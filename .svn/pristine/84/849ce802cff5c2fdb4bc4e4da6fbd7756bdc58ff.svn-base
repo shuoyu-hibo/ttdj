@@ -1,0 +1,17 @@
+db.driver=com.mysql.jdbc.Driver
+#db.url=jdbc:MySQL://211.99.203.174:3336/weiboapp_ccb
+#db.user_name=root
+#db.password=lwb
+db.url=jdbc:MySQL://192.168.1.113:3306/ttdj
+db.user_name=root
+db.password=root
+
+
+timer.init.delay=900
+timer.run.delay=900
+timer.format=HH:mm:ss
+timer.start=00:00:00
+timer.stop=23:59:59
+
+log.propsfile=WEB-INF/classes/log4j.properties
+upload.pic.path=image/

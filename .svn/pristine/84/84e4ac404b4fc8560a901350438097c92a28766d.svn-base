@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsPrivateMsgTextMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsPrivateMsgText" >
+    <id column="PRIVMSG_ID" property="privmsgId" jdbcType="BIGINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.mybatis.entity.bbs.BbsPrivateMsgText" extends="BaseResultMap" >
+    <result column="MSG_TEXT" property="msgText" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    PRIVMSG_ID
+  </sql>
+  <sql id="Blob_Column_List" >
+    MSG_TEXT
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.mybatis.entity.bbs.BbsPrivateMsgTextExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bbs_private_msg_text
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsPrivateMsgTextExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_private_msg_text
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bbs_private_msg_text
+    where PRIVMSG_ID = #{privmsgId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from bbs_private_msg_text
+    where PRIVMSG_ID = #{privmsgId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsPrivateMsgTextExample" >
+    delete from bbs_private_msg_text
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsPrivateMsgText" >
+    insert into bbs_private_msg_text (PRIVMSG_ID, MSG_TEXT)
+    values (#{privmsgId,jdbcType=BIGINT}, #{msgText,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsPrivateMsgText" >
+    insert into bbs_private_msg_text
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="privmsgId != null" >
+        PRIVMSG_ID,
+      </if>
+      <if test="msgText != null" >
+        MSG_TEXT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="privmsgId != null" >
+        #{privmsgId,jdbcType=BIGINT},
+      </if>
+      <if test="msgText != null" >
+        #{msgText,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsPrivateMsgTextExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_private_msg_text
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_private_msg_text
+    <set >
+      <if test="record.privmsgId != null" >
+        PRIVMSG_ID = #{record.privmsgId,jdbcType=BIGINT},
+      </if>
+      <if test="record.msgText != null" >
+        MSG_TEXT = #{record.msgText,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update bbs_private_msg_text
+    set PRIVMSG_ID = #{record.privmsgId,jdbcType=BIGINT},
+      MSG_TEXT = #{record.msgText,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_private_msg_text
+    set PRIVMSG_ID = #{record.privmsgId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsPrivateMsgText" >
+    update bbs_private_msg_text
+    <set >
+      <if test="msgText != null" >
+        MSG_TEXT = #{msgText,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where PRIVMSG_ID = #{privmsgId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.mybatis.entity.bbs.BbsPrivateMsgText" >
+    update bbs_private_msg_text
+    set MSG_TEXT = #{msgText,jdbcType=LONGVARCHAR}
+    where PRIVMSG_ID = #{privmsgId,jdbcType=BIGINT}
+  </update>
+</mapper>

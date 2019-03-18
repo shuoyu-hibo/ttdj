@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="application-name" content="ttdaijin网－ttdaijin一次 美一次，精品生活">
+<meta name="description" content="运城ttdaijin网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城ttdaijin网,您身边的吃喝玩乐好帮手!">
+<meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+
+
+<title>【运城代金券网】</title>
+
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css">
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+
+
+<!--[if IE 6]>
+<script src="http://s1.ttdaijin.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://s0.ttdaijin.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+
+<script type="text/javascript">
+
+ $(function(){
+ 	$("#myModal1").modal("show");
+ 	$("#saveShop").click(function(){
+	    	if(!checkInputStore("storeName","商铺名称")){
+	    		return false;
+	    	}
+	    	if(!checkInputStore("address","地址")){
+	    		return false;
+	    	}
+	    	if(!checkInputStore("linkNumber","联系电话")){
+	    		return false;
+	    	}
+	    	if(!checkInputStore("province","省份")){
+	    		return false;
+	    	}
+	    	if(!checkInputStore("city","城市")){
+	    		return false;
+	    	}
+	    	var sul = "us!saveStoreInfo.do?provinceId="+$("#province option:selected").attr("id");
+	    	sul += "&cityId="+$("#city option:selected").attr("id");
+	    	if($("#county option:selected").attr("id")!=undefined){
+	    		sul += "&countyId="+$("#county option:selected").attr("id");
+	    	}
+	    	if($("#county option:selected").attr("id")!=undefined){
+		    	sul += "&businessGroupId="+$("#businessGroup option:selected").attr("id");
+	    	}
+	    	sul += "&";
+    		var strUrl = generateUrl(sul,"storeName,address,linkNumber,province,city,county,businessGroup");
+    		//alert(strUrl);
+    		$.post(strUrl,function(json){
+				if(json["result"]=="0"){
+					//$("#myModal1").modal("hide");
+					$("#viewStoreName").html($("#storeName").val());
+					var vStoreLeve = 1;
+					$("#viewStoreleve").css("width",""+vStoreLeve*20+"%");
+					$("#viewAddress").html($("#address").val());
+					$("#viewLinkNumber").html($("#linkNumber").val());
+				}else{
+					$("#warningStore").html('<strong>提示:</strong> 商品添加失败!');
+    				$("#warningStore").toggle(true);
+    				return false;
+				}
+			});
+	    });
+	    
+	    
+        //$("#myModal1").css("z-index","1051");
+        //load province city county and bgrounp start
+        $.post(generateUrl("ct!getProvince.do?"),function(data){
+        	$("#province").html("<option></option>");
+        	$.each(data["record"],function(i,n){
+        		$("<option id="+n.provinceCode+"\>"+n.provinceName+"</option>").appendTo($("#province"));
+        	});
+        });
+        $("#province").change(function(){
+        	var sU = generateUrl("ct!getCity.do?provinceId="+$("#province option:selected").attr("id"))
+        	$("#city").removeAttr("disabled");
+        	$("#city").html("<option></option>");
+        	$.post(sU,function(data){
+	        	$.each(data["record"],function(i,n){
+	        		$("<option id="+n.cityCode+"\>"+n.cityName+"</option>").appendTo($("#city"));
+        		});
+       		});
+       		$("#city").change();
+        });
+        $("#city").change(function(){
+        	var sU = generateUrl("ct!getCounty.do?cityId="+$("#city option:selected").attr("id"))
+        	$("#county").removeAttr("disabled");
+        	$("#county").html("<option></option>");
+        	$.post(sU,function(data){
+	        	$.each(data["record"],function(i,n){
+	        		$("<option id="+n.countyId+"\>"+n.countyName+"</option>").appendTo($("#county"));
+        		});
+       		});
+       		$("#county").change();
+        });
+        $("#county").change(function(){
+        	var sUl = generateUrl("ct!getBusinessGroup.do?cityId="+$("#city option:selected").attr("id")+"&countyId="+$("#county option:selected").attr("id"))
+        	$("#businessGroup").removeAttr("disabled");
+        	$("#businessGroup").html("<option></option>");
+        	$.post(sUl,function(data){
+	        	$.each(data["record"],function(i,n){
+	        		$("<option id="+n.busiGropId+"\>"+n.busiGropName+"</option>").appendTo($("#businessGroup"));
+        		});
+       		});
+        });
+		//load province city county and bgrounp end
+		
+ });
+</script>
+</head>
+
+
+<body id="index" class="pg-floor">
+<div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+  <div class="modal-header">
+    <h3 id="myModalLabel">添加商铺信息</h3>
+  </div>
+  <div class="modal-body">
+    <table class="normal" width="456" border="0" cellspacing="1" cellpadding="0" align="center" bordercolor="#0099CC" bgcolor="#CCCCCC">
+		        
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商铺名称:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+ 		                <input id="storeName" class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商铺地址:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+ 		                <input id="address" class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商铺电话:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+		                <input id="linkNumber" class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">店铺所属区域:  </font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+		            	<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:black,direction:145,strength:15)" width="100%" color=#black SIZE=5>
+		                <select style="width:120px" id="province">
+		                	<option></option>
+		                </select>省<br>
+		                <select style="width:120px" id="city" disabled="disabled">
+		                	<option></option>
+		                </select>市<br>
+		                <select style="width:120px" id="county" disabled="disabled">
+		                	<option></option>
+		                </select>区/县<br>
+		                <select style="width:120px" id="businessGroup" disabled="disabled">
+		                	<option></option>
+		                </select>商圈<br>
+		     		   <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#black,direction:145,strength:15)" width="100%" color=#black SIZE=5>		        
+		            </td>
+		        </tr>
+		    </table>
+ 	</div>
+         <div class="alert alert-success" style="display: none;" id="okStore">
+              <strong>恭喜:</strong> 商铺信息添加成功！
+         </div>
+         <div class="alert alert-warning" style="display: none;" id="warningStore">
+              <strong>提示:</strong> 商铺信息添加成功！
+         </div>
+         
+         <div class="modal-footer">
+            <button type="button" class="btn" data-dismiss="modal" aria-hidden="true" id="saveShop">
+               提交
+            </button>
+         </div>
+</div>
+</body>
+
+</html>

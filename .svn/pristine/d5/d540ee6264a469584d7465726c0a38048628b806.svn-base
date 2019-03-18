@@ -1,0 +1,30 @@
+package com.mybatis.dao.bbs;
+
+import com.mybatis.entity.bbs.ProduceInfo;
+import com.mybatis.entity.bbs.ProduceInfoExample;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
+
+public interface ProduceInfoMapper {
+    int countByExample(ProduceInfoExample example);
+
+    int deleteByExample(ProduceInfoExample example);
+
+    int deleteByPrimaryKey(String produceId);
+
+    int insert(ProduceInfo record);
+
+    int insertSelective(ProduceInfo record);
+
+    List<ProduceInfo> selectByExample(ProduceInfoExample example);
+
+    ProduceInfo selectByPrimaryKey(String produceId);
+
+    int updateByExampleSelective(@Param("record") ProduceInfo record, @Param("example") ProduceInfoExample example);
+
+    int updateByExample(@Param("record") ProduceInfo record, @Param("example") ProduceInfoExample example);
+
+    int updateByPrimaryKeySelective(ProduceInfo record);
+
+    int updateByPrimaryKey(ProduceInfo record);
+}

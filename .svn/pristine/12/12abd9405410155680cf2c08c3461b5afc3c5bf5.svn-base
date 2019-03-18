@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsConfig" >
+    <id column="CONFIG_ID" property="configId" jdbcType="BIGINT" />
+    <result column="DEF_AVATAR" property="defAvatar" jdbcType="VARCHAR" />
+    <result column="AVATAR_WIDTH" property="avatarWidth" jdbcType="INTEGER" />
+    <result column="AVATAR_HEIGHT" property="avatarHeight" jdbcType="INTEGER" />
+    <result column="TOPIC_COUNT_PER_PAGE" property="topicCountPerPage" jdbcType="INTEGER" />
+    <result column="POST_COUNT_PER_PAGE" property="postCountPerPage" jdbcType="INTEGER" />
+    <result column="KEYWORDS" property="keywords" jdbcType="VARCHAR" />
+    <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />
+    <result column="REGISTER_STATUS" property="registerStatus" jdbcType="SMALLINT" />
+    <result column="REGISTER_GROUP_ID" property="registerGroupId" jdbcType="INTEGER" />
+    <result column="CACHE_POST_TODAY" property="cachePostToday" jdbcType="INTEGER" />
+    <result column="CACHE_POST_YESTERDAY" property="cachePostYesterday" jdbcType="INTEGER" />
+    <result column="CACHE_POST_MAX" property="cachePostMax" jdbcType="INTEGER" />
+    <result column="CACHE_POST_MAX_DATE" property="cachePostMaxDate" jdbcType="DATE" />
+    <result column="CACHE_TOPIC_TOTAL" property="cacheTopicTotal" jdbcType="INTEGER" />
+    <result column="CACHE_POST_TOTAL" property="cachePostTotal" jdbcType="INTEGER" />
+    <result column="CACHE_USER_TOTAL" property="cacheUserTotal" jdbcType="INTEGER" />
+    <result column="last_user_id" property="lastUserId" jdbcType="INTEGER" />
+    <result column="site_id" property="siteId" jdbcType="INTEGER" />
+    <result column="DEFAULT_GROUP_ID" property="defaultGroupId" jdbcType="BIGINT" />
+    <result column="TOPIC_HOT_COUNT" property="topicHotCount" jdbcType="INTEGER" />
+    <result column="AUTO_REGISTER" property="autoRegister" jdbcType="BIT" />
+    <result column="EMAIL_VALIDATE" property="emailValidate" jdbcType="BIT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.mybatis.entity.bbs.BbsConfig" extends="BaseResultMap" >
+    <result column="REGISTER_RULE" property="registerRule" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    CONFIG_ID, DEF_AVATAR, AVATAR_WIDTH, AVATAR_HEIGHT, TOPIC_COUNT_PER_PAGE, POST_COUNT_PER_PAGE, 
+    KEYWORDS, DESCRIPTION, REGISTER_STATUS, REGISTER_GROUP_ID, CACHE_POST_TODAY, CACHE_POST_YESTERDAY, 
+    CACHE_POST_MAX, CACHE_POST_MAX_DATE, CACHE_TOPIC_TOTAL, CACHE_POST_TOTAL, CACHE_USER_TOTAL, 
+    last_user_id, site_id, DEFAULT_GROUP_ID, TOPIC_HOT_COUNT, AUTO_REGISTER, EMAIL_VALIDATE
+  </sql>
+  <sql id="Blob_Column_List" >
+    REGISTER_RULE
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.mybatis.entity.bbs.BbsConfigExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bbs_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsConfigExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bbs_config
+    where CONFIG_ID = #{configId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from bbs_config
+    where CONFIG_ID = #{configId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsConfigExample" >
+    delete from bbs_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsConfig" >
+    insert into bbs_config (CONFIG_ID, DEF_AVATAR, AVATAR_WIDTH, 
+      AVATAR_HEIGHT, TOPIC_COUNT_PER_PAGE, POST_COUNT_PER_PAGE, 
+      KEYWORDS, DESCRIPTION, REGISTER_STATUS, 
+      REGISTER_GROUP_ID, CACHE_POST_TODAY, CACHE_POST_YESTERDAY, 
+      CACHE_POST_MAX, CACHE_POST_MAX_DATE, CACHE_TOPIC_TOTAL, 
+      CACHE_POST_TOTAL, CACHE_USER_TOTAL, last_user_id, 
+      site_id, DEFAULT_GROUP_ID, TOPIC_HOT_COUNT, 
+      AUTO_REGISTER, EMAIL_VALIDATE, REGISTER_RULE
+      )
+    values (#{configId,jdbcType=BIGINT}, #{defAvatar,jdbcType=VARCHAR}, #{avatarWidth,jdbcType=INTEGER}, 
+      #{avatarHeight,jdbcType=INTEGER}, #{topicCountPerPage,jdbcType=INTEGER}, #{postCountPerPage,jdbcType=INTEGER}, 
+      #{keywords,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{registerStatus,jdbcType=SMALLINT}, 
+      #{registerGroupId,jdbcType=INTEGER}, #{cachePostToday,jdbcType=INTEGER}, #{cachePostYesterday,jdbcType=INTEGER}, 
+      #{cachePostMax,jdbcType=INTEGER}, #{cachePostMaxDate,jdbcType=DATE}, #{cacheTopicTotal,jdbcType=INTEGER}, 
+      #{cachePostTotal,jdbcType=INTEGER}, #{cacheUserTotal,jdbcType=INTEGER}, #{lastUserId,jdbcType=INTEGER}, 
+      #{siteId,jdbcType=INTEGER}, #{defaultGroupId,jdbcType=BIGINT}, #{topicHotCount,jdbcType=INTEGER}, 
+      #{autoRegister,jdbcType=BIT}, #{emailValidate,jdbcType=BIT}, #{registerRule,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsConfig" >
+    insert into bbs_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="configId != null" >
+        CONFIG_ID,
+      </if>
+      <if test="defAvatar != null" >
+        DEF_AVATAR,
+      </if>
+      <if test="avatarWidth != null" >
+        AVATAR_WIDTH,
+      </if>
+      <if test="avatarHeight != null" >
+        AVATAR_HEIGHT,
+      </if>
+      <if test="topicCountPerPage != null" >
+        TOPIC_COUNT_PER_PAGE,
+      </if>
+      <if test="postCountPerPage != null" >
+        POST_COUNT_PER_PAGE,
+      </if>
+      <if test="keywords != null" >
+        KEYWORDS,
+      </if>
+      <if test="description != null" >
+        DESCRIPTION,
+      </if>
+      <if test="registerStatus != null" >
+        REGISTER_STATUS,
+      </if>
+      <if test="registerGroupId != null" >
+        REGISTER_GROUP_ID,
+      </if>
+      <if test="cachePostToday != null" >
+        CACHE_POST_TODAY,
+      </if>
+      <if test="cachePostYesterday != null" >
+        CACHE_POST_YESTERDAY,
+      </if>
+      <if test="cachePostMax != null" >
+        CACHE_POST_MAX,
+      </if>
+      <if test="cachePostMaxDate != null" >
+        CACHE_POST_MAX_DATE,
+      </if>
+      <if test="cacheTopicTotal != null" >
+        CACHE_TOPIC_TOTAL,
+      </if>
+      <if test="cachePostTotal != null" >
+        CACHE_POST_TOTAL,
+      </if>
+      <if test="cacheUserTotal != null" >
+        CACHE_USER_TOTAL,
+      </if>
+      <if test="lastUserId != null" >
+        last_user_id,
+      </if>
+      <if test="siteId != null" >
+        site_id,
+      </if>
+      <if test="defaultGroupId != null" >
+        DEFAULT_GROUP_ID,
+      </if>
+      <if test="topicHotCount != null" >
+        TOPIC_HOT_COUNT,
+      </if>
+      <if test="autoRegister != null" >
+        AUTO_REGISTER,
+      </if>
+      <if test="emailValidate != null" >
+        EMAIL_VALIDATE,
+      </if>
+      <if test="registerRule != null" >
+        REGISTER_RULE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="configId != null" >
+        #{configId,jdbcType=BIGINT},
+      </if>
+      <if test="defAvatar != null" >
+        #{defAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarWidth != null" >
+        #{avatarWidth,jdbcType=INTEGER},
+      </if>
+      <if test="avatarHeight != null" >
+        #{avatarHeight,jdbcType=INTEGER},
+      </if>
+      <if test="topicCountPerPage != null" >
+        #{topicCountPerPage,jdbcType=INTEGER},
+      </if>
+      <if test="postCountPerPage != null" >
+        #{postCountPerPage,jdbcType=INTEGER},
+      </if>
+      <if test="keywords != null" >
+        #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="registerStatus != null" >
+        #{registerStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="registerGroupId != null" >
+        #{registerGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostToday != null" >
+        #{cachePostToday,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostYesterday != null" >
+        #{cachePostYesterday,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostMax != null" >
+        #{cachePostMax,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostMaxDate != null" >
+        #{cachePostMaxDate,jdbcType=DATE},
+      </if>
+      <if test="cacheTopicTotal != null" >
+        #{cacheTopicTotal,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostTotal != null" >
+        #{cachePostTotal,jdbcType=INTEGER},
+      </if>
+      <if test="cacheUserTotal != null" >
+        #{cacheUserTotal,jdbcType=INTEGER},
+      </if>
+      <if test="lastUserId != null" >
+        #{lastUserId,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="defaultGroupId != null" >
+        #{defaultGroupId,jdbcType=BIGINT},
+      </if>
+      <if test="topicHotCount != null" >
+        #{topicHotCount,jdbcType=INTEGER},
+      </if>
+      <if test="autoRegister != null" >
+        #{autoRegister,jdbcType=BIT},
+      </if>
+      <if test="emailValidate != null" >
+        #{emailValidate,jdbcType=BIT},
+      </if>
+      <if test="registerRule != null" >
+        #{registerRule,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsConfigExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_config
+    <set >
+      <if test="record.configId != null" >
+        CONFIG_ID = #{record.configId,jdbcType=BIGINT},
+      </if>
+      <if test="record.defAvatar != null" >
+        DEF_AVATAR = #{record.defAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="record.avatarWidth != null" >
+        AVATAR_WIDTH = #{record.avatarWidth,jdbcType=INTEGER},
+      </if>
+      <if test="record.avatarHeight != null" >
+        AVATAR_HEIGHT = #{record.avatarHeight,jdbcType=INTEGER},
+      </if>
+      <if test="record.topicCountPerPage != null" >
+        TOPIC_COUNT_PER_PAGE = #{record.topicCountPerPage,jdbcType=INTEGER},
+      </if>
+      <if test="record.postCountPerPage != null" >
+        POST_COUNT_PER_PAGE = #{record.postCountPerPage,jdbcType=INTEGER},
+      </if>
+      <if test="record.keywords != null" >
+        KEYWORDS = #{record.keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null" >
+        DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registerStatus != null" >
+        REGISTER_STATUS = #{record.registerStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="record.registerGroupId != null" >
+        REGISTER_GROUP_ID = #{record.registerGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="record.cachePostToday != null" >
+        CACHE_POST_TODAY = #{record.cachePostToday,jdbcType=INTEGER},
+      </if>
+      <if test="record.cachePostYesterday != null" >
+        CACHE_POST_YESTERDAY = #{record.cachePostYesterday,jdbcType=INTEGER},
+      </if>
+      <if test="record.cachePostMax != null" >
+        CACHE_POST_MAX = #{record.cachePostMax,jdbcType=INTEGER},
+      </if>
+      <if test="record.cachePostMaxDate != null" >
+        CACHE_POST_MAX_DATE = #{record.cachePostMaxDate,jdbcType=DATE},
+      </if>
+      <if test="record.cacheTopicTotal != null" >
+        CACHE_TOPIC_TOTAL = #{record.cacheTopicTotal,jdbcType=INTEGER},
+      </if>
+      <if test="record.cachePostTotal != null" >
+        CACHE_POST_TOTAL = #{record.cachePostTotal,jdbcType=INTEGER},
+      </if>
+      <if test="record.cacheUserTotal != null" >
+        CACHE_USER_TOTAL = #{record.cacheUserTotal,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastUserId != null" >
+        last_user_id = #{record.lastUserId,jdbcType=INTEGER},
+      </if>
+      <if test="record.siteId != null" >
+        site_id = #{record.siteId,jdbcType=INTEGER},
+      </if>
+      <if test="record.defaultGroupId != null" >
+        DEFAULT_GROUP_ID = #{record.defaultGroupId,jdbcType=BIGINT},
+      </if>
+      <if test="record.topicHotCount != null" >
+        TOPIC_HOT_COUNT = #{record.topicHotCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.autoRegister != null" >
+        AUTO_REGISTER = #{record.autoRegister,jdbcType=BIT},
+      </if>
+      <if test="record.emailValidate != null" >
+        EMAIL_VALIDATE = #{record.emailValidate,jdbcType=BIT},
+      </if>
+      <if test="record.registerRule != null" >
+        REGISTER_RULE = #{record.registerRule,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update bbs_config
+    set CONFIG_ID = #{record.configId,jdbcType=BIGINT},
+      DEF_AVATAR = #{record.defAvatar,jdbcType=VARCHAR},
+      AVATAR_WIDTH = #{record.avatarWidth,jdbcType=INTEGER},
+      AVATAR_HEIGHT = #{record.avatarHeight,jdbcType=INTEGER},
+      TOPIC_COUNT_PER_PAGE = #{record.topicCountPerPage,jdbcType=INTEGER},
+      POST_COUNT_PER_PAGE = #{record.postCountPerPage,jdbcType=INTEGER},
+      KEYWORDS = #{record.keywords,jdbcType=VARCHAR},
+      DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+      REGISTER_STATUS = #{record.registerStatus,jdbcType=SMALLINT},
+      REGISTER_GROUP_ID = #{record.registerGroupId,jdbcType=INTEGER},
+      CACHE_POST_TODAY = #{record.cachePostToday,jdbcType=INTEGER},
+      CACHE_POST_YESTERDAY = #{record.cachePostYesterday,jdbcType=INTEGER},
+      CACHE_POST_MAX = #{record.cachePostMax,jdbcType=INTEGER},
+      CACHE_POST_MAX_DATE = #{record.cachePostMaxDate,jdbcType=DATE},
+      CACHE_TOPIC_TOTAL = #{record.cacheTopicTotal,jdbcType=INTEGER},
+      CACHE_POST_TOTAL = #{record.cachePostTotal,jdbcType=INTEGER},
+      CACHE_USER_TOTAL = #{record.cacheUserTotal,jdbcType=INTEGER},
+      last_user_id = #{record.lastUserId,jdbcType=INTEGER},
+      site_id = #{record.siteId,jdbcType=INTEGER},
+      DEFAULT_GROUP_ID = #{record.defaultGroupId,jdbcType=BIGINT},
+      TOPIC_HOT_COUNT = #{record.topicHotCount,jdbcType=INTEGER},
+      AUTO_REGISTER = #{record.autoRegister,jdbcType=BIT},
+      EMAIL_VALIDATE = #{record.emailValidate,jdbcType=BIT},
+      REGISTER_RULE = #{record.registerRule,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_config
+    set CONFIG_ID = #{record.configId,jdbcType=BIGINT},
+      DEF_AVATAR = #{record.defAvatar,jdbcType=VARCHAR},
+      AVATAR_WIDTH = #{record.avatarWidth,jdbcType=INTEGER},
+      AVATAR_HEIGHT = #{record.avatarHeight,jdbcType=INTEGER},
+      TOPIC_COUNT_PER_PAGE = #{record.topicCountPerPage,jdbcType=INTEGER},
+      POST_COUNT_PER_PAGE = #{record.postCountPerPage,jdbcType=INTEGER},
+      KEYWORDS = #{record.keywords,jdbcType=VARCHAR},
+      DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+      REGISTER_STATUS = #{record.registerStatus,jdbcType=SMALLINT},
+      REGISTER_GROUP_ID = #{record.registerGroupId,jdbcType=INTEGER},
+      CACHE_POST_TODAY = #{record.cachePostToday,jdbcType=INTEGER},
+      CACHE_POST_YESTERDAY = #{record.cachePostYesterday,jdbcType=INTEGER},
+      CACHE_POST_MAX = #{record.cachePostMax,jdbcType=INTEGER},
+      CACHE_POST_MAX_DATE = #{record.cachePostMaxDate,jdbcType=DATE},
+      CACHE_TOPIC_TOTAL = #{record.cacheTopicTotal,jdbcType=INTEGER},
+      CACHE_POST_TOTAL = #{record.cachePostTotal,jdbcType=INTEGER},
+      CACHE_USER_TOTAL = #{record.cacheUserTotal,jdbcType=INTEGER},
+      last_user_id = #{record.lastUserId,jdbcType=INTEGER},
+      site_id = #{record.siteId,jdbcType=INTEGER},
+      DEFAULT_GROUP_ID = #{record.defaultGroupId,jdbcType=BIGINT},
+      TOPIC_HOT_COUNT = #{record.topicHotCount,jdbcType=INTEGER},
+      AUTO_REGISTER = #{record.autoRegister,jdbcType=BIT},
+      EMAIL_VALIDATE = #{record.emailValidate,jdbcType=BIT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsConfig" >
+    update bbs_config
+    <set >
+      <if test="defAvatar != null" >
+        DEF_AVATAR = #{defAvatar,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarWidth != null" >
+        AVATAR_WIDTH = #{avatarWidth,jdbcType=INTEGER},
+      </if>
+      <if test="avatarHeight != null" >
+        AVATAR_HEIGHT = #{avatarHeight,jdbcType=INTEGER},
+      </if>
+      <if test="topicCountPerPage != null" >
+        TOPIC_COUNT_PER_PAGE = #{topicCountPerPage,jdbcType=INTEGER},
+      </if>
+      <if test="postCountPerPage != null" >
+        POST_COUNT_PER_PAGE = #{postCountPerPage,jdbcType=INTEGER},
+      </if>
+      <if test="keywords != null" >
+        KEYWORDS = #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        DESCRIPTION = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="registerStatus != null" >
+        REGISTER_STATUS = #{registerStatus,jdbcType=SMALLINT},
+      </if>
+      <if test="registerGroupId != null" >
+        REGISTER_GROUP_ID = #{registerGroupId,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostToday != null" >
+        CACHE_POST_TODAY = #{cachePostToday,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostYesterday != null" >
+        CACHE_POST_YESTERDAY = #{cachePostYesterday,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostMax != null" >
+        CACHE_POST_MAX = #{cachePostMax,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostMaxDate != null" >
+        CACHE_POST_MAX_DATE = #{cachePostMaxDate,jdbcType=DATE},
+      </if>
+      <if test="cacheTopicTotal != null" >
+        CACHE_TOPIC_TOTAL = #{cacheTopicTotal,jdbcType=INTEGER},
+      </if>
+      <if test="cachePostTotal != null" >
+        CACHE_POST_TOTAL = #{cachePostTotal,jdbcType=INTEGER},
+      </if>
+      <if test="cacheUserTotal != null" >
+        CACHE_USER_TOTAL = #{cacheUserTotal,jdbcType=INTEGER},
+      </if>
+      <if test="lastUserId != null" >
+        last_user_id = #{lastUserId,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        site_id = #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="defaultGroupId != null" >
+        DEFAULT_GROUP_ID = #{defaultGroupId,jdbcType=BIGINT},
+      </if>
+      <if test="topicHotCount != null" >
+        TOPIC_HOT_COUNT = #{topicHotCount,jdbcType=INTEGER},
+      </if>
+      <if test="autoRegister != null" >
+        AUTO_REGISTER = #{autoRegister,jdbcType=BIT},
+      </if>
+      <if test="emailValidate != null" >
+        EMAIL_VALIDATE = #{emailValidate,jdbcType=BIT},
+      </if>
+      <if test="registerRule != null" >
+        REGISTER_RULE = #{registerRule,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where CONFIG_ID = #{configId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.mybatis.entity.bbs.BbsConfig" >
+    update bbs_config
+    set DEF_AVATAR = #{defAvatar,jdbcType=VARCHAR},
+      AVATAR_WIDTH = #{avatarWidth,jdbcType=INTEGER},
+      AVATAR_HEIGHT = #{avatarHeight,jdbcType=INTEGER},
+      TOPIC_COUNT_PER_PAGE = #{topicCountPerPage,jdbcType=INTEGER},
+      POST_COUNT_PER_PAGE = #{postCountPerPage,jdbcType=INTEGER},
+      KEYWORDS = #{keywords,jdbcType=VARCHAR},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      REGISTER_STATUS = #{registerStatus,jdbcType=SMALLINT},
+      REGISTER_GROUP_ID = #{registerGroupId,jdbcType=INTEGER},
+      CACHE_POST_TODAY = #{cachePostToday,jdbcType=INTEGER},
+      CACHE_POST_YESTERDAY = #{cachePostYesterday,jdbcType=INTEGER},
+      CACHE_POST_MAX = #{cachePostMax,jdbcType=INTEGER},
+      CACHE_POST_MAX_DATE = #{cachePostMaxDate,jdbcType=DATE},
+      CACHE_TOPIC_TOTAL = #{cacheTopicTotal,jdbcType=INTEGER},
+      CACHE_POST_TOTAL = #{cachePostTotal,jdbcType=INTEGER},
+      CACHE_USER_TOTAL = #{cacheUserTotal,jdbcType=INTEGER},
+      last_user_id = #{lastUserId,jdbcType=INTEGER},
+      site_id = #{siteId,jdbcType=INTEGER},
+      DEFAULT_GROUP_ID = #{defaultGroupId,jdbcType=BIGINT},
+      TOPIC_HOT_COUNT = #{topicHotCount,jdbcType=INTEGER},
+      AUTO_REGISTER = #{autoRegister,jdbcType=BIT},
+      EMAIL_VALIDATE = #{emailValidate,jdbcType=BIT},
+      REGISTER_RULE = #{registerRule,jdbcType=LONGVARCHAR}
+    where CONFIG_ID = #{configId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.BbsConfig" >
+    update bbs_config
+    set DEF_AVATAR = #{defAvatar,jdbcType=VARCHAR},
+      AVATAR_WIDTH = #{avatarWidth,jdbcType=INTEGER},
+      AVATAR_HEIGHT = #{avatarHeight,jdbcType=INTEGER},
+      TOPIC_COUNT_PER_PAGE = #{topicCountPerPage,jdbcType=INTEGER},
+      POST_COUNT_PER_PAGE = #{postCountPerPage,jdbcType=INTEGER},
+      KEYWORDS = #{keywords,jdbcType=VARCHAR},
+      DESCRIPTION = #{description,jdbcType=VARCHAR},
+      REGISTER_STATUS = #{registerStatus,jdbcType=SMALLINT},
+      REGISTER_GROUP_ID = #{registerGroupId,jdbcType=INTEGER},
+      CACHE_POST_TODAY = #{cachePostToday,jdbcType=INTEGER},
+      CACHE_POST_YESTERDAY = #{cachePostYesterday,jdbcType=INTEGER},
+      CACHE_POST_MAX = #{cachePostMax,jdbcType=INTEGER},
+      CACHE_POST_MAX_DATE = #{cachePostMaxDate,jdbcType=DATE},
+      CACHE_TOPIC_TOTAL = #{cacheTopicTotal,jdbcType=INTEGER},
+      CACHE_POST_TOTAL = #{cachePostTotal,jdbcType=INTEGER},
+      CACHE_USER_TOTAL = #{cacheUserTotal,jdbcType=INTEGER},
+      last_user_id = #{lastUserId,jdbcType=INTEGER},
+      site_id = #{siteId,jdbcType=INTEGER},
+      DEFAULT_GROUP_ID = #{defaultGroupId,jdbcType=BIGINT},
+      TOPIC_HOT_COUNT = #{topicHotCount,jdbcType=INTEGER},
+      AUTO_REGISTER = #{autoRegister,jdbcType=BIT},
+      EMAIL_VALIDATE = #{emailValidate,jdbcType=BIT}
+    where CONFIG_ID = #{configId,jdbcType=BIGINT}
+  </update>
+</mapper>

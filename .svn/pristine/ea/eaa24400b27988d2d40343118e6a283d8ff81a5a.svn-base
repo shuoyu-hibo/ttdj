@@ -1,0 +1,23 @@
+package com.mybatis.entity.bbs;
+
+public class ProduceSort3Key {
+    private String proSort2Code;
+
+    private String proSort3Code;
+
+    public String getProSort2Code() {
+        return proSort2Code;
+    }
+
+    public void setProSort2Code(String proSort2Code) {
+        this.proSort2Code = proSort2Code == null ? null : proSort2Code.trim();
+    }
+
+    public String getProSort3Code() {
+        return proSort3Code;
+    }
+
+    public void setProSort3Code(String proSort3Code) {
+        this.proSort3Code = proSort3Code == null ? null : proSort3Code.trim();
+    }
+}

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+	<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="TTDJ网－TTDJ一次 美一次，精品生活">
+    <meta name="description" content="运城TTDJ网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城TTDJ网,您身边的吃喝玩乐好帮手!">
+    <meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+    <link rel="canonical" href="http://www.ttdaijin.com ">
+    <link rel="alternate" href="http://www.ttdaijin.comfeed" title="订阅更新" type="application/rss+xml">
+    <link rel="icon" href="/site-logo.jpg" sizes="16x16 32x32">
+    <title>【运城代金券网】运城代金券大全_运城代金券网站_TTDJ网</title>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<link rel="stylesheet" type="text/css" href="../../styles/bootstrap.css">
+	<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.js"></script>
+	<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../js/ourUtil.js"></script>
+	<script type="text/javascript" src="../../js/menu.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/xw/common_new.css">
+	<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+	
+	<style>
+	a{
+    color:#f60;
+    text-decoration:none;
+    }
+    .header {
+	  padding: 0;
+	}
+    .city-info__name{
+    color:#f60;
+    }
+    .city-info__toggle{
+    color:#f60;
+    }
+    input[type="submit"]{
+    width:60px;
+    }
+	.main{
+	width:1180px;
+	margin:0 auto;
+	}
+	#nav{
+	width:1180px;
+	}
+	.navwrap{
+		background:skyblue;
+		border:none;
+	}
+	.navbar a{
+	border:none;
+	color:#f60;
+	}
+	.navbar a:hover{
+	background-color:#f60;
+	}
+	.navbar a.current{
+	background-color:skyblue;
+	border-right:1px #f60 solid;
+	border-left:1px #f60 solid;
+	}
+	.user-info{
+    width:232px;
+    }
+    .pros{
+	background-color:skyblue;
+	border:1px #f60 solid;
+	}
+	.pros h2{
+	color:#f60;
+	}
+	.prosul li a.ti{
+	color:#f60;
+	}
+    .prosul li {
+	  line-height: 35px;
+	  height: 35px;
+	  border-bottom:1px #f60 solid;
+	  }
+	  .prosul li i{
+	  height:35px;
+	  }
+	  .prosul li.bd-solid{
+	  border-bottom:1px #f60 solid;
+	  }
+	  .prosul a{
+	  height:35px;
+	  }
+	  .prosul a{
+	  height:35px;
+	  }
+	  .prosmore{
+	  width:800px;	  
+	  }
+	  .prosmore li{
+	  border:none;
+	  padding-left:3px;
+	  }
+	  .breadcrumb{
+	  margin:0 0 5px;
+	  }
+	</style>
+	
+  </head>
+    
+<body id="index" class="pg-floor">
+<div class="header" id="header">
+</div>
+<div class="main">		
+		<div class="navwrap">
+		    <div id="nav">
+		      <div class="navbar clearfix" mon="type=mainnav&action=click">  <a mon="#content=首页" class=" current" href="http://www.js-css.cn">首页</a> <a mon="#content=餐饮美食" class="" href="http://www.js-css.cn">餐饮美食</a> <a mon="#content=休闲娱乐" class="" href="http://www.js-css.cn">休闲娱乐</a> <a mon="#content=旅游住宿" class="" href="http://www.js-css.cn">旅游住宿</a> <a mon="#content=生活服务" class="" href="http://www.js-css.cn">生活服务</a> <a mon="#content=丽人" class="" href="http://www.js-css.cn">丽人</a> <a mon="#content=商品" class="" href="http://www.js-css.cn">商品</a> </div>
+		      <div class="pros subpage">
+		        <h2>全部代金券分类</h2>
+		        <ul class="prosul clearfix" id="proinfo">
+          <li id="liMenu1" class="food" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="美食" mon="#content=美食">食品、饮料</a>
+            <div class="prosmore hide">
+	            <ul class="breadcrumb">
+				  <li><a href="#">首页</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> </li>
+				</ul>
+	            <ul class="breadcrumb">
+				  <li><a href="#">首页</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> </li>
+				</ul>
+				<ul class="breadcrumb">
+				  <li><a href="#">首页</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> | </li>
+				  <li><a href="#">Library</a> </li>
+				</ul>
+				
+            </div>
+          </li>
+          <li id="liMenu2" class="enjoy" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="休闲" mon="#content=休闲">营养保健</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(663)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="电影"  mon="#content=电影">电影(18)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="KTV"  mon="#content=KTV">KTV(8)</a> </em></span><span><em > <a  href="javascript:void(0);" title="运动健身"  mon="#content=运动健身">运动健身(95)</a> </em></span><span><em > <a  href="javascript:void(0);" title="游乐电玩"  mon="#content=游乐电玩">游乐电玩(48)</a> </em></span><span><em > <a  href="javascript:void(0);" title="展览演出"  mon="#content=展览演出">展览演出(13)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="足疗按摩"  mon="#content=足疗按摩">足疗按摩(8)</a> </em></span><span><em > <a  href="javascript:void(0);" title="洗浴"  mon="#content=洗浴">洗浴(11)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(29)</a> </em></span><span><em > <a  href="javascript:void(0);" title="采摘"  mon="#content=采摘">采摘(2)</a> </em></span><span><em > <a  href="javascript:void(0);" title="滑雪"  mon="#content=滑雪">滑雪(4)</a> </em></span><span><em > <a  href="javascript:void(0);" title="温泉"  mon="#content=温泉">温泉(427)</a> </em></span> </div>
+          </li>
+          <li id="liMenu3" class="travel" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="旅游" mon="#content=旅游">图书、音像</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(13602)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="酒店"  mon="#content=酒店">酒店(9044)</a> </em></span><span><em > <a  href="javascript:void(0);" title="旅游"  mon="#content=旅游">旅游(1775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="景点公园"  mon="#content=景点公园">景点公园(935)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(1848)</a> </em></span> </div>
+          </li>
+          <li id="liMenu4" class="life" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="生活" mon="#content=生活">彩票、旅行</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(333)</a> </em></span><span><em > <a  href="javascript:void(0);" title="写真"  mon="#content=写真">写真(9)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="婚纱摄影"  mon="#content=婚纱摄影">婚纱摄影(212)</a> </em></span><span><em > <a  href="javascript:void(0);" title="儿童摄影"  mon="#content=儿童摄影">儿童摄影(1)</a> </em></span><span><em > <a  href="javascript:void(0);" title="汽车养护"  mon="#content=汽车养护">汽车养护(3)</a> </em></span><span><em > <a  href="javascript:void(0);" title="教育培训"  mon="#content=教育培训">教育培训(91)</a> </em></span><span><em > <a  href="javascript:void(0);" title="体检"  mon="#content=体检">体检(8)</a> </em></span><span><em > <a  href="javascript:void(0);" title="口腔"  mon="#content=口腔">口腔(1)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(8)</a> </em></span></div>
+          </li>
+          <li id="liMenu5" class="women" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="丽人" mon="#content=丽人">五金百货</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(14)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="美发"  mon="#content=美发">美发(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="美甲"  mon="#content=美甲">美甲(3)</a> </em></span><span><em > <a  href="javascript:void(0);" title="美容美体"  mon="#content=美容美体">美容美体(4)</a> </em></span> </div>
+          </li>
+          <li id="liMenu6" class="goods bd-solid" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="商品" mon="#content=商品">家用电器</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(112343)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="服装"  mon="#content=服装">服装(32747)</a> </em></span><span><em > <a  href="javascript:void(0);" title="生活家居"  mon="#content=生活家居">生活家居(14441)</a> </em></span><span><em > <a  href="javascript:void(0);" title="食品饮料"  mon="#content=食品饮料">食品饮料(10116)</a> </em></span><span><em > <a  href="javascript:void(0);" title="化妆品"  mon="#content=化妆品">化妆品(12707)</a> </em></span><span><em > <a  href="javascript:void(0);" title="箱包"  mon="#content=箱包">箱包(7621)</a> </em></span><span><em > <a  href="javascript:void(0);" title="家用电器"  mon="#content=家用电器">家用电器(3775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手机数码"  mon="#content=手机数码">手机数码(3639)</a> </em></span><span><em > <a  href="javascript:void(0);" title="鞋靴"  mon="#content=鞋靴">鞋靴(11686)</a> </em></span><span><em > <a  href="javascript:void(0);" title="饰品"  mon="#content=饰品">饰品(4558)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手表"  mon="#content=手表">手表(1482)</a> </em></span><span><em > <a  href="javascript:void(0);" title="母婴用品"  mon="#content=母婴用品">母婴用品(3659)</a> </em></span><span><em > <a  href="javascript:void(0);" title="玩具"  mon="#content=玩具">玩具(777)</a> </em></span><span><em > <a  href="javascript:void(0);" title="抽奖"  mon="#content=抽奖">抽奖(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="礼品"  mon="#content=礼品">礼品(197)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(4931)</a> </em></span></div>
+          </li>
+          <li id="liMenu7" class="goods bd-solid" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="商品" mon="#content=商品">手机、数码</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(112343)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="服装"  mon="#content=服装">服装(32747)</a> </em></span><span><em > <a  href="javascript:void(0);" title="生活家居"  mon="#content=生活家居">生活家居(14441)</a> </em></span><span><em > <a  href="javascript:void(0);" title="食品饮料"  mon="#content=食品饮料">食品饮料(10116)</a> </em></span><span><em > <a  href="javascript:void(0);" title="化妆品"  mon="#content=化妆品">化妆品(12707)</a> </em></span><span><em > <a  href="javascript:void(0);" title="箱包"  mon="#content=箱包">箱包(7621)</a> </em></span><span><em > <a  href="javascript:void(0);" title="家用电器"  mon="#content=家用电器">家用电器(3775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手机数码"  mon="#content=手机数码">手机数码(3639)</a> </em></span><span><em > <a  href="javascript:void(0);" title="鞋靴"  mon="#content=鞋靴">鞋靴(11686)</a> </em></span><span><em > <a  href="javascript:void(0);" title="饰品"  mon="#content=饰品">饰品(4558)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手表"  mon="#content=手表">手表(1482)</a> </em></span><span><em > <a  href="javascript:void(0);" title="母婴用品"  mon="#content=母婴用品">母婴用品(3659)</a> </em></span><span><em > <a  href="javascript:void(0);" title="玩具"  mon="#content=玩具">玩具(777)</a> </em></span><span><em > <a  href="javascript:void(0);" title="抽奖"  mon="#content=抽奖">抽奖(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="礼品"  mon="#content=礼品">礼品(197)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(4931)</a> </em></span></div>
+          </li>
+          <li id="liMenu8" class="goods bd-solid" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="商品" mon="#content=商品">电脑、办公</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(112343)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="服装"  mon="#content=服装">服装(32747)</a> </em></span><span><em > <a  href="javascript:void(0);" title="生活家居"  mon="#content=生活家居">生活家居(14441)</a> </em></span><span><em > <a  href="javascript:void(0);" title="食品饮料"  mon="#content=食品饮料">食品饮料(10116)</a> </em></span><span><em > <a  href="javascript:void(0);" title="化妆品"  mon="#content=化妆品">化妆品(12707)</a> </em></span><span><em > <a  href="javascript:void(0);" title="箱包"  mon="#content=箱包">箱包(7621)</a> </em></span><span><em > <a  href="javascript:void(0);" title="家用电器"  mon="#content=家用电器">家用电器(3775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手机数码"  mon="#content=手机数码">手机数码(3639)</a> </em></span><span><em > <a  href="javascript:void(0);" title="鞋靴"  mon="#content=鞋靴">鞋靴(11686)</a> </em></span><span><em > <a  href="javascript:void(0);" title="饰品"  mon="#content=饰品">饰品(4558)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手表"  mon="#content=手表">手表(1482)</a> </em></span><span><em > <a  href="javascript:void(0);" title="母婴用品"  mon="#content=母婴用品">母婴用品(3659)</a> </em></span><span><em > <a  href="javascript:void(0);" title="玩具"  mon="#content=玩具">玩具(777)</a> </em></span><span><em > <a  href="javascript:void(0);" title="抽奖"  mon="#content=抽奖">抽奖(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="礼品"  mon="#content=礼品">礼品(197)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(4931)</a> </em></span></div>
+          </li>
+          <li id="liMenu9" class="goods bd-solid" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="商品" mon="#content=商品">家居、家具</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(112343)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="服装"  mon="#content=服装">服装(32747)</a> </em></span><span><em > <a  href="javascript:void(0);" title="生活家居"  mon="#content=生活家居">生活家居(14441)</a> </em></span><span><em > <a  href="javascript:void(0);" title="食品饮料"  mon="#content=食品饮料">食品饮料(10116)</a> </em></span><span><em > <a  href="javascript:void(0);" title="化妆品"  mon="#content=化妆品">化妆品(12707)</a> </em></span><span><em > <a  href="javascript:void(0);" title="箱包"  mon="#content=箱包">箱包(7621)</a> </em></span><span><em > <a  href="javascript:void(0);" title="家用电器"  mon="#content=家用电器">家用电器(3775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手机数码"  mon="#content=手机数码">手机数码(3639)</a> </em></span><span><em > <a  href="javascript:void(0);" title="鞋靴"  mon="#content=鞋靴">鞋靴(11686)</a> </em></span><span><em > <a  href="javascript:void(0);" title="饰品"  mon="#content=饰品">饰品(4558)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手表"  mon="#content=手表">手表(1482)</a> </em></span><span><em > <a  href="javascript:void(0);" title="母婴用品"  mon="#content=母婴用品">母婴用品(3659)</a> </em></span><span><em > <a  href="javascript:void(0);" title="玩具"  mon="#content=玩具">玩具(777)</a> </em></span><span><em > <a  href="javascript:void(0);" title="抽奖"  mon="#content=抽奖">抽奖(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="礼品"  mon="#content=礼品">礼品(197)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(4931)</a> </em></span></div>
+          </li>
+          <li id="liMenu10" class="goods bd-solid" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="商品" mon="#content=商品">男装、女装</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(112343)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="服装"  mon="#content=服装">服装(32747)</a> </em></span><span><em > <a  href="javascript:void(0);" title="生活家居"  mon="#content=生活家居">生活家居(14441)</a> </em></span><span><em > <a  href="javascript:void(0);" title="食品饮料"  mon="#content=食品饮料">食品饮料(10116)</a> </em></span><span><em > <a  href="javascript:void(0);" title="化妆品"  mon="#content=化妆品">化妆品(12707)</a> </em></span><span><em > <a  href="javascript:void(0);" title="箱包"  mon="#content=箱包">箱包(7621)</a> </em></span><span><em > <a  href="javascript:void(0);" title="家用电器"  mon="#content=家用电器">家用电器(3775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手机数码"  mon="#content=手机数码">手机数码(3639)</a> </em></span><span><em > <a  href="javascript:void(0);" title="鞋靴"  mon="#content=鞋靴">鞋靴(11686)</a> </em></span><span><em > <a  href="javascript:void(0);" title="饰品"  mon="#content=饰品">饰品(4558)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手表"  mon="#content=手表">手表(1482)</a> </em></span><span><em > <a  href="javascript:void(0);" title="母婴用品"  mon="#content=母婴用品">母婴用品(3659)</a> </em></span><span><em > <a  href="javascript:void(0);" title="玩具"  mon="#content=玩具">玩具(777)</a> </em></span><span><em > <a  href="javascript:void(0);" title="抽奖"  mon="#content=抽奖">抽奖(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="礼品"  mon="#content=礼品">礼品(197)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(4931)</a> </em></span></div>
+          </li>
+          <li id="liMenu11" class="goods bd-solid" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="商品" mon="#content=商品">个护、化妆</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(112343)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="服装"  mon="#content=服装">服装(32747)</a> </em></span><span><em > <a  href="javascript:void(0);" title="生活家居"  mon="#content=生活家居">生活家居(14441)</a> </em></span><span><em > <a  href="javascript:void(0);" title="食品饮料"  mon="#content=食品饮料">食品饮料(10116)</a> </em></span><span><em > <a  href="javascript:void(0);" title="化妆品"  mon="#content=化妆品">化妆品(12707)</a> </em></span><span><em > <a  href="javascript:void(0);" title="箱包"  mon="#content=箱包">箱包(7621)</a> </em></span><span><em > <a  href="javascript:void(0);" title="家用电器"  mon="#content=家用电器">家用电器(3775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手机数码"  mon="#content=手机数码">手机数码(3639)</a> </em></span><span><em > <a  href="javascript:void(0);" title="鞋靴"  mon="#content=鞋靴">鞋靴(11686)</a> </em></span><span><em > <a  href="javascript:void(0);" title="饰品"  mon="#content=饰品">饰品(4558)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手表"  mon="#content=手表">手表(1482)</a> </em></span><span><em > <a  href="javascript:void(0);" title="母婴用品"  mon="#content=母婴用品">母婴用品(3659)</a> </em></span><span><em > <a  href="javascript:void(0);" title="玩具"  mon="#content=玩具">玩具(777)</a> </em></span><span><em > <a  href="javascript:void(0);" title="抽奖"  mon="#content=抽奖">抽奖(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="礼品"  mon="#content=礼品">礼品(197)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(4931)</a> </em></span></div>
+          </li>
+          <li id="liMenu12" class="goods bd-solid" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="商品" mon="#content=商品">鞋靴、箱包</a> 
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(112343)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="服装"  mon="#content=服装">服装(32747)</a> </em></span><span><em > <a  href="javascript:void(0);" title="生活家居"  mon="#content=生活家居">生活家居(14441)</a> </em></span><span><em > <a  href="javascript:void(0);" title="食品饮料"  mon="#content=食品饮料">食品饮料(10116)</a> </em></span><span><em > <a  href="javascript:void(0);" title="化妆品"  mon="#content=化妆品">化妆品(12707)</a> </em></span><span><em > <a  href="javascript:void(0);" title="箱包"  mon="#content=箱包">箱包(7621)</a> </em></span><span><em > <a  href="javascript:void(0);" title="家用电器"  mon="#content=家用电器">家用电器(3775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手机数码"  mon="#content=手机数码">手机数码(3639)</a> </em></span><span><em > <a  href="javascript:void(0);" title="鞋靴"  mon="#content=鞋靴">鞋靴(11686)</a> </em></span><span><em > <a  href="javascript:void(0);" title="饰品"  mon="#content=饰品">饰品(4558)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手表"  mon="#content=手表">手表(1482)</a> </em></span><span><em > <a  href="javascript:void(0);" title="母婴用品"  mon="#content=母婴用品">母婴用品(3659)</a> </em></span><span><em > <a  href="javascript:void(0);" title="玩具"  mon="#content=玩具">玩具(777)</a> </em></span><span><em > <a  href="javascript:void(0);" title="抽奖"  mon="#content=抽奖">抽奖(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="礼品"  mon="#content=礼品">礼品(197)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(4931)</a> </em></span></div>
+          </li>
+          <li id="liMenu13" class="goods bd-solid" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="商品" mon="#content=商品">运动、户外</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(112343)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="服装"  mon="#content=服装">服装(32747)</a> </em></span><span><em > <a  href="javascript:void(0);" title="生活家居"  mon="#content=生活家居">生活家居(14441)</a> </em></span><span><em > <a  href="javascript:void(0);" title="食品饮料"  mon="#content=食品饮料">食品饮料(10116)</a> </em></span><span><em > <a  href="javascript:void(0);" title="化妆品"  mon="#content=化妆品">化妆品(12707)</a> </em></span><span><em > <a  href="javascript:void(0);" title="箱包"  mon="#content=箱包">箱包(7621)</a> </em></span><span><em > <a  href="javascript:void(0);" title="家用电器"  mon="#content=家用电器">家用电器(3775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手机数码"  mon="#content=手机数码">手机数码(3639)</a> </em></span><span><em > <a  href="javascript:void(0);" title="鞋靴"  mon="#content=鞋靴">鞋靴(11686)</a> </em></span><span><em > <a  href="javascript:void(0);" title="饰品"  mon="#content=饰品">饰品(4558)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手表"  mon="#content=手表">手表(1482)</a> </em></span><span><em > <a  href="javascript:void(0);" title="母婴用品"  mon="#content=母婴用品">母婴用品(3659)</a> </em></span><span><em > <a  href="javascript:void(0);" title="玩具"  mon="#content=玩具">玩具(777)</a> </em></span><span><em > <a  href="javascript:void(0);" title="抽奖"  mon="#content=抽奖">抽奖(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="礼品"  mon="#content=礼品">礼品(197)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(4931)</a> </em></span></div>
+          </li>
+          <li id="liMenu14" class="goods bd-solid" mon="type=subnav&action=click"><i>&gt;</i> <a class="ti" href="javascript:void(0);" title="商品" mon="#content=商品">汽车用品</a>
+            <div class="prosmore hide"><span><em > <a  href="javascript:void(0);" title="全部"  mon="#content=全部">全部(112343)</a> </em></span><span><em class="morehot"> <a class="morehot" href="javascript:void(0);" title="服装"  mon="#content=服装">服装(32747)</a> </em></span><span><em > <a  href="javascript:void(0);" title="生活家居"  mon="#content=生活家居">生活家居(14441)</a> </em></span><span><em > <a  href="javascript:void(0);" title="食品饮料"  mon="#content=食品饮料">食品饮料(10116)</a> </em></span><span><em > <a  href="javascript:void(0);" title="化妆品"  mon="#content=化妆品">化妆品(12707)</a> </em></span><span><em > <a  href="javascript:void(0);" title="箱包"  mon="#content=箱包">箱包(7621)</a> </em></span><span><em > <a  href="javascript:void(0);" title="家用电器"  mon="#content=家用电器">家用电器(3775)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手机数码"  mon="#content=手机数码">手机数码(3639)</a> </em></span><span><em > <a  href="javascript:void(0);" title="鞋靴"  mon="#content=鞋靴">鞋靴(11686)</a> </em></span><span><em > <a  href="javascript:void(0);" title="饰品"  mon="#content=饰品">饰品(4558)</a> </em></span><span><em > <a  href="javascript:void(0);" title="手表"  mon="#content=手表">手表(1482)</a> </em></span><span><em > <a  href="javascript:void(0);" title="母婴用品"  mon="#content=母婴用品">母婴用品(3659)</a> </em></span><span><em > <a  href="javascript:void(0);" title="玩具"  mon="#content=玩具">玩具(777)</a> </em></span><span><em > <a  href="javascript:void(0);" title="抽奖"  mon="#content=抽奖">抽奖(7)</a> </em></span><span><em > <a  href="javascript:void(0);" title="礼品"  mon="#content=礼品">礼品(197)</a> </em></span><span><em > <a  href="javascript:void(0);" title="其他"  mon="#content=其他">其他(4931)</a> </em></span></div>
+          </li>
+        </ul>
+		      </div>
+		    </div>
+		  </div>
+
+		   <div class="pagination">
+				  <ul>
+				  	<li><a href="#">全部分类: </a></li>
+				    <li><a href="#">家电</a></li>
+				    <li><a href="#">数码</a></li>
+				    <li><a href="#">办公</a></li>
+				    <li><a href="#">家居</a></li>
+				    <li><a href="#">服装</a></li>
+				    <li><a href="#">个护</a></li>
+				    <li><a href="#">家居</a></li>
+				    <li><a href="#">鞋包</a></li>
+				    <li><a href="#">运动</a></li>
+				    <li><a href="#">汽车</a></li>
+				    <li><a href="#">母婴</a></li>
+				    <li><a href="#">食品</a></li>
+				    <li><a href="#">保健</a></li>
+				    <li><a href="#">娱乐</a></li>
+				    <li><a href="#">其他</a></li>
+				  </ul>
+			</div>
+
+
+		    <div class="pagination">
+				  <ul>
+				  	<li><a href="#">全部区域: </a></li>
+				    <li><a href="#">盐湖</a></li>
+				    <li><a href="#">空港</a></li>
+				    <li><a href="#">河津</a></li>
+				    <li><a href="#">永济</a></li>
+				    <li><a href="#">稷山</a></li>
+				    <li><a href="#">新绛</a></li>
+				    <li><a href="#">绛县</a></li>
+				    <li><a href="#">闻喜</a></li>
+				    <li><a href="#">夏县</a></li>
+				    <li><a href="#">临猗</a></li>
+				    <li><a href="#">万荣</a></li>
+				    <li><a href="#">芮城</a></li>
+				    <li><a href="#">垣曲</a></li>
+				    <li><a href="#">平陆</a></li>
+				  </ul>
+			</div>
+	<div id="showMes">搜索 &gt;</div>
+	         <ul class="nav nav-pills">
+	           <li class="active"><a href="#">默认排序</a></li>
+	           <li><a href="#">销量</a></li>
+	           <li><a href="#">价格</a></li>
+	           <!-- <li><a href="#">好评</a></li> -->
+	           <li><a href="#">发布时间</a></li>
+	         </ul>
+       <div class="content">
+       <ul class="thumbnails"></ul>
+       </div>
+       <div class="pagination" align="center">
+		  <ul>
+		  	<!-- <li><a href="#">首页</a></li> -->
+		    <li  class="disabled" id="pNumPre"><a href="javascript:void(0);">上一页</a></li>
+		    <li class="active" id="pNum_1"><a href="javascript:void(0);" >1</a></li>
+		    <li id="pNum_2"><a href="javascript:void(0);" >2</a></li>
+		    <li id="pNum_3"><a href="javascript:void(0);" >3</a></li>
+		    <li id="pNum_4"><a href="javascript:void(0);" >4</a></li>
+		    <li id="pNum_5"><a href="javascript:void(0);">5</a></li>
+		    <li id="pNumNext"><a href="javascript:void(0);">下一页</a></li>
+		    <!--<li><a href="#">末页</a></li> -->
+		   	<font id="font_ps">&nbsp;&nbsp;&nbsp;&nbsp;【共20页】</font>
+		  </ul>
+		</div>
+<div class="foot" id="foot">
+</div>          
+	
+	
+</div>			
+<script type="text/javascript">
+	  var prompt_word = "��ʳ";
+	  if(prompt_word && prompt_word.length > 0)
+	  {
+		  $(document).ready(function()
+		  {
+			 (function(element, str)
+		  {
+		  if (element.size() == 0)
+		  { 
+			return; 
+		  }
+	     var elem = element; 
+		 var opts = {styleDefault: 'prompt-default',styleFocus: 'prompt-focus'};
+		 if (elem.val() === ""){
+		 elem.val(str);
+		 if (!elem.hasClass(opts.styleDefault)){
+		    elem.addClass(opts.styleDefault);
+		 }
+		 } 
+		 elem.bind("focus", function(e){
+		   elem.removeClass(opts.styleDefault);
+		 if (!elem.hasClass(opts.styleFocus)){
+		    elem.addClass(opts.styleFocus);
+		 }
+		 if (elem.val() === str){elem.val("");
+		 }
+		 });
+		 elem.bind("blur", function(e){
+		 if (elem.val() === ""){
+			 elem.val(str);
+			 elem.removeClass(opts.styleFocus);
+			 if (!elem.hasClass(opts.styleDefault)){
+			  elem.addClass(opts.styleDefault);
+			 }
+		 } else {
+		 elem.removeClass(opts.styleDefault);
+		 }
+		 });
+		 })($("#ssinput"), prompt_word);
+		 });
+		 }
+		 function bindEvent(uname, utip){
+		 if(uname.size() == 0) return;
+		 var userNameEnter,userNameLeave,userTipLeave;
+		 uname.bind("mouseenter", function(){
+		 userNameEnter = setTimeout(function(){
+		 if(userNameEnter) clearTimeout(userNameEnter);utip.show();
+		 },200);
+		 });
+		 uname.bind("mouseleave", function(){
+		 userNameLeave = setTimeout(function(){
+		 if(userNameLeave) clearTimeout(userNameLeave);utip.hide();
+		 },200);
+		 });
+		 utip.bind("mouseenter", function(){
+		 if(userNameLeave) clearTimeout(userNameLeave);
+		 if(userTipLeave) clearTimeout(userTipLeave);
+		 });
+		 utip.bind("mouseleave",function(){
+		 userTipLeave = setTimeout(function(){
+		 if(userNameLeave) clearTimeout(userNameLeave);
+		 if(userTipLeave) clearTimeout(userTipLeave);
+		 utip.hide();
+		 },10);
+		 });
+		 }
+		 $(document).ready(function(){
+		 bindEvent($("#J_mytuanorder"), $("#J_mylist"));});/* ȫ����Ʒ */
+		 (function(){
+		 var $block = $("#jpros"),
+		 $subblock = $(".subpage"),
+		 $head=$subblock.find('h2'),
+		 $ul = $("#proinfo"),
+		 $lis = $ul.find("li"),
+		 inter=false;
+		 $head.click(function(e){
+		 e.stopPropagation();
+		 if(!inter){$ul.show();
+		 }else{
+		 $ul.hide();
+		 }
+		 inter=!inter;
+		 });
+		 $ul.click(function(event){
+		 event.stopPropagation();
+		 });
+		 $('body').click(function(){
+		 $ul.hide();inter=!inter;
+		 });
+		 $lis.hover(function(){
+		 if(!$(this).hasClass('nochild')){
+		 $(this).addClass("prosahover");
+		 $(this).find(".prosmore").removeClass('hide');
+		 }},
+		 function(){
+		 if(!$(this).hasClass('nochild')){
+		 if($(this).hasClass("prosahover")){
+		 $(this).removeClass("prosahover");
+		 }
+		 $(this).find(".prosmore").addClass('hide');
+		 }});
+		 })();
+</script>
+  </body>
+</html>

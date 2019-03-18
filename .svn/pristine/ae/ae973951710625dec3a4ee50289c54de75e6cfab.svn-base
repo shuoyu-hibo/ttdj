@@ -1,0 +1,137 @@
+//JavaScript Documentfunction
+ function getLength(str){
+	return str.replace(/[^\x00-xff]/g,"xx").length;
+	}
+function findStr(str,n){
+    var tmp=0;
+    for( var i=0;i<str.length;i++){if(str.charAt(i)==n){tmp++;}}
+    return tmp;
+}
+window.onload=function(){
+	var aInput=document.getElementsByTagName('input');
+    var ema=aInput[0];
+    var oName=aInput[1];
+	var pwd=aInput[2];
+	var pwd2=aInput[3];
+    
+    //var pho=aInput[4];
+	var aP=document.getElementsByTagName('p');
+    var ema_msg=aP[0];
+    var name_msg=aP[2];
+	var pwd_msg=aP[3];
+	var pwd2_msg=aP[4];
+    var sheng_msg=aP[5];
+
+    //var pho_msg=aP[4];
+	var count=document.getElementById('count');
+    var wen_zi=document.getElementById('wen_zi');
+	var aEm=document.getElementsByTagName('em');
+    var select=document.getElementsByTagName('select');
+    var select1=select[0];
+    var select2=select[1];
+	var name_length=0;
+//城市验证
+    select1.onfocus=function(){sheng_msg.style.display="none";};
+    select2.onfocus=function(){sheng_msg.style.display="none";};
+    select1.onblur=function(){
+            if(select1.selectedIndex==0){sheng_msg.style.display="block";
+         sheng_msg.innerHTML= '<i><img src="../../image/aw/55555.jpg" width="17" height="15" /></i>请选择所在省';}
+        if(select1.selectedIndex>0){
+            if(select2.selectedIndex==0){sheng_msg.style.display="block";
+            sheng_msg.innerHTML= '<i><img src="../../image/aw/55555.jpg" width="17" height="15" /></i>请选择所在市';}}
+
+
+    };
+    select2.onblur=function(){
+        if(select1.selectedIndex>0){
+            if(select2.selectedIndex==0){sheng_msg.style.display="block";
+                sheng_msg.innerHTML= '<i><img src="../../image/aw/55555.jpg" width="17" height="15" /></i>请选择所在市';}
+            if(select2.selectedIndex>0){sheng_msg.innerHTML='<i><img src="../../image/aw/6666666.jpg" width="17" height="15" /></i>OK';}
+
+        };
+
+    };
+    //提交验证
+   /* tj.onclick=function(){
+        name_msg.style.display="block";
+        if(oName.value==""){name_msg.innerHTML='<i><img src="tupian/444444.jpg" width="17" height="15" /></i>不能为空';    }
+
+
+    }
+
+*/
+//用户名的验证
+   oName.onfocus =function(){
+   		name_msg.style.display="none";
+
+
+   };
+   oName.onkeyup =function(){
+     count.style.visibility="visible";
+     name_length=getLength(this.value);
+	 //count.innerHTML=name_length+re;
+       count.innerHTML= name_length+'个字符';
+	 if(name_length==0){count.style.visibility="hidden";}
+   };
+    oName.onblur=function(){
+        name_msg.style.display="block";
+        var rd=/[^\w\u4e00-\u9fa5]/g;
+        if(this.value==""){name_msg.innerHTML= '<i><img src="../../image/aw/55555.jpg" width="17" height="15" /></i>请输入用户名';  }
+        else if( rd.test(this.value)){name_msg.innerHTML='<i><img src="../../image/aw/444444.jpg" width="17" height="15" /></i>含有非法字符';}
+        else if(name_length>25){name_msg.innerHTML='<i><img src="../../image/aw/444444.jpg" width="17" height="15" /></i>长度超过25个字符';    }
+        else if(name_length<6){name_msg.innerHTML='<i><img src="../../image/aw/444444.jpg" width="17" height="15" /></i>长度少于6个字符';    }
+        else {name_msg.innerHTML='<i><img src="../../image/aw/6666666.jpg" width="17" height="15" /></i>OK';  }
+    };
+// 输入密码的验证
+    pwd.onfocus=function(){
+        pwd_msg.style.display="none";
+
+    };
+    pwd.onkeyup=function(){
+        if(this.value.length==0){aEm[0].className="";aEm[1].className="";aEm[2].className="";}
+        if(this.value.length>0&&this.value.length<6){aEm[0].className="active";aEm[1].className="";}
+        if(this.value.length>6&&this.value.length<12){aEm[1].className="active";aEm[2].className="";}
+        if(this.value.length>12){aEm[2].className="active";aEm[0].className="active";aEm[1].className="active";}
+
+    };
+    pwd.onblur=function(){
+        pwd_msg.style.display="block";
+        var m=findStr(pwd.value,pwd.value[0]);
+        var re_n=/[^\d]/g;
+        var re_t=/[^a-zA-Z]/g;
+        if(this.value==""){pwd_msg.innerHTML='<i><img src="../../image/aw/55555.jpg" width="17" height="15" /></i>请输入密码';}
+        else if(m==this.value.length){pwd_msg.innerHTML='<i><img src="../../image/aw/444444.jpg" width="17" height="15" /></i>不能为相同字符';}
+        else if(this.value.length==0||this.value.length>12){pwd_msg.innerHTML='<i><img src="../../image/aw/444444.jpg" width="17" height="15" /></i>应为6-12个字符';}
+        else if(!re_n.test(this.value)){pwd_msg.innerHTML='<i><img src="../../image/aw/444444.jpg" width="17" height="15" /></i>不能全为数字';}
+        else if(!re_t.test(this.value)){pwd_msg.innerHTML='<i><img src="../../image/aw/444444.jpg" width="17" height="15" /></i>不能全为字母';}
+        else {pwd_msg.innerHTML='<i><img src="../../image/aw/6666666.jpg" width="17" height="15" /></i>OK';}
+
+    };
+    //再次 输入密码的验证
+    pwd2.onfocus=function(){
+        pwd2_msg.style.display="none";
+
+    };
+    pwd2.onblur=function(){
+        pwd2_msg.style.display="block";
+        if(this.value==""){pwd2_msg.innerHTML='<i><img src="../../image/aw/55555.jpg" width="17" height="15" /></i>请再次输入密码';}
+        else if(this.value!=pwd.value){pwd2_msg.innerHTML='<i><img src="../../image/aw/444444.jpg" width="17" height="15" /></i>两次密码输入不一致';}
+        else{pwd2_msg.innerHTML='<i><img src="../../image/aw/6666666.jpg" width="17" height="15" /></i>OK';}
+    };
+    //邮箱验证
+    ema.onfocus=function(){
+        ema_msg.style.display="none";
+
+        wen_zi.style.visibility="hidden";
+    };
+
+    ema.onblur=function(){
+        ema_msg.style.display="block";
+     var re_d=/^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+        if(this.value==""){ema_msg.innerHTML= ema_msg.innerHTML='<i><img src="../../image/aw/55555.jpg" width="17" height="15" /></i>请输入您的邮箱';}
+        else if(!re_d.test(this.value)){ema_msg.innerHTML='<i><img src="../../image/aw/444444.jpg" width="17" height="15" /></i>请输入正确的邮箱';}
+        else{ema_msg.innerHTML='<i><img src="../../image/aw/6666666.jpg" width="17" height="15" /></i>OK';}
+    };
+
+
+};

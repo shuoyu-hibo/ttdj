@@ -1,0 +1,23 @@
+package com.mybatis.entity.ttdj;
+
+public class ProduceSort3 extends ProduceSort3Key {
+    private String proSort3Name;
+
+    private String remark;
+
+    public String getProSort3Name() {
+        return proSort3Name;
+    }
+
+    public void setProSort3Name(String proSort3Name) {
+        this.proSort3Name = proSort3Name == null ? null : proSort3Name.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+}

@@ -1,0 +1,31 @@
+package com.mybatis.dao.bbs;
+
+import com.mybatis.entity.bbs.ProduceSort2;
+import com.mybatis.entity.bbs.ProduceSort2Example;
+import com.mybatis.entity.bbs.ProduceSort2Key;
+import java.util.List;
+import org.apache.ibatis.annotations.Param;
+
+public interface ProduceSort2Mapper {
+    int countByExample(ProduceSort2Example example);
+
+    int deleteByExample(ProduceSort2Example example);
+
+    int deleteByPrimaryKey(ProduceSort2Key key);
+
+    int insert(ProduceSort2 record);
+
+    int insertSelective(ProduceSort2 record);
+
+    List<ProduceSort2> selectByExample(ProduceSort2Example example);
+
+    ProduceSort2 selectByPrimaryKey(ProduceSort2Key key);
+
+    int updateByExampleSelective(@Param("record") ProduceSort2 record, @Param("example") ProduceSort2Example example);
+
+    int updateByExample(@Param("record") ProduceSort2 record, @Param("example") ProduceSort2Example example);
+
+    int updateByPrimaryKeySelective(ProduceSort2 record);
+
+    int updateByPrimaryKey(ProduceSort2 record);
+}

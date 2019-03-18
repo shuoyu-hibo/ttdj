@@ -1,0 +1,68 @@
+package com.service.produce;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
+
+import com.mybatis.dao.ttdj.ProduceInfoMapper;
+import com.mybatis.dao.ttdj.UserInfoMapper;
+import com.mybatis.entity.ttdj.ProduceInfo;
+import com.mybatis.entity.ttdj.ProduceInfoExample;
+import com.mybatis.entity.ttdj.UserInfo;
+import com.service.BaseService;
+
+
+public class ProduceServiceImpl extends BaseService{
+
+	Logger log = this.getLog(this.getClass());//加载log方法
+
+	/**
+	 * 根据用户id查询商品信息
+	 * @param userName
+	 * @return
+	 */
+	public List<ProduceInfo> selectProduceByUserId(int userid){
+		
+		List<ProduceInfo> list = null;
+		SqlSession sqlSession = null;
+		try {
+			ProduceInfoExample pdExmp = new ProduceInfoExample();
+			pdExmp.or().andUserIdEqualTo(userid);
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			ProduceInfoMapper produceInfoMapper = sqlSession.getMapper(ProduceInfoMapper.class);
+			list = produceInfoMapper.selectByExample(pdExmp);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return null;//失败
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	
+	/**
+	 * 保存商品信息
+	 * @param userinfo
+	 * @return
+	 */
+	public boolean saveProduceData(ProduceInfo produceInfo){
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			ProduceInfoMapper produceMapper = sqlSession.getMapper(ProduceInfoMapper.class);
+			produceMapper.insert(produceInfo);
+			sqlSession.commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return false;
+		} finally {
+			sqlSession.close();
+		}
+		return true;
+	}
+}

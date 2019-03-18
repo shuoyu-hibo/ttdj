@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsOperationMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsOperation" >
+    <id column="OPERATOR_ID" property="operatorId" jdbcType="INTEGER" />
+    <result column="SITE_ID" property="siteId" jdbcType="INTEGER" />
+    <result column="operater_id" property="operaterId" jdbcType="INTEGER" />
+    <result column="REF_TYPE" property="refType" jdbcType="CHAR" />
+    <result column="REF_ID" property="refId" jdbcType="INTEGER" />
+    <result column="OPT_NAME" property="optName" jdbcType="VARCHAR" />
+    <result column="OPT_REASON" property="optReason" jdbcType="VARCHAR" />
+    <result column="OPT_TIME" property="optTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    OPERATOR_ID, SITE_ID, operater_id, REF_TYPE, REF_ID, OPT_NAME, OPT_REASON, OPT_TIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsOperationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_operation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bbs_operation
+    where OPERATOR_ID = #{operatorId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs_operation
+    where OPERATOR_ID = #{operatorId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsOperationExample" >
+    delete from bbs_operation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsOperation" >
+    insert into bbs_operation (OPERATOR_ID, SITE_ID, operater_id, 
+      REF_TYPE, REF_ID, OPT_NAME, 
+      OPT_REASON, OPT_TIME)
+    values (#{operatorId,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, #{operaterId,jdbcType=INTEGER}, 
+      #{refType,jdbcType=CHAR}, #{refId,jdbcType=INTEGER}, #{optName,jdbcType=VARCHAR}, 
+      #{optReason,jdbcType=VARCHAR}, #{optTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsOperation" >
+    insert into bbs_operation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="operatorId != null" >
+        OPERATOR_ID,
+      </if>
+      <if test="siteId != null" >
+        SITE_ID,
+      </if>
+      <if test="operaterId != null" >
+        operater_id,
+      </if>
+      <if test="refType != null" >
+        REF_TYPE,
+      </if>
+      <if test="refId != null" >
+        REF_ID,
+      </if>
+      <if test="optName != null" >
+        OPT_NAME,
+      </if>
+      <if test="optReason != null" >
+        OPT_REASON,
+      </if>
+      <if test="optTime != null" >
+        OPT_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="operatorId != null" >
+        #{operatorId,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="operaterId != null" >
+        #{operaterId,jdbcType=INTEGER},
+      </if>
+      <if test="refType != null" >
+        #{refType,jdbcType=CHAR},
+      </if>
+      <if test="refId != null" >
+        #{refId,jdbcType=INTEGER},
+      </if>
+      <if test="optName != null" >
+        #{optName,jdbcType=VARCHAR},
+      </if>
+      <if test="optReason != null" >
+        #{optReason,jdbcType=VARCHAR},
+      </if>
+      <if test="optTime != null" >
+        #{optTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsOperationExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_operation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_operation
+    <set >
+      <if test="record.operatorId != null" >
+        OPERATOR_ID = #{record.operatorId,jdbcType=INTEGER},
+      </if>
+      <if test="record.siteId != null" >
+        SITE_ID = #{record.siteId,jdbcType=INTEGER},
+      </if>
+      <if test="record.operaterId != null" >
+        operater_id = #{record.operaterId,jdbcType=INTEGER},
+      </if>
+      <if test="record.refType != null" >
+        REF_TYPE = #{record.refType,jdbcType=CHAR},
+      </if>
+      <if test="record.refId != null" >
+        REF_ID = #{record.refId,jdbcType=INTEGER},
+      </if>
+      <if test="record.optName != null" >
+        OPT_NAME = #{record.optName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.optReason != null" >
+        OPT_REASON = #{record.optReason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.optTime != null" >
+        OPT_TIME = #{record.optTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_operation
+    set OPERATOR_ID = #{record.operatorId,jdbcType=INTEGER},
+      SITE_ID = #{record.siteId,jdbcType=INTEGER},
+      operater_id = #{record.operaterId,jdbcType=INTEGER},
+      REF_TYPE = #{record.refType,jdbcType=CHAR},
+      REF_ID = #{record.refId,jdbcType=INTEGER},
+      OPT_NAME = #{record.optName,jdbcType=VARCHAR},
+      OPT_REASON = #{record.optReason,jdbcType=VARCHAR},
+      OPT_TIME = #{record.optTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsOperation" >
+    update bbs_operation
+    <set >
+      <if test="siteId != null" >
+        SITE_ID = #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="operaterId != null" >
+        operater_id = #{operaterId,jdbcType=INTEGER},
+      </if>
+      <if test="refType != null" >
+        REF_TYPE = #{refType,jdbcType=CHAR},
+      </if>
+      <if test="refId != null" >
+        REF_ID = #{refId,jdbcType=INTEGER},
+      </if>
+      <if test="optName != null" >
+        OPT_NAME = #{optName,jdbcType=VARCHAR},
+      </if>
+      <if test="optReason != null" >
+        OPT_REASON = #{optReason,jdbcType=VARCHAR},
+      </if>
+      <if test="optTime != null" >
+        OPT_TIME = #{optTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where OPERATOR_ID = #{operatorId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.BbsOperation" >
+    update bbs_operation
+    set SITE_ID = #{siteId,jdbcType=INTEGER},
+      operater_id = #{operaterId,jdbcType=INTEGER},
+      REF_TYPE = #{refType,jdbcType=CHAR},
+      REF_ID = #{refId,jdbcType=INTEGER},
+      OPT_NAME = #{optName,jdbcType=VARCHAR},
+      OPT_REASON = #{optReason,jdbcType=VARCHAR},
+      OPT_TIME = #{optTime,jdbcType=TIMESTAMP}
+    where OPERATOR_ID = #{operatorId,jdbcType=INTEGER}
+  </update>
+</mapper>

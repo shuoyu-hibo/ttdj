@@ -1,0 +1,169 @@
+package com.web.action.us;
+
+import java.util.List;
+
+import net.sf.json.JSONArray;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.mybatis.base.BaseHandle;
+import com.mybatis.dao.ttdj.BusinessGroupMapper;
+import com.mybatis.dao.ttdj.CityInfoMapper;
+import com.mybatis.dao.ttdj.CountyInfoMapper;
+import com.mybatis.dao.ttdj.ProvinceInfoMapper;
+import com.mybatis.entity.ttdj.BusinessGroup;
+import com.mybatis.entity.ttdj.BusinessGroupExample;
+import com.mybatis.entity.ttdj.CityInfo;
+import com.mybatis.entity.ttdj.CityInfoExample;
+import com.mybatis.entity.ttdj.CountyInfo;
+import com.mybatis.entity.ttdj.CountyInfoExample;
+import com.mybatis.entity.ttdj.ProvinceInfo;
+import com.mybatis.entity.ttdj.ProvinceInfoExample;
+import com.mybatis.entity.ttdj.UserInfo;
+import com.service.login.LoginServiceImpl;
+import com.web.action.base.BaseAction;
+import com.web.action.base.JsonUtil;
+
+/**
+ * 公共工具action
+ * @author wanghaibo
+ * @date 20150515
+ */
+public class UserAction extends BaseAction {
+
+
+
+	/**
+	 * 获取省
+	 * @throws Exception
+	 */
+	public void getProvince() throws Exception{ 
+		getLog(this.getClass()).info(this.getClass().getName()+"=getProvince()===================info: start");
+		BaseHandle baseHandle = ((BaseHandle) getApplicationContext().getBean("baseHandle"));
+		SqlSession sqlSession = baseHandle.getSqlSession();
+		ProvinceInfoMapper prov = sqlSession.getMapper(ProvinceInfoMapper.class);
+		ProvinceInfoExample provExmp = new ProvinceInfoExample();
+		List<ProvinceInfo> list = prov.selectByExample(provExmp);
+		JsonUtil jsonUtil = new JsonUtil();
+		JSONArray jsAry=new JSONArray();
+		for(int i=0;i<list.size();i++){
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");//kk是24小时制,hh是12小时制
+//			System.out.println(sdf.format(list.get(i).getRegisterDate()));
+			jsAry.add(list.get(i));
+		}
+		getLog(this.getClass()).info(this.getClass().getName()+"=====getProvince()===jsonAry="+jsAry);
+		jsonUtil.returnJson(response, "0", "s", jsAry);
+	}
+	
+	/**
+	 * 获取市
+	 * @throws Exception
+	 */
+	public void getCity() throws Exception{ 
+		getLog(this.getClass()).info(this.getClass().getName()+"==getCity()==================info: start");
+		String provinceId = commonUtil.decodeUrl(request.getParameter("provinceId"));
+		BaseHandle baseHandle = ((BaseHandle) getApplicationContext().getBean("baseHandle"));
+		SqlSession sqlSession = baseHandle.getSqlSession();
+		CityInfoMapper ct = sqlSession.getMapper(CityInfoMapper.class);
+		CityInfoExample ctExmp = new CityInfoExample();
+		JsonUtil jsonUtil = new JsonUtil();
+		JSONArray jsAry=new JSONArray();
+		if("".equals(provinceId)){
+			getLog(this.getClass()).error(this.getClass().getName()+"===getCity()====provinceId为空");
+			jsonUtil.returnJson(response, "1", "f", jsAry);
+		}else{
+			ctExmp.or().andProvinceCodeEqualTo(Integer.parseInt(provinceId));
+			List<CityInfo> list = ct.selectByExample(ctExmp);
+			for(int i=0;i<list.size();i++){
+//				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");//kk是24小时制,hh是12小时制
+//				System.out.println(sdf.format(list.get(i).getRegisterDate()));
+				jsAry.add(list.get(i));
+			}
+			getLog(this.getClass()).info(this.getClass().getName()+"===getCity()====jsonAry="+jsAry);
+			jsonUtil.returnJson(response, "0", "s", jsAry);
+		}
+	}
+	
+	/**
+	 * 获取县区
+	 * @throws Exception
+	 */
+	public void getCounty() throws Exception{ 
+		getLog(this.getClass()).info(this.getClass().getName()+"==getCounty()==================info: start");
+		String cityId = commonUtil.decodeUrl(request.getParameter("cityId"));
+		BaseHandle baseHandle = ((BaseHandle) getApplicationContext().getBean("baseHandle"));
+		SqlSession sqlSession = baseHandle.getSqlSession();
+		CountyInfoMapper ct = sqlSession.getMapper(CountyInfoMapper.class);
+		CountyInfoExample ctExmp = new CountyInfoExample();
+		JsonUtil jsonUtil = new JsonUtil();
+		JSONArray jsAry=new JSONArray();
+		if("".equals(cityId)){
+			getLog(this.getClass()).error(this.getClass().getName()+"===getCounty()====cityId为空");
+			jsonUtil.returnJson(response, "1", "f", jsAry);
+		}else{
+			ctExmp.or().andCityIdEqualTo(Integer.parseInt(cityId));
+			List<CountyInfo> list = ct.selectByExample(ctExmp);
+			for(int i=0;i<list.size();i++){
+//				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");//kk是24小时制,hh是12小时制
+//				System.out.println(sdf.format(list.get(i).getRegisterDate()));
+				jsAry.add(list.get(i));
+			}
+			getLog(this.getClass()).info(this.getClass().getName()+"===getCounty()====jsonAry="+jsAry);
+			jsonUtil.returnJson(response, "0", "s", jsAry);
+		}
+	}
+	
+	/**
+	 * 获取商圈
+	 * @throws Exception
+	 */
+	public void getBusinessGroup() throws Exception{ 
+		getLog(this.getClass()).info(this.getClass().getName()+"==getBusinessGroup()==================info: start");
+		String cityId = commonUtil.decodeUrl(request.getParameter("cityId"));
+		String countyId = commonUtil.decodeUrl(request.getParameter("countyId"));
+		BaseHandle baseHandle = ((BaseHandle) getApplicationContext().getBean("baseHandle"));
+		SqlSession sqlSession = baseHandle.getSqlSession();
+		BusinessGroupMapper bg = sqlSession.getMapper(BusinessGroupMapper.class);
+		BusinessGroupExample bgExmp = new BusinessGroupExample();
+		JsonUtil jsonUtil = new JsonUtil();
+		JSONArray jsAry=new JSONArray();
+		if("".equals(cityId)){
+			getLog(this.getClass()).error(this.getClass().getName()+"===getBusinessGroup()====cityId为空");
+			jsonUtil.returnJson(response, "1", "f", jsAry);
+		}else{
+			if(!"".equals(countyId)){
+				bgExmp.or().andCityIdEqualTo(Integer.parseInt(cityId)).andCountyIdEqualTo(Integer.parseInt(countyId));
+			}else{
+				bgExmp.or().andCityIdEqualTo(Integer.parseInt(cityId));
+			}
+			List<BusinessGroup> list = bg.selectByExample(bgExmp);
+			for(int i=0;i<list.size();i++){
+//				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");//kk是24小时制,hh是12小时制
+//				System.out.println(sdf.format(list.get(i).getRegisterDate()));
+				jsAry.add(list.get(i));
+			}
+			getLog(this.getClass()).info(this.getClass().getName()+"===getBusinessGroup()====jsonAry="+jsAry);
+			jsonUtil.returnJson(response, "0", "s", jsAry);
+		}
+	}
+	
+	/**
+	 * 获取用户信息by用户名
+	 * @throws Exception
+	 */
+	public void getUserInfoByUserName() throws Exception{ 
+		getLog(this.getClass()).info(this.getClass().getName()+"====================info: start");
+		String userName = commonUtil.decodeUrl(request.getParameter("userName"));
+		LoginServiceImpl loginServiceImpl = ((LoginServiceImpl) getApplicationContext().getBean("loginServiceImpl"));
+		List<UserInfo> list = loginServiceImpl.getDataByUserinfo(userName);
+		JsonUtil jsonUtil = new JsonUtil();
+		JSONArray jsAry=new JSONArray();
+		for(int i=0;i<list.size();i++){
+//			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd kk:mm:ss");//kk是24小时制,hh是12小时制
+//			System.out.println(sdf.format(list.get(i).getRegisterDate()));
+			jsAry.add(list.get(i));
+		}
+		getLog(this.getClass()).info(this.getClass().getName()+"jsonAry="+jsAry);
+		jsonUtil.returnJson(response, "0", "s", jsAry);
+	}
+}

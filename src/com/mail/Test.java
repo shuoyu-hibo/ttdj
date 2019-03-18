@@ -1,0 +1,39 @@
+package com.mail;
+
+import javax.mail.MessagingException;
+
+public class Test {
+
+	public static void main(String[] args){   
+        //这个类主要是设置邮件   
+//     MailSenderInfo mailInfo = new MailSenderInfo();    
+//     mailInfo.setMailServerHost("smtp.sina.com");    
+//     mailInfo.setMailServerPort("25");    
+//     mailInfo.setValidate(true);    
+//     mailInfo.setUserName("ttdaijin@sina.com");    
+//     mailInfo.setPassword("wanghaibo0321");//您的邮箱密码    
+//     mailInfo.setFromAddress("ttdaijin@sina.com");    
+//     mailInfo.setToAddress("wanghaibo0321@163.com");    
+//     mailInfo.setSubject("http://www.ttdaijin.com 天天代金网");    
+////     mailInfo.setContent("您好,感谢注册天天代金！点击下面连接来激活您的账号！");    
+//     mailInfo.setContent("<a href='http://www.baidu.com'>测试一下</a>");
+//        //这个类主要来发送邮件   
+//     SimpleMailSender sms = new SimpleMailSender();   
+//         //sms.sendTextMail(mailInfo);//发送文体格式    
+//         sms.sendHtmlMail(mailInfo);//发送html格式   
+		
+//		SendMail send = new SendMail(); 
+//		try {
+//			MailSenderInfo mailSenderInfo = new MailSenderInfo();
+//			send.sendMailWithHtml(mailSenderInfo);
+//		} catch (MessagingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		
+		if("".equals(null)){
+			
+		}else
+			System.out.println(111);
+   }  
+}

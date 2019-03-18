@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css" />
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/ajaxfileupload.js"></script> 
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<link href="../../styles/jquery-ui.css" rel="stylesheet">
+<style>
+   #pageloading{position:absolute; left:0px; top:0px; background:white url('../../image/loading.gif') no-repeat center; width:100%; height:100%;z-index:99999;}
+</style>
+<!--  测试查询用户信息,返回结果集的显示方法 -->
+<script type="text/javascript">  
+
+	$(function(){
+		$("#pageloading").hide();
+		$("#form1").attr("action",generateUrl("produce!uploadImage.do?"));
+	});
+    /** 
+     * 获取用户信息
+     */  
+    function getUserInfo()  {  
+    		$("#pageloading").show();
+            
+            var userName = $("#userName").val(); 
+			var strUrl = generateUrl("ct!getUserInfoByUserName.do?userName="+userName);
+			$.post(strUrl,function(json){
+					if(json["result"]=="0"){
+						var record = json["record"];
+						$("#pageloading").hide();
+						var strRecord = "";
+						for(i=0;i<parseInt(json["recordSize"]);i++){
+							for(o in record[i]){
+								strRecord+=o;
+								strRecord+="=";
+								if(o=="lastLoginDate"||o=="registerDate"){//如果数据类型是date类型
+									var a=record[i][o];
+									strRecord+=toDate(a,"yyyy-MM-dd hh:mm:ss");
+								}else{
+									strRecord+=record[i][o];
+								}
+								strRecord+="\t";
+								strRecord+="\n";
+							}
+							strRecord+="\n";
+							strRecord+="\n";
+						}
+						$("#txtDiv").html(strRecord);
+					}else{
+						$("#pageloading").hide();
+					}
+					
+			});
+    }  
+</script>  
+</head>  
+  
+<body>  
+    <!-- upload file -->  
+    <div id="pageloading"></div>
+    <form name="form" id="form1" action="" method="POST" enctype="multipart/form-data">  
+        <table class="tableForm">  
+            <thead>  
+                <tr>  
+                    <th>MyTest for getUserInfoByUserName <br/> 测试查询用户信息,返回结果集的显示方法</th>  
+                </tr>  
+            </thead>  
+            <tbody>  
+                <tr>
+                    <td>
+                    <input id="userName"  type="text" size="45"    class="input" />
+                    </td>  
+                </tr>  
+                 <tr>
+                    <td>
+                    <div id="txtDiv"></div>
+                    </td>  
+                </tr>  
+            </tbody>  
+            <tfoot>  
+                <tr>  
+                    <td><button class="button" id="btnUserInfo" type="button" 
+                            onclick="getUserInfo();">查询</button></td>  
+                </tr>  
+            </tfoot>  
+        </table>  
+        <div id="result" style="margin-left:200px"></div>
+        
+    </form>  
+    <div class="bs-docs-example">
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#">首页</a></li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Messages</a></li>
+            </ul>
+          </div>
+</body>  
+</html>

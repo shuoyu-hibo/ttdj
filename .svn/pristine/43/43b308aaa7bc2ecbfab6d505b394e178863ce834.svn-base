@@ -1,0 +1,6 @@
+struts.i18n.encoding=UTF-8
+struts.custom.i18n.resources=MessageResource
+struts.objectFactory=spring
+struts.devMode=false
+struts.enable.DynamicMethodInvocation=false
+struts.action.extension=do

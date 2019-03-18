@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html class="yui3-js-enabled" id="yui_3_16_0_1_1426896770329_405"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="application-name" content="TTDJ网－TTDJ一次 美一次，精品生活">
+<meta name="description" content="运城TTDJ网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城TTDJ网,您身边的吃喝玩乐好帮手!">
+<meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+<meta http-equiv="mobile-agent" content="format=html5; url=http://i.meituan.com/?city=yuncheng">
+<link rel="dns-prefetch" href="//c.meituan.net">
+<link rel="dns-prefetch" href="//s0.meituan.net">
+<link rel="dns-prefetch" href="//s1.meituan.net">
+<link rel="dns-prefetch" href="//p0.meituan.net">
+<link rel="dns-prefetch" href="//p1.meituan.net">
+<link rel="canonical" href="http://www.ttdaijin.com ">
+<link rel="alternate" href="http://www.ttdaijin.comfeed" title="订阅更新" type="application/rss+xml">
+
+<title>【运城代金券网】运城通宝大酒店</title>
+
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css">
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+
+
+<!--[if IE 6]>
+<script src="http://s1.meituan.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://s0.meituan.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    font: 400 14px/1.5 "Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",tahoma,sans-serif;
+    color: #ff6600;
+}
+html{
+    background-color: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Hiragino Sans GB"," Microsoft YaHei","WenQuanYi Micro Hei",arial,sans-serif;
+  color: #ff6600;
+  -webkit-font-smoothing: antialiased;
+}
+.pg-floor {
+    margin: 0 auto;
+    min-width: 100%;
+    background-color: #fff;
+}
+.site-mast__branding {
+    position: relative;
+    margin: 0 auto;
+    height: 110px;
+    width: 100%;
+    background: #fff;
+}
+.site-mast__branding .cf{
+    width:100%;
+}
+.site-mast{
+    width: 100%;
+    height: 150px;
+}
+
+.logoWrapper{
+    width:1070px;
+    margin:0 auto;
+}
+
+.site-mast__branding .site-logo {
+    float: left;
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin-top: 0;
+    margin-left: 150px;
+    background-image: url(../../image/xw/gg.jpg);
+    background-repeat: no-repeat;
+    background-position: 0;
+}
+.site-mast__branding p{
+    margin-left: 340px;
+    margin-top: 3px;
+    font-size: 25px;
+}
+.site-mast__branding form{
+    margin-left: 340px;
+}
+.site-mast__keep a {
+    color:#ff6600;
+    text-decoration: none;
+}
+
+.user-info__signup {
+    padding: 0 10px 0 5px;
+    color:#ff6600;
+    border-right: 1px solid #ff6600;
+}
+.site-mast .dropdown__toggle {
+    position: relative;
+    display: inline-block;
+    height: 16px;
+    padding: 6px 20px 6px 12px;
+    margin: 0 1px;
+    color:#ff6600;
+    z-index: 93;
+
+}
+.site-mast__user-w .user-orders a {
+    color:#ff6600;
+}
+.search-box__button {
+    float: left;
+    width: 80px;
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    color: #ff6600;
+    background:skyblue;
+    cursor: pointer;
+    border-radius: 0;
+}
+.search-box__input {
+    float: left;
+    margin: 0;
+    padding: 6px 5px;
+    border: 2px solid #ff6600;
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+    width: 338px;
+    height: 26px;
+    line-height: 26px;
+}
+.site-mast__user-nav-w {
+    height: 35px;
+    font-size: 15px;
+    border-top: 1px solid #ff6600;
+    box-shadow: 0 0 0 1px #ff6600,0 0 0 2px #ff6600,0 0 5px 3px #ff6600;
+}
+.main{
+    width:1070px;
+    margin:0 auto;
+}
+.foot{
+    width:1070px;
+    background: #fff;
+    position: relative;
+    margin:0 auto;
+    color:#ff6600;
+}
+.img{
+    width: 390px;
+    height: 317px;
+}
+.sellinfo{
+    width:1100px;
+    height:420px;
+}
+.sellinfo1{
+    width:270px;
+    height:400px;
+    float:left;
+}
+.tb-shop-info {
+    position: relative;
+    top: 3px;
+    left: 1px;
+}
+.tb-shop-info-bg img{
+    vertical-align: middle;
+}
+.tb-shop-info-wrap {
+    padding: 0 10px 17px 20px;
+    height: 378px;
+    width: 235px;
+    color: #ff6600;
+    border:1px solid #ff6600;
+}
+.tb-shop-info a {
+    color: #ff6600;
+    text-decoration: none;
+}
+.tb-shop-info-hd .tb-shop-name {
+    margin-top: 50px;
+    height: 20px;
+    overflow: hidden;
+}
+.tb-shop-info-hd .tb-shop-rank {
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.tb-shop-info-hd .tb-shop-seller {
+    overflow: hidden;
+    margin-bottom: 5px;
+    line-height: 20px;
+}
+.tb-shop-info-hd .tb-shop-ww {
+    height: 22px;
+    margin-bottom: 5px;
+}
+.tb-shop-info-bd {
+    margin-top: 80px;
+    padding-top: 13px;
+    border-top: dotted 1px #ff6600;
+    overflow: hidden;
+}
+.tb-shop-info-bd .tb-shop-rate {
+    overflow: hidden;
+    margin: 0;
+}
+.tb-shop-info-bd .tb-shop-rate dl {
+    display: inline;
+    float: left;
+    padding-left: 5px;
+    margin-left: 5px;
+    border-left: 1px solid #ff6600;
+}
+.tb-shop-info-ft a {
+    display: inline;
+    float: left;
+    margin-right: 5px;
+    margin-top: 20px;
+    width: 74px;
+    height: 28px;
+    text-align: center;
+    color: #ff6600;
+    line-height: 28px;
+    border: 1px solid #ff6600;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+.common-rating {
+    vertical-align: bottom;
+    display: block;
+    float: right;
+}
+.sellinfo2{
+    width:800px;
+    height:400px;
+    float: left;
+}
+
+.recmUp{
+    font-size: 25px;
+    color:#ff6600
+}
+.recmDown{
+
+}
+.downLeft{
+	float:left;
+	width:380px;
+	height:360px;
+}
+.leftPic{
+	width:360px;
+	height:320px;
+    background: url("../../image/xw/default.png");
+}
+.leftTxt{
+
+}
+.downRight{
+	float:right;
+	width:380px;
+	height:360px;
+}
+.rightPic{
+	width:360px;
+	height:320px;
+    background: url("../../image/xw/default.png") no-repeat;
+}
+.rightTxt{
+
+}
+
+.uploadPic{
+    float:right;
+    clear:both;
+}
+.btn {
+	  color: #f60;
+	  background-color: #fff;
+	  border-color: #f60;
+	  background-image: linear-gradient(to bottom,skyblue,skyblue);
+}
+
+.category-floor__body cf{
+	width:1070px;
+}
+
+
+
+.category-floor__head{
+	height:80px;
+	width:1060px;
+	border:3px solid #f60; 
+}
+
+.common-rating {
+    vertical-align: bottom;
+    display: block;
+    margin:10px 130px 0 0;
+    float:right;
+}
+
+.mt-slider {
+    position: relative;
+}
+
+.index-slider .head h2 {
+    line-height: 20px;
+    font-size: 14px;
+    color: #ff6600;
+}
+.category-floor {
+    margin-bottom: 20px;
+}
+
+
+.deal-tile {
+    position: relative;
+    float: left;
+    width: 350px;
+    border: 1px solid #974e1e;
+    background-color: #101010;
+    color: #ff6600;
+}
+
+.deal-tile__extra .extra-inner {
+    position: relative;
+    height: 33px;
+    padding: 0 15px;
+    font-size: 12px;
+    background-color: #2c2c2c;
+}
+
+.J-webp{
+    background: url("../../image/xw/default.png");
+}
+
+.price {
+    font-family: arial,sans-serif;
+    color: #f76120;
+    margin-left: 35px;
+}
+.site-info-w {
+    border-top: 3px solid #ff6600;
+    padding-bottom: 30px;
+    clear: both;
+}
+.site-info {
+    margin: 0 auto;
+    width: 980px;
+    font-size: 12px;
+    clear: both;
+}
+.site-info__item {
+    float: left;
+    border-left: 1px dotted #161516;
+    border-right: 1px dotted #161818;
+    padding: 20px 0 0 25px;
+    width: 161px;
+    height: 160px;
+}
+.site-info__item h3 {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ff6600;
+}
+.site-info__item a {
+    color: #ff6600;
+}
+.site-info__item--service {
+    border-right-color: #161516;
+    padding-right: 25px;
+    width: 176px;
+    font-family: "Hiragino Sans GB"," Microsoft YaHei","WenQuanYi Micro Hei",arial,sans-serif;
+    color: #ff6600;
+}
+.copyright {
+    padding: 30px 0 10px;
+    clear: both;
+    color: #ff6600;
+    text-align: center;
+    font-size: 12px;
+    font-family: initial;
+}
+.cert {
+    margin: 10px auto;
+    text-align: center;
+}
+</style>
+</head>
+
+
+<body id="index" class="pg-floor">
+<div class="header">
+    <div id="yui_3_16_0_1_1426896770329_3741" class="yui3-widget mt-slider">
+        <div id="yui_3_16_0_1_1426896770329_3743" class="mt-slider-content"></div>
+    </div>
+    <noscript hidden="" style="display:none;" data-comboajax-uri="/index/tips/index/floor" data-comboajax-onsuccess="$request.listen(&quot;www-tips&quot;, &quot;www.Tips&quot;);" data-comboajax-data="{&quot;sysmsg&quot;:true,&quot;commontips&quot;:true,&quot;page&quot;:&quot;index&quot;}" data-comboajax-state="5" data-parent="body"></noscript><noscript hidden="" style="display:none;" data-comboajax-uri="/event/timetrigger" data-comboajax-state="5"></noscript><noscript hidden="" style="display:none;" data-comboajax-uri="/index/atf" data-comboajax-onsuccess="$request.listen(&quot;www-index&quot;, &quot;www.Index.ATF&quot;);" data-comboajax-state="5"></noscript><noscript hidden="" style="display:none;" data-comboajax-uri="/index/prepare" data-comboajax-onsuccess="$request.listen(&quot;www-index&quot;, &quot;www.Index.FloatCard&quot;);" data-comboajax-state="5"></noscript><header id="site-mast" class="site-mast">
+    <div class="site-mast" class="site-mast">
+        <div class="site-mast__user-nav-w">
+            <div class="site-mast__user-nav cf">
+                <ul class="basic-info">
+                    <li class="site-mast__keep">
+                        <a rel="nofollow" class="fav log-mod-viewed" id="J-favorite" gaevent="header/addFavorite" data-mod="fa" href="javascript:;">
+                            <i class="F-glob F-glob-star-border icon-keep"></i>
+                            收藏TTDJ
+                        </a>
+                    </li>
+                    <li class="user-info cf" data-comboajax-uri="/combo/userinfo" data-comboajax-onsuccess="this.setHTML($response.html);" data-comboajax-state="5">
+                        <!--注册登陆在这里-->
+                        <a class="user-info__login" id="J-login" href="https://passport.meituan.com/account/unitivelogin?service=www&amp;continue=http%3A%2F%2Fwww.meituan.com%2Faccount%2Fsettoken%3Fcontinue%3Dhttp%253A%252F%252Fyuncheng.meituan.com%252F" gaevent="top/login">登录</a>
+                        <a class="user-info__signup" href="https://passport.meituan.com/account/unitivesignup?service=www&amp;continue=http%3A%2F%2Fwww.meituan.com%2Faccount%2Fsettoken%3Fcontinue%3Dhttp%253A%252F%252Fyuncheng.meituan.com%252F" gaevent="top/signup">注册</a>
+                    </li>
+                    <li data-uix="dropdown" class="dropdown dropdown--msg" data-comboajax-uri="/index/message" data-comboajax-onsuccess="$request.listen(&quot;www-tips&quot;, &quot;www.MsgCenter&quot;);" data-comboajax-state="5" style="display:none;" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1614">
+                        <a id="J-my-msg" rel="nofollow" class="dropdown__toggle" href="http://www.meituan.com/message/" gaevent="nav/mymsg">
+                            <i class="vertical-bar vertical-bar--left"></i>
+                            <span class="J-title">消息</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                    </li>
+                    <li data-uix="dropdown" data-params="{&quot;classname&quot;: &quot;dropdown--open dropdown--open-app&quot;}" class="mobile-info__item dropdown" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1625">
+                        <a class="dropdown__toggle" href="javascript:;"><i class="icon-mobile F-glob F-glob-phone"></i>首页<i class="tri tri--dropdown"></i></a>
+
+                    </li>
+                </ul>
+                <ul class="site-mast__user-w">
+                    <li class="user-orders">
+                        <a href="http://www.meituan.com/orders/">我的订单</a>
+                    </li>
+                    <li data-uix="dropdown" class="dropdown dropdown--account" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1636">
+                        <a id="J-my-account-toggle" rel="nofollow" class="dropdown__toggle" href="http://www.meituan.com/orders/" gaevent="nav/my" data-mttcode="Amymeituan">
+                            <span>我的TTDJ</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <ul id="J-my-account-menu" class="dropdown-menu dropdown-menu--text dropdown-menu--account account-menu" data-mtnode="Amymeituan">
+                            <li><a class="dropdown-menu__item first " rel="nofollow" gaevent="nav/my/orders" href="http://www.meituan.com/orders/" data-mttcode="Borders">我的订单</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/feedback" href="http://www.meituan.com/rates/" data-mttcode="Brates">我的评价</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/collections" href="http://www.meituan.com/collections/" data-mttcode="Bcollections">我的收藏</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/points" href="http://www.meituan.com/account/points/" data-mttcode="Bpoints">我的积分</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/card" href="http://www.meituan.com/card/list" data-mttcode="Bvoucher">抵用券</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/credit" href="http://www.meituan.com/account/credit" data-mttcode="Bcredit">TTDJ余额</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/charge" href="http://www.meituan.com/account/charge" data-mttcode="Bcharge">账户充值</a></li>
+                            <li><a class="dropdown-menu__item  last" rel="nofollow" gaevent="nav/my/settings" href="http://www.meituan.com/account/settings" data-mttcode="Bsettings">账户设置</a></li>
+                        </ul>
+                    </li>
+                    <li data-uix="dropdown" data-params="{&quot;classname&quot;: &quot;dropdown--open dropdown--open-history&quot;}" class="dropdown dropdown--history" data-comboajax-uri="/index/rvd" data-comboajax-config="www.History.nav" data-comboajax-state="5" id="yui_3_16_0_1_1426896770329_98" data-widget-init="true">
+                        <a id="J-my-history-toggle" rel="nofollow" class="dropdown__toggle" href="javascript:;" gaevent="nav/history">
+                            <span>最近浏览</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <div id="J-my-history-menu" class="dropdown-menu dropdown-menu--deal dropdown-menu--history"></div>
+                    </li>
+                    <li data-uix="dropdown" id="J-my-cart" class="dropdown dropdown--cart J-cart-updated" data-comboajax-uri="/index/navcart" data-comboajax-onsuccess="Y.mt.www.CartEx.update($response.data);" data-comboajax-state="5" data-widget-init="true">
+                        <a id="J-my-cart-toggle" rel="nofollow" class="dropdown__toggle" href="http://www.meituan.com/cart/" gaevent="nav/cart">
+                            <i class="icon icon-cart F-glob F-glob-cart"></i>
+                            <span>购物车<em class="badge" data-newindex="true"><strong class="cart-count">0</strong>件</em></span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <div id="J-my-cart-menu" class="dropdown-menu dropdown-menu--deal dropdown-menu--cart"></div>
+                    </li>
+                    <li data-uix="dropdown" id="J-site-help" class="dropdown dropdown--help" data-widget-init="true">
+                        <a class="dropdown__toggle" href="http://www.meituan.com/help/selfservice" gaevent="top/service">
+                            <span>联系客服</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu--text dropdown-menu--help">
+                            <ul class="site-help-info">
+                                <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="0" href="http://www.meituan.com/help/selfservice" gaevent="top/service/refund">申请退款</a></li>
+                                <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="1" href="http://www.meituan.com/help/selfservice?tab=1" gaevent="top/service/returns">申请退换货</a></li>
+                                <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="2" href="http://www.meituan.com/help/selfservice?tab=2" gaevent="top/service/code">查看TTDJ券</a></li>
+                                <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="3" href="http://www.meituan.com/help/selfservice?tab=3" gaevent="top/service/tel">换绑手机号</a></li>
+                                <li><a rel="nofollow" class="dropdown-menu__item" href="http://www.meituan.com/help/faq" gaevent="top/service/faq">常见问题</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-uix="dropdown" id="J-site-merchant" class="dropdown dropdown--merchant" data-widget-init="true">
+                        <a class="dropdown__toggle dropdown__toggle--merchant" href="javascript:;" gaevent="top/merchant">
+                            <span>我是商家</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu--text dropdown-menu--merchant">
+                            <ul>
+                                <li><a rel="nofollow" class="dropdown-menu__item" href="http://e.meituan.com/" gaevent="top/merchant/ecom">商家中心</a></li>
+                                <li><a rel="nofollow" class="dropdown-menu__item" href="http://www.meituan.com/crmopen/business/opportunity/embed/add" gaevent="top/merchant/cooperation">我想合作</a></li>
+                                <li><a rel="nofollow" class="dropdown-menu__item" href="http://zhaoshang.meituan.com" gaevent="top/merchant/mmp">商家营销平台</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-uix="dropdown" id="J-my-more" class="dropdown dropdown--more dropdown--last" data-widget-init="true">
+                        <a id="J-my-more-toggle" class="dropdown__toggle dropdown__toggle--my-more" href="javascript:;" gaevent="nav/more">
+                            <span>更多</span>
+                            <i class="tri tri--dropdown"></i>
+                        </a>
+                        <div id="J-my-more-menu" class="dropdown-menu dropdown-menu--text dropdown-menu--more">
+                            <ul>
+                                <li>
+                                    <a rel="nofollow" class="mobile dropdown-menu__item" href="http://www.meituan.com/mobile/" target="_blank" gaevent="header/mobile"><span></span>手机版</a>
+                                </li>
+                                <li>
+                                    <a rel="nofollow" id="J-subscribe" class="subscribe dropdown-menu__item" gaevent="header/subscribe" href="http://www.meituan.com/maillist/subscribe"><span></span>邮件订阅</a>
+                                </li>
+                                <li class="last">
+                                    <a rel="nofollow" class="refer dropdown-menu__item" href="http://www.meituan.com/account/referrals" target="_blank" gaevent="header/refferals">邀请好友</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <noscript hidden="" style="display:none;" data-comboajax-uri="/index/vipbubble" data-comboajax-data="{&quot;ref&quot;:&quot;\/index\/floor&quot;}" data-comboajax-onsuccess="$request.listen(&quot;www-tips&quot;, &quot;www.VipBubble&quot;);" data-comboajax-state="5"></noscript>
+            </div>
+        </div>
+        <div class="site-mast__branding cf" id="yui_3_16_0_1_1427242054970_2364">
+            <div class="logoWrapper">
+                <div class="site-logo">
+
+                </div>
+                <p><big><strong>运城市通宝大酒店欢迎您</strong></big></p>
+                <br/>
+
+                <form action="/s/" class="search-box__form J-search-form cf" name="searchForm" method="get" id="yui_3_16_0_1_1427242054970_2383">
+
+                    <input tabindex="1" type="text" name="w" autocomplete="off" data-smartbox="/search/smartboxv2/" class="s-text search-box__input J-search-box__input" value="" placeholder="请输入商品名称" id="yui_3_16_0_1_1427242054970_2389">
+                    <input type="submit" class="s-submit search-box__button log-mod-viewed" hidefocus="true" value="店内搜索" data-mod="sr">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main">
+<div class="sellinfo">
+<div class="sellinfo1">
+    <div data-spm="1000126" id="J_ShopInfo" class="tb-shop-info" data-creditscore="10633" data-creditflag="cap" data-rateurl="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm">
+        <div class="tb-shop-info-wrap">
+            <div class="tb-shop-info-hd">
+                <div class="tb-shop-name">
+                    <dl>
+                        <dd>
+                            <strong>
+                                <a href="http://nb888888888.taobao.com" title="通宝大酒店" target="_blank">
+                                    运城市通宝大酒店
+                                </a>
+                            </strong>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tb-shop-rank tb-rank-cap">
+                    <dl>
+                        <dt>等级：</dt>
+                        <dd>
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank">
+                                <i><span class="rate-info__bar common-rating" id="yui_3_16_0_1_1428457523954_350">
+                                                <span class="rate-stars" style="width: 99%;" id="yui_3_16_0_1_1428457523954_349"></span>
+                                            </span></i>
+                            </a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="tb-shop-seller">
+                    <dl>
+                        <dt>地址：</dt>
+                        <dd>
+                            运城市经济开发区机场路北
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tb-shop-ww">
+                    <dl>
+                        <dt>联系：</dt>
+                        <dd>18003480283</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="tb-shop-info-bd">
+                <div class="tb-shop-rate">
+                    <dl>
+                        <dt>好评率</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                100%
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>浏览次数</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                1000
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>代金券已领次数</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                1000
+                            </a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="tb-shop-info-ft">
+                <a class="J_TDialogTrigger J_TokenSign" data-spm="d22" href="http://favorite.taobao.com/popup/add_collection.htm?id=68144467&amp;itemid=68144467&amp;itemtype=0&amp;ownerid=dd7d2f27c1785ed07a2dbd6e2902aba3&amp;scjjc=2&amp;_tb_token_=eeb735b03657f" data-info="param=SCCP_2_68144467&amp;countUrl=http://count.tbcdn.cn/counter3&amp;mecuryUrl=http://favorite.taobao.com/collect_item_relation---68144467-0-.htm" mercury:params="id=68144467&amp;itemid=68144467&amp;itemtype=0&amp;ownerid=dd7d2f27c1785ed07a2dbd6e2902aba3&amp;scjjc=5" data-closebtn="true" data-width="440" data-height="260">收藏店铺</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sellinfo2">
+    <div class="recmUp">
+		<h2>
+			<span>本周精选</span>
+		</h2>
+    </div>
+    <div class="recmDown">
+        <div class="downLeft">
+            <div class="leftPic">
+
+            </div>
+            <div class="leftTxt">
+                <span>商品名称</span>
+                <p>商品价格</p>
+            </div>
+        </div>
+        <div class="downRight">
+            <div class="rightPic">
+
+            </div>
+            <div class="rightTxt">
+                <span>商品名称</span>
+                <p>商品价格</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="products">
+    
+        <div class="category-floor__head">
+        	<h3><span style="font-size:25px">所有宝贝</span></h3>
+
+            <div class="uploadPic">
+                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    开始上传图片
+                </button>
+
+                <!-- 模态框（Modal） -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                     aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div id="pageloading"></div>
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">×
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    添加商品信息
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <table class="normal" width="456" border="0" cellspacing="1" cellpadding="0" align="center" bordercolor="#0099CC" bgcolor="#CCCCCC">
+                                    <tr bgcolor="#FFFFFF">
+                                        <td height="32" width="67" nowrap>
+                                            <div align="center"><font class="normal">商品名称:</font></div>
+                                        </td>
+                                        <td height="32" width="386" nowrap>
+                                            <input class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td height="32" width="67" nowrap>
+                                            <div align="center"><font class="normal">商品描述:</font></div>
+                                        </td>
+                                        <td height="32" width="386" nowrap>
+                                            <input class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+                                        </td>
+                                    </tr>
+                                    <tr bgcolor="#FFFFFF">
+                                        <td height="26" width="67" nowrap>
+                                            <div align="center"><font class="normal">商品图片:</font></div>
+                                        </td>
+                                        <td height="26" width="386" nowrap>
+                                            <div><img border="0" id="imgUpload" src="" alt="" width="100" height="100" /></div>
+                                            <input id="fileToUpload"  type="file" size="45"   accept="image/*" name="file"  class="input" />
+                                            <button class="button" id="buttonUpload" type="button"
+                                                    onclick="uploadUnitImage();">上传选定图片</button><br>
+                                            <div class="alert fade in" id="warning">
+                                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                                <strong>提示:</strong> 请选择要上传的图片!
+                                            </div>
+                                            <div id="result" style="margin-left:200px"></div>
+                                            <input type="hidden" id="picUrl"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default"
+                                        data-dismiss="modal">
+                                    关闭
+                                </button>
+                                <button type="button" class="btn btn-primary" id="save">
+                                    提交
+                                </button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+        <div class="category-floor__body cf">
+            <div class="row-fluid">
+            <ul class="thumbnails">
+              <li class="span4">
+                <div class="thumbnail">
+                  <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                  <div class="caption">
+                    <h3>商品名称</h3>
+                    <p>商品价格</p>
+                    <p><a href="#" class="btn btn-primary">修改</a> <a href="#" class="btn">删除</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="span4">
+                <div class="thumbnail">
+                  <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                  <div class="caption">
+                    <h3>商品名称</h3>
+                    <p>商品价格</p>
+                    <p><a href="#" class="btn btn-primary">修改</a> <a href="#" class="btn">删除</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="span4">
+                <div class="thumbnail">
+                  <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                  <div class="caption">
+                    <h3>商品名称</h3>
+                    <p>商品价格</p>
+                    <p><a href="#" class="btn btn-primary">修改</a> <a href="#" class="btn">删除</a></p>
+                  </div>
+                </div>
+              </li>                            
+            </ul>
+            <ul class="thumbnails">
+              <li class="span4">
+                <div class="thumbnail">
+                  <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                  <div class="caption">
+                    <h3>商品名称</h3>
+                    <p>商品价格</p>
+                    <p><a href="#" class="btn btn-primary">修改</a> <a href="#" class="btn">删除</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="span4">
+                <div class="thumbnail">
+                  <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                  <div class="caption">
+                    <h3>商品名称</h3>
+                    <p>商品价格</p>
+                    <p><a href="#" class="btn btn-primary">修改</a> <a href="#" class="btn">删除</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="span4">
+                <div class="thumbnail">
+                  <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAJh0lEQVR4Xu3bS2sUaxSF4YoXEMELONFBRMGB4kzw//8AwZk4EbwNFEFRxDuaw1fnfKGsE5My6ZBevZ8GB2p1917v2nmprq5svXv3bmfwQAABBAIIbBFWQEtGRACBkQBhWQQEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiq/m7Qr1+/Dg8fPhw+f/68+8TTp08Pd+7cGa5evbr7b48ePRpevXq1+/ezZ88O9+7dGy5cuPDbGy49bsmUe83Wnnfp0qXh/v37h3rfVc63JINjToYAYZ0M92N9148fP46y+vXr166gnj17Njx58mR831u3bg03btwY+g95l9Tbt2/HY+bSWnrcklCvX78eHj9+PB7a5dnn/fHjx2/SWvq+S49bMp9j1psAYa13P4earsvp/Pnz49nSuXPnxtd58ODB8OHDh1EK29vbozh+/vy5K7D5Me1spwvmoOOWDtrlMj+b6jN3WX769OlE5luaw3EnQ4CwTob7sb7r/Ie/f7zrwrp27dr4/u2j4Fxq8+e+ePFi0XHzj5B/CtiFNf942sV46tSpUbJL33fpcUvnO9ZivPiRCRDWkRFmvEAXRRPU3bt3x4+D7frW/Exn+pGtfXR8+fLlgcfNr4sdhsj0rHAd5ztMJs9ZPQHCWj3TtXnF6bWhNlSX0/SidzvbaoLoj+lz2nWuN2/ejMLa77grV64M7fpXfzQptjOo9lr90a+b7QVnOk87rn0p0L8wWMV8+7332pRlkEUECGsRpvyD+hlME8nNmzeH58+fD+0i935CaNe52hnXQcc1ITRpTS/0X758efx7e+5e3zpOifaPql0sU2muar4mX498AoSV3+HiBP1jYbsIv7W1NXz58mVfYS09w5qLpg108eLF4f379/+7jWI+7FxW7f9XfQboDGvxiqz9gYS19hWtbsB+fWpnZ2c4c+bM8P3795Vfw5p+qzg/O5ommX8MnJ4BTf9vXa6xra4Fr3QUAoR1FHpr+tz5fUn9G7LpBfX2b+0MaNXfEk6FNX/tjqsL6du3b388A5t+STC9NeO4v8Vc00qN9R8BwtrAVegfs+Y3gE5/2K9fvz60vx90f9Xf3IfVrz01UbU/7baJ+RnSfrJq8zx9+nSUWHucxH1iG7gOGxWJsDaqzn/D7HU3+V7imZ+J9XuaDrrTfa/juoja+/czoul9X/2byPae7ZvH+a0QXXb9+e0McJXzbWDNJSMR1obWPhVUj3hcv0s4/bWf9l7t2lW7FaLdVd8f7Uzr9u3bu98c/gn7/GPk0t8RXHrchtZdJhZhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIbAP/lruSu+euMmAAAAAElFTkSuQmCC" style="width: 300px; height: 200px;">
+                  <div class="caption">
+                    <h3>商品名称</h3>
+                    <p>商品价格</p>
+                    <p><a href="#" class="btn btn-primary">修改</a> <a href="#" class="btn">删除</a></p>
+                  </div>
+                </div>
+              </li>                            
+            </ul>
+            <ul class="thumbnails">
+              <li class="span4">
+                <div class="thumbnail">
+                  <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                  <div class="caption">
+                    <h3>商品名称</h3>
+                    <p>商品价格</p>
+                    <p><a href="#" class="btn btn-primary">修改</a> <a href="#" class="btn">删除</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="span4">
+                <div class="thumbnail">
+                  <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                  <div class="caption">
+                    <h3>商品名称</h3>
+                    <p>商品价格</p>
+                    <p><a href="#" class="btn btn-primary">修改</a> <a href="#" class="btn">删除</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="span4">
+                <div class="thumbnail">
+                  <img data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                  <div class="caption">
+                    <h3>商品名称</h3>
+                    <p>商品价格</p>
+                    <p><a href="#" class="btn btn-primary">修改</a> <a href="#" class="btn">删除</a></p>
+                  </div>
+                </div>
+              </li>                            
+            </ul>
+          </div>
+        </div>
+</div>
+</div>
+<div class="foot">
+        <div class="site-info" id="yui_3_16_0_1_1427333131652_4249">
+            <div class="site-info__item" id="yui_3_16_0_1_1427333131652_4248">
+                <h3>获取更新</h3>
+                <ul id="yui_3_16_0_1_1427333131652_4247">
+                    <li id="yui_3_16_0_1_1427333131652_4246"><a rel="nofollow" href="http://www.meituan.com/maillist/subscribe">邮件订阅</a></li>
+                    <li><a rel="nofollow" href="http://user.qzone.qq.com/97231705" target="_blank">天天代金QQ空间</a></li>
+                    <li><a rel="nofollow" href="http://t.sina.com.cn/meituanyuncheng" target="_blank">天天代金新浪微博</a></li>
+                    <li><a href="http://www.meituan.com/sitemap/citysitemap.php" target="_blank">网站地图</a></li>
+                    <li><a rel="nofollow" href="/feed/yuncheng" target="_blank">RSS订阅</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item">
+                <h3>商务合作</h3>
+                <ul>
+                    <li><a rel="nofollow" href="http://www.meituan.com/crmopen/business/opportunity/embed/add" gaevent="footer/seller">提供代金券信息</a></li>
+                    <li><a rel="nofollow" href="http://zhaoshang.meituan.com/" gaevent="footer/mmp">天天代金商家营销平台</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about#contact">市场合作</a></li>
+                    <li><a rel="nofollow" href="http://union.meituan.com/" target="_blank">天天代金联盟</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item">
+                <h3>公司信息</h3>
+                <ul>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/">关于天天代金</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/commitment/">天天代金承诺</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/press">媒体报道</a></li>
+                    <li><a rel="nofollow" href="http://www.hotjob.cn/wt/meituan/web/index?brandCode=meituan" gaevent="footer/job">加入我们</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/law">法律声明</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/terms">用户协议</a></li>
+                    <li><a href="http://www.meituan.com/about/license">营业执照</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item">
+                <h3>用户帮助</h3>
+                <ul>
+                    <li><a rel="nofollow" class="J-selfservice-tab" data-tab="0" href="http://www.meituan.com/help/selfservice">申请退款</a></li>
+                    <li><a rel="nofollow" class="J-selfservice-tab" data-tab="2" href="http://www.meituan.com/help/selfservice?tab=2">查看天天代金券密码</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/help/faq">常见问题</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/anticheat">反诈骗公告</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item site-info__item--service">
+                <div class="contact-info">
+                    <p>客服电话：400-660-5335</p>
+                    <p>服务时间：每天 9:00 - 22:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>©<span title="I:-; Q:21; S:7; C:10; F:0; T:295.60; H:com">2015</span><a href="http://www.meituan.com/">天天代金网代金券</a> ttdaijin.com <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证070791号</a> 京公网安备11010502025545号<a href="http://www.meituan.com/about/rules" target="_blank"> 电子公告服务规则</a></p>
+            </div>
+            <ul class="cert cf">
+                <li class="cert__item"><a class="sp-ft sp-ft--record" title="备案信息" href="http://www.meituan.com/about/openinfo" hidefocus="true" target="_blank">备案信息</a></li>
+                <li class="cert__item"><a class="sp-ft sp-ft--knet" href="javascript:;" title="可信网站认证" rel="nofollow">可信网站</a></li>
+                <li class="cert__item"><a class="sp-ft sp-ft--12315" href="javascript:;" title="12315消费争议" rel="nofollow">12315消费争议</a></li>
+            </ul>
+        </div><textarea style="display:none;" class="br-rendered" data-br-beforerender="e.target.one('a').remove(true);">
+    </textarea>
+
+    </footer>
+
+</div>
+
+
+<script type="text/javascript">
+
+    $(function(){
+		$("#pageloading").hide();
+		$("#form1").attr("action",generateUrl("produce!uploadImage.do?"));
+		$("#imgUpload").attr("src","../../image/addPic.png");
+		$("#warning").hide();
+		
+		$("#save").click(function(){
+	    	if(!checkInput("produceName","商品名称")
+	    		||!checkInput("produceDesc","商品描述")
+	    			||!checkInput("producePrice","商品价格")){
+	    		return;
+	    	}
+	    	if($("#picUrl").val()==''){
+	    		$("#warning").html('<strong>提示:</strong> 请选择要上传的图片!');
+	    		$("#warning").toggle(true);
+	    	}else{
+	    		$("#warning").toggle(false);
+	    		var strUrl = generateUrl("produce!saveProduceData.do?","produceName,produceDesc,producePrice,picUrl");
+	    		$.post(strUrl,function(json){
+					if(json["result"]=="0"){alert(1);
+						$("#ok").show();
+					}else{
+						$("#warning").html('<strong>提示:</strong> 商品添加失败!');
+	    				$("#warning").toggle(true);
+					}
+				});
+	    	}
+	    });
+	});
+    /** 
+     * upload Picture
+     */  
+    function uploadUnitImage()  {  
+    		$("#pageloading").show();
+            if($("#fileToUpload").val()==''){
+            	$("#warning").show();
+            	return;
+            }
+             $.ajaxFileUpload({  
+                 url:generateUrl("produce!uploadImage.do?"),             //需要链接到服务器地址  
+                 secureuri:false,  
+                 fileElementId:'fileToUpload',                         //文件选择框的id属性  
+                 dataType: 'json',                                     //服务器返回的格式，可以是json  
+                 success: function (data, status)             //相当于java中try语句块的用法  
+                 {     
+                 //alert(data);       //data是从服务器返回来的值     
+                	 $("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     var imgPath="../../uploadfiles/"+data["newname"];
+   					 $("#imgUpload").attr("src",imgPath);
+   					 $("#picUrl").val(imgPath);
+   					 $("#warning").hide();
+   					 return 0;
+                 },  
+                 error: function (data, status, e)             //相当于java中catch语句块的用法  
+                 {  
+                 	$("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     $("#warning").hide();
+                     return 1;
+                 }  
+               }  
+             );  
+    }  
+    
+    function checkInput(inputId,inputName){
+    	if($("#"+inputId).val()==''){
+	    		$("#warning").html("<strong>提示:</strong> 请输入"+inputName+"!");
+	    		$("#warning").show();
+	    		$("#ok").hide();
+	    		return false;
+	    }
+	    return true;
+    }
+</script>
+</body>
+
+</html>

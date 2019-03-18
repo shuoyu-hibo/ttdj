@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册2</title>
+</head>
+<style>
+    *{ margin:0; padding:0; }
+    body{background-color: #000;color:#FF6600; }
+    a{ text-decoration:none;  background-color:#000;  text-align:center; color:#00FFFF;font-size: 25px ;}
+    ul{ list-style:none; margin-left:420px;   }
+    li{float:left; margin-top:45px; margin-left:20px; }
+    .tubiao{margin-left: 400px;margin-top:10px}
+    .tubiao2{margin-left: 680px;}
+    .zhucebiao{margin-top:140px;margin-left:500px}
+    /*img{border:none}*/
+    input{vertical-align:middle;}
+    select{vertical-align:middle;}
+    label{vertical-align:middle}
+    /*input:focus{ outline:none}*/
+    textarea:focus{ outline:none}
+    /*.btn{border:none 0}
+    div{ overflow: auto}
+    form{width:940px; height:500px; margin:100px auto}*/
+    form div{overflow:hidden; clear:both}
+    form div label{float:left; clear:both}
+    form div label b{font-weight:normal; font-size:30px; color: #ff38e6; visibility: hidden}
+    form div label .text{width:200px; height:30px; padding:0 2px; border:1px solid #666}
+    form div em{display: inline-table; font-size:12px; text-align:center; color:#fff; vertical-align:middle; font-style:normal; width:53px; height:15px; line-height:15px; background:#ffd099}
+    form div .active{background-color:#f60}
+    form  div span{display: inline-table; width:100px; text-align:right}
+    /*<!--.submitBtn{width:135px; height:33px; margin:20px 0 0 80px}-->
+    <!--.changeimg{width:22px; height:22px; display:inline-table; vertical-align:middle;}-->*/
+    .msg{line-height:18px; color:#f60; float:left; margin-left:5px; display:none;font-size: 12px;}
+    #intro{line-height:12px; font-size:30px; color: #b9ff8a; float:left; margin-left:500px;visibility: hidden; }
+    #count{line-height:20px; font-size:13px; color: red; float:left; margin-left:50px;visibility: hidden; }
+    .msg i{display: inline-table; vertical-align:middle; width:25px; height:20px;}
+    .btn{height:40px;width:270px;left:100px; right:100px;border:2px solid #666; background:#f60;font-size:25px;font-family:"微软雅体"; }
+
+
+    /* .msg .err{background-position:0 -39px}
+    .msg .ok{background-position: 0 -99px}
+    */
+    .tijiao1{
+        color: #FF6600;
+        left: 1100px;
+        position: relative;
+        font-size: 10px;
+        top: 200px;
+    }
+    .lianjie{font-size:18px;color:#f60  }
+    #wen_zi{visibility:visible;margin-left: 320px;font-size: 12px;}
+</style>
+<script type="text/javascript" >
+    function getLength(str){
+        return str.replace(/[^\x00-xff]/g,"xx").length;
+    }
+    function findStr(str,n){
+        var tmp=0;
+        for( var i=0;i<str.length;i++){if(str.charAt(i)==n){tmp++;}}
+        return tmp;
+    }
+    window.onload=function(){
+        var aInput=document.getElementsByTagName('input');
+        var pho=aInput[0];
+        var dtm=aInput[1];
+        var pwd=aInput[2];
+        var pwd2=aInput[3];
+        var tj=aInput[4];
+        //var pho=aInput[4];
+        var aP=document.getElementsByTagName('p');
+        var pho_msg=aP[0];
+        var dtm_msg=aP[2];
+        var pwd_msg=aP[3];
+        var pwd2_msg=aP[4];
+        var sheng_msg=aP[5];
+
+        //var pho_msg=aP[4];
+        var count=document.getElementById('count');
+        var wen_zi=document.getElementById('wen_zi');
+        var aEm=document.getElementsByTagName('em');
+
+        var name_length=0;
+
+        //提交验证
+        /* tj.onclick=function(){
+         name_msg.style.display="block";
+         if(oName.value==""){name_msg.innerHTML='<i><img src="tupian/444444.jpg" width="17" height="15" /></i>不能为空';    }
+
+
+         }
+
+         */
+        //手机号注册
+
+        pho.onfocus=function(){
+            pho_msg.style.display="none";
+            wen_zi.style.visibility="hidden";
+        }
+
+
+        pho.onblur=function(){
+            pho_msg.style.display="block";
+            var mob=/^(13+\d{9})|(159+\d{8})|(153+\d{8})$/;
+            if(this.value==""){pho_msg.innerHTML='<i><img src="tupian/55555.jpg" width="17" height="15" /></i>请输入您的手机号';}
+
+            else if(!mob.test(this.value)){pho_msg.innerHTML='<i><img src="tupian/444444.jpg" width="17" height="15" /></i>请输入正确的11位手机号';}
+            else{pho_msg.innerHTML='<i><img src="tupian/6666666.jpg" width="17" height="15" /></i>OK';}
+        }
+        dtm.onfocus=function(){
+            dtm_msg.style.display="none";
+
+        }
+       dtm.onblur=function(){
+           dtm_msg.style.display="block";
+            if(this.value==""){dtm_msg.innerHTML='<i><img src="tupian/55555.jpg" width="17" height="15" /></i>请输入短信动态码';}
+            else{dtm_msg.innerHTML='<i><img src="tupian/6666666.jpg" width="17" height="15" /></i>OK';}
+
+        }
+
+
+// 输入密码的验证
+        pwd.onfocus=function(){
+            pwd_msg.style.display="none";
+
+        }
+        pwd.onkeyup=function(){
+            if(this.value.length==0){aEm[1].className="";}
+            if(this.value.length>0&&this.value.length<6){aEm[1].className="active";aEm[2].className="";}
+            if(this.value.length>6&&this.value.length<12){aEm[2].className="active";aEm[3].className="";}
+            if(this.value.length>12){aEm[3].className="active"}
+
+        }
+        pwd.onblur=function(){
+            pwd_msg.style.display="block";
+            var m=findStr(pwd.value,pwd.value[0]);
+            var re_n=/[^\d]/g;
+            var re_t=/[^a-zA-Z]/g;
+            if(this.value==""){pwd_msg.innerHTML='<i><img src="tupian/55555.jpg" width="17" height="15" /></i>请输入密码'}
+            else if(m==this.value.length){pwd_msg.innerHTML='<i><img src="tupian/444444.jpg" width="17" height="15" /></i>不能为相同字符';}
+            else if(this.value.length==0||this.value.length>12){pwd_msg.innerHTML='<i><img src="tupian/444444.jpg" width="17" height="15" /></i>应为6-12个字符';}
+            else if(!re_n.test(this.value)){pwd_msg.innerHTML='<i><img src="tupian/444444.jpg" width="17" height="15" /></i>不能全为数字';}
+            else if(!re_t.test(this.value)){pwd_msg.innerHTML='<i><img src="tupian/444444.jpg" width="17" height="15" /></i>不能全为字母';}
+            else {pwd_msg.innerHTML='<i><img src="tupian/6666666.jpg" width="17" height="15" /></i>OK'}
+
+        }
+        //再次 输入密码的验证
+        pwd2.onfocus=function(){
+            pwd2_msg.style.display="none";
+
+        }
+        pwd2.onblur=function(){
+            pwd2_msg.style.display="block";
+            if(this.value==""){pwd2_msg.innerHTML='<i><img src="tupian/55555.jpg" width="17" height="15" /></i>请再次输入密码'}
+           else if(this.value!=pwd.value){pwd2_msg.innerHTML='<i><img src="tupian/444444.jpg" width="17" height="15" /></i>两次密码输入不一致';}
+            else{pwd2_msg.innerHTML='<i><img src="tupian/6666666.jpg" width="17" height="15" /></i>OK'}
+        }
+
+
+
+    }
+
+
+</script>
+
+<body>
+<div class="tubiao" ><img src="tupian/gg.png" width="100" height="100" /><span class="tubiao3"  >注册TT账号</span>
+    <span class="tubiao2" >已有TT账号？</span><span ><a href="denglu.html"target="_blank" >登录</a></span></div>
+<div style="margin-left:410px;font-size:14px;color: #00c3b0  "><em>ttdaijin.com</em></div>
+<div style="margin-top:15px "></div>
+<hr color="#333"   >
+<div >
+    <ul>
+        <li ><a  class="lianjie" href="zhuce.html" > 邮箱注册</a></li>
+        <li><a class="lianjie"href="zhuce1.html" >手机注册</a></li>
+    </ul>
+</div>
+<div class="zhucebiao">
+    <form >
+        <div style="margin-bottom:20px"> <label><span>    手机号:</span><input type="text" class="text" /></label><p  class="msg">  请输入手机号</p><p  id="wen_zi"> 注册成功后，全TT通用</p></div>
+         <div style="margin-bottom:20px;margin-left:110px;font-size:13px ;border:1px solid #666;width: 120px;background-color:#333333">免费获取短信动态码</div>
+        <div style="margin-bottom:20px"><label><span>短信动态码:</span><input type="text" class="text" /></label><p  class="msg">  请输入手机号</p> </div>
+
+
+        <div><label><span>登录密码:  </span><input type="password" class="text" /></label><p class="msg">5-25个字符，一个汉字为两个字</p></div>
+        <div style="margin:3px 0 10px 0"><label><span></span><em >弱</em><em> 中 </em><em>强</em></label></div>
+        <div style="margin-bottom:20px"><label><span>确认密码:  </span><input type="password" class="text" /></label><p class="msg">请再输入一次</p></div>
+
+
+        <div style="margin-top:30px;margin-left:100px ">
+            <label><input name="Submit2" type="submit" class="btn" value="同意以下协议并注册" /></label></div>
+        <div style="margin-top:30px;margin-left:100px;font-size:10px  ">《TT网用户协议》</div>
+
+
+    </form>
+</div>
+<div><p><span class="tijiao1"> 京ICP证070791号京公网安备11010502025545号</span><br /></div>
+
+</body>
+</html>

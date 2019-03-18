@@ -1,0 +1,90 @@
+package com.web.action.register;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import net.sf.json.JSONArray;
+
+import org.apache.commons.fileupload.FileItemIterator;
+import org.apache.commons.fileupload.FileItemStream;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.fileupload.util.Streams;
+
+
+import com.mybatis.entity.ttdj.UserInfo;
+import com.service.register.RegisterServiceImpl;
+import com.web.action.base.BaseAction;
+import com.web.action.base.JsonUtil;
+import common.CommonUtil;
+
+public class RegisterAction extends BaseAction {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * 验证注册时,用户名是否已经存在
+	 */
+	 public void checkUserName() throws Exception {
+		 	
+			String userName = commonUtil.decodeUrl(request.getParameter("userName"));
+			RegisterServiceImpl registerServiceImpl = ((RegisterServiceImpl) getApplicationContext().getBean("registerServiceImpl"));
+			int count = registerServiceImpl.selectCountByUserName(userName);
+//			JSONObject jsonObj=new JSONObject();
+//			ArrayList aList = new ArrayList();
+			JsonUtil jsUtil = new JsonUtil();
+			JSONArray jsAry=new JSONArray();
+			if(count>=1){
+				jsUtil.returnJson(response, "1","用户名已存在!", jsAry);//存在相同的用户名
+			}else{
+				jsUtil.returnJson(response, "0","用户名可用!", jsAry);//不存在相同的用户名
+			}
+		}
+
+	 /**
+	  * 保存用户注册信息
+	  * @throws Exception
+	  */
+	public void saveUserRegisterInfo() throws Exception {
+		 String email = commonUtil.decodeUrl(request.getParameter("email"));
+		 String userName = commonUtil.decodeUrl(request.getParameter("userName"));
+		 String password = commonUtil.decodeUrl(request.getParameter("password"));
+		 String checkNumber = commonUtil.decodeUrl(request.getParameter("checkNumber"));
+//		 String province = commonUtil.decodeUrl(request.getParameter("province"));
+//		 String city = commonUtil.decodeUrl(request.getParameter("city"));
+		 String strSysRand = (String) request.getSession().getAttribute("ttdjrand");
+		 JsonUtil jsUtil = new JsonUtil();
+		 JSONArray jsAry=new JSONArray();
+		 RegisterServiceImpl registerServiceImpl = null;
+		 boolean flag=false;
+		 if(!checkNumber.equals(strSysRand)){//验证码不一致
+			 jsUtil.returnJson(response, "1","验证码不正确!", jsAry);//验证失败
+		 }else{//验证码正确
+			 registerServiceImpl = ((RegisterServiceImpl) getApplicationContext().getBean("registerServiceImpl"));
+			 UserInfo userinfo = new UserInfo();
+			 userinfo.setEmail(email);
+			 userinfo.setUserName(userName);
+			 userinfo.setPassword(password);
+//			 userinfo.setCityName(city);
+//			 userinfo.setProvinceName(province);
+	//		 SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-DD hh:mm:ss");
+			 userinfo.setRegisterDate(new Date());
+			 flag = registerServiceImpl.saveData(userinfo);
+		 }
+		 if(flag==true)
+			 jsUtil.returnJson(response, "0","注册成功!", jsAry);//保存成功
+		 else
+			 jsUtil.returnJson(response, "1","注册失败!", jsAry);//保存失败
+	 }
+	
+	    
+}

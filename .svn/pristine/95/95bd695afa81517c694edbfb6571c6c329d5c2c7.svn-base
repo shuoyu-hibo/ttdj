@@ -1,0 +1,23 @@
+package com.mybatis.entity.ttdj;
+
+public class ProduceSort2Key {
+    private String proSort1Code;
+
+    private String proSort2Code;
+
+    public String getProSort1Code() {
+        return proSort1Code;
+    }
+
+    public void setProSort1Code(String proSort1Code) {
+        this.proSort1Code = proSort1Code == null ? null : proSort1Code.trim();
+    }
+
+    public String getProSort2Code() {
+        return proSort2Code;
+    }
+
+    public void setProSort2Code(String proSort2Code) {
+        this.proSort2Code = proSort2Code == null ? null : proSort2Code.trim();
+    }
+}

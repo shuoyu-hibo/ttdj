@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/context   
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd"> 
+
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+ 
+	 <!-- 引入jdbc配置文件 -->  
+    <context:property-placeholder location="classpath:jdbc.properties" />  
+    <!-- 配置数据源 -->
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName" value="${driver}" />
+        <property name="url" value="${url}" />
+        <property name="username" value="${username}" />
+        <property name="password" value="${password}" />
+        <property name="maxActive" value="100"></property>
+        <property name="maxIdle" value="30"></property>
+        <property name="maxWait" value="500"></property>
+        <property name="defaultAutoCommit" value="true"></property>
+    </bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        <property name="mapperLocations" value="classpath*:com/mybatis/xml/ttdj*/*.xml" />
+    </bean>
+
+		<!-- 事务管理 -->
+    <bean id="transactionManager"
+        class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="annotationClass" value="org.springframework.stereotype.Repository" />
+        <property name="basePackage" value="com.mybatis.dao" />
+    </bean>
+    
+    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory" />
+    </bean>
+    
+    <!-- 注入service类中start -->
+	
+
+    <bean id="baseHandle" class="com.mybatis.base.BaseHandle">
+	  <property name="sqlSessionTemplate" ref="sqlSession" />
+	</bean>
+	<bean id="homePageServiceImpl" class="com.service.homepage.HomePageServiceImpl">
+	  <property name="sqlSessionTemplate" ref="sqlSession" />
+	</bean>
+	<bean id="registerServiceImpl" class="com.service.register.RegisterServiceImpl">
+	  <property name="sqlSessionTemplate" ref="sqlSession" />
+	</bean>
+	<bean id="loginServiceImpl" class="com.service.login.LoginServiceImpl">
+	  <property name="sqlSessionTemplate" ref="sqlSession" />
+	</bean>
+	<bean id="produceServiceImpl" class="com.service.produce.ProduceServiceImpl">
+	  <property name="sqlSessionTemplate" ref="sqlSession" />
+	</bean>
+    <!-- 注入service类中 end -->
+   
+    
+ 	
+    <!-- 事务注解支持 -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    <!-- 扫描注解文件 -->
+    <context:component-scan base-package="com.mybatis" />
+
+
+	<bean id="baseAction" class="com.web.action.base.BaseAction" scope="prototype" />
+	<bean id="homepageAction" class="com.web.action.homepage.HomePageAction" scope="prototype" />
+	<bean id="registerAction" class="com.web.action.register.RegisterAction" scope="prototype" />
+	<bean id="loginAction" class="com.web.action.login.LoginAction" scope="prototype" />
+	<bean id="produceAction" class="com.web.action.produce.ProduceAction" scope="prototype" />
+	<bean id="commonToolAction" class="com.web.action.util.CommonToolAction" scope="prototype" />
+	<bean id="userAction" class="com.web.action.us.UserAction" scope="prototype" />
+	
+</beans>

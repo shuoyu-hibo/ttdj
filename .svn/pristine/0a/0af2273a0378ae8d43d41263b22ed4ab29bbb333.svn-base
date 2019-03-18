@@ -1,0 +1,174 @@
+package com.web.action.login;
+
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
+import javax.imageio.ImageIO;
+import javax.servlet.ServletException;
+
+import net.sf.json.JSONArray;
+
+import com.mybatis.entity.ttdj.ProduceInfo;
+import com.mybatis.entity.ttdj.UserInfo;
+import com.service.login.LoginServiceImpl;
+import com.service.produce.ProduceServiceImpl;
+import com.web.action.base.BaseAction;
+import com.web.action.base.JsonUtil;
+
+/**
+ * 登陆action
+ * @author wanghaibo
+ * @describe 登陆action  不要轻易再添加方法.拦截器会放过loginaction
+ */
+public class LoginAction extends BaseAction {
+
+	/**
+	 * 跳转首页
+	 * @throws Exception
+	 */
+//	public String toHomePage() throws Exception{
+////		UserInfo userinfo = (UserInfo) request.getSession().getAttribute("userinfo");
+//		return "homepage";
+//	}
+
+	/**
+	 *  用户登陆
+	 * @throws Exception
+	 */
+	public void userLogin() throws Exception{
+		 String userName = commonUtil.decodeUrl(request.getParameter("userName"));
+		 String password = commonUtil.decodeUrl(request.getParameter("password"));
+		 String checkNumber = commonUtil.decodeUrl(request.getParameter("checkNumber"));
+		 LoginServiceImpl loginServiceImpl = ((LoginServiceImpl) getApplicationContext().getBean("loginServiceImpl"));
+		 String strSysRand = (String) request.getSession().getAttribute("ttdjrand");
+		 JsonUtil jsUtil = new JsonUtil();
+		 JSONArray jsAry=new JSONArray();
+		 if(!checkNumber.equals(strSysRand)){//验证码不一致
+			 jsUtil.returnJson(response, "1","验证码不正确!", jsAry);//验证失败
+		 }else{//验证码正确
+			 List<UserInfo> list = loginServiceImpl.getDataByUserinfo(userName,password);
+			 if(list.size()==1){
+				 //有效用户 
+				 UserInfo userinfo = null;
+				 userinfo = list.get(0);
+				 if(userinfo.getActivation()==null||!"0".equals(userinfo.getActivation())){
+					//用户未激活
+					 jsUtil.returnJson(response, "1","您的账户未激活,请通过我们发送的邮件来激活账户!", jsAry);//验证失败
+					 return;
+				 }
+				 userinfo.setLastLoginDate(new Date());
+				 userinfo.setLastLoginIp(commonUtil.getIpAddr(request));//获取客户端ip地址
+				 boolean flag = loginServiceImpl.updateUserInfo(userinfo);
+				 if(!flag){
+					 getLog(this.getClass()).error(this.getClass().getName()+"====================error: update userinfo failed！");
+				 }
+				 request.getSession().setAttribute("userName", userName);
+				 request.getSession().setAttribute("userinfo", userinfo);
+				 jsUtil.returnJson(response, "0","登陆成功!", jsAry);//验证失败
+			 }else{
+				 //用户不存在
+				 jsUtil.returnJson(response, "1","您输入的用户名或密码不正确!", jsAry);//验证失败
+			 }
+		 }
+	}
+
+	/**
+	 * 获取验证码图片
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void genCheckImg() throws ServletException, IOException {
+		try {
+			response.setHeader("Pragma", "No-cache");
+			response.setHeader("Cache-Control", "no-cache");
+			response.setDateHeader("Expires", 0);
+			int width = 60, height = 20;
+			BufferedImage image = new BufferedImage(width, height,
+					BufferedImage.TYPE_INT_RGB);
+			OutputStream os = response.getOutputStream();
+			Graphics g = image.getGraphics();
+			Random random = new Random();
+			g.setColor(commonUtil.getRandColor(200, 250));
+			g.fillRect(0, 0, width, height);
+			g.setFont(new Font("Arial", Font.PLAIN, 18));
+			g.setColor(commonUtil.getRandColor(160, 200));
+			for (int i = 0; i < 155; i++) {
+				int x = random.nextInt(width);
+				int y = random.nextInt(height);
+				int xl = random.nextInt(12);
+				int yl = random.nextInt(12);
+				g.drawLine(x, y, x + xl, y + yl);
+			}
+			String sRand = "";
+			sRand = commonUtil.genChkNumber(g,sRand,4);
+			request.getSession().setAttribute("ttdjrand", sRand);
+			g.dispose();
+			ImageIO.write(image, "JPEG", os);
+			os.flush();
+			os.close();
+			os = null;
+			response.flushBuffer();
+			// out.clear();
+			// out = pageContext.pushBody();
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+			getLog(this.getClass()).error(this.getClass().getName()+"====================error: "+e.getMessage());
+		}
+	}
+	
+	/**
+	 *  用户是否登陆
+	 * @throws Exception
+	 */
+	public void checkUserLogin() throws Exception{
+		Object userName = request.getSession().getAttribute("userName");
+		getLog(this.getClass()).error(this.getClass().getName()+"====================check user login");
+		JsonUtil jsUtil = new JsonUtil();
+		 JSONArray jsAry=new JSONArray();
+		if(userName==null){
+			jsUtil.returnJson(response, "1","用户未登陆", jsAry);//验证失败
+		}else{
+			jsAry.add((String)userName);
+			jsUtil.returnJson(response, "0","用户已经登陆", jsAry);//验证失败
+		}
+	}
+	
+	/**
+	 *  用户退出
+	 * @throws Exception
+	 */
+	public void userQuit() throws Exception{
+		String userName = (String)request.getSession().getAttribute("userName");
+		request.getSession().invalidate();
+		getLog(this.getClass()).error(this.getClass().getName()+"====================user ["+userName+"]  quit");
+		response.sendRedirect("html/register/login.html");
+	}
+	
+	/**
+	 * 获取首页商品信息
+	 * @throws Exception
+	 */
+	public void loadPdToHomepage() throws Exception {
+		ProduceServiceImpl produceServiceImpl = ((ProduceServiceImpl) getApplicationContext().getBean("produceServiceImpl"));
+		List<ProduceInfo> list = produceServiceImpl.selectPdToHomepage();
+		JsonUtil jsUtil = new JsonUtil();
+		JSONArray jsAry=new JSONArray();
+		if(list!=null){
+			for(ProduceInfo pdinfo : list){
+				jsAry.add(pdinfo);
+			}
+			getLog(this.getClass()).info(this.getClass().getName()+"=====================查询商品信息成功!");
+			jsUtil.returnJson(response, "0","查询商品信息成功!", jsAry);//保存成功
+		}else{
+			getLog(this.getClass()).error(this.getClass().getName()+"=====================查询商品信息失败!");
+			jsUtil.returnJson(response, "1","查询失败!", jsAry);//保存成功
+		}
+	}
+}

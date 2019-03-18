@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>我的信息</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css" />
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<style>
+span {
+	font-size: 20px;
+}
+
+.xinxiweizhi {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: -8px;
+}
+
+.xinxiweizhi1 {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.xinxiweizhi11 {
+	margin-bottom: 10px;
+	margin-top: 30px;
+	margin-left: 50px;
+}
+.xinxiweizhi2 {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.comWidth {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+ul {
+	list-style: none;
+}
+
+.leftArea {
+	float: left;
+	margin-top: 20px;
+}
+
+.rightArea {
+	float: right;
+	margin-top: 80px
+}
+
+.headerBar {
+	height: 120px;
+}
+
+.headerBar1 {
+	width: 940px;
+	
+	height: 450px;
+	border: 1px solid #666;
+	margin-left: 10px;
+	display: block;
+}
+
+.headerBar2 {
+	width: 850px;
+	height: 50px;
+	border: 0px solid #f60;
+	margin-left: 10px;
+	display: block;
+	font-size: 20px;
+	padding-left: 12px;
+	padding-top: 10px;
+}
+
+.headerBar3 {
+	width: 600px;
+	height: 20px;
+	border: 0px solid #f60;
+	margin-left: 80px;
+	display: block;
+	padding-left: 50px;
+	padding-top: 20px;
+}
+
+.headerBar4 {
+	width: 400px;
+	height: 260px;
+	border: 0px solid #f60;
+	margin-left: 180px;
+	margin-top: 50px;
+	display: none;
+	padding-left: 50px;
+	padding-top: 20px;
+	float: left;
+}.headerBar44 {
+	width: 400px;
+	height: 220px;
+	border: 0px solid #f60;
+	margin-left: 180px;
+	margin-top: 50px;
+	display: block;
+	padding-left: 50px;
+	padding-top: 20px;
+	float: left;
+}
+
+.headerBar5 {
+	width: 400px;
+	height: 260px;
+	border: 0px solid #f60;
+	margin-left: 180px;
+	margin-top: 50px;
+	display: none;
+	padding-left: 50px;
+	padding-top: 20px;
+	float: left;
+}
+.headerBar6 {
+	width: 400px;
+	height: 220px;
+	border: 0px solid #f60;
+	margin-left: 180px;
+	margin-top: 50px;
+	display: none;
+	padding-left: 50px;
+	padding-top: 20px;
+	float: left;
+}
+.headerBar7 {
+	width: 400px;
+	height: 220px;
+	border: 0px solid #f60;
+	margin-left: 180px;
+	margin-top: 50px;
+	display: none;
+	padding-left: 50px;
+	padding-top: 20px;
+	float: left;
+}
+.headerBar8 {
+	width:110px;
+	height: 35px;
+	border: 0px solid #f60;
+	background-image: url(../../image/aw/put.png);
+	background-repeat:no-repeat;
+	margin-left: 10px;
+	margin-top: 11px;
+	display: block;
+	padding-left: 38px;
+	padding-top: 6px;
+	float: left;
+	color:#000;
+	text-decoration: none;
+}
+.headerBar8 a {
+	text-decoration: none;
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	width: 140px;
+	background-color: #fff;
+	color: #000;
+	font-size: 18px;
+	text-align: center;
+}
+
+
+	
+	
+ a:link {
+text-decoration: none;
+color: #000;
+}
+ a:visited {
+text-decoration: none;
+color: #000;
+}
+ a:hover {
+text-decoration: none;
+color: #000;
+}
+ a:active {
+text-decoration: none;
+color: #000;
+}
+</style>
+<script type="text/javascript">
+$(function(){
+$("#email").click(function() {
+
+
+  $(".headerBar4").css({display: "block"});
+  $(".headerBar44").css({display: "none"});
+  $("#changcolor").css({"background-color": "#666"});
+  $("#changcolor1").css({"background-color": "#09c"});
+ 
+});
+$("#pho").click(function() {
+  $(".headerBar5").css({display: "block"});
+  $(".headerBar44").css({display: "none"});
+  $("#changcolor").css({"background-color": "#666"});
+  $("#changcolor1").css({"background-color": "#09c"});
+});
+$("#email2").click(function() {
+  $(".headerBar44").css({display: "block"});
+  $(".headerBar4").css({display: "none"});
+  $("#changcolor1").css({"background-color": "#666"});
+  $("#changcolor").css({"background-color": "#09c"});
+ 
+});
+$("#pho2").click(function() {
+  $(".headerBar5").css({display: "none"});
+  $(".headerBar44").css({display: "block"});
+  $("#changcolor1").css({"background-color": "#666"});
+  $("#changcolor").css({"background-color": "#09c"});
+ 
+});
+//邮箱验证
+$("#emyz").click(
+				function(){
+				//if (!checkpho()){	return;} 
+				
+							
+				//$("#btnSub3").attr("disabled","true");
+				  var count = 60;
+                var countdown = setInterval(CountDown, 1000);
+
+                function CountDown() {
+                    $("#emyz").attr("disabled", true);
+                    $("#emyz1").html("Please wait " + count + " seconds!");
+                    if (count == 0) {
+                        $("#emyz").removeAttr("disabled");
+                        $("#emyz1").html("");
+                        clearInterval(countdown);
+                    }
+                    count--;
+                }
+
+				
+				
+				});
+//手机验证				
+$("#phyz").click(
+				function(){
+				//if (!checkpho()){	return;} 
+				
+							
+				//$("#btnSub3").attr("disabled","true");
+				  var count = 60;
+                var countdown = setInterval(CountDown, 1000);
+
+                function CountDown() {
+                    $("#phyz").attr("disabled", true);
+                    $("#phyz1").html("Please wait " + count + " seconds!");
+                    if (count == 0) {
+                        $("#phyz").removeAttr("disabled");
+                        $("#phyz1").html("");
+                        clearInterval(countdown);
+                    }
+                    count--;
+                }
+
+				
+				
+				});	
+//重置密码
+$("#email1").click(function() {
+  $(".headerBar4").css({display: "none"});
+  $(".headerBar6").css({display: "block"});
+  $("#changcolor1").css({"background-color": "#666"});
+  $("#changcolor2").css({"background-color": "#09c"});
+ 
+});
+$("#pw1").click(function() {
+  $(".headerBar6").css({display: "none"});
+  $(".headerBar4").css({display: "block"});
+  $("#changcolor2").css({"background-color": "#666"});
+  $("#changcolor1").css({"background-color": "#09c"});
+ 
+});							
+$("#pho1").click(function() {
+  $(".headerBar5").css({display: "none"});
+  $(".headerBar6").css({display: "block"});
+  $("#changcolor1").css({"background-color": "#666"});
+  $("#changcolor2").css({"background-color": "#09c"});
+ 
+});
+$("#pw").click(function() {
+  $(".headerBar6").css({display: "none"});
+  $(".headerBar7").css({display: "block"});
+  $("#changcolor2").css({"background-color": "#666"});
+  $("#changcolor3").css({"background-color": "#09c"});
+ 
+});
+$("#wanc1").click(function() {
+  $(".headerBar7").css({display: "none"});
+  $(".headerBar6").css({display: "block"});
+  $("#changcolor3").css({"background-color": "#666"});
+  $("#changcolor2").css({"background-color": "#09c"});
+ 
+});	
+$("#wanc").click(function() {
+ 
+ window.location.href='../../html/register/login.html';
+ 
+});		
+});
+
+</script>
+</head>
+
+<body>
+	<div class="comWidth">
+		<div class="headerBar1 ">
+			<div class="headerBar2 ">
+				<h4>找回密码</h4>
+			</div>
+			<div class="headerBar3 ">
+				<div class="progress">
+
+					<span  id="changcolor"class="badge badge-success"
+						style="width: 20%;text-align: center;background-color: #09c;">选择找回方式</span>
+					<span id="changcolor1" class="badge badge-success"
+						style="width: 20%;text-align: center; background-color: #666;">输入验证码</span>
+					<span id="changcolor2"class="badge badge-success"
+						style="width: 20%;text-align: center;background-color: #666;">重置密码</span>
+					<span id="changcolor3"class="badge badge-success"
+						style="width: 20%;text-align: center;background-color: #666;">完成</span>
+
+
+				</div>
+				</div>
+				<div class="headerBar44 ">
+					 <input name="Submit11" type="button" value="邮箱验证" id="email"
+							style="margin-left: 30px;width: 100px;" /> 
+						<!--  	<input name="Submit22"
+							type="button" value="手机验证" id="pho"
+							style="margin-left: 60px;width: 100px;" />-->
+				</div>
+				
+				<div class="headerBar4 ">
+					<div class="xinxiweizhi">
+						<label><span> 用户邮箱:</span><input type="email" /> </label>
+					</div>
+					<div class="xinxiweizhi">
+					<input id="emyz" name="Submit2" type="button"style="margin-left:80px" 
+						value="获取验证码" /><p id="emyz1" style="margin-left:100px" ></p>
+					
+					</div>
+					<div class="xinxiweizhi1">
+						<label><span> 验证码:</span><input type="text" /> </label>
+						<p id="emyz2" style="margin-left:100px" >11</p>
+					</div>
+					<div class="xinxiweizhi2">
+						<input name="Submit1" type="button" value="确定" id="email1"
+							style="margin-left: 30px;width: 100px;" /> <input name="Submit2"
+							type="button" value="取消" id="email2"
+							style="margin-left: 60px;width: 100px;" />
+					</div>
+				</div>
+				<div class="headerBar5 ">
+					<div class="xinxiweizhi">
+						<label><span> 输入手机:</span><input type="text" /> </label>
+					</div>
+					<div class="xinxiweizhi">
+					<input id="phyz" name="Submit2" type="button"style="margin-left:80px" 
+						value="获取验证码" /><p id="phyz1" style="margin-left:100px" ></p>
+					
+					</div>
+					<div class="xinxiweizhi1">
+						<label><span> 验证码:</span><input type="text" /> </label>
+						<p id="phyz2" style="margin-left:100px" >11</p>
+					</div>
+					<div class="xinxiweizhi2">
+						<input name="Submit1" type="button" value="确定" id="pho1"
+							style="margin-left: 30px;width: 100px;" /> <input name="Submit2"
+							type="button" value="取消" id="pho2"
+							style="margin-left: 60px;width: 100px;" />
+					</div>
+				</div>
+				<div class="headerBar6 ">
+					<div class="xinxiweizhi">
+						<label><span> 设置密码:</span><input type="password" /> </label>
+					</div>
+					<div class="xinxiweizhi">
+						<label><span> 确认密码:</span><input type="password" /> </label>
+						<p id="pw2" style="margin-left:100px" >11</p>
+					</div>
+					<div class="xinxiweizhi2">
+						<input name="Submit1" type="button" value="确定" id="pw"
+							style="margin-left: 30px;width: 100px;" /> <input name="Submit2"
+							type="button" value="取消" id="pw1"
+							style="margin-left: 60px;width: 100px;" />
+					</div>
+				</div>
+				<div class="headerBar7 ">
+					<div class="headerBar2 " style="margin-left: 15px;width: 260px;">
+				<h3>恭喜密码设置成功！</h3>
+			</div>
+					
+					<div class="xinxiweizhi2">
+						  <input name="Submit2"
+							type="button" value="取消" id="wanc1"
+							style="margin-left: 60px;margin-top: 15px;width: 100px;" />
+							<a class="headerBar8" href="login.html" target="_blank">确定 </a>
+							
+					</div>
+				</div>
+			</div>
+</div>
+
+	
+
+
+
+</body>
+</html>

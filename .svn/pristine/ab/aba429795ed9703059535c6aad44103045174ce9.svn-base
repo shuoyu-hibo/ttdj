@@ -1,0 +1,27 @@
+$(document).ready(function () {
+	
+	var winw = parseInt($(window).width());
+	//$('.menu .nav .box').css({'position': 'absolute';'left':0;'padding-left':0,'padding-right':0});
+	
+	var navLi=$(".menu .nav li");
+	var currentChoose="a1";
+	navLi.mouseover(function () {
+		//alert((winw-parseInt($(this).css("width")))/2);
+		//$('.menu .nav .box').css({"margin-left":-parseInt($(this).css("width"))/2});
+		
+		$(this).find("a").addClass("current");
+		//$(this).find(".box").stop().slideDown(200);
+	})
+	navLi.click(function(){
+		currentChoose=$(this).find("a").attr("id");
+		if($(".current")!=$(this).find("a")){//如果当前选中的不是之前选中的项
+			$(".current").removeClass("current");
+		}
+	})
+	navLi.mouseleave(function(){
+		//$(this).find("a").removeClass("current");
+		//$(this).find(".box").stop().slideUp(200);
+		$(this).find("a").removeClass("current");
+		$("#"+currentChoose).addClass("current");
+	})
+})

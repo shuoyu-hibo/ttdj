@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsMagicConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsMagicConfig" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="magic_switch" property="magicSwitch" jdbcType="BIT" />
+    <result column="magic_discount" property="magicDiscount" jdbcType="INTEGER" />
+    <result column="magic_sofa_lines" property="magicSofaLines" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, magic_switch, magic_discount, magic_sofa_lines
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsMagicConfigExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_magic_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bbs_magic_config
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs_magic_config
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsMagicConfigExample" >
+    delete from bbs_magic_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsMagicConfig" >
+    insert into bbs_magic_config (id, magic_switch, magic_discount, 
+      magic_sofa_lines)
+    values (#{id,jdbcType=INTEGER}, #{magicSwitch,jdbcType=BIT}, #{magicDiscount,jdbcType=INTEGER}, 
+      #{magicSofaLines,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsMagicConfig" >
+    insert into bbs_magic_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="magicSwitch != null" >
+        magic_switch,
+      </if>
+      <if test="magicDiscount != null" >
+        magic_discount,
+      </if>
+      <if test="magicSofaLines != null" >
+        magic_sofa_lines,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="magicSwitch != null" >
+        #{magicSwitch,jdbcType=BIT},
+      </if>
+      <if test="magicDiscount != null" >
+        #{magicDiscount,jdbcType=INTEGER},
+      </if>
+      <if test="magicSofaLines != null" >
+        #{magicSofaLines,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsMagicConfigExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_magic_config
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_magic_config
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.magicSwitch != null" >
+        magic_switch = #{record.magicSwitch,jdbcType=BIT},
+      </if>
+      <if test="record.magicDiscount != null" >
+        magic_discount = #{record.magicDiscount,jdbcType=INTEGER},
+      </if>
+      <if test="record.magicSofaLines != null" >
+        magic_sofa_lines = #{record.magicSofaLines,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_magic_config
+    set id = #{record.id,jdbcType=INTEGER},
+      magic_switch = #{record.magicSwitch,jdbcType=BIT},
+      magic_discount = #{record.magicDiscount,jdbcType=INTEGER},
+      magic_sofa_lines = #{record.magicSofaLines,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsMagicConfig" >
+    update bbs_magic_config
+    <set >
+      <if test="magicSwitch != null" >
+        magic_switch = #{magicSwitch,jdbcType=BIT},
+      </if>
+      <if test="magicDiscount != null" >
+        magic_discount = #{magicDiscount,jdbcType=INTEGER},
+      </if>
+      <if test="magicSofaLines != null" >
+        magic_sofa_lines = #{magicSofaLines,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.BbsMagicConfig" >
+    update bbs_magic_config
+    set magic_switch = #{magicSwitch,jdbcType=BIT},
+      magic_discount = #{magicDiscount,jdbcType=INTEGER},
+      magic_sofa_lines = #{magicSofaLines,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

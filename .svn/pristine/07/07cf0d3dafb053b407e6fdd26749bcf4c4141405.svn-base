@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="application-name" content="TTDJ网－TTDJ一次 美一次，精品生活">
+<meta name="description" content="运城TTDJ网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城TTDJ网,您身边的吃喝玩乐好帮手!">
+<meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+
+
+<title>找回密码</title>
+
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css">
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+
+
+<!--[if IE 6]>
+<script src="http://s1.ttdaijin.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://s0.ttdaijin.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+    
+  
+  <style>
+  
+
+	.comWidth {
+	width: 1070px;
+	margin: 0 auto;
+	position:relative;
+	
+}
+	.comWidth2 {
+	width: 980px;
+	margin: 0 auto;
+	position:relative;
+	
+}
+	.comWidth1 {
+	width: 1070px;
+	margin: 60px auto;
+	position:relative;
+	
+}
+  iframe {
+ 
+   width: 1050px;
+	height: 470px;
+    border:0px solid #2d6987;
+
+}
+  </style>
+  </head>
+  <body id="index" class="pg-floor">
+<div class="header" id="header">
+</div>
+ <div class="comWidth1 ">
+ 			
+			
+	</div>
+ <div class="comWidth ">
+ 			 <div class="comWidth2 ">					
+              <iframe src="wjmi.html" >
+              
+              </iframe>
+
+			</div>
+			
+	</div>
+	
+ <div class="foot" id="foot">
+</div>
+
+  </body>
+</html>

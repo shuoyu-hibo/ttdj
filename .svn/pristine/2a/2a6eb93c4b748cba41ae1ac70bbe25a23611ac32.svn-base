@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsPostMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsPost" >
+    <id column="POST_ID" property="postId" jdbcType="INTEGER" />
+    <result column="TOPIC_ID" property="topicId" jdbcType="INTEGER" />
+    <result column="SITE_ID" property="siteId" jdbcType="INTEGER" />
+    <result column="CONFIG_ID" property="configId" jdbcType="INTEGER" />
+    <result column="EDITER_ID" property="editerId" jdbcType="INTEGER" />
+    <result column="CREATER_ID" property="createrId" jdbcType="INTEGER" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="POSTER_IP" property="posterIp" jdbcType="VARCHAR" />
+    <result column="EDIT_TIME" property="editTime" jdbcType="TIMESTAMP" />
+    <result column="EDITER_IP" property="editerIp" jdbcType="VARCHAR" />
+    <result column="EDIT_COUNT" property="editCount" jdbcType="INTEGER" />
+    <result column="INDEX_COUNT" property="indexCount" jdbcType="INTEGER" />
+    <result column="STATUS" property="status" jdbcType="SMALLINT" />
+    <result column="IS_AFFIX" property="isAffix" jdbcType="BIT" />
+    <result column="IS_HIDDEN" property="isHidden" jdbcType="BIT" />
+    <result column="TYPE_ID" property="typeId" jdbcType="INTEGER" />
+    <result column="ANONYMOUS" property="anonymous" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    POST_ID, TOPIC_ID, SITE_ID, CONFIG_ID, EDITER_ID, CREATER_ID, CREATE_TIME, POSTER_IP, 
+    EDIT_TIME, EDITER_IP, EDIT_COUNT, INDEX_COUNT, STATUS, IS_AFFIX, IS_HIDDEN, TYPE_ID, 
+    ANONYMOUS
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsPostExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_post
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bbs_post
+    where POST_ID = #{postId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs_post
+    where POST_ID = #{postId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsPostExample" >
+    delete from bbs_post
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsPost" >
+    insert into bbs_post (POST_ID, TOPIC_ID, SITE_ID, 
+      CONFIG_ID, EDITER_ID, CREATER_ID, 
+      CREATE_TIME, POSTER_IP, EDIT_TIME, 
+      EDITER_IP, EDIT_COUNT, INDEX_COUNT, 
+      STATUS, IS_AFFIX, IS_HIDDEN, 
+      TYPE_ID, ANONYMOUS)
+    values (#{postId,jdbcType=INTEGER}, #{topicId,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, 
+      #{configId,jdbcType=INTEGER}, #{editerId,jdbcType=INTEGER}, #{createrId,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{posterIp,jdbcType=VARCHAR}, #{editTime,jdbcType=TIMESTAMP}, 
+      #{editerIp,jdbcType=VARCHAR}, #{editCount,jdbcType=INTEGER}, #{indexCount,jdbcType=INTEGER}, 
+      #{status,jdbcType=SMALLINT}, #{isAffix,jdbcType=BIT}, #{isHidden,jdbcType=BIT}, 
+      #{typeId,jdbcType=INTEGER}, #{anonymous,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsPost" >
+    insert into bbs_post
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="postId != null" >
+        POST_ID,
+      </if>
+      <if test="topicId != null" >
+        TOPIC_ID,
+      </if>
+      <if test="siteId != null" >
+        SITE_ID,
+      </if>
+      <if test="configId != null" >
+        CONFIG_ID,
+      </if>
+      <if test="editerId != null" >
+        EDITER_ID,
+      </if>
+      <if test="createrId != null" >
+        CREATER_ID,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="posterIp != null" >
+        POSTER_IP,
+      </if>
+      <if test="editTime != null" >
+        EDIT_TIME,
+      </if>
+      <if test="editerIp != null" >
+        EDITER_IP,
+      </if>
+      <if test="editCount != null" >
+        EDIT_COUNT,
+      </if>
+      <if test="indexCount != null" >
+        INDEX_COUNT,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="isAffix != null" >
+        IS_AFFIX,
+      </if>
+      <if test="isHidden != null" >
+        IS_HIDDEN,
+      </if>
+      <if test="typeId != null" >
+        TYPE_ID,
+      </if>
+      <if test="anonymous != null" >
+        ANONYMOUS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="postId != null" >
+        #{postId,jdbcType=INTEGER},
+      </if>
+      <if test="topicId != null" >
+        #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="configId != null" >
+        #{configId,jdbcType=INTEGER},
+      </if>
+      <if test="editerId != null" >
+        #{editerId,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null" >
+        #{createrId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="posterIp != null" >
+        #{posterIp,jdbcType=VARCHAR},
+      </if>
+      <if test="editTime != null" >
+        #{editTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="editerIp != null" >
+        #{editerIp,jdbcType=VARCHAR},
+      </if>
+      <if test="editCount != null" >
+        #{editCount,jdbcType=INTEGER},
+      </if>
+      <if test="indexCount != null" >
+        #{indexCount,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="isAffix != null" >
+        #{isAffix,jdbcType=BIT},
+      </if>
+      <if test="isHidden != null" >
+        #{isHidden,jdbcType=BIT},
+      </if>
+      <if test="typeId != null" >
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="anonymous != null" >
+        #{anonymous,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsPostExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_post
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_post
+    <set >
+      <if test="record.postId != null" >
+        POST_ID = #{record.postId,jdbcType=INTEGER},
+      </if>
+      <if test="record.topicId != null" >
+        TOPIC_ID = #{record.topicId,jdbcType=INTEGER},
+      </if>
+      <if test="record.siteId != null" >
+        SITE_ID = #{record.siteId,jdbcType=INTEGER},
+      </if>
+      <if test="record.configId != null" >
+        CONFIG_ID = #{record.configId,jdbcType=INTEGER},
+      </if>
+      <if test="record.editerId != null" >
+        EDITER_ID = #{record.editerId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createrId != null" >
+        CREATER_ID = #{record.createrId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.posterIp != null" >
+        POSTER_IP = #{record.posterIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.editTime != null" >
+        EDIT_TIME = #{record.editTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.editerIp != null" >
+        EDITER_IP = #{record.editerIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.editCount != null" >
+        EDIT_COUNT = #{record.editCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.indexCount != null" >
+        INDEX_COUNT = #{record.indexCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=SMALLINT},
+      </if>
+      <if test="record.isAffix != null" >
+        IS_AFFIX = #{record.isAffix,jdbcType=BIT},
+      </if>
+      <if test="record.isHidden != null" >
+        IS_HIDDEN = #{record.isHidden,jdbcType=BIT},
+      </if>
+      <if test="record.typeId != null" >
+        TYPE_ID = #{record.typeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.anonymous != null" >
+        ANONYMOUS = #{record.anonymous,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_post
+    set POST_ID = #{record.postId,jdbcType=INTEGER},
+      TOPIC_ID = #{record.topicId,jdbcType=INTEGER},
+      SITE_ID = #{record.siteId,jdbcType=INTEGER},
+      CONFIG_ID = #{record.configId,jdbcType=INTEGER},
+      EDITER_ID = #{record.editerId,jdbcType=INTEGER},
+      CREATER_ID = #{record.createrId,jdbcType=INTEGER},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      POSTER_IP = #{record.posterIp,jdbcType=VARCHAR},
+      EDIT_TIME = #{record.editTime,jdbcType=TIMESTAMP},
+      EDITER_IP = #{record.editerIp,jdbcType=VARCHAR},
+      EDIT_COUNT = #{record.editCount,jdbcType=INTEGER},
+      INDEX_COUNT = #{record.indexCount,jdbcType=INTEGER},
+      STATUS = #{record.status,jdbcType=SMALLINT},
+      IS_AFFIX = #{record.isAffix,jdbcType=BIT},
+      IS_HIDDEN = #{record.isHidden,jdbcType=BIT},
+      TYPE_ID = #{record.typeId,jdbcType=INTEGER},
+      ANONYMOUS = #{record.anonymous,jdbcType=BIT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsPost" >
+    update bbs_post
+    <set >
+      <if test="topicId != null" >
+        TOPIC_ID = #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        SITE_ID = #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="configId != null" >
+        CONFIG_ID = #{configId,jdbcType=INTEGER},
+      </if>
+      <if test="editerId != null" >
+        EDITER_ID = #{editerId,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null" >
+        CREATER_ID = #{createrId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="posterIp != null" >
+        POSTER_IP = #{posterIp,jdbcType=VARCHAR},
+      </if>
+      <if test="editTime != null" >
+        EDIT_TIME = #{editTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="editerIp != null" >
+        EDITER_IP = #{editerIp,jdbcType=VARCHAR},
+      </if>
+      <if test="editCount != null" >
+        EDIT_COUNT = #{editCount,jdbcType=INTEGER},
+      </if>
+      <if test="indexCount != null" >
+        INDEX_COUNT = #{indexCount,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="isAffix != null" >
+        IS_AFFIX = #{isAffix,jdbcType=BIT},
+      </if>
+      <if test="isHidden != null" >
+        IS_HIDDEN = #{isHidden,jdbcType=BIT},
+      </if>
+      <if test="typeId != null" >
+        TYPE_ID = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="anonymous != null" >
+        ANONYMOUS = #{anonymous,jdbcType=BIT},
+      </if>
+    </set>
+    where POST_ID = #{postId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.BbsPost" >
+    update bbs_post
+    set TOPIC_ID = #{topicId,jdbcType=INTEGER},
+      SITE_ID = #{siteId,jdbcType=INTEGER},
+      CONFIG_ID = #{configId,jdbcType=INTEGER},
+      EDITER_ID = #{editerId,jdbcType=INTEGER},
+      CREATER_ID = #{createrId,jdbcType=INTEGER},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      POSTER_IP = #{posterIp,jdbcType=VARCHAR},
+      EDIT_TIME = #{editTime,jdbcType=TIMESTAMP},
+      EDITER_IP = #{editerIp,jdbcType=VARCHAR},
+      EDIT_COUNT = #{editCount,jdbcType=INTEGER},
+      INDEX_COUNT = #{indexCount,jdbcType=INTEGER},
+      STATUS = #{status,jdbcType=SMALLINT},
+      IS_AFFIX = #{isAffix,jdbcType=BIT},
+      IS_HIDDEN = #{isHidden,jdbcType=BIT},
+      TYPE_ID = #{typeId,jdbcType=INTEGER},
+      ANONYMOUS = #{anonymous,jdbcType=BIT}
+    where POST_ID = #{postId,jdbcType=INTEGER}
+  </update>
+</mapper>

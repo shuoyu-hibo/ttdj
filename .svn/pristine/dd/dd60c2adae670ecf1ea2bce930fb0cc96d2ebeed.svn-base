@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+   <link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css">
+	<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../js/ourUtil.js"></script>
+   <script type="text/javascript" src="../../js/bootstrap.js"></script>
+   <script type="text/javascript" src="../../js/ajaxfileupload.js"></script> 
+  <script type="text/javascript">  
+
+	$(function(){
+		$("#pageloading").hide();
+		$("#form1").attr("action",generateUrl("produce!uploadImage.do?"));
+		$("#imgUpload").attr("src","../../image/addPic.png");
+		$("#warning").hide();
+		
+		$("#save").click(function(){
+	    	if(!checkInput("produceName","商品名称")
+	    		||!checkInput("produceDesc","商品描述")
+	    			||!checkInput("producePrice","商品价格")){
+	    		return;
+	    	}
+	    	if($("#picUrl").val()==''){
+	    		$("#warning").html('<strong>提示:</strong> 请选择要上传的图片!');
+	    		$("#warning").toggle(true);
+	    	}else{
+	    		$("#warning").toggle(false);
+	    		var strUrl = generateUrl("produce!saveProduceData.do?","produceName,produceDesc,producePrice,picUrl");
+	    		$.post(strUrl,function(json){
+					if(json["result"]=="0"){alert(1);
+						$("#ok").show();
+					}else{
+						$("#warning").html('<strong>提示:</strong> 商品添加失败!');
+	    				$("#warning").toggle(true);
+					}
+				});
+	    	}
+	    });
+	});
+    /** 
+     * upload Picture
+     */  
+    function uploadUnitImage()  {  
+    		$("#pageloading").show();
+            if($("#fileToUpload").val()==''){
+            	$("#warning").show();
+            	return;
+            }
+             $.ajaxFileUpload({  
+                 url:generateUrl("produce!uploadImage.do?"),             //需要链接到服务器地址  
+                 secureuri:false,  
+                 fileElementId:'fileToUpload',                         //文件选择框的id属性  
+                 dataType: 'json',                                     //服务器返回的格式，可以是json  
+                 success: function (data, status)             //相当于java中try语句块的用法  
+                 {     
+                 //alert(data);       //data是从服务器返回来的值     
+                	 $("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     var imgPath="../../uploadfiles/"+data["newname"];
+   					 $("#imgUpload").attr("src",imgPath);
+   					 $("#picUrl").val(imgPath);
+   					 $("#warning").hide();
+   					 return 0;
+                 },  
+                 error: function (data, status, e)             //相当于java中catch语句块的用法  
+                 {  
+                 	$("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     $("#warning").hide();
+                     return 1;
+                 }  
+               }  
+             );  
+    }  
+    
+    function checkInput(inputId,inputName){
+    	if($("#"+inputId).val()==''){
+	    		$("#warning").html("<strong>提示:</strong> 请输入"+inputName+"!");
+	    		$("#warning").show();
+	    		$("#ok").hide();
+	    		return false;
+	    }
+	    return true;
+    }
+</script> 
+  </head>
+ <body>
+
+
+<h2>模态框（Modal）插件事件</h2>
+<!-- 按钮触发模态框 -->
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="true">
+   开始演示模态框
+</button>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div id="pageloading"></div>
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">
+               	添加商品信息
+            </h4>
+         </div>
+         <div class="modal-body">
+	         <table class="normal" width="456" border="0" cellspacing="1" cellpadding="0" align="center" bordercolor="#0099CC" bgcolor="#CCCCCC">
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商品名称:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+		                <input id="produceName" class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商品描述:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+ 		                <input id="produceDesc" class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商品价格:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+		                <input id="producePrice" class='normal'  type="number" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="26" width="67" nowrap>
+		                <div align="center"><font class="normal">商品图片:</font></div>
+		            </td>
+		            <td height="26" width="386" nowrap>
+		               <img border="0" id="imgUpload" src="" alt="" width="100" height="100" />
+                       <input id="fileToUpload"  type="file" size="45"   accept="image/*" name="file"  class="input" />
+		            	<button class="button" id="buttonUpload" type="button" 
+                            onclick="uploadUnitImage();">上传选定图片</button><br>
+			           <div class="alert fade in" id="warning">
+			            <strong>提示:</strong> 请选择要上传的图片!
+			          </div>
+		            	<div id="result" style="margin-left:200px"></div>
+		            	<input type="hidden" id="picUrl" value=""/>
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="40" width="67" nowrap>
+		                <div align="center"><font class="normal">是否推荐:</font></div>
+		            </td>
+		            <td height="26" width="386" nowrap>
+		               <label class="checkbox">
+                        <input type="checkbox"> (只可设置2个)
+                      </label>
+		            </td>
+		        </tr>
+		    </table>
+         </div>
+         <div class="alert alert-success" style="display: none;" id="ok">
+              <strong>恭喜:</strong> 商品信息添加成功！
+         </div>
+         
+         <div class="modal-footer">
+         
+         	
+         
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">
+               关闭
+            </button>
+            <button type="button" class="btn btn-primary" id="save">
+               提交
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="navbar">
+     <div class="navbar-inner">
+       <div class="container">
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </a>
+         <a class="brand" href="#">Title</a>
+         <div class="nav-collapse collapse navbar-responsive-collapse">
+           <ul class="nav">
+             <li class="active"><a href="#">首页</a></li>
+             <li><a href="#">Link</a></li>
+             <li><a href="#">Link</a></li>
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+               <ul class="dropdown-menu">
+                 <li><a href="#">Action</a></li>
+                 <li><a href="#">Another action</a></li>
+                 <li><a href="#">Something else here</a></li>
+                 <li class="divider"></li>
+                 <li class="nav-header">Nav header</li>
+                 <li><a href="#">Separated link</a></li>
+                 <li><a href="#">One more separated link</a></li>
+               </ul>
+             </li>
+           </ul>
+           <form class="navbar-search pull-left" action="">
+             <input class="search-query span2" placeholder="Search" type="text">
+           </form>
+           <ul class="nav pull-right">
+             <li><a href="#">Link</a></li>
+             <li class="divider-vertical"></li>
+             <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+               <ul class="dropdown-menu">
+                 <li><a href="#">Action</a></li>
+                 <li><a href="#">Another action</a></li>
+                 <li><a href="#">Something else here</a></li>
+                 <li class="divider"></li>
+                 <li><a href="#">Separated link</a></li>
+               </ul>
+             </li>
+           </ul>
+         </div><!-- /.nav-collapse -->
+       </div>
+     </div><!-- /navbar-inner -->
+   </div>
+   
+   <div class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="test">Dropdown trigger</a>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="test">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="http://google.com">Action</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#anotherAction">Another action</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+      <li role="presentation" class="divider"></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+    </ul>
+</div>
+<button id="a">ok</button>
+<script type="text/javascript">
+	$(function(){
+		$("#a").click(function(){
+		 	$("#test").dropdown();
+		 });
+	});
+ 
+</script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+var urlParam = null;
+var urlBase = 'http://test.pinz.cn/';
+/**
+ * 得到url中的参数
+ * @param attrName
+ * @author wanghuwei
+ * @returns
+ */
+function getUrlParam(attrName){
+	if(urlParam == null){
+		var up = location.search;
+		var ps = up.split("&");
+		urlParam = new Object();
+		for(var i=0;i<ps.length;i++){
+			var p = ps[i].split("=");
+			eval("urlParam." + p[0] + " = " + p[1]);
+		}
+	}
+	return eval("urlParam." + attrName);
+}
+
+/**
+ * 获取上下文
+ * @return
+ */
+function getContextPath() {
+    var pathName = window.location.href;
+    var index = pathName.substr(1).indexOf("/");
+    var result = pathName.substr(0,index+1);
+    return result;
+}
+
+
+
+function toPage(ifmName,ifmUrl){//change iframe page
+			$("#"+ifmName).attr("src",ifmUrl);
+}
+
+$(document).ready(function(){
+	  $("#a1").addClass("current");
+	  $("#middle").load("homepage!onload.do");
+});
+function pageLoad(strUrl){
+	$("#middle").load(strUrl);
+}

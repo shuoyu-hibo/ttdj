@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>注册</title>
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css" />
+<link type="text/css" rel="stylesheet" href="../../styles/aw/reset.css" />
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<!--  <script type="text/javascript" src="../../js/aw/zhuce.js">
+	
+</script>-->
+<script type="text/javascript">
+	$(function() {
+		$("#em").click(function() {
+			$("#l_ip").removeClass();
+			$("#l_em").addClass("active");
+			$(".zhucebiao1").css({
+				display : "none"
+			});
+			$(".zhucebiao").css({
+				display : "block"
+			});
+		});
+		$("#ip").click(function() {
+			$("#l_em").removeClass();
+			$("#l_ip").addClass("active");
+			$(".zhucebiao").css({
+				display : "none"
+			});
+			$(".zhucebiao1").css({
+				display : "block"
+			});
+		});
+		
+		$("#chkImg").click(function() {
+			$("#chkImg").attr("src", generateUrl("login!genCheckImg.do?"));
+		});
+	///////////////////邮箱验证/////////////////////////////////////////////////////
+		$("#email").focus(function() {
+			$("#wen_zi").css({
+				visibility : "hidden"
+			});
+			$("#yz").css({
+				visibility : "hidden",
+				display : "none"
+			});
+
+		});
+		$("#email")
+				.blur(
+						function() {
+							$("#yz").css({
+								visibility : "visible",
+								display : "block"
+							});
+							var email = $("#email").val();
+							var re_d = /^([\.a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+							if (email == "") {
+								$("#yz")
+										.html(
+												"<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请输入您的邮箱");
+							} else if (!re_d.test(email)) {
+								$("#yz")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg' width='17' height='15' /></i>请输入正确的邮箱");
+							} else {
+								$("#yz")
+										.html(
+												"<i><img src='../../image/aw/success.jpg' width='17' height='15' /></i>OK");
+							}
+						});
+//////////////////////////////密码验证///////////////////////////////////////////////////////////	
+		function findStr(str, n) {
+			var tmp = 0;
+			for ( var i = 0; i < str.length; i++) {
+				if (str.charAt(i) == n) {
+					tmp++;
+				}
+			}
+			return tmp;
+		}
+		;
+		$("#password1")
+				.blur(
+						function() {
+							$("#yz1").css({
+								visibility : "visible",
+								display : "block"
+							});
+							//$("#yz1").html ("<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请输入您的密码");
+							var password = $("#password1").val();
+							var m = findStr(password, password[0]);
+							var re_n = /[^\d]/g;
+							var re_t = /[^a-zA-Z]/g;
+							if (password == "") {
+								$("#yz1")
+										.html(
+												"<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请输入您的密码");
+							} else if (m == password.length) {
+								$("#yz1")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg' width='17' height='15' /></i>不能为相同字符");
+							} else if (password.length<6||password.length>12) {
+								$("#yz1")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg' width='17' height='15' /></i>应为6-12个字符");
+							} else if (!re_n.test(this.value)) {
+								$("#yz1")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg' width='17' height='15' /></i>不能全为数字");
+							} else if (!re_t.test(this.value)) {
+								$("#yz1")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg' width='17' height='15' /></i>不能全为字母");
+							} else {
+								$("#yz1")
+										.html(
+												"<i><img src='../../image/aw/success.jpg' width='17' height='15' /></i>OK");
+							}
+
+						});
+		$("#password1").keyup(function() {
+			if (this.value.length == 0) {
+				$("#e1").css({
+					"background-color" : ""
+				});
+				$("#e2").css({
+					"background-color" : ""
+				});
+				$("#e3").css({
+					"background-color" : ""
+				});
+			}
+			if (this.value.length > 0 && this.value.length < 6) {
+				$("#e1").css({
+					"background-color" : "#f60"
+				});
+				$("#e2").css({
+					"background-color" : ""
+				});
+			}
+			if (this.value.length > 6 && this.value.length < 12) {
+				$("#e2").css({
+					"background-color" : "#f60"
+				});
+				$("#e3").css({
+					"background-color" : ""
+				});
+			}
+			if (this.value.length > 12) {
+				$("#e1").css({
+					"background-color" : "#f60"
+				});
+				$("#e2").css({
+					"background-color" : "#f60"
+				});
+				$("#e3").css({
+					"background-color" : "#f60"
+				});
+			}
+
+		});
+		$("#password1").focus(function() {
+			$("#yz1").css({
+				visibility : "hidden",
+				display : "none"
+			});
+		});
+//////////////////////////////再次输入密码验证/////////////////////////////////////////////////
+		$("#password").focus(function() {
+			$("#yz2").css({
+				visibility : "hidden",
+				display : "none"
+			});
+		});
+		$("#password")
+				.blur(
+						function() {
+							$("#yz2").css({
+								visibility : "visible",
+								display : "block"
+							});
+							//$("#yz1").html ("<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请输入您的密码");
+							var password = $("#password").val();
+							var paw = $("#password1").val();
+							if (password == "") {
+								$("#yz2")
+										.html(
+												"<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请再次输入密码");
+							} else if (password != paw) {
+								$("#yz2")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg' width='17' height='15' /></i>两次密码输入不一致");
+							}
+
+							else {
+								$("#yz2")
+										.html(
+												"<i><img src='../../image/aw/success.jpg' width='17' height='15' /></i>OK");
+							}
+
+						});
+//////////////////////////////验证码/////////////////////////////////////////////////////////////
+		$("#yzm").focus(function() {
+			$("#yz3").css({
+				visibility : "hidden",
+				display : "none"
+			});
+		});
+		$("#yzm")
+				.blur(
+						function() {
+							$("#yz3").css({
+								visibility : "visible",
+								display : "block"
+							});
+							var yzm = $("#yzm").val();
+							if (yzm == "") {
+								$("#yz3")
+										.html(
+												"<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请输入验证码");
+							} else {
+								$("#yz3")
+										.html(
+												"<i><img src='../../image/aw/success.jpg' width='17' height='15' /></i>OK");
+							}
+						});
+
+		/*$("#userName")
+				.blur(
+						function() {
+							var userName = this.value;
+							if(userName==''){
+								return;
+							}
+							if (!this.onblur()) {
+								return;
+							}
+							var strUrl = generateUrl("register!checkUserName.do?userName="
+									+ encodeURI(userName));
+							$
+									.post(
+											strUrl,
+											function(json) {
+												if (json["result"] == "0") {
+
+													$('p')[2].innerHTML = "<i><img src='../../image/aw/6666666.jpg' width='17' height='15' /></i>用户名可用";
+												} else {
+													$('p')[2].innerHTML = "<i><img src='../../image/aw/444444.jpg' width='17' height='15' /></i>用户已存在";
+												}
+
+											});
+						});
+
+		$("#btnSub")
+				.click(
+						function() {
+							var userName = $("#userName").val();
+							var password = $("#password").val();
+							var city = $("#city").val();
+							var email = $("#email").val();
+							var urlStr = "register!saveUserRegisterInfo.do?userName="
+									+ userName + "&email=" + email;
+							urlStr = urlStr + "&city=" + city + "&password="
+									+ password;
+							var strUrl = generateUrl(urlStr);
+							$.post(strUrl, function(json) {
+								if (json["result"] == "0") {
+									alert("保存成功");
+								} else {
+									alert("保存失败");
+								}
+
+							});
+						});*/
+
+///////////////////////////////手机验证//////////////////////////////////////////////
+		$("#pho").focus(function() {
+			$("#wen_zi_1").css({
+				visibility : "hidden"
+			});
+			$("#yz4").css({
+				visibility : "hidden",
+				display : "none"
+			});
+		});
+
+		$("#pho")
+				.blur(
+						function() {
+							$("#yz4").css({
+								visibility : "visible",
+								display : "block"
+							});
+							var pho = $("#pho").val();
+							var mob = /^(13+\d{9})|(15+\d{9})|(18+\d{9})$/;
+							if (pho == "") {
+								$("#yz4")
+										.html(
+												"<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请输入手机号");
+							} else if (!mob.test(pho)) {
+								$("#yz4")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg' width='17' height='15' /></i>请输入正确的11位手机号");
+							} else {
+								$("#yz4")
+										.html(
+												"<i><img src='../../image/aw/success.jpg' width='17' height='15' /></i>OK");
+							}
+						});
+
+//////////////////////////动态码///////////////////////////////////////////////////////
+		$("#dtm").focus(function() {
+			$("#yz5").css({
+				visibility : "hidden",
+				display : "none"
+			});
+		});
+		$("#dtm")
+				.blur(
+						function() {
+							$("#yz5").css({
+								visibility : "visible",
+								display : "block"
+							});
+							var dtm = $("#dtm").val();
+							if (dtm == "") {
+								$("#yz5")
+										.html(
+												"<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请输入动态码");
+							} else {
+								$("#yz5")
+										.html(
+												"<i><img src='../../image/aw/success.jpg' width='17' height='15' /></i>OK");
+							}
+						});
+///////////////////////////////密码/////////////////////////////////////////////////////////////
+		$("#password2").focus(function() {
+			$("#yz6").css({
+				visibility : "hidden",
+				display : "none"
+			});
+		});
+		$("#password2")
+				.blur(
+						function() {
+							$("#yz6").css({
+								visibility : "visible",
+								display : "block"
+							});
+							//$("#yz1").html ("<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请输入您的密码");
+							var password = $("#password2").val();
+							var m = findStr(password, password[0]);
+							var re_n = /[^\d]/g;
+							var re_t = /[^a-zA-Z]/g;
+							if (password == "") {
+								$("#yz6")
+										.html(
+												"<i><img src='../../image/aw/hint.jpg'width='17' height='15' /></i>请输入您的密码");
+							} else if (m == password.length) {
+								$("#yz6")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg'width='17' height='15' /></i>不能为相同字符");
+							} else if (password.length<6||password.length>12) {
+								$("#yz6")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg'width='17' height='15' /></i>应为6-12个字符");
+							} else if (!re_n.test(this.value)) {
+								$("#yz6")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg'width='17' height='15' /></i>不能全为数字");
+							} else if (!re_t.test(this.value)) {
+								$("#yz6")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg'width='17' height='15' /></i>不能全为字母");
+							} else {
+								$("#yz6")
+										.html(
+												"<i><img src='../../image/aw/success.jpg'width='17' height='15' /></i>OK");
+							}
+
+						});
+		$("#password2").keyup(function() {
+			if (this.value.length == 0) {
+				$("#e4").css({
+					"background-color" : ""
+				});
+				$("#e5").css({
+					"background-color" : ""
+				});
+				$("#e6").css({
+					"background-color" : ""
+				});
+			}
+			if (this.value.length > 0 && this.value.length < 6) {
+				$("#e4").css({
+					"background-color" : "#f60"
+				});
+				$("#e5").css({
+					"background-color" : ""
+				});
+			}
+			if (this.value.length > 6 && this.value.length < 12) {
+				$("#e5").css({
+					"background-color" : "#f60"
+				});
+				$("#e6").css({
+					"background-color" : ""
+				});
+			}
+			if (this.value.length > 12) {
+				$("#e4").css({
+					"background-color" : "#f60"
+				});
+				$("#e5").css({
+					"background-color" : "#f60"
+				});
+				$("#e6").css({
+					"background-color" : "#f60"
+				});
+			}
+
+		});
+///////////////////////再次密码///////////////////////////////////////////////
+		$("#password3").focus(function() {
+			$("#yz7").css({
+				visibility : "hidden",
+				display : "none"
+			});
+		});
+		$("#password3")
+				.blur(
+						function() {
+							$("#yz7").css({
+								visibility : "visible",
+								display : "block"
+							});
+							//$("#yz1").html ("<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请输入您的密码");
+							var password = $("#password3").val();
+							var paw = $("#password2").val();
+							if (password == "") {
+								$("#yz7")
+										.html(
+												"<i><img src='../../image/aw/hint.jpg' width='17' height='15' /></i>请再次输入密码");
+							} else if (password != paw) {
+								$("#yz7")
+										.html(
+												"<i><img src='../../image/aw/Warning.jpg' width='17' height='15' /></i>两次密码输入不一致");
+							}
+
+							else {
+								$("#yz7")
+										.html(
+												"<i><img src='../../image/aw/success.jpg' width='17' height='15' /></i>OK");
+							}
+
+						});
+
+	});
+	//add by wanghaibo 2015/5/7 end
+</script>
+
+</head>
+<body>
+	<div class="headerBar">
+		<div class="comWidth">
+			<div class="leftArea">
+				<img src="../../image/aw/tupiao.jpg" width="100" height="100" />
+				注册TT账号
+			</div>
+			<div class="rightArea">
+				已有TT账号？<a href="login.html" target="_blank">登录</a>
+			</div>
+		</div>
+	</div>
+	<div class="comWidth">
+		<div class="bs-docs-example">
+	        <ul class="nav nav-tabs">
+			  <li id="l_em" class="active">
+			    <a  id="em" href="#">邮箱注册</a>
+			  </li>
+			  <li id="l_ip"><a id="ip"  href="#">手机注册</a></li>
+			</ul>
+	    </div>
+		<div class="zhucebiao">
+			<form>
+				<div style="margin-bottom:20px">
+					<label><span> 邮箱:</span><input id="email" type="email"
+						class="text" /> </label>
+					<p id="yz" class="msg">请输入您的邮箱</p>
+					<p id="wen_zi">注册成功后，全TT通用</p>
+				</div>
+				<div>
+					<label><span>登录密码: </span><input id="password1"
+						type="password" class="text" maxlength="15" /> </label>
+					<p id="yz1" class="msg">5-25个字符，一个汉字为两个字</p>
+				</div>
+				<div style="margin:3px 0 10px 0">
+					<label><span></span><em id="e1">弱</em><em id="e2"> 中 </em><em
+						id="e3">强</em> </label>
+				</div>
+				<div style="margin-bottom:20px">
+					<label><span>确认密码: </span><input id="password"
+						type="password" class="text" maxlength="15" /> </label>
+					<p id="yz2" class="msg">请再输入一次</p>
+				</div>
+				<div style="margin-bottom:20px">
+					<label><span>验证码: </span><input id="yzm" type="text"
+						class="text1" maxlength="5" /><span class="text2"><img
+							id="chkImg" src="login!genCheckImg.do?" alt=""
+							style="cursor: pointer;" /> </span> </label>
+
+					<p id="yz3" class="msg">请再输入一次</p>
+				</div>
+				<div style="margin-top:30px;margin-left:85px ">
+					<input id="btnSub" name="Submit2" type="button" class="btn"
+						value="同意以下协议并注册" />
+				</div>
+				<div class="tijiao2 ">《TT网用户协议》</div>
+			</form>
+		</div>
+		<div class="zhucebiao1">
+			<form>
+				<div style="margin-bottom:20px">
+					<label><span> 手机号:</span><input id="pho" type="text"
+						class="text" /> </label>
+					<p id="yz4" class="msg">请输入手机号</p>
+					<p id="wen_zi_1">注册成功后，全TT通用</p>
+				</div>
+				<div
+					style="margin-bottom:20px;margin-left:100px;font-size:13px ;border:1px solid #666;width: 120px;background-color:#a0c8ff">免费获取短信动态码</div>
+				<div style="margin-bottom:20px">
+					<label><span>短信动态码: </span><input id="dtm" type="text"
+						class="text" /> </label>
+					<p id="yz5" class="msg">请输入手机号</p>
+				</div>
+				<div>
+					<label><span>登录密码: </span><input id="password2"
+						type="password" class="text" /> </label>
+					<p id="yz6" class="msg">5-25个字符，一个汉字为两个字</p>
+				</div>
+				<div style="margin:3px 0 10px 0">
+					<label><span></span><em id="e4">弱</em><em id="e5"> 中
+					</em><em id="e6">强</em> </label>
+				</div>
+				<div style="margin-bottom:20px">
+					<label><span>确认密码: </span><input id="password3"
+						type="password" class="text" /> </label>
+					<p id="yz7" class="msg">请再输入一次</p>
+				</div>
+
+
+				<div style="margin-top:30px;margin-left:85px ">
+					<input id="btnSub1" name="Submit2" type="button" class="btn"
+						value="同意以下协议并注册" />
+				</div>
+				<div class="tijiao2 ">《TT网用户协议》</div>
+			</form>
+		</div>
+	</div>
+	<div class="comWidth">
+
+		<p>
+			<span class="tijiao1"> 京ICP证070791号京公网安备11010502025545号</span>
+		<p />
+
+
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/aw/zhuce.js"></script>
+<style>
+    *{ margin:0; padding:0; }
+    body{background-color: #000;color:#f60; }
+    a{ text-decoration:none;  background-color:#000;  text-align:center; color:#00FFFF;font-size: 25px ;}
+    ul{ list-style:none; margin-left:420px;   }
+    li{float:left; margin-top:45px; margin-left:20px; }
+  .tubiao{margin-top:10px;margin-left: 400px;}
+  .tubiao2{margin-left: 680px;}
+  .zhucebiao{margin-top:140px;margin-left:500px}
+    /*img{border:none}*/
+    input{vertical-align:middle;}
+    select{vertical-align:middle;}
+    label{vertical-align:middle}
+    /*input:focus{ outline:none}*/
+    textarea:focus{ outline:none}
+    /*.btn{border:none 0}
+    div{ overflow: auto}
+    form{width:940px; height:500px; margin:100px auto}*/
+   form div{overflow:hidden; clear:both}
+    form div label{float:left; clear:both}
+    form div label b{font-weight:normal; font-size:30px; color: #ff38e6; visibility: hidden}
+    form div label .text{width:200px; height:30px; padding:0 2px; border:1px solid #666}
+    form div em{display: inline-table; font-size:12px; text-align:center; color:#fff; vertical-align:middle; font-style:normal; width:53px; height:15px; line-height:15px; background:#ffd099}
+    form div .active{background-color:#f60}
+    form  div span{display: inline-table; width:80px; text-align:right}
+    /*<!--.submitBtn{width:135px; height:33px; margin:20px 0 0 80px}-->
+    <!--.changeimg{width:22px; height:22px; display:inline-table; vertical-align:middle;}-->*/
+    .msg{line-height:18px; color:#f60; float:left; margin-left:5px; display:none;font-size: 12px;}
+    #intro{line-height:12px; font-size:30px; color: #b9ff8a; float:left; margin-left:500px;visibility: hidden; }
+    #count{line-height:20px; font-size:13px; color: red; float:left; margin-left:50px;visibility: hidden; }
+    .msg i{display: inline-table; vertical-align:middle; width:25px; height:20px;}
+    .btn{height:40px;width:270px;left:100px; right:100px;border:2px solid #666; background:#f60;font-size:25px;font-family:"微软雅体"; }
+
+
+    /* .msg .err{background-position:0 -39px}
+    .msg .ok{background-position: 0 -99px}
+    */
+    .tijiao1{
+        color: #FF6600;
+        left: 1100px;
+        position: relative;
+        font-size: 10px;
+        top: 200px;
+    }
+    .lianjie{font-size:18px;color:#f60  }
+    #wen_zi{visibility:visible;margin-left: 300px;font-size: 14px;}
+</style>
+
+<script type="text/javascript">  //定义了城市的二维数组，里面的顺序跟省份的顺序是相同的。通过selectedIndex获得省份的下标值来得到相应的城市数组
+ //add by wanghaibo 2015/5/7 start
+ $(function(){
+ 	$("#userName").blur(function(){
+		var userName = this.value; 
+		if(userName==''){
+			return;
+		}
+		var strUrl = generateUrl("register!checkUserName.do?userName="+encodeURI(userName));
+		$.post(strUrl,function(json){
+				if(json["result"]=="0"){
+					$('p')[2].innerHTML="<i><img src='../../image/aw/6666666.jpg' width='17' height='15' /></i>用户名可用";
+				}else{
+					$('p')[2].innerHTML="<i><img src='../../image/aw/444444.jpg' width='17' height='15' /></i>用户已存在";
+				}
+				
+		});
+	});
+	
+	$("#btnSub").click(function(){
+		var userName = $("#userName").val();
+		var password = $("#password").val();
+		var city = $("#city").val();
+		var email = $("#email").val();
+		var urlStr = "register!saveUserRegisterInfo.do?userName="+userName+"&email="+email;
+		urlStr = urlStr+"&city="+city+"&password="+password;
+		var strUrl = generateUrl(urlStr);
+		$.post(strUrl,function(json){
+				if(json["result"]=="0"){
+					alert("保存成功");
+				}else{
+					alert("保存失败");
+				}
+				
+		});
+	});
+ });
+//add by wanghaibo 2015/5/7 end
+
+    var city=[  ["北京","天津","上海","重庆","香港","澳门"],
+        ["石家庄","唐山","秦皇岛","邯郸","邢台","保定","张家口","承德","沧州","廊坊","衡水"],
+        ["太原","大同","阳泉","长治","晋城","朔州","晋中","运城","忻州","临汾","吕梁"],
+        ["呼和浩特","包头","乌海","赤峰","通辽","鄂尔多斯","呼伦贝尔","巴彦淖尔","乌兰察布","兴安","锡林郭勒","阿拉善"],
+        ["沈阳","大连","鞍山","抚顺","本溪","丹东","锦州","营口","阜新","辽阳","盘锦","铁岭","朝阳","葫芦岛"],
+        ["长春","吉林","四平","辽源","通化","白山","松原","白城","延边"],
+        ["哈尔滨","齐齐哈尔","鸡西","鹤岗","双鸭山","大庆","伊春","佳木斯","七台河","牡丹江","黑河","绥化","大兴安岭"],
+        ["南京","苏州","扬州","无锡","徐州","常州","南通","连云港","淮安","盐城","镇江","泰州","宿迁"],
+        ["杭州","宁波","温州","嘉兴","湖州","绍兴","金华","衢州","舟山","台州","丽水"],
+        ["合肥","芜湖","蚌埠","淮南","马鞍山","淮北","铜陵","安庆","黄山","滁州","阜阳","宿州","巢湖","六安","亳州","池州","宣城"],
+        ["福州","宁德","南平","厦门","莆田","三明","泉州","漳州"],
+        ["南昌","上饶","萍乡","九江","景德镇","新余","鹰潭","赣州","吉安","宜春","抚州"],
+        ["济南","青岛","淄博","枣庄","东营","烟台","潍坊","威海","济宁","泰安","日照","莱芜","临沂","德州","聊城","滨州","菏泽"],
+        ["郑州","开封","洛阳","平顶山","焦作","鹤壁","新乡","安阳","濮阳","漯河","许昌","三门峡","南阳","商丘","信阳","周口","驻马店"],
+        ["武汉","十堰","襄樊","鄂州","黄石","荆州","宜昌","荆门","孝感","黄冈","咸宁","随州","恩施"],
+        ["长沙","株洲","湘潭","岳阳","邵阳","常德","衡阳","张家界","益阳","郴州","永州","怀化","娄底","湘西"],
+        ["广州","清远","潮州","东莞","珠海","深圳","汕头","韶关","佛山","江门","湛江","茂名","肇庆","惠州","梅州","汕尾","阳江","河源","中山","揭阳","云浮"],
+        ["南宁","柳州","桂林","梧州","北海","防城港","钦州","贵港","玉林","百色","贺州","河池","来宾","崇左"],
+        ["海口","三亚"],
+        ["成都","自贡","攀枝花","泸州","德阳","绵阳","广元","遂宁","内江","乐山","南充","宜宾","广安","达州","眉山","雅安","巴中","资阳","阿坝","甘孜","凉山"],       ["贵阳","六盘水","遵义","安顺","铜仁","毕节","黔西南","黔东南","黔南"],
+        ["昆明","曲靖","玉溪","保山","昭通","丽江","普洱","临沧","文山","红河","西双版纳","楚雄","大理","德宏","怒江","迪庆"],
+        ["拉萨","昌都","山南","日喀则","那曲","阿里","林芝"],
+        ["西安","铜川","宝鸡","咸阳","渭南","延安","汉中","榆林","安康","商洛"],
+        ["兰州","白银","定西","敦煌","嘉峪关","金昌","天水","武威","张掖","平凉","酒泉","庆阳","临夏","陇南","甘南"],
+        ["西宁","海东","海北","黄南","海南","果洛","玉树","海西"],
+        ["银川","石嘴山","吴忠","固原","中卫"],
+        ["乌鲁木齐","克拉玛依","吐鲁番","哈密","和田","阿克苏","喀什","克孜勒苏柯尔克孜","巴音郭楞蒙古","昌吉","博尔塔拉蒙古","伊犁哈萨克","阿勒泰"],
+        ["台北","高雄","基隆","台中","台南","新竹","嘉义"]   ];
+    function getCity(){
+        //获得省份下拉框的对象
+        var sltProvince=document.forms[0].province;
+        // 获得城市下拉框的对象
+        var sltCity=document.forms[0].city;
+        //得到对应省份的城市数组
+        var provinceCity=city[sltProvince.selectedIndex-1 ];
+        //清空城市下拉框，仅留提示选项
+        sltCity.length=1;
+        //将城市数组中的值填充到城市下拉框中
+        for(var i=0;i<provinceCity.length;i++){              
+         sltCity[i+1]=new Option(provinceCity[i],provinceCity[i]);       
+        }
+    }
+	
+</script>
+</head>
+<body>
+<div class="tubiao" ><img src="../../image/aw/gg.png" width="100" height="100" /><span class="tubiao3"  >注册TT账号</span>
+    <span class="tubiao2" >已有TT账号？</span><span ><a href="denglu.html"target="_blank" >登录</a></span></div>
+<div style="margin-left:410px;font-size:14px;color: #00c3b0  "><em>ttdaijin.com</em></div>
+<div style="margin-top:15px "></div>
+<hr color="#333"   >
+<div >
+    <ul>
+   <li ><a  class="lianjie" href="zhuce.html" > 邮箱注册</a></li>
+    <li><a class="lianjie"href="zhuce1.html" >手机注册</a></li>
+    </ul>
+</div>
+<div class="zhucebiao">
+<form method="post" action="http://localhost:8080/ttdj/register!saveUserRegisterInfo.do" >
+   <div style="margin-bottom:20px"> <label><span>    邮箱:</span><input id="email" type="text" class="text" /></label><p  class="msg">  请输入您的邮箱</p><p  id="wen_zi"> 注册成功后，全TT通用</p></div>
+
+    <div><label><span>    用户名:</span><input id="userName" name="title" type="text" class="text" /></label><p  class="msg">5-25个字符，一个汉字为两个字</p> </div>
+    <div><label><span id="count">0个字符</span></label></div>
+
+    <div><label><span>登录密码:  </span><input type="password" class="text"maxlength="15" /></label><p class="msg">5-25个字符，一个汉字为两个字</p></div>
+    <div style="margin:3px 0 10px 0"><label><span></span><em >弱</em><em> 中 </em><em>强</em></label></div>
+    <div style="margin-bottom:20px"><label><span>确认密码:  </span><input id="password" type="password" class="text"maxlength="15" /></label><p class="msg">请再输入一次</p></div>
+   <!--<div><label><span>    手机号:</span><input type="text" class="text" /></label><p  class="msg"> 请输入您的手机号</p></div>-->
+    <div><label><span>   所在城市:</span> <select name="province" onChange="getCity()" > <option value="null" selected="selected">-省-</option>
+        <option value="直辖市">直辖市</option>
+        <option value="河北">河北</option>
+        <option value="山西">山西</option>
+        <option value="内蒙古">内蒙古</option>
+        <option value="辽宁">辽宁</option>
+        <option value="吉林">吉林</option>
+        <option value="黑龙江">黑龙江</option>
+        <option value="江苏">江苏</option>
+        <option value="浙江">浙江</option>
+        <option value="安徽">安徽 </option>
+        <option value="福建">福建 </option>
+        <option value="江西">江西</option>
+        <option value="山东">山东</option>
+        <option value="河南">河南</option>
+        <option value="湖北">湖北</option>
+        <option value="湖南">湖南</option>
+        <option value="广东">广东</option>
+        <option value="广西">广西</option>
+        <option value="海南">海南</option>
+        <option value="四川">四川</option>
+        <option value="贵州">贵州</option>
+        <option value="云南">云南</option>
+        <option value="西藏">西藏</option>
+        <option value="陕西">陕西 </option>
+        <option value="甘肃">甘肃 </option>
+        <option value="青海">青海</option>
+        <option value="宁夏">宁夏</option>
+        <option value="新疆">新疆</option>
+        <option value="台湾">台湾</option>
+        </select>
+        <select id="city" name="city"> <option selected="selected" value="null">-市-</option> </select>
+    </label><p  class="msg"> 请选择所在省</p></div>
+   <div style="margin-top:30px;margin-left:85px ">
+       <input id="btnSub" name="Submit2" type="button" class="btn" value="同意以下协议并注册" /></label></div>
+          <div style="margin-top:30px;margin-left:100px;font-size:10px  ">《TT网用户协议》</div>
+
+
+</form>
+</div>
+<div><p><span class="tijiao1"> 京ICP证070791号京公网安备11010502025545号</span><br /></div>
+
+</body>
+</html>

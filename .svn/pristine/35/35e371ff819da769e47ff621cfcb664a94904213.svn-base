@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="application-name" content="ttdaijin网－ttdaijin一次 美一次，精品生活">
+<meta name="description" content="运城ttdaijin网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城ttdaijin网,您身边的吃喝玩乐好帮手!">
+<meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+
+
+<title>【运城代金券网】</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../../styles/bootstrap-responsive.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="../../styles/bootstrap.css" >
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+<script type="text/javascript" src="../../js/s.js"></script>
+<script type="text/javascript" src="../../js/pg.js"></script>
+<!--[if IE 6]>
+<script src="http://s1.ttdaijin.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://s0.ttdaijin.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+<style>
+.category-floor__head{
+background:url(../../image/xw/background/shopbac.jpg)
+}
+
+a{
+color:#f60;
+}
+.main{
+width:1100px;
+}
+.sellinfo{
+height:470px;
+}
+.sellinfo1{
+height:460px;
+}
+.tb-shop-info-wrap{
+height:420px;
+}
+</style>
+
+<script type="text/javascript">
+	var updId="";
+    $(function(){
+		$("#pageloading").hide();
+		$.post(generateUrl("login!checkUserLogin.do?"),function(data){
+			if(data["result"]=="0"){
+				$("#userNameShow").html(data["record"][0]);
+				$("#userNameShow1").html(data["record"][0]);
+				$("#div_login").show();
+				$("#div_unlogin").hide();
+				//$("#quit").attr("href",generateUrl("login!userQuit.do?"));
+				$("#quit").bind("click",function(){
+					if(confirm("确认退出吗？")){
+						window.location.href=generateUrl("login!userQuit.do?");
+					}
+				});
+			}else{
+				$("#div_login").hide();
+				$("#div_unlogin").show();
+			}
+		});
+		
+		$.post(generateUrl("us!ifBusinessman.do?"),function(data){
+			if(data["result"]!=0){
+				$("#divModal1").load(genLinkUrl("html/home/addShopInfo.html?"));
+			}else{
+				//alert(data["record"][0].userName);
+				//$("#myModal1").css("z-index",-1);
+				$("#viewStoreName").html(data["record"][0].storeName);
+				var vStoreLeve = "";
+				if(data["record"][0].storeLeve==null||data["record"][0].storeLeve==""){
+					vStoreLeve = 1;
+				}else{
+					vStoreLeve = parseInt(data["record"][0].storeLeve);
+				}
+				$("#viewStoreleve").css("width",""+vStoreLeve*20+"%");
+				$("#viewAddress").html(data["record"][0].address);
+				$("#viewLinkNumber").html(data["record"][0].linkNumber);
+			}
+		});
+		
+	    for(var i=0;i<9;i++){
+ 	    	$("#itemUpdate"+(i+1)).click(function(){
+ 	    		updId=$(this).attr("name");
+ 	    		$("#modalUpdDiv").load(genLinkUrl("html/home/modalPdUpdate.html?produceId="+updId));
+ 	    	});
+	    	$("#itemDele"+(i+1)).click(function(){
+	    		if(confirm("确定要删除该商品吗?")){
+	   				var sUl = generateUrl("produce!deleteProduceData.do?produceId="+$(this).attr("name"));
+	    			$.post(sUl,function(data){
+			        	if(data["result"]=="0"){
+			        		if(loadProduce()){
+			        			return;
+			        		}
+			        	}else{
+			        		alert("商品删除失败！");
+			        		return;
+			        	}
+		       		});
+	       		}
+	    	});
+	    }
+	    
+	    loadProduce();//load produceList
+	});
+	
+	
+    function checkInputStore(inputId,inputName){//checkinput for store
+    	if($("#"+inputId).val()=='' || $("#"+inputId).val()==undefined){
+	    		$("#warningStore").html("<strong>提示:</strong> 请输入"+inputName+"!");
+	    		$("#warningStore").show();
+	    		$("#okStore").hide();
+	    		return false;
+	    }
+	    $("#warningStore").hide();
+	    return true;
+    }
+    
+    function loadProduce(){
+    	$.post(generateUrl("produce!getPopularProduceInfoByUser.do?"),function(data){//load produce
+   			for(var i=0;i<2;i++){
+   				$("#itemImg0"+(i+1)).attr("src","data:image/png;base64,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");
+	    		$("#itemImg0"+(i+1)).attr("style","width: 360px; height: 270px;");
+	    		$("#itemPdName0"+(i+1)).html("");
+	    		$("#itemPdDesc0"+(i+1)).html("");
+	    		$("#itemPdPrice0"+(i+1)).html("");
+	    		$("#itemCoupon0"+(i+1)).html("");
+	    		$("#itemPriceNew0"+(i+1)).html("");
+   			}
+    		$.each(data["record"],function(i,n){
+	    		$("#itemImg0"+(i+1)).attr("src",n.producePic);
+	    		$("#itemPdName0"+(i+1)).html(n.produceName);
+	    		$("#itemPdDesc0"+(i+1)).html(n.produceDesc);
+	    		$("#itemPdPrice0"+(i+1)).html(n.producePrice);
+	    		$("#itemCoupon0"+(i+1)).html(n.remitPrice);
+	    		$("#itemPriceNew0"+(i+1)).html(n.finalPrice);
+	    	});
+    	});
+    	var v_url = "produce!getProduceInfoByUser.do?pcn="+pageCurrent+"&ps=9";
+    	$.post(generateUrl(v_url),function(data){//load produce
+	   		var pdCount = parseInt(data["recordSize"]);
+	   		if(pdCount<9){
+	   			for(var i=pdCount;i<9;i++){
+	   				$("#item"+(i+1)).hide();
+	   				$("#itemImg"+(i+1)).attr("src","data:image/png;base64,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");
+		    		$("#itemImg"+(i+1)).attr("style","width: 360px; height: 270px;");
+		    		$("#itemPdName"+(i+1)).html("");
+		    		$("#itemPdDesc"+(i+1)).html("");
+		    		$("#itemPdPrice"+(i+1)).html("");
+		    		$("#itemCoupon"+(i+1)).html("");
+		    		$("#itemPriceNew"+(i+1)).html("");
+		    		$("#itemUpdate"+(i+1)).attr("onclick","");
+		    		$("#itemDele"+(i+1)).click(function(){});
+	   			}
+	   		}
+	    	$.each(data["record"],function(i,n){
+	    		$("#item"+(i+1)).show();
+	    		$("#itemImg"+(i+1)).attr("src",n.producePic);
+	    		$("#itemPdName"+(i+1)).html(n.produceName);
+	    		$("#itemPdDesc"+(i+1)).html(n.produceDesc);
+	    		$("#itemPdPrice"+(i+1)).html(n.producePrice);
+	    		$("#itemCoupon"+(i+1)).html(n.remitPrice);
+	    		$("#itemPriceNew"+(i+1)).html(n.finalPrice);
+	    		$("#itemUpdate"+(i+1)).attr("name",n.produceId);
+	    		$("#itemDele"+(i+1)).attr("name",n.produceId);
+	    	});
+    		pageNumSet(data["recordSum"],9);
+    	});
+    	return true;
+    }
+    function pageChange(){
+    	var v_url = "produce!getProduceInfoByUser.do?pcn="+pageCurrent+"&ps=9";
+    	$.post(generateUrl(v_url),function(data){//load produce
+	   		var pdCount = parseInt(data["recordSize"]);
+	   		if(pdCount<9){
+	   			for(var i=pdCount;i<9;i++){
+	   				$("#item"+(i+1)).hide();
+	   				$("#itemImg"+(i+1)).attr("src","data:image/png;base64,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");
+		    		$("#itemImg"+(i+1)).attr("style","width: 360px; height: 270px;");
+		    		$("#itemPdName"+(i+1)).html("");
+		    		$("#itemPdDesc"+(i+1)).html("");
+		    		$("#itemPdPrice"+(i+1)).html("");
+		    		$("#itemCoupon"+(i+1)).html("");
+		    		$("#itemPriceNew"+(i+1)).html("");
+		    		$("#itemUpdate"+(i+1)).attr("onclick","");
+		    		$("#itemDele"+(i+1)).click(function(){});
+	   			}
+	   		}
+	    	$.each(data["record"],function(i,n){
+	    		$("#item"+(i+1)).show();
+	    		$("#itemImg"+(i+1)).attr("src",n.producePic);
+	    		$("#itemPdName"+(i+1)).html(n.produceName);
+	    		$("#itemPdDesc"+(i+1)).html(n.produceDesc);
+	    		$("#itemPdPrice"+(i+1)).html(n.producePrice);
+	    		$("#itemCoupon"+(i+1)).html(n.remitPrice);
+	    		$("#itemPriceNew"+(i+1)).html(n.finalPrice);
+	    		$("#itemUpdate"+(i+1)).attr("name",n.produceId);
+	    		$("#itemDele"+(i+1)).attr("name",n.produceId);
+	    	});
+    		pageNumSet(data["recordSum"],9);
+    	});
+    }
+    function addProduce(){
+    	$("#divModal2").load(genLinkUrl("html/home/addProduce.html?"));
+    }
+</script>
+</head>
+
+
+<body id="index" class="pg-floor">
+<header id="site-mast" class="site-mast">
+<div class="site-mast__user-nav-w">
+    <div class="site-mast__user-nav cf">
+        <ul class="basic-info">
+	           <li class="site-mast__keep">
+	               <a class="fav log-mod-viewed" href="javascript:window.external.AddFavorite('../../html/home/index.html','天天代金券')">
+	                   <i class="F-glob F-glob-star-border icon-keep"></i>
+	                   	收藏天天代金
+	               </a>
+	           </li>
+	           <li class="user-info cf" >
+	              <div id="div_unlogin">
+	                <a class="user-info__login" href="../../html/register/login.html">登录</a>
+	                <a class="user-info__signup" href="../../html/register/register.html">注册</a>
+	               </div>
+	               <div id="div_login" style="display: none">
+	                	<span >欢迎您</span>,【<span id="userNameShow" style="font-size: 12px;"></span>】   
+	                	<a   href="#" id="quit" >退出</a>
+	               </div>
+	           </li>
+	           <li   class="mobile-info__item dropdown" >
+	               <a class="dropdown__toggle" href="../../html/home/index.html">首页</a>
+	           </li>
+	       </ul>
+        <ul class="site-mast__user-w">
+            <li  class="dropdown dropdown--account" >
+                <a id="J-my-account-toggle" rel="nofollow" class="dropdown__toggle" href="../../html/register/usermessage.html" >
+                    <span>我的天天代金</span>
+                    <i class="tri tri--dropdown"></i>
+                </a>
+            </li>
+            <li   class="dropdown dropdown--history"  >
+                <a id="J-my-history-toggle" rel="nofollow" class="dropdown__toggle" href="javascript:;" >
+                    <span>最近浏览</span>
+                    <i class="tri tri--dropdown"></i>
+                   
+                </a>
+                <div id="J-my-history-menu" class="dropdown-menu dropdown-menu--deal dropdown-menu--history"></div>
+            </li>
+            <li  id="J-site-merchant" class="dropdown dropdown--merchant" >
+                <a class="dropdown__toggle dropdown__toggle--merchant" href="../../html/home/shop.html">
+                    <span>我是商家</span>
+                    <i class="tri tri--dropdown"></i>
+                </a>
+            </li>
+            <li  id="J-my-more" class="dropdown dropdown--more dropdown--last" >
+                <a id="J-my-more-toggle" class="dropdown__toggle dropdown__toggle--my-more" href="../../html/home/shopmodel.html" >
+                    <span>更换模板</span>
+                    <i class="tri tri--dropdown"></i>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+<div class="site-mast__branding cf" >
+    <h1><a class="site-logo"  href="#" gaevent="header/logo">运城代金券</a></h1>
+    <div class="city-info">
+        <h2><a class="city-info__name" href="http://yuncheng.ttdaijin.com" gaevent="header/cityname" code="25">运城</a></h2>
+        <a class="city-info__toggle" href="../../html/home/future.html" gaevent="header/changecity">切换城市</a>
+    </div>
+    <div  class="component-search-box mt-component--booted"  >
+    	<div   class="J-search-box search-box ">
+            <br>
+            <input tabindex="1" type="text" id="search" name="w" autocomplete="off" data-smartbox="/search/smartboxv2/" class="s-text search-box__input J-search-box__input" value="" placeholder="请输入商品名称、商铺名等">
+            <input type="button" id="btnSearch" class="s-submit search-box__button log-mod-viewed" hidefocus="true" value="&nbsp;&nbsp;搜&nbsp;&nbsp;&nbsp;索&nbsp;&nbsp;" data-mod="sr">
+        </div>
+    </div>
+   <!-- <div class="site-commitment">
+        <a href="#">用户登陆</a>
+        <a href="#">商家登陆</a>
+    </div> --> 
+</div>
+
+</header>
+<div class="main">
+<div id="pageloading"></div>
+<div id="divModal1"></div>
+<div id="divModal2"></div>
+<div class="sellinfo">
+<div class="sellinfo1">
+    <div data-spm="1000126" id="J_ShopInfo" class="tb-shop-info" data-creditscore="10633" data-creditflag="cap" data-rateurl="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm">
+        <div class="tb-shop-info-wrap">
+            <div class="tb-shop-info-hd">
+                <div class="tb-shop-name">
+                    <dl>
+                        <dd>
+                            <strong>
+                            	商铺名称:
+                                <a href="#" title="" id="viewStoreName">                                    	
+                                </a>
+                            </strong>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tb-shop-rank tb-rank-cap">
+                    <dl>
+                        <dt>等级:</dt>
+                        <dd>
+                            <a href="#" target="_blank" >
+                                <i><span class="rate-info__bar common-rating">
+                                                <span class="rate-stars" id="viewStoreleve" style="width: 99%;"></span>
+                                	</span></i>
+                            </a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="tb-shop-seller">
+                    <dl>
+                        <dt>地址:</dt>
+                        <dd id="viewAddress">
+                           	 商铺地址
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tb-shop-ww">
+                    <dl>
+                        <dt>联系电话:</dt>
+                        <dd id="viewLinkNumber">商铺电话</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="tb-shop-info-bd" style="visibility:visible;">
+               <!--  <div class="tb-shop-rate">
+                    <dl>
+                        <dt>好评率</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                100%
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>浏览次数</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                1000
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>代金券已领次数</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                1000
+                            </a>
+                        </dd>
+                    </dl>
+                </div> -->
+            </div>
+            <div class="tb-shop-info-ft">
+                <a class="J_TDialogTrigger J_TokenSign" data-spm="d22" href="" data-closebtn="true" data-width="440" data-height="260">收藏店铺</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modalUpdDiv"></div>
+<div class="sellinfo2">
+    <div class="recmUp">
+		<h2>
+			<span>本周精选</span>
+		</h2>
+    </div>
+    <div class="thumbnails">
+        <div class="downLeft">
+            <li class="span4">
+              <a href="../../html/home/product.html" class="thumbnail">
+                <img id="itemImg01" data-src="holder.js/360x270" alt="360x270" src="data:image/png;base64,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" style="width: 360px; height: 270px;">
+              </a>
+            </li>
+            <div class="recmInfo">
+                <h3 id="itemPdName01">商品名称</h3>
+                <p  id="itemPdDesc01">商品描述</p>
+                <p id="itemPdPrice01">商品原价</p>
+                <p id="itemCoupon01">优惠价</p>
+                <p id="itemPriceNew01">还需到店支付</p>
+            </div>
+        </div>
+        <div class="downRight">
+            <li class="span4">
+              <a href="../../html/home/product.html" class="thumbnail">
+                <img id="itemImg02" data-src="holder.js/360x270" alt="360x270" src="data:image/png;base64,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" style="width: 360px; height: 270px;">
+              </a>
+            </li>
+            <div class="recmInfo">
+                <h3 id="itemPdName02">商品名称</h3>
+                <p  id="itemPdDesc02">商品描述</p>
+                <p id="itemPdPrice02">商品原价</p>
+                <p id="itemCoupon02">优惠价</p>
+                <p id="itemPriceNew02">还需到店支付</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<div class="products">
+    
+        <div class="category-floor__head">
+        	<h3><span style="font-size:25px">所有宝贝</span></h3>
+
+            <div class="uploadPic">
+                <button class="btn btn-primary" onclick="addProduce()">
+                    	添加我的商品
+                </button>
+                
+            </div>
+        </div>
+        <div class="category-floor__body cf">
+            <div class="row-fluid">
+            <div class="thumbnails">
+              <div id="item1" class="span4" style="display:none;">
+                <a class="thumbnail" href="javascript:void(0);">
+                  <div class="caption">
+                  <img id="itemImg1" data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                    <h3 id="itemPdName1">商品名称</h3>
+                    <p  id="itemPdDesc1">商品描述</p>
+                    <p id="itemPdPrice1">商品原价</p>
+                    <p id="itemCoupon1">优惠价</p>
+                    <p id="itemPriceNew1">还需到店支付</p>
+                  </div> 
+                </a>
+                   	<button class="btn btn-primary" id="itemUpdate1">修改</button>
+                    <button class="btn" id="itemDele1">删除</button>
+              </div>
+              <div id="item2" class="span4" style="display:none;">
+                <a class="thumbnail" href="javascript:void(0);">
+                  <div class="caption">
+                  <img id="itemImg2" data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAJh0lEQVR4Xu3bS2sUaxSF4YoXEMELONFBRMGB4kzw//8AwZk4EbwNFEFRxDuaw1fnfKGsE5My6ZBevZ8GB2p1917v2nmprq5svXv3bmfwQAABBAIIbBFWQEtGRACBkQBhWQQEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiq/m7Qr1+/Dg8fPhw+f/68+8TTp08Pd+7cGa5evbr7b48ePRpevXq1+/ezZ88O9+7dGy5cuPDbGy49bsmUe83Wnnfp0qXh/v37h3rfVc63JINjToYAYZ0M92N9148fP46y+vXr166gnj17Njx58mR831u3bg03btwY+g95l9Tbt2/HY+bSWnrcklCvX78eHj9+PB7a5dnn/fHjx2/SWvq+S49bMp9j1psAYa13P4earsvp/Pnz49nSuXPnxtd58ODB8OHDh1EK29vbozh+/vy5K7D5Me1spwvmoOOWDtrlMj+b6jN3WX769OlE5luaw3EnQ4CwTob7sb7r/Ie/f7zrwrp27dr4/u2j4Fxq8+e+ePFi0XHzj5B/CtiFNf942sV46tSpUbJL33fpcUvnO9ZivPiRCRDWkRFmvEAXRRPU3bt3x4+D7frW/Exn+pGtfXR8+fLlgcfNr4sdhsj0rHAd5ztMJs9ZPQHCWj3TtXnF6bWhNlSX0/SidzvbaoLoj+lz2nWuN2/ejMLa77grV64M7fpXfzQptjOo9lr90a+b7QVnOk87rn0p0L8wWMV8+7332pRlkEUECGsRpvyD+hlME8nNmzeH58+fD+0i935CaNe52hnXQcc1ITRpTS/0X758efx7e+5e3zpOifaPql0sU2muar4mX498AoSV3+HiBP1jYbsIv7W1NXz58mVfYS09w5qLpg108eLF4f379/+7jWI+7FxW7f9XfQboDGvxiqz9gYS19hWtbsB+fWpnZ2c4c+bM8P3795Vfw5p+qzg/O5ommX8MnJ4BTf9vXa6xra4Fr3QUAoR1FHpr+tz5fUn9G7LpBfX2b+0MaNXfEk6FNX/tjqsL6du3b388A5t+STC9NeO4v8Vc00qN9R8BwtrAVegfs+Y3gE5/2K9fvz60vx90f9Xf3IfVrz01UbU/7baJ+RnSfrJq8zx9+nSUWHucxH1iG7gOGxWJsDaqzn/D7HU3+V7imZ+J9XuaDrrTfa/juoja+/czoul9X/2byPae7ZvH+a0QXXb9+e0McJXzbWDNJSMR1obWPhVUj3hcv0s4/bWf9l7t2lW7FaLdVd8f7Uzr9u3bu98c/gn7/GPk0t8RXHrchtZdJhZhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIbAP/lruSu+euMmAAAAAElFTkSuQmCC" style="width: 300px; height: 200px;">
+                    <h3 id="itemPdName2">商品名称</h3>
+                    <p id="itemPdDesc2">商品描述</p>
+                    <p id="itemPdPrice2">商品原价</p>
+                    <p id="itemCoupon2">优惠价</p>
+                    <p id="itemPriceNew2">还需到店支付</p>
+                  </div>
+                </a>
+                    <button class="btn btn-primary" id="itemUpdate2">修改</button>
+                    <button  class="btn" id="itemDele2">删除</button>
+              </div>
+              <div id="item3" class="span4" style="display:none;">
+                <a class="thumbnail" href="javascript:void(0);">
+                  <div class="caption">
+                  <img id="itemImg3" data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                    <h3 id="itemPdName3">商品名称</h3>
+                    <p id="itemPdDesc3">商品描述</p>
+                    <p id="itemPdPrice3">商品原价</p>
+                    <p id="itemCoupon3">优惠价</p>
+                    <p id="itemPriceNew3">还需到店支付</p>
+                  </div>
+                </a>
+               	 <button class="btn btn-primary" id="itemUpdate3">修改</button>
+                 <button class="btn" id="itemDele3">删除</button>
+              </div>                            
+              <div id="item4" class="span4" style="margin-left:0;display:none;" >
+                <a class="thumbnail" href="javascript:void(0);">
+                  <div class="caption">
+                  <img id="itemImg4" data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                    <h3 id="itemPdName4">商品名称</h3>
+                    <p id="itemPdDesc4">商品描述</p>
+                    <p id="itemPdPrice4">商品原价</p>
+                    <p id="itemCoupon4">优惠价</p>
+                    <p id="itemPriceNew4">还需到店支付</p>
+                    <p>
+                    </p>
+                  </div>
+                </a>
+            		<button class="btn btn-primary" id="itemUpdate4">修改</button> 
+                 	<button class="btn" id="itemDele4" onclick="javascript:$()">删除</button>                                              
+              </div>
+              <div id="item5" class="span4" style="display:none;">
+                <a class="thumbnail" href="javascript:void(0);">
+                  <div class="caption">
+                  <img id="itemImg5" data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                    <h3 id="itemPdName5">商品名称</h3>
+                    <p id="itemPdDesc5">商品描述</p>
+                    <p id="itemPdPrice5">商品原价</p>
+                    <p id="itemCoupon5">优惠价</p>
+                    <p id="itemPriceNew5">还需到店支付</p>
+                  </div>
+                </a>
+                    <button class="btn btn-primary"  id="itemUpdate5">修改</button>
+                    <button class="btn" id="itemDele5">删除</button>
+              </div>
+              <div id="item6" class="span4" style="display:none;">
+                <a class="thumbnail" href="javascript:void(0);">
+                  <div class="caption">
+                  <img id="itemImg6" data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                    <h3 id="itemPdName6">商品名称</h3>
+                    <p id="itemPdDesc6">商品描述</p>
+                    <p id="itemPdPrice6">商品原价</p>
+                    <p id="itemCoupon6">优惠价</p>
+                    <p id="itemPriceNew6">还需到店支付</p>
+                  </div>
+                </a>
+                    <button class="btn btn-primary"  id="itemUpdate6">修改</button>
+                    <button class="btn" id="itemDele6">删除</button>
+              </div>                            
+ 
+              <div id="item7" class="span4" style="margin-left:0;display:none;">
+                <a class="thumbnail" href="javascript:void(0);">
+                  <div class="caption">
+                  <img id="itemImg7" data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                    <h3 id="itemPdName7">商品名称</h3>
+                    <p id="itemPdDesc7">商品描述</p>
+                    <p id="itemPdPrice7">商品原价</p>
+                    <p id="itemCoupon7">优惠价</p>
+                    <p id="itemPriceNew7">还需到店支付</p>
+                  </div>
+                </a>
+                    <button class="btn btn-primary"  id="itemUpdate7">修改</button>
+                    <button class="btn" id="itemDele7">删除</button>
+              </div>
+              <div id="item8" class="span4" style="display:none;" >
+                <a class="thumbnail" href="javascript:void(0);">
+                  <div class="caption">
+                  <img id="itemImg8" data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,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" style="width: 300px; height: 200px;">
+                    <h3 id="itemPdName8">商品名称</h3>
+                    <p id="itemPdDesc8">商品描述</p>
+                    <p id="itemPdPrice8">商品原价</p>
+                    <p id="itemCoupon8">优惠价</p>
+                    <p id="itemPriceNew8">还需到店支付</p>
+                  </div>
+                </a>
+                    <button class="btn btn-primary" id="itemUpdate8">修改</button>
+                    <button class="btn" id="itemDele8">删除</button>
+              </div>
+              <div id="item9" class="span4" style="display:none;">
+                <a class="thumbnail" href="javascript:void(0);">
+                  <div class="caption">
+                  <img id="itemImg9" data-src="holder.js/300x200" alt="300x200" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADICAYAAABS39xVAAAJh0lEQVR4Xu3bS2sUaxSF4YoXEMELONFBRMGB4kzw//8AwZk4EbwNFEFRxDuaw1fnfKGsE5My6ZBevZ8GB2p1917v2nmprq5svXv3bmfwQAABBAIIbBFWQEtGRACBkQBhWQQEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiqDIoAAoRlBxBAIIYAYcVUZVAEECAsO4AAAjEECCumKoMigABh2QEEEIghQFgxVRkUAQQIyw4ggEAMAcKKqcqgCCBAWHYAAQRiCBBWTFUGRQABwrIDCCAQQ4CwYqoyKAIIEJYdQACBGAKEFVOVQRFAgLDsAAIIxBAgrJiq/m7Qr1+/Dg8fPhw+f/68+8TTp08Pd+7cGa5evbr7b48ePRpevXq1+/ezZ88O9+7dGy5cuPDbGy49bsmUe83Wnnfp0qXh/v37h3rfVc63JINjToYAYZ0M92N9148fP46y+vXr166gnj17Njx58mR831u3bg03btwY+g95l9Tbt2/HY+bSWnrcklCvX78eHj9+PB7a5dnn/fHjx2/SWvq+S49bMp9j1psAYa13P4earsvp/Pnz49nSuXPnxtd58ODB8OHDh1EK29vbozh+/vy5K7D5Me1spwvmoOOWDtrlMj+b6jN3WX769OlE5luaw3EnQ4CwTob7sb7r/Ie/f7zrwrp27dr4/u2j4Fxq8+e+ePFi0XHzj5B/CtiFNf942sV46tSpUbJL33fpcUvnO9ZivPiRCRDWkRFmvEAXRRPU3bt3x4+D7frW/Exn+pGtfXR8+fLlgcfNr4sdhsj0rHAd5ztMJs9ZPQHCWj3TtXnF6bWhNlSX0/SidzvbaoLoj+lz2nWuN2/ejMLa77grV64M7fpXfzQptjOo9lr90a+b7QVnOk87rn0p0L8wWMV8+7332pRlkEUECGsRpvyD+hlME8nNmzeH58+fD+0i935CaNe52hnXQcc1ITRpTS/0X758efx7e+5e3zpOifaPql0sU2muar4mX498AoSV3+HiBP1jYbsIv7W1NXz58mVfYS09w5qLpg108eLF4f379/+7jWI+7FxW7f9XfQboDGvxiqz9gYS19hWtbsB+fWpnZ2c4c+bM8P3795Vfw5p+qzg/O5ommX8MnJ4BTf9vXa6xra4Fr3QUAoR1FHpr+tz5fUn9G7LpBfX2b+0MaNXfEk6FNX/tjqsL6du3b388A5t+STC9NeO4v8Vc00qN9R8BwtrAVegfs+Y3gE5/2K9fvz60vx90f9Xf3IfVrz01UbU/7baJ+RnSfrJq8zx9+nSUWHucxH1iG7gOGxWJsDaqzn/D7HU3+V7imZ+J9XuaDrrTfa/juoja+/czoul9X/2byPae7ZvH+a0QXXb9+e0McJXzbWDNJSMR1obWPhVUj3hcv0s4/bWf9l7t2lW7FaLdVd8f7Uzr9u3bu98c/gn7/GPk0t8RXHrchtZdJhZhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIYAYZWpWlAE8gkQVn6HEiBQhgBhlalaUATyCRBWfocSIFCGAGGVqVpQBPIJEFZ+hxIgUIbAP/lruSu+euMmAAAAAElFTkSuQmCC" style="width: 300px; height: 200px;">
+                    <h3 id="itemPdName9">商品名称</h3>
+                    <p id="itemPdDesc9">商品描述</p>
+                    <p id="itemPdPrice9">商品原价</p>
+                    <p id="itemCoupon9">优惠价</p>
+                    <p id="itemPriceNew9">还需到店支付</p>
+                  </div>
+                </a>
+                    <button class="btn btn-primary" id="itemUpdate9">修改</button>
+                    <button class="btn" id="itemDele9">删除</button>
+              </div>                            
+          </div>
+        </div>
+        </div>
+        <div class="pagination" align="center">
+		  <ul>
+		  	<!-- <li><a href="#">首页</a></li> -->
+		    <li  class="disabled" id="pNumPre"><a href="javascript:void(0);">上一页</a></li>
+		    <li class="active" id="pNum_1"><a href="javascript:void(0);" >1</a></li>
+		    <li id="pNum_2"><a href="javascript:void(0);" >2</a></li>
+		    <li id="pNum_3"><a href="javascript:void(0);" >3</a></li>
+		    <li id="pNum_4"><a href="javascript:void(0);" >4</a></li>
+		    <li id="pNum_5"><a href="javascript:void(0);">5</a></li>
+		    <li id="pNumNext"><a href="javascript:void(0);">下一页</a></li>
+		    <!--<li><a href="#">末页</a></li> -->
+		   	<font id="font_ps">&nbsp;&nbsp;&nbsp;&nbsp;【共20页】</font>
+		  </ul>
+		</div>
+</div>
+</div>
+<div class="foot" id="foot">
+</div>
+
+
+</body>
+
+</html>

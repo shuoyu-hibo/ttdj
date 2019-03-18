@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.ttdj.PictureInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.ttdj.PictureInfo" >
+    <id column="PIC_ID" property="picId" jdbcType="INTEGER" />
+    <result column="PIC_DESC" property="picDesc" jdbcType="VARCHAR" />
+    <result column="PIC_NO" property="picNo" jdbcType="INTEGER" />
+    <result column="PIC_URL" property="picUrl" jdbcType="VARCHAR" />
+    <result column="PIC_CLASS" property="picClass" jdbcType="VARCHAR" />
+    <result column="DOT_COUNT" property="dotCount" jdbcType="INTEGER" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    PIC_ID, PIC_DESC, PIC_NO, PIC_URL, PIC_CLASS, DOT_COUNT, REMARK
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.ttdj.PictureInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from picture_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from picture_info
+    where PIC_ID = #{picId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from picture_info
+    where PIC_ID = #{picId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.ttdj.PictureInfoExample" >
+    delete from picture_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.ttdj.PictureInfo" >
+    insert into picture_info (PIC_ID, PIC_DESC, PIC_NO, 
+      PIC_URL, PIC_CLASS, DOT_COUNT, 
+      REMARK)
+    values (#{picId,jdbcType=INTEGER}, #{picDesc,jdbcType=VARCHAR}, #{picNo,jdbcType=INTEGER}, 
+      #{picUrl,jdbcType=VARCHAR}, #{picClass,jdbcType=VARCHAR}, #{dotCount,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.ttdj.PictureInfo" >
+    insert into picture_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="picId != null" >
+        PIC_ID,
+      </if>
+      <if test="picDesc != null" >
+        PIC_DESC,
+      </if>
+      <if test="picNo != null" >
+        PIC_NO,
+      </if>
+      <if test="picUrl != null" >
+        PIC_URL,
+      </if>
+      <if test="picClass != null" >
+        PIC_CLASS,
+      </if>
+      <if test="dotCount != null" >
+        DOT_COUNT,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="picId != null" >
+        #{picId,jdbcType=INTEGER},
+      </if>
+      <if test="picDesc != null" >
+        #{picDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="picNo != null" >
+        #{picNo,jdbcType=INTEGER},
+      </if>
+      <if test="picUrl != null" >
+        #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="picClass != null" >
+        #{picClass,jdbcType=VARCHAR},
+      </if>
+      <if test="dotCount != null" >
+        #{dotCount,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.ttdj.PictureInfoExample" resultType="java.lang.Integer" >
+    select count(*) from picture_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update picture_info
+    <set >
+      <if test="record.picId != null" >
+        PIC_ID = #{record.picId,jdbcType=INTEGER},
+      </if>
+      <if test="record.picDesc != null" >
+        PIC_DESC = #{record.picDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.picNo != null" >
+        PIC_NO = #{record.picNo,jdbcType=INTEGER},
+      </if>
+      <if test="record.picUrl != null" >
+        PIC_URL = #{record.picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.picClass != null" >
+        PIC_CLASS = #{record.picClass,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dotCount != null" >
+        DOT_COUNT = #{record.dotCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.remark != null" >
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update picture_info
+    set PIC_ID = #{record.picId,jdbcType=INTEGER},
+      PIC_DESC = #{record.picDesc,jdbcType=VARCHAR},
+      PIC_NO = #{record.picNo,jdbcType=INTEGER},
+      PIC_URL = #{record.picUrl,jdbcType=VARCHAR},
+      PIC_CLASS = #{record.picClass,jdbcType=VARCHAR},
+      DOT_COUNT = #{record.dotCount,jdbcType=INTEGER},
+      REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.ttdj.PictureInfo" >
+    update picture_info
+    <set >
+      <if test="picDesc != null" >
+        PIC_DESC = #{picDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="picNo != null" >
+        PIC_NO = #{picNo,jdbcType=INTEGER},
+      </if>
+      <if test="picUrl != null" >
+        PIC_URL = #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="picClass != null" >
+        PIC_CLASS = #{picClass,jdbcType=VARCHAR},
+      </if>
+      <if test="dotCount != null" >
+        DOT_COUNT = #{dotCount,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PIC_ID = #{picId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.ttdj.PictureInfo" >
+    update picture_info
+    set PIC_DESC = #{picDesc,jdbcType=VARCHAR},
+      PIC_NO = #{picNo,jdbcType=INTEGER},
+      PIC_URL = #{picUrl,jdbcType=VARCHAR},
+      PIC_CLASS = #{picClass,jdbcType=VARCHAR},
+      DOT_COUNT = #{dotCount,jdbcType=INTEGER},
+      REMARK = #{remark,jdbcType=VARCHAR}
+    where PIC_ID = #{picId,jdbcType=INTEGER}
+  </update>
+</mapper>

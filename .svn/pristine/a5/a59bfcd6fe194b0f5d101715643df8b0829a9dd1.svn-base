@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>bootstrap</title>
+<!--#set var='compatible' value='<%@ page pageEncoding="utf-8"%>'-->
+<meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+<link rel="icon" href="http://s.lietou-static.com/revs/images/favicon_b2283e0b.ico" type="image/x-icon" />
+<script>function FileManagerClass(){return this.root="http://s.lietou-static.com/",this.base="http://core.pc.lietou-static.com",this.cache={},this.alis={},this.init(),this}FileManagerClass.prototype.init=function(){return document.write(unescape('%3Cscript src="'+this.base+'/js/common/cdntest.js" type="text/javascript"%3E%3C/script%3E')),this},FileManagerClass.prototype.fetchCDN=function(){return this},FileManagerClass.prototype.extname=function(t){return(/(\.[^\\\/\.]+)$/g.exec(t)||[0,""])[1]},FileManagerClass.prototype.prefix=function(t){var e=this;return t=t.replace(/^\//,this.root),t.replace(/https?:\/\/(.*)\.lietou-static\.com/,function(t,s){return e.alis[s]===!1?"s"===s?t.replace(s,"i."+s):t.replace(".pc.",".ipc."):t})},FileManagerClass.prototype.get=function(){var t,e,s,i=arguments;for(s=0;s<i.length;s++)e=this.prefix(i[s]),this.cache[e]||(this.cache[e]=!0,t=this.extname(e),".css"===t?document.write(unescape('%3Clink href="'+e+'" rel="stylesheet" type="text/css"/%3E')):".js"===t&&document.write(unescape('%3Cscript src="'+e+'"%3E%3C/script%3E')));return this};var FileManager=new FileManagerClass;</script>
+<!--[if lt IE 9]>
+<script type="text/javascript">FileManager.get('http://core.pc.lietou-static.com/revs/js/common/html5shiv_62ac5721.js');</script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript">FileManager.get('http://core.pc.lietou-static.com/revs/js/common/DD_belatedPNG_849d7004.js');</script>
+<script>DD_belatedPNG.fix('.pngfix');</script>
+<![endif]-->
+<script>FileManager.get('http://core.pc.lietou-static.com/revs/css/port/www/common_6e2f763e.css','http://www.pc.lietou-static.com/revs/v1/css/public_3bba3b43.css','http://core.pc.lietou-static.com/revs/js/common/jquery-1.7.1.min_c7e0488b.js','http://core.pc.lietou-static.com/revs/js/common/lt.core_26024266.js','http://core.pc.lietou-static.com/revs/js/port/www/plugins/jquery.artDialog_222fb849.js','http://core.pc.lietou-static.com/revs/js/common/plugins/jquery.loadingui_6a6316c4.js','http://core.pc.lietou-static.com/revs/js/common/plugins/jquery.tipsui_03bbd011.js','http://www.pc.lietou-static.com/revs/v1/js/lt.apps_b2dd98fb.js');</script>
+<script type="text/javascript">
+FileManager.get('http://www.pc.lietou-static.com/revs/v1/css/event/bootstrap_75f5e2d5.css');
+</script>
+</head>
+<body id="bootstrap">
+<!--#set var='compatible' value='<%@ page pageEncoding="utf-8"%>'-->
+<script type="text/javascript">FileManager.get('http://core.pc.lietou-static.com/revs/css/common/header_c8045ce8.css');</script>
+<header id="header-p-beta2">
+  <div class="header">
+    <div class="wrap">
+      <div class="logo">
+        <a href="http://www.liepin.com/" target="_blank"><img alt="猎聘网logo" class="pngfix" src="http://s.lietou-static.com/revs/p/beta2/images/logo_a2145e0d.png" width="110" height="40" /><em><i class="icons16 icons16-home-white" title="首页"></i></em></a>
+      </div>
+      <div class="quick-menu"></div>
+    </div>
+  </div>
+</header>
+<script type="text/javascript">FileManager.get('http://core.pc.lietou-static.com/revs/js/common/header_ec650e3f.js');</script>
+<script>
+HeaderHelper.navbar("home");
+</script>
+
+<div class="container">
+  <div class="banner"></div>
+  <section class="search-bar">
+    <div class="wrapp relative">
+      <form action="http://www.liepin.com/zhaopin/" target="_blank">
+        <input type="text" name="key" placeholder="输入职位关键词,如 销售总监等" class="text input-xxlarge" data-selector="key"><button type="submit" class="btn btn-xxlarge"><i class="icon-32-nd icon-32-find float-left"></i>搜索</button>
+      </form>
+    </div>
+  </section>
+  <section class="hot-positions ">
+    <div class="wrapp">
+      <h2>名企热招职位</h2>
+      <ul class="position-selection">
+        <li class="clearfix navigation">
+          <b>名企导航：</b>
+          <p>
+            <a target="_blank" href="http://vip.liepin.com/1072424/">阿里巴巴</a>
+            <a target="_blank" href="http://company.liepin.com/884492">百度</a>
+            <a target="_blank" href="http://company.liepin.com/7983148">腾讯</a>
+            <a target="_blank" href="http://company.liepin.com/2174886">小米</a>
+            <a target="_blank" href="http://company.liepin.com/1663745">京东</a>
+            <a target="_blank" href="http://company.liepin.com/1050289">乐视</a>
+            <a target="_blank" href="http://company.liepin.com/6429309">奇虎360</a>
+          </p>
+        </li>
+        <li class="clearfix area">
+          <b>区域：</b>
+          <p>
+            <a dqs="000" href="javascript:;" class="on">全部</a>
+            <a dqs="010" href="javascript:;">北京</a>
+            <a dqs="050020" href="javascript:;">广州</a>
+            <a dqs="020" href="javascript:;">上海</a>
+            <a dqs="280020" href="javascript:;">成都</a>
+            <a dqs="070020" href="javascript:;">杭州</a>
+            <a dqs="040" href="javascript:;">重庆</a>
+            <a dqs="030" href="javascript:;">天津</a>
+            <a dqs="210040" href="javascript:;">大连</a>
+          </p>
+        </li>
+        <li class="clearfix salary">
+          <b>年薪范围：</b>
+          <p>
+            <a salary="*" href="javascript:;" class="on">全部</a>
+            <a salary="10$15" href="javascript:;">10-15万</a>
+            <a salary="16$20" href="javascript:;">16-20万</a>
+            <a salary="21$30" href="javascript:;">21-30万</a>
+            <a salary="31$50" href="javascript:;">31-50万</a>
+            <a salary="51$100" href="javascript:;">51-100万</a>
+          </p>
+        </li>
+        <li class="clearfix hot-jobs">
+          <b>热门职位：<em></em></b>
+          <p>
+            <a href="javascript:;">HTML5</a>
+            <a href="javascript:;" class="on">Web前端</a>
+            <a href="javascript:;">FLash</a>
+            <a href="javascript:;">Javascript </a>
+            <a href="javascript:;">U3D</a>
+            <a href="javascript:;">COCOS2D-X</a>
+            <a href="javascript:;">Java</a>
+            <a href="javascript:;">PHP</a>
+            <a href="javascript:;">UI</a>
+            <a href="javascript:;">技术管理</a>
+            <a href="javascript:;">产品</a>
+            <a href="javascript:;">.net</a>
+            <a href="javascript:;">Android</a>
+            <a href="javascript:;">iOS</a>
+            <a href="javascript:;">大数据</a>
+          </p>
+        </li>
+      </ul>
+      <div class="list-wrap" data-selector="list-wrap">
+        <div class="clearfix list"></div>
+        <div class="pager-box" data-selector="pager-box"></div>
+      </div>
+<!--       <p class="more"><a href="http://www.liepin.com/zhaopin/?searchField=1&jobTitles=360300&salary=10%2415&searchType=1&init=1">更多热招职位<i></i></a></p> -->
+    </div>
+  </section>
+  <section class="rookie">
+    <div class="wrapp">
+      <p class="ladder-shaped"><span></span></p>
+      <h2>互联网新秀职位</h2>
+      <div class="slide-change">
+        <a href="javascript:;" class="prev"></a>
+        <a href="javascript:;" class="next"></a>
+        <div class="slide relative">
+          <div class="clearfix rookie-slide-con">
+
+          </div>
+        </div>
+      </div>
+      <!-- <p class="more"><a target="_blank" href="http://company.liepin.com/startup/">更多新兴名企<i></i></a></p> -->
+    </div>
+  </section>
+  <section class="charging">
+    <div class="wrapp">
+      <p class="ladder-shaped ladder-shaped2"><span></span></p>
+      <h2>职场充电区</h2>
+      <ul>
+        <li>
+          <a target="_blank" href="http://article.liepin.com/ask/qa41339#question" class="charging-img"><img src="http://www.pc.lietou-static.com/revs/v1/images/event/bootstrap/charging_img1_78f75350.jpg" /></a>
+          <div class="content">
+            <h3><a target="_blank" href="http://article.liepin.com/ask/qa41339#question">选择公司时你最看重什么？</a></h3>
+            <p><a target="_blank" href="http://article.liepin.com/ask/qa41339#question">我认为应该看重行业前景、企业文化、发展空间这几点。其一，行业没有前景你去了注定也不会有太大发展，除非你是为了一时的某种利益；其二，企业文化不好就容易滋生“上层忙罚款、中层忙敷衍、下层忙斗殴”的各种尴尬现象，因为文化造就人！何为企业文化？说白了老板的做事风格就是企业文化，你想有别于在这样的环境里熏陶出的人，那结果只有出局，否则你就跟着大家一起平庸！其三，对于发展空间而言本人认为这点不看重企业大小，很多大企业机构臃肿等级森严，还不如中小企业空间大呢，这点上我的建议是要衡量...</a></p>
+          </div>
+        </li>
+        <li>
+          <a target="_blank" href="http://article.liepin.com/ask/qa197640#question" class="charging-img"><img src="http://www.pc.lietou-static.com/revs/v1/images/event/bootstrap/charging_img2_6c085a5a.jpg" /></a>
+          <div class="content">
+            <h3><a target="_blank" href="http://article.liepin.com/ask/qa197640#question">技术重要还是人脉关系重要</a></h3>
+            <p><a target="_blank" href="http://article.liepin.com/ask/qa197640#question">技术和人脉同等重要。现在搞开发的技术人员大多数都是比较呆板，我行我素的。对于一个团队来讲，其实每个人的工作都很重要，只会一味的工作，不懂得沟通技巧，是一个不完善的团队，一个企业里最忌讳的就是单打独斗，如果只讲究技术，不懂得沟通，对企业发展是一个弊端。同时，你在做什么，为什么要做，这么做对企业带来的好处在哪里，这都需要沟通才能展现在大众面前，只有用别人也听得懂的语言去描述，才能让技术人员的价值得以充分的体现。</a></p>
+          </div>
+        </li>
+        <li>
+          <a target="_blank" href="http://article.liepin.com/ask/qa38925#question" class="charging-img"><img src="http://www.pc.lietou-static.com/revs/v1/images/event/bootstrap/charging_img3_462a3274.jpg" /></a>
+          <div class="content">
+            <h3><a target="_blank" href="http://article.liepin.com/ask/qa38925#question">什么才是程序员最有价值的技能？怎样才能成为一名成功的开发者呢？</a></h3>
+            <p><a target="_blank" href="http://article.liepin.com/ask/qa38925#question">虽然现代信息技术日新月异，不过个人认为一个程序员最有价值的还是自己的逻辑思维能力，作为程序员不是一个技术研究者，个人认为没必要专研某项技术，只要实行“拿来主义”即可，其中关键还是在于对于整个系统的流程分析与设计。
+对于第二个问题，一个成功的开发者一定要做好前期的需求分析和软件设计，这对后面的代码编写以及软件升级、维护的难易程度至关重要。</a></p>
+          </div>
+        </li>
+        <li>
+          <a target="_blank"  href="http://article.liepin.com/ask/qa127100#question" class="charging-img"><img src="http://www.pc.lietou-static.com/revs/v1/images/event/bootstrap/charging_img4_ac93bebf.jpg" /></a>
+          <div class="content">
+            <h3><a target="_blank"  href="http://article.liepin.com/ask/qa127100#question">25岁，职场中的第一个转折点，迷茫……</a></h3>
+            <p><a  target="_blank" href="http://article.liepin.com/ask/qa127100#question">1、定方向。从自身出发，探究自身适合的方向，学习不是问题，重要的是学什么？为什么要学，努力的方向比努力本身更重要。从自我出发，找到自己喜欢并适合的职业发展方向，有了正确的方向，就沿着既定的职业发展通路坚持不懈的做下去。2、建理想。分析自我后明确自己最看重的是什么？最不可放弃的是什么？找到自我追求的方向，树立符合自身发展规律的阶段性目标，并建立自我终身追求的终极理想。3、找通路。分析各种实现理想的可能途径，并结合自身确定最适合自己的职业发展通路，充分的进行成本分析...</a></p>
+          </div>
+        </li>
+      </ul>
+      <p class="more"><a target="_blank" href="http://article.liepin.com/">更多职场秘籍<i></i></a></p>
+    </div>
+  </section>
+</div>
+
+
+
+<!--#set var='compatible' value='<%@ page pageEncoding="utf-8"%>'-->
+<script type="text/javascript">FileManager.get('http://core.pc.lietou-static.com/revs/css/common/footer_47d2c33b.css');</script>
+<footer id="footer-p-beta2">
+  <hr />
+  <div class="wrap">
+    <div class="copyright">
+      <div class="copy-side">
+        服务热线 (免长话费)<br /><strong>400-6838-789</strong><br /><small>工作日 9:00-19:00</small>
+      </div>
+      <div class="copy-main">
+        <div class="item">
+          <dl>
+            <dt>简介</dt>
+            <dd><a href="http://www.liepin.com/about/introduction.shtml" target="_blank" rel="nofollow">猎聘网简介</a></dd>
+            <dd><a href="http://www.liepin.com/about/productsandservices.shtml" target="_blank" rel="nofollow">产品服务</a></dd>
+            <dd><a href="http://www.liepin.com/about/innovation.shtml" target="_blank" rel="nofollow">创新优势</a></dd>
+            <dd><a href="http://www.liepin.com/about/weblink/" target="_blank" rel="nofollow">友情链接</a></dd>
+            <dd><a href="http://www.liepin.com/about/about_us.shtml" target="_blank" rel="nofollow">联系我们</a></dd>
+          </dl>
+        </div>
+        <div class="item">
+          <dl>
+            <dt>帮助</dt>
+            <dd><a href="http://www.liepin.com/help/" target="_blank" rel="nofollow">经理人帮助</a></dd>
+            <dd><a href="http://www.liepin.com/help/itemlist/2/0" target="_blank" rel="nofollow">用户注册</a></dd>
+            <dd><a href="http://www.liepin.com/help/itemlist/3/0" target="_blank" rel="nofollow">关于您的简历</a></dd>
+            <dd><a href="http://www.liepin.com/help/itemlist/4/0" target="_blank" rel="nofollow">关于猎头</a></dd>
+            <dd><a href="http://www.liepin.com/help/itemlist/5/0" target="_blank" rel="nofollow">关于职位</a></dd>
+          </dl>
+        </div>
+        <div class="item">
+          <dl>
+            <dt>共赢</dt>
+            <dd><a href="http://www.liepin.com/cooperation.shtml" target="_blank" rel="nofollow">网站合作</a></dd>
+            <dd><a href="http://www.liepin.com/user/agreement.shtml" target="_blank" rel="nofollow">用户协议</a></dd>
+            <dd><a href="http://www.liepin.com/sitemap.shtml" target="_blank" rel="nofollow">网站地图</a></dd>
+            <dd><a href="http://www.liepin.com/user/feedback/" target="_blank" rel="nofollow">意见反馈</a></dd>
+            <dd><a href="http://www.liepin.com/inshr/index.shtml" target="_blank" rel="nofollow">加入猎聘网</a></dd>
+          </dl>
+        </div>
+        <div class="item">
+          <dl>
+            <dt>导航</dt>
+            <dd><a href="http://www.liepin.com/sitemap.shtml" target="_blank" rel="nofollow">地图首页</a></dd>
+            <dd><a href="http://www.liepin.com/sitemap/chengshi.shtml" target="_blank" rel="nofollow">城市分类</a></dd>
+            <dd><a href="http://www.liepin.com/sitemap/hangye.shtml" target="_blank" rel="nofollow">行业分类</a></dd>
+            <dd><a href="http://www.liepin.com/sitemap/zhineng.shtml" target="_blank" rel="nofollow">职能分类</a></dd>
+            <dd><a href="http://www.liepin.com/sitemap/zhuceqiye.shtml" target="_blank" rel="nofollow">企业名录</a></dd>
+          </dl>
+        </div>
+        <div class="item item-weibo">
+          <a href="http://weibo.com/lietouwang" target="_blank" rel="nofollow"><i class="weibo"></i></a>
+          <p>猎聘微博</p>
+          <a class="btn-sina" href="http://weibo.com/lietouwang" target="_blank" rel="nofollow"></a>
+        </div>
+        <div class="item item-apps">
+          <i class="mishu"></i>
+          <p>猎聘同道APP</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="copy-footer">
+    <p>京ICP备09083200号 京ICP证070419号 人才服务许可证:RC0710280 京公网安备:11010502026763</p>
+    <p>Copyright&copy;2000-2015 liepin.com All Rights Reserved</p>
+  </div>
+</footer>
+<script type="text/javascript">
+FileManager.get('http://www.pc.lietou-static.com/revs/v1/js/event/bootstrap_5b42c8a6.js');
+</script>
+<script type="text/javascript">window.FileManager&&FileManager.get('http://core.pc.lietou-static.com/revs/js/common/stat_f37a07ef.js');</script>
+<script>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="//hm.baidu.com/hm.js?a2647413544f5a04f00da7eee0d5e200";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script> 
+</body>
+</html>

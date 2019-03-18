@@ -1,0 +1,14 @@
+package com.service.util;
+
+import java.util.List;
+
+import com.mybatis.entity.ttdj.ProduceSort1;
+
+public class CommonToolServiceImpl {
+
+	public List<ProduceSort1> selectMenuToHomepage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

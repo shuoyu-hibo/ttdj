@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="application-name" content="TTDJ网－TTDJ一次 美一次，精品生活">
+<meta name="description" content="运城TTDJ网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城TTDJ网,您身边的吃喝玩乐好帮手!">
+<meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+
+
+<title>【运城代金券网】</title>
+
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css">
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+
+
+<!--[if IE 6]>
+<script src="http://s1.ttdaijin.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://s0.ttdaijin.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+</head>
+
+
+<body id="index" class="pg-floor">
+
+<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    	修改商品信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <table class="normal" width="456" border="0" cellspacing="1" cellpadding="0" align="center" bordercolor="#0099CC" bgcolor="#CCCCCC">
+                    <tr bgcolor="#FFFFFF">
+                        <td height="32" width="67" nowrap>
+                            <div align="center"><font class="normal">商品名称:</font></div>
+                        </td>
+                        <td height="32" width="386" nowrap>
+                            <input class='normal' id="produceNameUpd"  type="text" name="WJMS" maxlength="200" size="40">
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td height="32" width="67" nowrap>
+                            <div align="center"><font class="normal">商品描述:</font></div>
+                        </td>
+                        <td height="32" width="386" nowrap>
+                            <input class='normal' id="produceDescUpd"  type="text" name="WJMS" maxlength="200" size="40">
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td height="32" width="67" nowrap>
+                            <div align="center"><font class="normal">商品价格:</font></div>
+                        </td>
+                        <td height="32" width="386" nowrap>
+                            <input class='normal' id="producePriceUpd"  type="number" name="WJMS" maxlength="200" size="40">
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td height="26" width="67" nowrap>
+                            <div align="center"><font class="normal">商品图片:</font></div>
+                        </td>
+                        <td height="26" width="386" nowrap>
+                            <div><img border="0" id="imgUploadUpd" src="" alt="" width="100" height="100" /></div>
+                            <input id="fileToUploadUpd"  type="file" size="45"   accept="image/*" name="file"  class="input" >
+                            <button class="button" id="buttonUploadUpd" type="button"
+                                    onclick="uploadUnitImageUpd();">上传选定图片</button><br>
+                             <input type="hidden" id="picUrlUpd"/>
+                         </td>
+                     </tr>
+                     <tr bgcolor="#FFFFFF">
+					    <td height="40" width="67" nowrap>
+					        <div align="center"><font class="normal">是否推荐:</font></div>
+					    </td>
+					    <td height="26" width="386" nowrap>
+					       <label class="checkbox">
+					              <input type="checkbox"> (只可设置2个)
+					            </label>
+					    </td>
+					</tr>
+					<div class="alert alert-success" style="display: none;" id="okUpd">
+			              <strong>恭喜:</strong> 商铺信息添加成功！
+			         </div>
+					<div class="alert fade in" id="warningUpd">
+                       <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>提示:</strong> 请选择要上传的图片!
+                    </div>
+                    <div id="resultUpd" style="margin-left:200px"></div>
+	                </table>
+	            </div>
+	            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+              		关闭
+                </button>
+                <button type="button" class="btn btn-primary" id="saveUpd">
+                   	 提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+
+<script type="text/javascript">
+
+    $(function(){
+		$("#imgUploadUpd").attr("src","../../image/addPic.png");
+		$("#warningUpd").hide();
+		$("#saveUpd").click(function(){
+	    	if(!checkInput("produceNameUpd","商品名称")){
+	    		return;
+	    	}
+	    	if(!checkInput("produceDescUpd","商品描述")){
+	    		return;
+	    	}
+	    	if(!checkInput("producePriceUpd","商品价格")){
+	    		return;
+	    	}
+	    	if($("#picUrlUpd").val()==''){
+	    		$("#warningUpd").html('<strong>提示:</strong> 请选择要上传的图片!');
+	    		$("#warningUpd").toggle(true);
+	    	}else{
+	    		$("#warningUpd").toggle(false);
+	    		var strUrl = generateUrl("produce!saveProduceData.do?","produceName,produceDesc,producePrice,picUrl");
+	    		$.post(strUrl,function(json){
+					if(json["result"]=="0"){
+						//alert(1);
+						//$("#ok").show();
+						$("#modalUpd").modal("hide");
+						loadProduce();
+					}else{
+						$("#warning").html('<strong>提示:</strong> 商品添加失败!');
+	    				$("#warning").toggle(true);
+					}
+				});
+	    	}
+	    });
+	});
+	
+	function checkInput(inputId,inputName){//checkinput for produceinfo
+    	if($("#"+inputId).val()=='' || $("#"+inputId).val()==undefined){
+	    		$("#warningUpd").html("<strong>提示:</strong> 请输入"+inputName+"!");
+	    		$("#warningUpd").show();
+	    		$("#okUpd").hide();
+	    		return false;
+	    }
+	    $("#warningUpd").hide();
+	    return true;
+    }
+    
+     /** 
+     * upload Picture
+     */  
+    function uploadUnitImageUpd()  {  
+    		$("#pageloading").show();
+            if($("#fileToUploadUpd").val()==''){
+            	$("#warningUpd").show();
+            	return;
+            }
+             $.ajaxFileUpload({  
+                 url:generateUrl("produce!uploadImage.do?"),             //需要链接到服务器地址  
+                 secureuri:false,  
+                 fileElementId:'fileToUploadUpd',                         //文件选择框的id属性  
+                 dataType: 'json',                                     //服务器返回的格式，可以是json  
+                 success: function (data, status)             //相当于java中try语句块的用法  
+                 {     
+                 //alert(data);       //data是从服务器返回来的值     
+                	 $("#pageloading").hide();
+                     $('#resultUpd').html(data["msg"]);  
+                     var imgPath="../../uploadfiles/"+data["newname"];
+   					 $("#imgUploadUpd").attr("src",imgPath);
+   					 $("#picUrlUpd").val(imgPath);
+   					 $("#warningUpd").hide();
+   					 return 0;
+                 },  
+                 error: function (data, status, e)             //相当于java中catch语句块的用法  
+                 {  
+                 	$("#pageloading").hide();
+                     $('#resultUpd').html(data["msg"]);  
+                     $("#warningUpd").hide();
+                     return 1;
+                 }  
+               }  
+             );  
+    }  
+</script>
+</body>
+
+</html>

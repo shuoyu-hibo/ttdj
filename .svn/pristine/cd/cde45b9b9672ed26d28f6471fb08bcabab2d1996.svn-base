@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+<meta name="application-name" content="TTDJ网－TTDJ一次 美一次，精品生活">
+<meta name="description" content="运城TTDJ网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城TTDJ网,您身边的吃喝玩乐好帮手!">
+<meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+
+<link rel="canonical" href="http://www.ttdaijin.com ">
+<link rel="alternate" href="http://www.ttdaijin.comfeed" title="订阅更新" type="application/rss+xml">
+
+<title>【运城代金券网】</title>
+<!--[if IE 6]>
+<script src="http://s1.meituan.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://s0.meituan.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css"></link>
+<style>
+
+
+body,a {
+    font: 400 14px/1.5 "Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",tahoma,sans-serif;
+    color: #ff6600;
+}
+.picWrapper{
+    width:400px;
+    height:400px;
+    float: left;
+}
+.productPic{
+    width:400px;
+    height:400px;
+    background-image: url("../../image/xw/default.png");
+}
+.infoWrapper{
+    width:400px;
+    height:400px;
+    float: left;
+}
+.productInfo{
+    width:400px;
+    height:400px;
+}
+.infoTitle{
+    font-size: 30px;
+    margin-left: 20px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.infoTitle p{
+    font-size: 20px;
+}
+.productInfo ul{
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 15px;
+}
+.productPrice{
+    margin: 10px 0;
+    font-size: 20px;
+}
+.getDJQ{
+    font-size: 25px;
+    text-align: center;
+    line-height: 200%;
+    margin: 10px auto 0;
+    width:120px;
+    height: 50px;
+    border:1px solid #ff6600;
+    background-color: skyblue;
+}
+.getDJQ a{
+    color:#ff6600;
+    font-size: 23px;
+}
+.collect{
+    float:right;
+    margin-right: 20px;
+}
+
+.tb-shop-name{
+	margin-top:40px;
+}
+.tb-shop-info-bd{
+	margin-top:30px;
+}
+
+.replies .reply {
+    text-align: left;
+    padding: 16px 0 18px 0;
+    margin: 0 20px 0 19px;
+    color: #000;
+    border-bottom: 1px dotted #afafb0;
+}
+.userPanel{
+    margin-left: 20px;
+}
+input, textarea, .uneditable-input {
+  width: 400px;
+}
+.copyright{
+	padding-top:60px;	
+}
+</style>
+</head>
+
+
+<body id="index" class="pg-floor">
+<div class="header">
+    <div id="yui_3_16_0_1_1426896770329_3741" class="yui3-widget mt-slider">
+        <div id="yui_3_16_0_1_1426896770329_3743" class="mt-slider-content"></div>
+    </div>
+    <noscript hidden="" style="display:none;" data-comboajax-uri="/index/tips/index/floor" data-comboajax-onsuccess="$request.listen(&quot;www-tips&quot;, &quot;www.Tips&quot;);" data-comboajax-data="{&quot;sysmsg&quot;:true,&quot;commontips&quot;:true,&quot;page&quot;:&quot;index&quot;}" data-comboajax-state="5" data-parent="body"></noscript><noscript hidden="" style="display:none;" data-comboajax-uri="/event/timetrigger" data-comboajax-state="5"></noscript><noscript hidden="" style="display:none;" data-comboajax-uri="/index/atf" data-comboajax-onsuccess="$request.listen(&quot;www-index&quot;, &quot;www.Index.ATF&quot;);" data-comboajax-state="5"></noscript><noscript hidden="" style="display:none;" data-comboajax-uri="/index/prepare" data-comboajax-onsuccess="$request.listen(&quot;www-index&quot;, &quot;www.Index.FloatCard&quot;);" data-comboajax-state="5"></noscript><header id="site-mast" class="site-mast">
+    <div class="site-mast" class="site-mast">
+        <div class="site-mast__user-nav-w">
+            <div class="site-mast__user-nav cf">
+                <ul class="basic-info">
+                    <li class="site-mast__keep">
+                        <a rel="nofollow" class="fav log-mod-viewed" id="J-favorite" gaevent="header/addFavorite" data-mod="fa" href="javascript:;">
+                            <i class="F-glob F-glob-star-border icon-keep"></i>
+                            	收藏TTDJ
+                        </a>
+                    </li>
+                    <li class="user-info cf" data-comboajax-uri="/combo/userinfo" data-comboajax-onsuccess="this.setHTML($response.html);" data-comboajax-state="5">
+                        <!--注册登陆在这里-->
+                        <a class="user-info__login" id="J-login" href="https://passport.meituan.com/account/unitivelogin?service=www&amp;continue=http%3A%2F%2Fwww.meituan.com%2Faccount%2Fsettoken%3Fcontinue%3Dhttp%253A%252F%252Fyuncheng.meituan.com%252F" gaevent="top/login">登录</a>
+                        <a class="user-info__signup" href="https://passport.meituan.com/account/unitivesignup?service=www&amp;continue=http%3A%2F%2Fwww.meituan.com%2Faccount%2Fsettoken%3Fcontinue%3Dhttp%253A%252F%252Fyuncheng.meituan.com%252F" gaevent="top/signup">注册</a>
+                    </li>
+                    <li data-uix="dropdown" class="dropdown dropdown--msg" data-comboajax-uri="/index/message" data-comboajax-onsuccess="$request.listen(&quot;www-tips&quot;, &quot;www.MsgCenter&quot;);" data-comboajax-state="5" style="display:none;" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1614">
+                        <a id="J-my-msg" rel="nofollow" class="dropdown__toggle" href="http://www.meituan.com/message/" gaevent="nav/mymsg">
+                            <i class="vertical-bar vertical-bar--left"></i>
+                            <span class="J-title">消息</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                    </li>
+                    <li data-uix="dropdown" data-params="{&quot;classname&quot;: &quot;dropdown--open dropdown--open-app&quot;}" class="mobile-info__item dropdown" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1625">
+                        <a class="dropdown__toggle" href="javascript:;"><i class="icon-mobile F-glob F-glob-phone"></i>手机TTDJ<i class="tri tri--dropdown"></i></a>
+                        <div class="dropdown-menu dropdown-menu--app">
+                            <a class="app-block" href="http://i.meituan.com/mobile/down/meituan" target="_blank">
+                                <span class="app-block__title">免费下载TTDJ手机版</span>
+                                <span class="app-block__content"></span>
+                                <i class="app-block__arrow F-glob F-glob-caret-right"></i>
+                            </a>
+                            <a class="app-block app-block--last app-block--maoyan" href="http://www.maoyan.com/" target="_blank">
+                                <span class="app-block__title">免费下载天天代金券手机版</span>
+                                <span class="app-block__content"></span>
+                                <i class="app-block__arrow F-glob F-glob-caret-right"></i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="site-mast__user-w">
+                    <li class="user-orders">
+                        <a href="http://www.meituan.com/orders/">我的订单</a>
+                    </li>
+                    <li data-uix="dropdown" class="dropdown dropdown--account" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1636">
+                        <a id="J-my-account-toggle" rel="nofollow" class="dropdown__toggle" href="http://www.meituan.com/orders/" gaevent="nav/my" data-mttcode="Amymeituan">
+                            <span>我的TTDJ</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <ul id="J-my-account-menu" class="dropdown-menu dropdown-menu--text dropdown-menu--account account-menu" data-mtnode="Amymeituan">
+                            <li><a class="dropdown-menu__item first " rel="nofollow" gaevent="nav/my/orders" href="http://www.meituan.com/orders/" data-mttcode="Borders">我的订单</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/feedback" href="http://www.meituan.com/rates/" data-mttcode="Brates">我的评价</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/collections" href="http://www.meituan.com/collections/" data-mttcode="Bcollections">我的收藏</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/points" href="http://www.meituan.com/account/points/" data-mttcode="Bpoints">我的积分</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/card" href="http://www.meituan.com/card/list" data-mttcode="Bvoucher">抵用券</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/credit" href="http://www.meituan.com/account/credit" data-mttcode="Bcredit">TTDJ余额</a></li>
+                            <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/charge" href="http://www.meituan.com/account/charge" data-mttcode="Bcharge">账户充值</a></li>
+                            <li><a class="dropdown-menu__item  last" rel="nofollow" gaevent="nav/my/settings" href="http://www.meituan.com/account/settings" data-mttcode="Bsettings">账户设置</a></li>
+                        </ul>
+                    </li>
+                    <li data-uix="dropdown" data-params="{&quot;classname&quot;: &quot;dropdown--open dropdown--open-history&quot;}" class="dropdown dropdown--history" data-comboajax-uri="/index/rvd" data-comboajax-config="www.History.nav" data-comboajax-state="5" id="yui_3_16_0_1_1426896770329_98" data-widget-init="true">
+                        <a id="J-my-history-toggle" rel="nofollow" class="dropdown__toggle" href="javascript:;" gaevent="nav/history">
+                            <span>最近浏览</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <div id="J-my-history-menu" class="dropdown-menu dropdown-menu--deal dropdown-menu--history"></div>
+                    </li>
+                    <li data-uix="dropdown" id="J-my-cart" class="dropdown dropdown--cart J-cart-updated" data-comboajax-uri="/index/navcart" data-comboajax-onsuccess="Y.mt.www.CartEx.update($response.data);" data-comboajax-state="5" data-widget-init="true">
+                        <a id="J-my-cart-toggle" rel="nofollow" class="dropdown__toggle" href="http://www.meituan.com/cart/" gaevent="nav/cart">
+                            <i class="icon icon-cart F-glob F-glob-cart"></i>
+                            <span>购物车<em class="badge" data-newindex="true"><strong class="cart-count">0</strong>件</em></span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <div id="J-my-cart-menu" class="dropdown-menu dropdown-menu--deal dropdown-menu--cart"></div>
+                    </li>
+                    <li data-uix="dropdown" id="J-site-help" class="dropdown dropdown--help" data-widget-init="true">
+                        <a class="dropdown__toggle" href="http://www.meituan.com/help/selfservice" gaevent="top/service">
+                            <span>联系客服</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu--text dropdown-menu--help">
+                            <ul class="site-help-info">
+                                <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="1" href="http://www.meituan.com/help/selfservice?tab=1" gaevent="top/service/returns">申请退换货</a></li>
+                                <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="2" href="http://www.meituan.com/help/selfservice?tab=2" gaevent="top/service/code">查看TTDJ券</a></li>
+                                <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="3" href="http://www.meituan.com/help/selfservice?tab=3" gaevent="top/service/tel">换绑手机号</a></li>
+                                <li><a rel="nofollow" class="dropdown-menu__item" href="http://www.meituan.com/help/faq" gaevent="top/service/faq">常见问题</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-uix="dropdown" id="J-site-merchant" class="dropdown dropdown--merchant" data-widget-init="true">
+                        <a class="dropdown__toggle dropdown__toggle--merchant" href="javascript:;" gaevent="top/merchant">
+                            <span>我是商家</span>
+                            <i class="tri tri--dropdown"></i>
+                            <i class="vertical-bar"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu--text dropdown-menu--merchant">
+                            <ul>
+                                <li><a rel="nofollow" class="dropdown-menu__item" href="http://e.meituan.com/" gaevent="top/merchant/ecom">商家中心</a></li>
+                                <li><a rel="nofollow" class="dropdown-menu__item" href="http://www.meituan.com/crmopen/business/opportunity/embed/add" gaevent="top/merchant/cooperation">我想合作</a></li>
+                                <li><a rel="nofollow" class="dropdown-menu__item" href="http://zhaoshang.meituan.com" gaevent="top/merchant/mmp">商家营销平台</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li data-uix="dropdown" id="J-my-more" class="dropdown dropdown--more dropdown--last" data-widget-init="true">
+                        <a id="J-my-more-toggle" class="dropdown__toggle dropdown__toggle--my-more" href="javascript:;" gaevent="nav/more">
+                            <span>更多</span>
+                            <i class="tri tri--dropdown"></i>
+                        </a>
+                        <div id="J-my-more-menu" class="dropdown-menu dropdown-menu--text dropdown-menu--more">
+                            <ul>
+                                
+                                <li>
+                                    <a rel="nofollow" id="J-subscribe" class="subscribe dropdown-menu__item" gaevent="header/subscribe" href="http://www.meituan.com/maillist/subscribe"><span></span>邮件订阅</a>
+                                </li>
+                                <li class="last">
+                                    <a rel="nofollow" class="refer dropdown-menu__item" href="http://www.meituan.com/account/referrals" target="_blank" gaevent="header/refferals">邀请好友</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <noscript hidden="" style="display:none;" data-comboajax-uri="/index/vipbubble" data-comboajax-data="{&quot;ref&quot;:&quot;\/index\/floor&quot;}" data-comboajax-onsuccess="$request.listen(&quot;www-tips&quot;, &quot;www.VipBubble&quot;);" data-comboajax-state="5"></noscript>
+            </div>
+        </div>
+        <div class="site-mast__branding cf" id="yui_3_16_0_1_1427242054970_2364">
+        	<div class="logoWrapper">
+	            <div class="site-logo"></div>
+	            <p><span>商铺名称</span><strong>欢迎您</strong></p>
+	            <br/>
+	
+	            <form action="/s/" class="search-box__form J-search-form cf" name="searchForm" method="get" id="yui_3_16_0_1_1427242054970_2383">
+	
+	                <input tabindex="1" type="text" name="w" autocomplete="off" data-smartbox="/search/smartboxv2/" class="s-text search-box__input J-search-box__input" value="" placeholder="请输入商品名称" id="yui_3_16_0_1_1427242054970_2389">
+	                <input type="submit" class="s-submit search-box__button log-mod-viewed" hidefocus="true" value="店内搜索" data-mod="sr">
+	            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main">
+<div class="sellinfo">
+    <div class="picWrapper">
+        <div class="productPic"></div>
+    </div>
+    <div class="infoWrapper">
+        <div class="productInfo">
+            <div class="infoTitle">
+                <span>商铺名称</span>
+                <p>商品名称</p>
+                
+            </div>
+            <hr style="border:dashed">
+            <ul>
+                <li><span>原价：¥<span>0</span></span></li>                
+                <li>
+                    <div class="productPrice">
+                        <span>优惠价 : </span><strong><em>¥</em><em>0</em></strong>
+                    </div>
+                </li>
+                <li><span> 有效期：</span></li>
+                <li><span> 2015-12-31</span></li>
+                <li><span> 数量：</span></li>
+                <li><span> 1000</span></li>
+            </ul>
+            <div class="getDJQ">
+                <a href="/">立即领取</a>
+            </div>
+            <div class="collect">
+                <a href="/">收藏</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="sellinfo1">
+        <div class="tb-shop-info-wrap">
+            <div class="tb-shop-info-hd">
+                <div class="tb-shop-name">
+                    <dl>
+                        <dd>
+                            <strong>
+                                    	商铺名称：                               
+                            </strong>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tb-shop-rank tb-rank-cap">
+                    <dl>
+                        <dt>等级：</dt>
+                        <dd>
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank">
+                                <i><span class="rate-info__bar common-rating" id="yui_3_16_0_1_1428457523954_350">
+                                                <span class="rate-stars" style="width: 99%;" id="yui_3_16_0_1_1428457523954_349"></span>
+                                </span></i>
+                            </a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="tb-shop-seller">
+                    <dl>
+                        <dt>地址：</dt>
+                        <dd>
+                                	商铺地址
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tb-shop-ww">
+                    <dl>
+                        <dt>联系：</dt>
+                        <dd>商铺电话</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="tb-shop-info-bd">
+                <div class="tb-shop-rate">
+                    <dl>
+                        <dt>好评率</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                100%
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>浏览次数</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                1000
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>代金券已领次数</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                1000
+                            </a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        <div class="tb-shop-info-ft">
+            <a class="J_TDialogTrigger J_TokenSign" data-spm="d22" href="http://favorite.taobao.com/popup/add_collection.htm?id=68144467&amp;itemid=68144467&amp;itemtype=0&amp;ownerid=dd7d2f27c1785ed07a2dbd6e2902aba3&amp;scjjc=2&amp;_tb_token_=eeb735b03657f" data-info="param=SCCP_2_68144467&amp;countUrl=http://count.tbcdn.cn/counter3&amp;mecuryUrl=http://favorite.taobao.com/collect_item_relation---68144467-0-.htm" mercury:params="id=68144467&amp;itemid=68144467&amp;itemtype=0&amp;ownerid=dd7d2f27c1785ed07a2dbd6e2902aba3&amp;scjjc=5" data-closebtn="true" data-width="440" data-height="260">收藏店铺</a>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="commentWrapper">
+    <div id="mainReplies" class="replies">
+        <div class="titleBar titleBar-blue">
+            <div class="text"><strong>最新跟贴</strong> (跟贴<span class="displayCount"><em>5</em>条</span><span class="joinCount"> 有<em>11</em>人参与</span>)</div>
+        </div>
+        <div class="list">
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="userPanel">
+        <p class="postTips">文明社会，从理性发贴开始。</p>
+        <div class="userInfo clearfix">
+
+            <div id="mainLogon" class="logon clearfix" style="display: block;">
+                <a href="http://tie.163.com/reply/myaction.jsp?action=reply" class="toMyPage js-statistics" statistics="action=click;value=6;" target="_blank"><strong class="userName">校尉12...</strong></a>&nbsp;发言 |
+                <a href="http://tie.163.com/reply/myaction.jsp?action=reply" class="toMyPage js-statistics" statistics="action=click;value=6;" target="_blank">我的跟贴<span class="status-tie-news cDRed"></span></a> |
+                <a href="http://reg.163.com/Logout.jsp?username=bzhyang@126.com&amp;url=http://comment.news.163.com/news3_bbs/AP19NBG500014JB5.html" class="logout">退出</a>
+            </div>
+        </div>
+
+        <form id="replyForm" class="replyForm clearFix" action="/reply/dopost.jsp" method="post">
+            <textarea id="replyBody" name="body" rows="6" cols="1000" accesskey="r"></textarea>
+            <div class="replyForm-sub">
+                <input type="button" value="立即提交" name="commitBtn">
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+<div class="foot">
+    <footer class="site-info-w J-br" style="min-height:298px;" id="yui_3_16_0_1_1427333131652_281">
+
+        <div class="site-info" id="yui_3_16_0_1_1427333131652_4249">
+            <div class="site-info__item" id="yui_3_16_0_1_1427333131652_4248">
+                <h3>获取更新</h3>
+                <ul id="yui_3_16_0_1_1427333131652_4247">
+                    <li id="yui_3_16_0_1_1427333131652_4246"><a rel="nofollow" href="http://www.meituan.com/maillist/subscribe">邮件订阅</a></li>
+                    <li><a rel="nofollow" href="http://user.qzone.qq.com/97231705" target="_blank">天天代金QQ空间</a></li>
+                    <li><a rel="nofollow" href="http://t.sina.com.cn/meituanyuncheng" target="_blank">天天代金新浪微博</a></li>
+                    <li><a href="http://www.meituan.com/sitemap/citysitemap.php" target="_blank">网站地图</a></li>
+                    <li><a rel="nofollow" href="/feed/yuncheng" target="_blank">RSS订阅</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item">
+                <h3>商务合作</h3>
+                <ul>
+                    <li><a rel="nofollow" href="http://www.meituan.com/crmopen/business/opportunity/embed/add" gaevent="footer/seller">提供代金券信息</a></li>
+                    <li><a rel="nofollow" href="http://zhaoshang.meituan.com/" gaevent="footer/mmp">天天代金商家营销平台</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about#contact">市场合作</a></li>
+                    <li><a rel="nofollow" href="http://union.meituan.com/" target="_blank">天天代金联盟</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item">
+                <h3>公司信息</h3>
+                <ul>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/">关于天天代金</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/commitment/">天天代金承诺</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/press">媒体报道</a></li>
+                    <li><a rel="nofollow" href="http://www.hotjob.cn/wt/meituan/web/index?brandCode=meituan" gaevent="footer/job">加入我们</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/law">法律声明</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/terms">用户协议</a></li>
+                    <li><a href="http://www.meituan.com/about/license">营业执照</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item">
+                <h3>用户帮助</h3>
+                <ul>
+                    <li><a rel="nofollow" class="J-selfservice-tab" data-tab="0" href="http://www.meituan.com/help/selfservice">申请退款</a></li>
+                    <li><a rel="nofollow" class="J-selfservice-tab" data-tab="2" href="http://www.meituan.com/help/selfservice?tab=2">查看天天代金券密码</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/help/faq">常见问题</a></li>
+                    <li><a rel="nofollow" href="http://www.meituan.com/about/anticheat">反诈骗公告</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item site-info__item--service">
+                <div class="contact-info">
+                    <p>客服电话：400-660-5335</p>
+                    <p>服务时间：每天 9:00 - 22:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>©<span title="I:-; Q:21; S:7; C:10; F:0; T:295.60; H:com">2015</span><a href="http://www.meituan.com/">天天代金网代金券</a> ttdaijin.com <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证070791号</a> 京公网安备11010502025545号<a href="http://www.meituan.com/about/rules" target="_blank"> 电子公告服务规则</a></p>
+            </div>
+            <ul class="cert cf">
+                <li class="cert__item"><a class="sp-ft sp-ft--record" title="备案信息" href="http://www.meituan.com/about/openinfo" hidefocus="true" target="_blank">备案信息</a></li>
+                <li class="cert__item"><a class="sp-ft sp-ft--knet" href="javascript:;" title="可信网站认证" rel="nofollow">可信网站</a></li>
+                <li class="cert__item"><a class="sp-ft sp-ft--12315" href="javascript:;" title="12315消费争议" rel="nofollow">12315消费争议</a></li>
+            </ul>
+        </div><textarea style="display:none;" class="br-rendered" data-br-beforerender="e.target.one('a').remove(true);">
+    </textarea></footer>
+
+</div>
+
+</body>
+
+</html>

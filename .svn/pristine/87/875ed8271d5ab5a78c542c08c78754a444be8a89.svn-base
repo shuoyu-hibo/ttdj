@@ -1,0 +1,36 @@
+package com.web.action.login;
+
+import net.sf.json.JSONArray;
+
+import com.service.homepage.HomePageServiceImpl;
+import com.service.register.RegisterServiceImpl;
+import com.web.action.base.BaseAction;
+import com.web.action.base.JsonUtil;
+
+public class LoginAction extends BaseAction {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 验证注册时,用户名是否已经存在
+	 */
+	 public void checkUserName() throws Exception {
+			String userName = request.getParameter("userName");
+			RegisterServiceImpl registerServiceImpl = ((RegisterServiceImpl) getApplicationContext().getBean("registerServiceImpl"));
+			int count = registerServiceImpl.selectCountByUserName(userName);
+//			JSONObject jsonObj=new JSONObject();
+//			ArrayList aList = new ArrayList();
+			JsonUtil jsUtil = new JsonUtil();
+			JSONArray jsAry=new JSONArray();
+			if(count>=1){
+				jsUtil.returnJson(response, "1", jsAry);//存在相同的用户名
+			}else{
+				jsUtil.returnJson(response, "0", jsAry);//不存在相同的用户名
+			}
+		}
+
+		
+}

@@ -1,0 +1,110 @@
+package com.web.action.us;
+
+import java.util.Date;
+import java.util.List;
+
+import net.sf.json.JSONArray;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.mybatis.base.BaseHandle;
+import com.mybatis.dao.ttdj.BusinessGroupMapper;
+import com.mybatis.dao.ttdj.CityInfoMapper;
+import com.mybatis.dao.ttdj.CountyInfoMapper;
+import com.mybatis.dao.ttdj.ProvinceInfoMapper;
+import com.mybatis.entity.ttdj.BusinessGroup;
+import com.mybatis.entity.ttdj.BusinessGroupExample;
+import com.mybatis.entity.ttdj.CityInfo;
+import com.mybatis.entity.ttdj.CityInfoExample;
+import com.mybatis.entity.ttdj.CountyInfo;
+import com.mybatis.entity.ttdj.CountyInfoExample;
+import com.mybatis.entity.ttdj.ProvinceInfo;
+import com.mybatis.entity.ttdj.ProvinceInfoExample;
+import com.mybatis.entity.ttdj.UserInfo;
+import com.service.login.LoginServiceImpl;
+import com.service.register.RegisterServiceImpl;
+import com.web.action.base.BaseAction;
+import com.web.action.base.JsonUtil;
+
+/**
+ * 公共工具action
+ * @author wanghaibo
+ * @date 20150515
+ */
+public class UserAction extends BaseAction {
+
+
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * 是否是商人
+	 * @throws Exception
+	 */
+	public void ifBusinessman() throws Exception {
+		JsonUtil jsUtil = new JsonUtil();
+		JSONArray jsAry=new JSONArray();
+		UserInfo userinfo = (UserInfo) request.getSession().getAttribute("userinfo");
+		if("0".equals(userinfo.getUserType())){//0为商家 1或空为普通用户
+			jsAry.add(userinfo);
+			jsUtil.returnJson(response, "0","您已开店！", jsAry);
+		}else{
+			jsUtil.returnJson(response, "1","您未开店", jsAry);
+		}
+	}
+	
+	/**
+	  * 保存商铺信息
+	  * @throws Exception
+	  */
+	public void saveStoreInfo() throws Exception {
+		String storeName = commonUtil.decodeUrl(request.getParameter("storeName"));
+		String address = commonUtil.decodeUrl(request.getParameter("address"));
+		String linkNumber = commonUtil.decodeUrl(request.getParameter("linkNumber"));
+		String provinceName = commonUtil.decodeUrl(request.getParameter("province"));
+		String provinceId = commonUtil.decodeUrl(request.getParameter("provinceId"));
+		String cityName = commonUtil.decodeUrl(request.getParameter("city"));
+		String cityId = commonUtil.decodeUrl(request.getParameter("cityId"));
+		String countyName = commonUtil.decodeUrl(request.getParameter("county"));
+		String countyId = commonUtil.decodeUrl(request.getParameter("countyId"));
+		String businessGroupName = commonUtil.decodeUrl(request.getParameter("businessGroup"));
+		String businessGroupId = commonUtil.decodeUrl(request.getParameter("businessGroupId"));
+		String userName = (String) request.getSession().getAttribute("userName");
+		LoginServiceImpl loginServiceImpl = null;
+		loginServiceImpl = ((LoginServiceImpl) getApplicationContext().getBean("loginServiceImpl"));
+		UserInfo userinfo = null;
+		JsonUtil jsUtil = new JsonUtil();
+		JSONArray jsAry=new JSONArray();
+		List<UserInfo> listUs =  loginServiceImpl.getDataByUserinfo(userName==null?"":userName);
+		userinfo = listUs.get(0);
+		if(userinfo==null){//未查询到数据.
+			getLog(this.getClass()).info(this.getClass().getName()+"method:saveStoreInfo=======================msg: 未查询到数据. "+new Date());
+			jsUtil.returnJson(response, "1","未查询到数据!", jsAry);
+		}else{//
+			userinfo.setUserType("0");//用户类型为商家
+			userinfo.setStoreName(storeName);
+			userinfo.setAddress(address);
+			userinfo.setLinkNumber(linkNumber);
+			userinfo.setProvinceName(provinceName);
+			userinfo.setCityName(cityName);
+			userinfo.setCountyName(countyName);
+			userinfo.setBusiGrop(businessGroupName);
+			userinfo.setProvinceCode(Integer.parseInt(provinceId));
+			userinfo.setCityCode(Integer.parseInt(cityId));
+			if(!"".equals(countyId)) userinfo.setCountyCode(Integer.parseInt(countyId));
+			if(!"".equals(businessGroupId)) userinfo.setBusiGropId(Integer.parseInt(businessGroupId));
+			userinfo.setStoreDate(new Date());
+			boolean uptFlag = loginServiceImpl.updateUserInfo(userinfo);
+			if(!uptFlag){//更新失败
+				getLog(this.getClass()).error(this.getClass().getName()+"method:saveStoreInfo=======================error: 保存店铺信息失败!  "+new Date());
+				jsUtil.returnJson(response, "1","保存店铺信息失败!", jsAry);
+			}
+			request.getSession().setAttribute("userinfo", userinfo);//session中保存最新的用户信息
+			jsUtil.returnJson(response, "0","保存店铺成功!", jsAry);//验证失败
+		}
+		
+	}
+}

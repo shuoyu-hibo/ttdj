@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录</title>
+    </head>
+<link type="text/css" rel="stylesheet" href="denglu.css">
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#chkImg").click(
+			function(){
+				$("#chkImg").attr("src","login!genCheckImg.do?");
+			});
+	});
+
+    window.onload=function() {
+        var aInput = document.getElementsByTagName('input');
+
+        var oName = aInput[0];
+        var pwd = aInput[1];
+        var aDiv = document.getElementsByTagName('div');
+        var a_msg=aDiv[4];
+        oName.onfocus =function(){
+        }
+        oName.onblur=function(){
+            a_msg.style.visibility="visible";
+            if(this.value==""){a_msg.innerHTML='用户名不能为空'}else{a_msg.style.visibility="hidden";}
+
+        }
+
+    }
+    function yan_zh_eng(){
+        var aInput = document.getElementsByTagName('input');
+
+        var oName = aInput[0];
+        var pwd = aInput[1];
+        var aDiv = document.getElementsByTagName('div');
+        var a_msg=aDiv[4];
+
+        if(oName.value==""){ a_msg.style.visibility="visible";a_msg.innerHTML='用户名不能为空'}else{a_msg.style.visibility="hidden";}
+           alert("")
+
+    }
+</script>
+<body>
+<div class="meihua1">
+    <div class="meihua2" ><i class="logo6"></i><span class="logo7">欢迎使用天天代金</span></div>
+    <div class="meihua3" ><i class="logo5"></i></div>
+    <div class="meihua4" >
+        <div class="meihua11" >生活很美好，现实很骨感</div>
+        <div class="meihua9" ><ul><li> 账号登录</li>
+                                 <li> 手机动态码登录</li>
+                              </ul></div>
+        <form  method="post" action="#" >
+        <div class="meihua7" ><label><i class="logo"></i><input type="text"class="text"placeholder="手机号/用户名/邮箱" /></label></div>
+        <div class="meihua7" ><label><i class="logo1"></i><input type="password"class="text"placeholder="密码" /></label></div>
+        <div class="meihua7" ><img id="chkImg" src="login!genCheckImg.do?" alt="" /></div>
+        <div class="meihua9" ><input type="checkbox" value="1" name="auto_login"  ><span style="font-size: 10px">七天内自动登录</span><span style="font-size: 10px;margin-left: 80px;" ><a href="#">忘记登录密码？</a></span><span></span></div>
+        <div class="meihua8" ><input name="Submit2" type="submit"  value="登录" onclick="yan_zh_eng()" class="btn"/></div>
+        <div class="meihua9" >还没有账号？<span><a  href="#">免费注册</a><p>
+        </p></span></div>
+        </form>
+        <div class="meihua10" ><i class="logo3"></i></div>
+    </div>
+    <div class="meihua5" ><i class="logo4"></i></div>
+
+</div>
+
+</body>
+</html>

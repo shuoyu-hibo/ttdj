@@ -1,0 +1,66 @@
+package com.mybatis.entity.ttdj.page;
+
+public class PagePojo {
+    private Integer code;//菜单code
+
+    private String searchStr;//搜索字符串
+
+    private Integer orderMark;//order by 标记
+
+    private Integer ifDesc;//是否desc
+
+    private Integer recordCount;//起始查询数 page use
+
+    private Integer pageSize;//每页条数
+
+	public Integer getCode() {
+		return code;
+	}
+
+	public void setCode(Integer code) {
+		this.code = code;
+	}
+
+	public String getSearchStr() {
+		return searchStr;
+	}
+
+	public void setSearchStr(String searchStr) {
+		this.searchStr = searchStr;
+	}
+
+	public Integer getOrderMark() {
+		return orderMark;
+	}
+
+	public void setOrderMark(Integer orderMark) {
+		this.orderMark = orderMark;
+	}
+
+	public Integer getIfDesc() {
+		return ifDesc;
+	}
+
+	public void setIfDesc(Integer ifDesc) {
+		this.ifDesc = ifDesc;
+	}
+
+	public Integer getRecordCount() {
+		return recordCount;
+	}
+
+	public void setRecordCount(Integer recordCount) {
+		this.recordCount = recordCount;
+	}
+
+	public Integer getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+    
+    
+    
+}

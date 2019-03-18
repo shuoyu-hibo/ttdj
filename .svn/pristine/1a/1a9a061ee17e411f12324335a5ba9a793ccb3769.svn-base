@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>用户信息</title>
+
+    <style>
+        .comWidth{width:1000px; margin-left:auto; margin-right:auto;}
+        .leftArea{float:left;margin-top:20px;}
+        .rightArea{float:right;margin-top: 80px}
+        .headerBar{height:120px;}
+        body{background-color: #fff;color:#000; }
+        .xinxiliebiao{float:left;;;border-bottom:5px solid #F60;  margin: 10px;
+            width: 300px;
+            height: 80px; display: block;}
+        *{ margin:0; padding:0; font-size:14px;}
+        ul{ list-style:none;  }
+        li{ margin-top:15px}
+        a{ text-decoration:none; display:block;height:20px; line-height:20px; width:100px; background-color:#fff;color:#000;  text-align:center;}
+        a:hover{background-color:#f60; color:#FFFFFF;}
+        h3{text-align: center;}
+        .meihua1 {
+            margin-top: 20px;
+            margin-left: 10px;
+            width: 1000px;
+            height: 750px;
+
+            border: 0px solid #f60;
+            display: block;
+            padding-left: 12px;
+            padding-top: 5px;
+        }
+        .meihua2 {
+            margin-top: 70px;
+            margin-left: 10px;
+            width: 100px;
+            height: 500px;
+            float: left;
+            border: 0px solid #f60;
+            display: block;
+            padding-left: 12px;
+            padding-top: 5px;
+        }
+        .meihua3 {
+              margin-top: 40px;
+              margin-left: 30px;
+              width: 800px;
+              height: 300px;
+            float: left;
+              border: 3px solid #f60;
+              display: block;
+              padding-left: 12px;
+              padding-top: 5px;
+          }
+       .xinxiweizhi{margin-bottom:20px;margin-top: 40px;margin-left: 200px}
+    </style>
+    <script>
+
+
+    </script>
+</head>
+<body>
+<div class="comWidth">
+<div class="headerBar">
+
+        <div class="leftArea">
+            <img src="../../image/aw/tupiao.jpg" width="100" height="100" /> 欢迎使用天天
+        </div>
+
+    </div>
+</div>
+<!--<div class="xinxiliebiao">
+<ul>
+    <li><a href="#">主机</a></li>
+    <li><a href="#">新闻快讯</a></li>
+    <li><a href="#">产品展示</a></li>
+    <li><a href="#">联系我们</a></li>
+
+</ul>
+</div>-->
+<div class="comWidth">
+<div class="meihua1">
+    <div class="meihua2">
+        <ul>
+            <li><a href="#">我的个人信息</a></li>
+            <li><a href="#">我浏览的店铺</a></li>
+            <li><a href="#">我已领的优惠券</a></li>
+            <li><a href="#">我的评价</a></li>
+            <li><a href="#">修改密码</a></li>
+        </ul>
+    </div>
+    <div class="meihua3">
+        <h3>注册天天的个人信息</h3>
+        <div class="xinxiweizhi"><label><span>    邮箱:</span></label><p>  </p></div>
+        <div class="xinxiweizhi"><label><span>    用户名:</span></label><p>  </p></div>
+        <div class="xinxiweizhi"><label><span>    密码:</span></label><p>  </p></div>
+        <div class="xinxiweizhi"><label><span>    所在城市:</span></label><p>  </p></div>
+
+    </div>
+</div>
+    </div>
+</body>
+</html>

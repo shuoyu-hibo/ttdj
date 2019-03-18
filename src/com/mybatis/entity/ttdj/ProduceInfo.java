@@ -1,0 +1,236 @@
+package com.mybatis.entity.ttdj;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+public class ProduceInfo {
+    private Integer produceId;
+
+    private String produceName;
+
+    private String produceDesc;
+
+    private Integer userId;
+
+    private String userName;
+
+    private String producePic;
+
+    private BigDecimal producePrice;
+
+    private BigDecimal remitPrice;
+
+    private BigDecimal finalPrice;
+
+    private Integer produceCount;
+
+    private Integer produceBuyCount;
+
+    private Integer favoriteCount;
+
+    private String proSort1Name;
+
+    private Integer proSort1Code;
+
+    private String proSort2Name;
+
+    private Integer proSort2Code;
+
+    private String proSort3Name;
+
+    private Integer proSort3Code;
+
+    private String ifPopular;
+
+    private Integer homepageShow;
+
+    private Date addDate;
+
+    private Date lastUpdateDate;
+
+    private String remark;
+
+    public Integer getProduceId() {
+        return produceId;
+    }
+
+    public void setProduceId(Integer produceId) {
+        this.produceId = produceId;
+    }
+
+    public String getProduceName() {
+        return produceName;
+    }
+
+    public void setProduceName(String produceName) {
+        this.produceName = produceName == null ? null : produceName.trim();
+    }
+
+    public String getProduceDesc() {
+        return produceDesc;
+    }
+
+    public void setProduceDesc(String produceDesc) {
+        this.produceDesc = produceDesc == null ? null : produceDesc.trim();
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName == null ? null : userName.trim();
+    }
+
+    public String getProducePic() {
+        return producePic;
+    }
+
+    public void setProducePic(String producePic) {
+        this.producePic = producePic == null ? null : producePic.trim();
+    }
+
+    public BigDecimal getProducePrice() {
+        return producePrice;
+    }
+
+    public void setProducePrice(BigDecimal producePrice) {
+        this.producePrice = producePrice;
+    }
+
+    public BigDecimal getRemitPrice() {
+        return remitPrice;
+    }
+
+    public void setRemitPrice(BigDecimal remitPrice) {
+        this.remitPrice = remitPrice;
+    }
+
+    public BigDecimal getFinalPrice() {
+        return finalPrice;
+    }
+
+    public void setFinalPrice(BigDecimal finalPrice) {
+        this.finalPrice = finalPrice;
+    }
+
+    public Integer getProduceCount() {
+        return produceCount;
+    }
+
+    public void setProduceCount(Integer produceCount) {
+        this.produceCount = produceCount;
+    }
+
+    public Integer getProduceBuyCount() {
+        return produceBuyCount;
+    }
+
+    public void setProduceBuyCount(Integer produceBuyCount) {
+        this.produceBuyCount = produceBuyCount;
+    }
+
+    public Integer getFavoriteCount() {
+        return favoriteCount;
+    }
+
+    public void setFavoriteCount(Integer favoriteCount) {
+        this.favoriteCount = favoriteCount;
+    }
+
+    public String getProSort1Name() {
+        return proSort1Name;
+    }
+
+    public void setProSort1Name(String proSort1Name) {
+        this.proSort1Name = proSort1Name == null ? null : proSort1Name.trim();
+    }
+
+    public Integer getProSort1Code() {
+        return proSort1Code;
+    }
+
+    public void setProSort1Code(Integer proSort1Code) {
+        this.proSort1Code = proSort1Code;
+    }
+
+    public String getProSort2Name() {
+        return proSort2Name;
+    }
+
+    public void setProSort2Name(String proSort2Name) {
+        this.proSort2Name = proSort2Name == null ? null : proSort2Name.trim();
+    }
+
+    public Integer getProSort2Code() {
+        return proSort2Code;
+    }
+
+    public void setProSort2Code(Integer proSort2Code) {
+        this.proSort2Code = proSort2Code;
+    }
+
+    public String getProSort3Name() {
+        return proSort3Name;
+    }
+
+    public void setProSort3Name(String proSort3Name) {
+        this.proSort3Name = proSort3Name == null ? null : proSort3Name.trim();
+    }
+
+    public Integer getProSort3Code() {
+        return proSort3Code;
+    }
+
+    public void setProSort3Code(Integer proSort3Code) {
+        this.proSort3Code = proSort3Code;
+    }
+
+    public String getIfPopular() {
+        return ifPopular;
+    }
+
+    public void setIfPopular(String ifPopular) {
+        this.ifPopular = ifPopular == null ? null : ifPopular.trim();
+    }
+
+    public Integer getHomepageShow() {
+        return homepageShow;
+    }
+
+    public void setHomepageShow(Integer homepageShow) {
+        this.homepageShow = homepageShow;
+    }
+
+    public Date getAddDate() {
+        return addDate;
+    }
+
+    public void setAddDate(Date addDate) {
+        this.addDate = addDate;
+    }
+
+    public Date getLastUpdateDate() {
+        return lastUpdateDate;
+    }
+
+    public void setLastUpdateDate(Date lastUpdateDate) {
+        this.lastUpdateDate = lastUpdateDate;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+}

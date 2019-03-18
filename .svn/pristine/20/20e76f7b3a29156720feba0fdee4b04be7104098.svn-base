@@ -1,0 +1,57 @@
+package com.web.action.base;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+public class JsonUtil {
+
+	private Map map = null;
+	/**
+	 * 组织返回json包
+	 * @param result
+	 * @param jsAry
+	 * @return
+	 */
+	public Map getMap(String result,JSONArray jsAry) {
+		map = new HashMap();
+		map.put("result", result);
+		map.put("record", jsAry);
+		return map;
+	}
+
+
+
+	/**
+	 * 返回json
+	 * @param response
+	 * @param ifSucess 0是成功 1是失败（0是肯定 1是否定）
+	 */
+	public void returnJson(HttpServletResponse response,String result,JSONArray jsAry){
+		response.setContentType("application/json;charset=UTF-8");
+		JSONObject json=new JSONObject();
+		json.putAll(getMap(result, jsAry));
+		PrintWriter out = null;
+		try {
+			out = response.getWriter();
+			out.print(json);
+			out.flush();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			Logger.getLogger(this.getClass()).error(this.getClass().getName()+"=========error:"+e.getMessage());
+			e.printStackTrace();
+		} finally {
+            if(out != null){
+                out.close();
+            }
+        }
+	}
+}

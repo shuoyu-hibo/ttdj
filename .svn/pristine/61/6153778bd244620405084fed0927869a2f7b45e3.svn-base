@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+<meta name="application-name" content="TTDJ网－TTDJ一次 美一次，精品生活">
+<meta name="description" content="运城TTDJ网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城TTDJ网,您身边的吃喝玩乐好帮手!">
+<meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+
+<link rel="canonical" href="http://www.ttdaijin.com ">
+<link rel="alternate" href="http://www.ttdaijin.comfeed" title="订阅更新" type="application/rss+xml">
+
+<title>【运城代金券网】</title>
+<!--[if IE 6]>
+<script src="http://s1.meituan.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://s0.meituan.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css"></link>
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+<script type="text/javascript" src="../../js/rate.js"></script>
+<link rel="stylesheet" type="text/css" href="../../styles/rate.css">
+<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+<style>
+
+
+body,a {
+    font: 400 14px/1.5 "Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",tahoma,sans-serif;
+    color: #ff6600;
+}
+.picWrapper{
+    width:400px;
+    height:400px;
+    float: left;
+}
+.productPic{
+    width:400px;
+    height:400px;
+    background-image: url("../../image/xw/default.png");
+}
+.infoWrapper{
+    width:400px;
+    height:400px;
+    float: left;
+}
+.productInfo{
+    width:400px;
+    height:400px;
+}
+.infoTitle{
+    font-size: 30px;
+    margin-left: 20px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+.infoTitle p{
+    font-size: 20px;
+}
+.productInfo ul{
+    margin-top: 10px;
+    margin-left: 30px;
+    font-size: 15px;
+}
+.productPrice{
+    margin: 10px 0;
+    font-size: 20px;
+}
+.getDJQ{
+    font-size: 25px;
+    text-align: center;
+    line-height: 200%;
+    margin: 10px auto 0;
+    width:120px;
+    height: 50px;
+    border:1px solid #ff6600;
+    background-color: skyblue;
+}
+.getDJQ a{
+    color:#ff6600;
+    font-size: 23px;
+}
+.collect{
+    float:right;
+    margin-right: 20px;
+}
+
+.tb-shop-name{
+	margin-top:40px;
+}
+.tb-shop-info-bd{
+	margin-top:30px;
+}
+
+.replies .reply {
+    text-align: left;
+    padding: 16px 0 18px 0;
+    margin: 0 20px 0 19px;
+    color: #000;
+    border-bottom: 1px dotted #afafb0;
+}
+.userPanel{
+    margin-left: 20px;
+}
+input, textarea, .uneditable-input {
+  width: 400px;
+}
+.copyright{
+	padding-top:60px;	
+}
+</style>
+</head>
+
+
+<body id="index" class="pg-floor">
+<div class="header" id="header">
+</div>
+<div class="main">
+<div class="sellinfo">
+    <div class="picWrapper">
+        <div><img class="productPic"></div>
+    </div>
+    <div class="infoWrapper">
+        <div class="productInfo">
+            <div class="infoTitle">
+                <span id="viewProduceName">商品名称</span>
+                <p id="viewProduceDesc"></p>
+            </div>
+            <hr style="border:dashed">
+            <ul>
+                <li><span>原价：¥<span id="producePrice">0</span></span></li>                
+                <li>
+                    <div class="productPrice">
+                        <span>优惠价 : </span><strong><em>¥</em><em id="remitPrice">0</em></strong>
+                    </div>
+                </li>
+                <li><span> 到店支付：¥<span id="finalPrice"></span></span></li>
+               <!-- <li><span> 有效期：</span></li>
+                <li><span> - </span></li> 
+                <li><span> 数量：</span></li>
+                <li><span> 1000</span></li>--> 
+            </ul>
+            <div class="getDJQ">
+                <a href="#">立即领取</a>
+            </div>
+            <div class="collect">
+                <a href="#">收藏</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="sellinfo1">
+        <div class="tb-shop-info-wrap">
+            <div class="tb-shop-info-hd">
+                <div class="tb-shop-name">
+                    <dl>
+                        <dd>
+                            <strong>
+                               	商铺名称：
+                               	<a href="#" title="" id="viewStoreName">                                    	
+                                </a>                               
+                            </strong>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tb-shop-rank tb-rank-cap">
+                    <dl>
+                        <dt>等级：</dt>
+                        <dd>
+                            <a href="#" target="_blank">
+                                <i><span class="rate-info__bar common-rating">
+                                        <span class="rate-stars" id="viewStoreLeve" style="width: 99%;"></span>
+                                </span></i>
+                            </a>
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="tb-shop-seller">
+                    <dl>
+                        <dt>地址：</dt>
+                        <dd id="viewAddress">
+                                	商铺地址
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tb-shop-ww">
+                    <dl>
+                        <dt>联系电话：</dt>
+                        <dd id="viewLinkNumber">商铺电话</dd>
+                    </dl>
+                </div>
+            </div>
+           <div class="tb-shop-info-bd">
+                <!-- <div class="tb-shop-rate">
+                    <dl>
+                        <dt>好评率</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                100%
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>浏览次数</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                1000
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>代金券已领次数</dt>
+                        <dd class="tb-rate-lower">
+                            <a href="http://rate.taobao.com/user-rate-dd7d2f27c1785ed07a2dbd6e2902aba3.htm" target="_blank" title="计算规则:(同行业平均分-店铺得分)/(同行业平均分-同行业店铺最低得分)">
+                                1000
+                            </a>
+                        </dd>
+                    </dl>
+                </div>--> 
+            </div> 
+        <div class="tb-shop-info-ft">
+            <a class="J_TDialogTrigger J_TokenSign" data-spm="d22" href="http://favorite.taobao.com/popup/add_collection.htm?id=68144467&amp;itemid=68144467&amp;itemtype=0&amp;ownerid=dd7d2f27c1785ed07a2dbd6e2902aba3&amp;scjjc=2&amp;_tb_token_=eeb735b03657f" data-info="param=SCCP_2_68144467&amp;countUrl=http://count.tbcdn.cn/counter3&amp;mecuryUrl=http://favorite.taobao.com/collect_item_relation---68144467-0-.htm" mercury:params="id=68144467&amp;itemid=68144467&amp;itemtype=0&amp;ownerid=dd7d2f27c1785ed07a2dbd6e2902aba3&amp;scjjc=5" data-closebtn="true" data-width="440" data-height="260">收藏店铺</a>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="commentWrapper">
+    <div id="mainReplies" class="replies">
+        <div class="titleBar titleBar-blue">
+            <div class="text"><strong>最新跟贴</strong> (跟贴<span class="displayCount"><em>5</em>条</span><span class="joinCount"> 有<em>11</em>人参与</span>)</div>
+        </div>
+        <div class="list">
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+            <div  class="reply essence">
+                <span class="author">
+                    <span class="faceBox">
+                        <span class="userFace">
+                            <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentieavatar" target="_blank"><img src="http://img0.ph.126.net/2xSmE3wF9ohiMVUk74grgg==/6619469017538186157.jpg" alt="曹县国营养猪场场长" width="35" height="35"></a>
+                        </span>
+                    </span>
+                    <a href="http://tie.163.com/reply/myaction.jsp?action=reply&amp;username=bTEzNzE3OTE1MDk1QDE2My5jb20=&amp;f=gentienickname" target="_blank">曹县国营养猪场场长</a>：
+                </span>
+                <span class="postTime">2015-05-07 16:13:18 发表</span>
+                <div class="body">
+                    <div style="line-height: 21px; margin-bottom: 3px; zoom: 1; word-wrap: break-word;overflow:hidden;">赔了我100多万，一怒之下气得我把模拟炒股软件给卸载了        </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="userPanel">
+        <p class="postTips"><b>为广大与您一样的用户负责，请您客观评论。十分感谢！</b></p><br>
+        <div style="font-size:18px;width: 80%;"><span>请为商家产品评分:</span> <span id="ratingValShow">0</span><span>分</span></div>
+        <input name="my_input" value="5" id="ratingVal" type="hidden"><br>
+        <form id="replyForm" class="replyForm clearFix" action="/reply/dopost.jsp" method="post">
+            <textarea id="replyBody" name="body" rows="6" cols="1000" accesskey="r"></textarea>
+            <div class="replyForm-sub">
+                <input type="button" value="立即提交" name="commitBtn">
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+<div class="foot" id="foot">
+</div>
+
+
+</body>
+<script type="text/javascript">
+$(function(){
+	var produceId = getUrlParam("produceId");
+	if(produceId=='undefined' || produceId==''){
+		return;
+	}
+	$.post(generateUrl("sh!getProduceInfoById.do?produceId="+produceId),function(data){
+		//$(".productPic").css({"background-image":"url(\""+data["record"][0].producePic+"\")", "background-size":"100% 100%"});
+		$(".productPic").attr("src",data["record"][0].producePic);
+		$("#producePrice").text(data["record"][0].producePrice);
+		$("#remitPrice").text(data["record"][0].remitPrice);
+		$("#finalPrice").text(data["record"][0].finalPrice);
+		$("#viewProduceName").text(data["record"][0].produceName);
+		$("#viewProduceDesc").text(data["record"][0].produceDesc);
+		$("#viewStoreName").text(data["record"][0].storeName);
+		$("#viewStoreLeve").text(data["record"][0].storeLeve);
+		$("#viewAddress").text(data["record"][0].address);
+		$("#viewLinkNumber").text(data["record"][0].linkNumber);
+	});
+	
+    $("#ratingVal").webwidget_rating_simple({
+        rating_star_length: '5',
+        rating_initial_value: '',
+        rating_function_name: 'rateChangeVal',//this is function name for click
+        directory: '../../image'
+    });
+    
+});
+
+	function rateChangeVal(){
+		$("#ratingValShow").text($("#ratingVal").val());
+	}
+
+</script>
+</html>

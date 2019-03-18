@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsCreditRuleMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsCreditRule" >
+    <id column="rid" property="rid" jdbcType="INTEGER" />
+    <result column="rulename" property="rulename" jdbcType="VARCHAR" />
+    <result column="action" property="action" jdbcType="VARCHAR" />
+    <result column="cycletype" property="cycletype" jdbcType="BIT" />
+    <result column="cycletime" property="cycletime" jdbcType="INTEGER" />
+    <result column="rewardnum" property="rewardnum" jdbcType="TINYINT" />
+    <result column="extcredits1" property="extcredits1" jdbcType="INTEGER" />
+    <result column="extcredits2" property="extcredits2" jdbcType="INTEGER" />
+    <result column="extcredits3" property="extcredits3" jdbcType="INTEGER" />
+    <result column="extcredits4" property="extcredits4" jdbcType="INTEGER" />
+    <result column="ext1name" property="ext1name" jdbcType="VARCHAR" />
+    <result column="ext2name" property="ext2name" jdbcType="VARCHAR" />
+    <result column="ext3name" property="ext3name" jdbcType="VARCHAR" />
+    <result column="ext4name" property="ext4name" jdbcType="VARCHAR" />
+    <result column="ext1avai" property="ext1avai" jdbcType="BIT" />
+    <result column="ext2avai" property="ext2avai" jdbcType="BIT" />
+    <result column="ext3avai" property="ext3avai" jdbcType="BIT" />
+    <result column="ext4avai" property="ext4avai" jdbcType="BIT" />
+    <result column="ext1exchangeout" property="ext1exchangeout" jdbcType="BIT" />
+    <result column="ext2exchangeout" property="ext2exchangeout" jdbcType="BIT" />
+    <result column="ext3exchangeout" property="ext3exchangeout" jdbcType="BIT" />
+    <result column="ext4exchangeout" property="ext4exchangeout" jdbcType="BIT" />
+    <result column="ext1exchangein" property="ext1exchangein" jdbcType="BIT" />
+    <result column="ext2exchangein" property="ext2exchangein" jdbcType="BIT" />
+    <result column="ext3exchangein" property="ext3exchangein" jdbcType="BIT" />
+    <result column="ext4exchangein" property="ext4exchangein" jdbcType="BIT" />
+    <result column="credittax" property="credittax" jdbcType="TINYINT" />
+    <result column="minibalance" property="minibalance" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    rid, rulename, action, cycletype, cycletime, rewardnum, extcredits1, extcredits2, 
+    extcredits3, extcredits4, ext1name, ext2name, ext3name, ext4name, ext1avai, ext2avai, 
+    ext3avai, ext4avai, ext1exchangeout, ext2exchangeout, ext3exchangeout, ext4exchangeout, 
+    ext1exchangein, ext2exchangein, ext3exchangein, ext4exchangein, credittax, minibalance
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsCreditRuleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_credit_rule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bbs_credit_rule
+    where rid = #{rid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs_credit_rule
+    where rid = #{rid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsCreditRuleExample" >
+    delete from bbs_credit_rule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsCreditRule" >
+    insert into bbs_credit_rule (rid, rulename, action, 
+      cycletype, cycletime, rewardnum, 
+      extcredits1, extcredits2, extcredits3, 
+      extcredits4, ext1name, ext2name, 
+      ext3name, ext4name, ext1avai, 
+      ext2avai, ext3avai, ext4avai, ext1exchangeout, 
+      ext2exchangeout, ext3exchangeout, ext4exchangeout, 
+      ext1exchangein, ext2exchangein, ext3exchangein, 
+      ext4exchangein, credittax, minibalance
+      )
+    values (#{rid,jdbcType=INTEGER}, #{rulename,jdbcType=VARCHAR}, #{action,jdbcType=VARCHAR}, 
+      #{cycletype,jdbcType=BIT}, #{cycletime,jdbcType=INTEGER}, #{rewardnum,jdbcType=TINYINT}, 
+      #{extcredits1,jdbcType=INTEGER}, #{extcredits2,jdbcType=INTEGER}, #{extcredits3,jdbcType=INTEGER}, 
+      #{extcredits4,jdbcType=INTEGER}, #{ext1name,jdbcType=VARCHAR}, #{ext2name,jdbcType=VARCHAR}, 
+      #{ext3name,jdbcType=VARCHAR}, #{ext4name,jdbcType=VARCHAR}, #{ext1avai,jdbcType=BIT}, 
+      #{ext2avai,jdbcType=BIT}, #{ext3avai,jdbcType=BIT}, #{ext4avai,jdbcType=BIT}, #{ext1exchangeout,jdbcType=BIT}, 
+      #{ext2exchangeout,jdbcType=BIT}, #{ext3exchangeout,jdbcType=BIT}, #{ext4exchangeout,jdbcType=BIT}, 
+      #{ext1exchangein,jdbcType=BIT}, #{ext2exchangein,jdbcType=BIT}, #{ext3exchangein,jdbcType=BIT}, 
+      #{ext4exchangein,jdbcType=BIT}, #{credittax,jdbcType=TINYINT}, #{minibalance,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsCreditRule" >
+    insert into bbs_credit_rule
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rid != null" >
+        rid,
+      </if>
+      <if test="rulename != null" >
+        rulename,
+      </if>
+      <if test="action != null" >
+        action,
+      </if>
+      <if test="cycletype != null" >
+        cycletype,
+      </if>
+      <if test="cycletime != null" >
+        cycletime,
+      </if>
+      <if test="rewardnum != null" >
+        rewardnum,
+      </if>
+      <if test="extcredits1 != null" >
+        extcredits1,
+      </if>
+      <if test="extcredits2 != null" >
+        extcredits2,
+      </if>
+      <if test="extcredits3 != null" >
+        extcredits3,
+      </if>
+      <if test="extcredits4 != null" >
+        extcredits4,
+      </if>
+      <if test="ext1name != null" >
+        ext1name,
+      </if>
+      <if test="ext2name != null" >
+        ext2name,
+      </if>
+      <if test="ext3name != null" >
+        ext3name,
+      </if>
+      <if test="ext4name != null" >
+        ext4name,
+      </if>
+      <if test="ext1avai != null" >
+        ext1avai,
+      </if>
+      <if test="ext2avai != null" >
+        ext2avai,
+      </if>
+      <if test="ext3avai != null" >
+        ext3avai,
+      </if>
+      <if test="ext4avai != null" >
+        ext4avai,
+      </if>
+      <if test="ext1exchangeout != null" >
+        ext1exchangeout,
+      </if>
+      <if test="ext2exchangeout != null" >
+        ext2exchangeout,
+      </if>
+      <if test="ext3exchangeout != null" >
+        ext3exchangeout,
+      </if>
+      <if test="ext4exchangeout != null" >
+        ext4exchangeout,
+      </if>
+      <if test="ext1exchangein != null" >
+        ext1exchangein,
+      </if>
+      <if test="ext2exchangein != null" >
+        ext2exchangein,
+      </if>
+      <if test="ext3exchangein != null" >
+        ext3exchangein,
+      </if>
+      <if test="ext4exchangein != null" >
+        ext4exchangein,
+      </if>
+      <if test="credittax != null" >
+        credittax,
+      </if>
+      <if test="minibalance != null" >
+        minibalance,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rid != null" >
+        #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="rulename != null" >
+        #{rulename,jdbcType=VARCHAR},
+      </if>
+      <if test="action != null" >
+        #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="cycletype != null" >
+        #{cycletype,jdbcType=BIT},
+      </if>
+      <if test="cycletime != null" >
+        #{cycletime,jdbcType=INTEGER},
+      </if>
+      <if test="rewardnum != null" >
+        #{rewardnum,jdbcType=TINYINT},
+      </if>
+      <if test="extcredits1 != null" >
+        #{extcredits1,jdbcType=INTEGER},
+      </if>
+      <if test="extcredits2 != null" >
+        #{extcredits2,jdbcType=INTEGER},
+      </if>
+      <if test="extcredits3 != null" >
+        #{extcredits3,jdbcType=INTEGER},
+      </if>
+      <if test="extcredits4 != null" >
+        #{extcredits4,jdbcType=INTEGER},
+      </if>
+      <if test="ext1name != null" >
+        #{ext1name,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2name != null" >
+        #{ext2name,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3name != null" >
+        #{ext3name,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4name != null" >
+        #{ext4name,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1avai != null" >
+        #{ext1avai,jdbcType=BIT},
+      </if>
+      <if test="ext2avai != null" >
+        #{ext2avai,jdbcType=BIT},
+      </if>
+      <if test="ext3avai != null" >
+        #{ext3avai,jdbcType=BIT},
+      </if>
+      <if test="ext4avai != null" >
+        #{ext4avai,jdbcType=BIT},
+      </if>
+      <if test="ext1exchangeout != null" >
+        #{ext1exchangeout,jdbcType=BIT},
+      </if>
+      <if test="ext2exchangeout != null" >
+        #{ext2exchangeout,jdbcType=BIT},
+      </if>
+      <if test="ext3exchangeout != null" >
+        #{ext3exchangeout,jdbcType=BIT},
+      </if>
+      <if test="ext4exchangeout != null" >
+        #{ext4exchangeout,jdbcType=BIT},
+      </if>
+      <if test="ext1exchangein != null" >
+        #{ext1exchangein,jdbcType=BIT},
+      </if>
+      <if test="ext2exchangein != null" >
+        #{ext2exchangein,jdbcType=BIT},
+      </if>
+      <if test="ext3exchangein != null" >
+        #{ext3exchangein,jdbcType=BIT},
+      </if>
+      <if test="ext4exchangein != null" >
+        #{ext4exchangein,jdbcType=BIT},
+      </if>
+      <if test="credittax != null" >
+        #{credittax,jdbcType=TINYINT},
+      </if>
+      <if test="minibalance != null" >
+        #{minibalance,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsCreditRuleExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_credit_rule
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_credit_rule
+    <set >
+      <if test="record.rid != null" >
+        rid = #{record.rid,jdbcType=INTEGER},
+      </if>
+      <if test="record.rulename != null" >
+        rulename = #{record.rulename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.action != null" >
+        action = #{record.action,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cycletype != null" >
+        cycletype = #{record.cycletype,jdbcType=BIT},
+      </if>
+      <if test="record.cycletime != null" >
+        cycletime = #{record.cycletime,jdbcType=INTEGER},
+      </if>
+      <if test="record.rewardnum != null" >
+        rewardnum = #{record.rewardnum,jdbcType=TINYINT},
+      </if>
+      <if test="record.extcredits1 != null" >
+        extcredits1 = #{record.extcredits1,jdbcType=INTEGER},
+      </if>
+      <if test="record.extcredits2 != null" >
+        extcredits2 = #{record.extcredits2,jdbcType=INTEGER},
+      </if>
+      <if test="record.extcredits3 != null" >
+        extcredits3 = #{record.extcredits3,jdbcType=INTEGER},
+      </if>
+      <if test="record.extcredits4 != null" >
+        extcredits4 = #{record.extcredits4,jdbcType=INTEGER},
+      </if>
+      <if test="record.ext1name != null" >
+        ext1name = #{record.ext1name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ext2name != null" >
+        ext2name = #{record.ext2name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ext3name != null" >
+        ext3name = #{record.ext3name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ext4name != null" >
+        ext4name = #{record.ext4name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ext1avai != null" >
+        ext1avai = #{record.ext1avai,jdbcType=BIT},
+      </if>
+      <if test="record.ext2avai != null" >
+        ext2avai = #{record.ext2avai,jdbcType=BIT},
+      </if>
+      <if test="record.ext3avai != null" >
+        ext3avai = #{record.ext3avai,jdbcType=BIT},
+      </if>
+      <if test="record.ext4avai != null" >
+        ext4avai = #{record.ext4avai,jdbcType=BIT},
+      </if>
+      <if test="record.ext1exchangeout != null" >
+        ext1exchangeout = #{record.ext1exchangeout,jdbcType=BIT},
+      </if>
+      <if test="record.ext2exchangeout != null" >
+        ext2exchangeout = #{record.ext2exchangeout,jdbcType=BIT},
+      </if>
+      <if test="record.ext3exchangeout != null" >
+        ext3exchangeout = #{record.ext3exchangeout,jdbcType=BIT},
+      </if>
+      <if test="record.ext4exchangeout != null" >
+        ext4exchangeout = #{record.ext4exchangeout,jdbcType=BIT},
+      </if>
+      <if test="record.ext1exchangein != null" >
+        ext1exchangein = #{record.ext1exchangein,jdbcType=BIT},
+      </if>
+      <if test="record.ext2exchangein != null" >
+        ext2exchangein = #{record.ext2exchangein,jdbcType=BIT},
+      </if>
+      <if test="record.ext3exchangein != null" >
+        ext3exchangein = #{record.ext3exchangein,jdbcType=BIT},
+      </if>
+      <if test="record.ext4exchangein != null" >
+        ext4exchangein = #{record.ext4exchangein,jdbcType=BIT},
+      </if>
+      <if test="record.credittax != null" >
+        credittax = #{record.credittax,jdbcType=TINYINT},
+      </if>
+      <if test="record.minibalance != null" >
+        minibalance = #{record.minibalance,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_credit_rule
+    set rid = #{record.rid,jdbcType=INTEGER},
+      rulename = #{record.rulename,jdbcType=VARCHAR},
+      action = #{record.action,jdbcType=VARCHAR},
+      cycletype = #{record.cycletype,jdbcType=BIT},
+      cycletime = #{record.cycletime,jdbcType=INTEGER},
+      rewardnum = #{record.rewardnum,jdbcType=TINYINT},
+      extcredits1 = #{record.extcredits1,jdbcType=INTEGER},
+      extcredits2 = #{record.extcredits2,jdbcType=INTEGER},
+      extcredits3 = #{record.extcredits3,jdbcType=INTEGER},
+      extcredits4 = #{record.extcredits4,jdbcType=INTEGER},
+      ext1name = #{record.ext1name,jdbcType=VARCHAR},
+      ext2name = #{record.ext2name,jdbcType=VARCHAR},
+      ext3name = #{record.ext3name,jdbcType=VARCHAR},
+      ext4name = #{record.ext4name,jdbcType=VARCHAR},
+      ext1avai = #{record.ext1avai,jdbcType=BIT},
+      ext2avai = #{record.ext2avai,jdbcType=BIT},
+      ext3avai = #{record.ext3avai,jdbcType=BIT},
+      ext4avai = #{record.ext4avai,jdbcType=BIT},
+      ext1exchangeout = #{record.ext1exchangeout,jdbcType=BIT},
+      ext2exchangeout = #{record.ext2exchangeout,jdbcType=BIT},
+      ext3exchangeout = #{record.ext3exchangeout,jdbcType=BIT},
+      ext4exchangeout = #{record.ext4exchangeout,jdbcType=BIT},
+      ext1exchangein = #{record.ext1exchangein,jdbcType=BIT},
+      ext2exchangein = #{record.ext2exchangein,jdbcType=BIT},
+      ext3exchangein = #{record.ext3exchangein,jdbcType=BIT},
+      ext4exchangein = #{record.ext4exchangein,jdbcType=BIT},
+      credittax = #{record.credittax,jdbcType=TINYINT},
+      minibalance = #{record.minibalance,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsCreditRule" >
+    update bbs_credit_rule
+    <set >
+      <if test="rulename != null" >
+        rulename = #{rulename,jdbcType=VARCHAR},
+      </if>
+      <if test="action != null" >
+        action = #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="cycletype != null" >
+        cycletype = #{cycletype,jdbcType=BIT},
+      </if>
+      <if test="cycletime != null" >
+        cycletime = #{cycletime,jdbcType=INTEGER},
+      </if>
+      <if test="rewardnum != null" >
+        rewardnum = #{rewardnum,jdbcType=TINYINT},
+      </if>
+      <if test="extcredits1 != null" >
+        extcredits1 = #{extcredits1,jdbcType=INTEGER},
+      </if>
+      <if test="extcredits2 != null" >
+        extcredits2 = #{extcredits2,jdbcType=INTEGER},
+      </if>
+      <if test="extcredits3 != null" >
+        extcredits3 = #{extcredits3,jdbcType=INTEGER},
+      </if>
+      <if test="extcredits4 != null" >
+        extcredits4 = #{extcredits4,jdbcType=INTEGER},
+      </if>
+      <if test="ext1name != null" >
+        ext1name = #{ext1name,jdbcType=VARCHAR},
+      </if>
+      <if test="ext2name != null" >
+        ext2name = #{ext2name,jdbcType=VARCHAR},
+      </if>
+      <if test="ext3name != null" >
+        ext3name = #{ext3name,jdbcType=VARCHAR},
+      </if>
+      <if test="ext4name != null" >
+        ext4name = #{ext4name,jdbcType=VARCHAR},
+      </if>
+      <if test="ext1avai != null" >
+        ext1avai = #{ext1avai,jdbcType=BIT},
+      </if>
+      <if test="ext2avai != null" >
+        ext2avai = #{ext2avai,jdbcType=BIT},
+      </if>
+      <if test="ext3avai != null" >
+        ext3avai = #{ext3avai,jdbcType=BIT},
+      </if>
+      <if test="ext4avai != null" >
+        ext4avai = #{ext4avai,jdbcType=BIT},
+      </if>
+      <if test="ext1exchangeout != null" >
+        ext1exchangeout = #{ext1exchangeout,jdbcType=BIT},
+      </if>
+      <if test="ext2exchangeout != null" >
+        ext2exchangeout = #{ext2exchangeout,jdbcType=BIT},
+      </if>
+      <if test="ext3exchangeout != null" >
+        ext3exchangeout = #{ext3exchangeout,jdbcType=BIT},
+      </if>
+      <if test="ext4exchangeout != null" >
+        ext4exchangeout = #{ext4exchangeout,jdbcType=BIT},
+      </if>
+      <if test="ext1exchangein != null" >
+        ext1exchangein = #{ext1exchangein,jdbcType=BIT},
+      </if>
+      <if test="ext2exchangein != null" >
+        ext2exchangein = #{ext2exchangein,jdbcType=BIT},
+      </if>
+      <if test="ext3exchangein != null" >
+        ext3exchangein = #{ext3exchangein,jdbcType=BIT},
+      </if>
+      <if test="ext4exchangein != null" >
+        ext4exchangein = #{ext4exchangein,jdbcType=BIT},
+      </if>
+      <if test="credittax != null" >
+        credittax = #{credittax,jdbcType=TINYINT},
+      </if>
+      <if test="minibalance != null" >
+        minibalance = #{minibalance,jdbcType=INTEGER},
+      </if>
+    </set>
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.BbsCreditRule" >
+    update bbs_credit_rule
+    set rulename = #{rulename,jdbcType=VARCHAR},
+      action = #{action,jdbcType=VARCHAR},
+      cycletype = #{cycletype,jdbcType=BIT},
+      cycletime = #{cycletime,jdbcType=INTEGER},
+      rewardnum = #{rewardnum,jdbcType=TINYINT},
+      extcredits1 = #{extcredits1,jdbcType=INTEGER},
+      extcredits2 = #{extcredits2,jdbcType=INTEGER},
+      extcredits3 = #{extcredits3,jdbcType=INTEGER},
+      extcredits4 = #{extcredits4,jdbcType=INTEGER},
+      ext1name = #{ext1name,jdbcType=VARCHAR},
+      ext2name = #{ext2name,jdbcType=VARCHAR},
+      ext3name = #{ext3name,jdbcType=VARCHAR},
+      ext4name = #{ext4name,jdbcType=VARCHAR},
+      ext1avai = #{ext1avai,jdbcType=BIT},
+      ext2avai = #{ext2avai,jdbcType=BIT},
+      ext3avai = #{ext3avai,jdbcType=BIT},
+      ext4avai = #{ext4avai,jdbcType=BIT},
+      ext1exchangeout = #{ext1exchangeout,jdbcType=BIT},
+      ext2exchangeout = #{ext2exchangeout,jdbcType=BIT},
+      ext3exchangeout = #{ext3exchangeout,jdbcType=BIT},
+      ext4exchangeout = #{ext4exchangeout,jdbcType=BIT},
+      ext1exchangein = #{ext1exchangein,jdbcType=BIT},
+      ext2exchangein = #{ext2exchangein,jdbcType=BIT},
+      ext3exchangein = #{ext3exchangein,jdbcType=BIT},
+      ext4exchangein = #{ext4exchangein,jdbcType=BIT},
+      credittax = #{credittax,jdbcType=TINYINT},
+      minibalance = #{minibalance,jdbcType=INTEGER}
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+</mapper>

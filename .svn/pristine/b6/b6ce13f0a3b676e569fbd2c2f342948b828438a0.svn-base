@@ -1,0 +1,23 @@
+package com.mybatis.entity.bbs;
+
+public class ProduceSort2 extends ProduceSort2Key {
+    private String proSort2Name;
+
+    private String remark;
+
+    public String getProSort2Name() {
+        return proSort2Name;
+    }
+
+    public void setProSort2Name(String proSort2Name) {
+        this.proSort2Name = proSort2Name == null ? null : proSort2Name.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+}

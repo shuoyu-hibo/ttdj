@@ -1,0 +1,50 @@
+/**
+ * 得到url中的参数
+ * @param attrName
+ * @author wanghaibo
+ * @returns
+ */
+function getUrlParam(attrName){
+	if(urlParam == null){
+		var up = location.search;
+		var ps = up.split("&");
+		urlParam = new Object();
+		for(var i=0;i<ps.length;i++){
+			var p = ps[i].split("=");
+			eval("urlParam." + p[0] + " = " + p[1]);
+		}
+	}
+	return eval("urlParam." + attrName);
+}
+
+/**
+ * 获取地址
+ * @return
+ */
+function getBasePath() {
+
+    var baseUrl = window.location.protocol+"//"+window.location.host+"/"+window.location.pathname.split("/")[1]+"/";
+    return baseUrl;
+}
+
+/**
+ * 传入action名与参数,获取最终URL
+ * @param strParam eg:homepage!add.do?a=1
+ */
+function generateUrl(strPara){
+	var basePath=getBasePath();
+	return basePath+strPara+"&seconds="+new Date().getSeconds();
+}
+
+
+function toPage(ifmName,ifmUrl){//change iframe page
+			$("#"+ifmName).attr("src",ifmUrl);
+}
+
+//$(document).ready(function(){
+//	  $("#a1").addClass("current");
+//	  $("#middle").load("homepage!onload.do");
+//});
+//function pageLoad(strUrl){
+//	$("#middle").load(strUrl);
+//}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>header.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.js"></script>
+	<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+
+	<script type="text/javascript" src="../../js/pg.js"></script>
+	<script type="text/javascript" src="../../js/s.js"></script>
+    
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+  
+  <body>
+<header id="site-mast" class="site-mast">
+<div class="site-mast__user-nav-w">
+    <div class="site-mast__user-nav cf">
+        <ul class="basic-info">
+	           <li class="site-mast__keep">
+	               <a class="fav log-mod-viewed" href="javascript:window.external.AddFavorite('../../html/home/index.html','天天代金券')">
+	                   <i class="F-glob F-glob-star-border icon-keep"></i>
+	                   	收藏TTDJ
+	               </a>
+	           </li>
+	           <li class="user-info cf" >
+	              <div id="div_unlogin">
+	                <a class="user-info__login" href="../../html/register/login.html">登录</a>
+	                <a class="user-info__signup" href="../../html/register/register.html">注册</a>
+	               </div>
+	               <div id="div_login" style="display: none">
+	                	<span >欢迎您</span>,【<span id="userNameShow" style="font-size: 12px;"></span>】   
+	                	<a href="#" id="quit" >退出</a>
+	               </div>
+	           </li>
+	           <li   class="mobile-info__item dropdown" >
+	               <a class="dropdown__toggle" href="../../html/home/index.html">首页</a>
+	           </li>
+	       </ul>
+        <ul class="site-mast__user-w">
+            <li  class="dropdown dropdown--account" >
+                <a id="J-my-account-toggle" rel="nofollow" class="dropdown__toggle" href="../../html/register/usermessage.html" >
+                    <span>我的TTDJ</span>
+                    <i class="tri tri--dropdown"></i>
+                </a>
+            </li>
+            <li   class="dropdown dropdown--history"  >
+                <a id="J-my-history-toggle" rel="nofollow" class="dropdown__toggle" href="javascript:;" >
+                    <span>最近浏览</span>
+                    <i class="tri tri--dropdown"></i>
+                   
+                </a>
+                <div id="J-my-history-menu" class="dropdown-menu dropdown-menu--deal dropdown-menu--history"></div>
+            </li>
+            <li  id="J-site-merchant" class="dropdown dropdown--merchant" >
+                <a class="dropdown__toggle dropdown__toggle--merchant" href="../../html/home/shop.html">
+                    <span>我是商家</span>
+                    <i class="tri tri--dropdown"></i>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+<div class="site-mast__branding cf" >
+    <h1><a class="site-logo"  href="#" gaevent="header/logo">运城代金券</a></h1>
+    <div class="city-info">
+        <h2><a class="city-info__name" href="http://yuncheng.ttdaijin.com" gaevent="header/cityname" code="25">运城</a></h2>
+        <a class="city-info__toggle" href="../../html/home/future.html" gaevent="header/changecity">切换城市</a>
+    </div>
+    <div  class="component-search-box mt-component--booted"  >
+    	<div   class="J-search-box search-box ">
+            <br>
+            <input tabindex="1" type="text" id="search" name="w" autocomplete="off" data-smartbox="/search/smartboxv2/" class="s-text search-box__input J-search-box__input" value="" placeholder="请输入商品名称、商铺名等">
+            <input type="hidden" id="hideSh">
+            <input type="button" id="btnSearch" class="s-submit search-box__button log-mod-viewed" hidefocus="true" value="&nbsp;&nbsp;搜&nbsp;&nbsp;&nbsp;索&nbsp;&nbsp;" data-mod="sr">
+        </div>
+    </div>
+   <!-- <div class="site-commitment">
+        <a href="#">用户登陆</a>
+        <a href="#">商家登陆</a>
+    </div> --> 
+</div>
+
+</header>
+  </body>
+  <script type="text/javascript">
+  $(function(){
+  	$.post(generateUrl("login!checkUserLogin.do?"),function(data){
+		if(data["result"]=="0"){
+			$("#userNameShow").html(data["record"][0]);
+			$("#userNameShow1").html(data["record"][0]);
+			$("#div_login").show();
+			$("#div_unlogin").hide();
+			//$("#quit").attr("href",generateUrl("login!userQuit.do?"));
+			$("#quit").bind("click",function(){
+				if(confirm("确认退出吗？")){
+					window.location.href=generateUrl("login!userQuit.do?");
+				}
+			});
+		}else{
+			$("#div_login").hide();
+			$("#div_unlogin").show();
+		}
+	});
+  });
+  </script>
+<script>
+	$(function(){
+		/*search */
+		window.location.href.indexOf("productSearch.html")>-1&&loaderSearch();//is pdsearch page or
+	});
+		function loaderSearch(){
+			var s=decodeURIComponent(decodeURIComponent(getUrlParam("s")));
+			if(s=="FIAL999") return;
+			var s1=decodeURIComponent(decodeURIComponent(getUrlParam("s1")));
+			var s2=decodeURIComponent(decodeURIComponent(getUrlParam("s2")));
+			var s3=decodeURIComponent(decodeURIComponent(getUrlParam("s3")));
+			var ct=$(".city-info__name").attr("code");
+			var vSearch = "";
+			if(s!="undefined"){
+				s = s.replace(/(^\s*)|(\s*$)/g, "");//前后空格
+				s = s.replace(/[^\u4e00-\u9fa5a-zA-Z0-9]/g, ' ');//replace illegal
+				s = s.replace(/\s{2,}/g,' ');//replace \s
+				$("#hideSh").val(s);
+				$("#search").val(s);
+				$("#showMes").html("找到&nbsp;&gt;&nbsp;\""+s+"\"&gt;&nbsp;&nbsp;相关商品");
+				vSearch = s;
+			}
+			if(s1!="undefined"){
+				var sn1=decodeURIComponent(decodeURIComponent(getUrlParam("sn1")));
+				$("#showMes").html("找到&nbsp;&gt;&nbsp;\""+decodeURIComponent(decodeURIComponent(getUrlParam("sn1")))+"\"&gt;&nbsp;&nbsp;相关商品");
+				vSearch = sn1;
+				vSearch += "&s1=";
+				vSearch += s1;
+			}
+			if(s2!="undefined"){
+				var sn2=decodeURIComponent(decodeURIComponent(getUrlParam("sn2")));
+				$("#showMes").html("找到&nbsp;&gt;&nbsp;\""+decodeURIComponent(decodeURIComponent(getUrlParam("sn2")))+"\"&gt;&nbsp;&nbsp;相关商品");
+				vSearch = sn2;
+				vSearch +="&s2=";
+				vSearch +=s2;
+			}
+			if(s3!="undefined"){
+				var sn3=decodeURIComponent(decodeURIComponent(getUrlParam("sn3")));
+				$("#showMes").html("找到&nbsp;&gt;&nbsp;\""+decodeURIComponent(decodeURIComponent(getUrlParam("sn3")))+"\"&gt;&nbsp;&nbsp;相关商品");
+				vSearch = sn3;
+				vSearch +="&s3=";
+				vSearch +=s3;
+			}
+			$.post(generateUrl("sh!search.do?sh="+vSearch+"&ct="+ct),function(data){
+				var recordSum = data["result"];
+				$("#showMes").append("<font style=\"\"> "+recordSum+"个</font>");
+				$.each(data["record"],function(i,n){
+					var vStr="<li class=\"span4\">";
+				    vStr+="<a href=\"javascript:void(0);\" onclick=\"javascript:window.open(genLinkUrl('html/home/product.html?produceId="+n.produceId+"'));\" class=\"thumbnail\">";
+		            vStr+="<img alt=\""+n.produceName+"\" src=\""+n.producePic+"\" style=\"width: 360px; height: 270px;\">";
+		            vStr+="</a>";
+	            	vStr+="<div class=\"thumbnail\">";
+	                vStr+="<h3 style=\"font-size:18px;\">"+n.produceName+"</h3>";
+	                vStr+="<p>原价:    	"+n.producePrice+"	元</p>";
+	                vStr+="<p>优惠券:   	"+n.remitPrice+"	元</p>";
+	                vStr+="<p>到店支付:	"+n.finalPrice+"	元</p>";                   
+	                vStr+="</div>";
+				  	vStr+="</li>";	
+				  	$(vStr).appendTo($(".thumbnails"));
+				});
+				
+				pageNumSet(recordSum,12);
+			});
+		}
+		
+		function pageChange(){
+			var vSearch = $("#hideSh").val();
+			var ct=$(".city-info__name").attr("code");
+	    	var v_url = "sh!search.do?sh="+vSearch+"&toPn="+pageCurrent+"&ps=12&ct="+ct;
+	    	$.post(generateUrl(v_url),function(data){//load produce
+		   		var recordSum = data["result"];
+		   		$(".thumbnails").empty();
+				$.each(data["record"],function(i,n){
+					var vStr="<li class=\"span4\">";
+				    vStr+="<a href=\"javascript:void(0);\" onclick=\"javascript:window.open(genLinkUrl('html/home/product.html?produceId="+n.produceId+"'));\" class=\"thumbnail\">";
+		            vStr+="<img alt=\""+n.produceName+"\" src=\""+n.producePic+"\" style=\"width: 360px; height: 270px;\">";
+		            vStr+="</a>";
+	            	vStr+="<div class=\"thumbnail\">";
+	                vStr+="<h3 style=\"font-size:18px;\">"+n.produceName+"</h3>";
+	                vStr+="<p>原价:    	"+n.producePrice+"	元</p>";
+	                vStr+="<p>优惠券:   	"+n.remitPrice+"	元</p>";
+	                vStr+="<p>到店支付:	"+n.finalPrice+"	元</p>";                   
+	                vStr+="</div>";
+				  	vStr+="</li>";	
+				  	$(vStr).appendTo($(".thumbnails"));
+				});
+	    		pageNumSet(recordSum,12);
+	    	});
+    	}
+</script>
+</html>

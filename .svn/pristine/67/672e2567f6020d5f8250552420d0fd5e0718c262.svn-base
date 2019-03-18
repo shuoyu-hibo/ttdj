@@ -1,0 +1,479 @@
+@CHARSET "UTF-8";
+
+body {
+	font-size: 10pt;
+}
+
+.youi-panel {
+	
+}
+
+.youi-panel-header {
+	overflow: hidden;
+	zoom: 1;
+	color: #15428b;
+	font: bold 11px tahoma, arial, verdana, sans-serif;
+	padding: 5px 3px 4px 5px;
+	border: 1px solid #99bbe8;
+	line-height: 15px;
+	background: transparent url(../images/youi/panel/white-top-bottom.gif)
+		repeat-x 0 -1px;
+}
+
+.youi-panel-body {
+	overflow: hidden;
+}
+
+.youi-panel-bbar .youi-toolbar {
+	border: 1px solid #99bbe8;
+	border-top: 0 none;
+	overflow: hidden;
+	padding: 2px;
+}
+
+.youi-panel-tbar .youi-toolbar {
+	border: 1px solid #99bbe8;
+	border-top: 0 none;
+	overflow: hidden;
+	padding: 2px;
+}
+
+.youi-panel-tbar-noheader .youi-toolbar,.youi-panel-mc .youi-panel-tbar .youi-toolbar
+	{
+	border-top: 1px solid #99bbe8;
+	border-bottom: 0 none;
+}
+
+.youi-panel-body-noheader,.youi-panel-mc .youi-panel-body {
+	
+}
+
+.youi-panel-header {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.youi-panel-tl .youi-panel-header {
+	color: #15428b;
+	font: bold 11px tahoma, arial, verdana, sans-serif;
+	padding: 5px 0 4px 0;
+	border: 0 none;
+	background: transparent;
+}
+
+.youi-panel-tl .youi-panel-icon,.youi-window-tl .youi-panel-icon {
+	padding-left: 20px !important;
+	background-repeat: no-repeat;
+	background-position: 0 4px;
+	zoom: 1;
+}
+
+.youi-panel-inline-icon {
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	vertical-align: middle;
+	margin-right: 4px;
+	margin-top: -1px;
+	margin-bottom: -1px;
+}
+
+.youi-panel-tc {
+	background: transparent url(../images/youi/panel/top-bottom.gif)
+		repeat-x 0 0;
+	overflow: hidden;
+}
+
+.youi-panel-tl {
+	background: transparent url(../images/youi/panel/corners-sprite.gif)
+		no-repeat 0 0;
+	padding-left: 6px;
+	zoom: 1;
+	border-bottom: 1px solid #99bbe8;
+}
+
+.youi-panel-tr {
+	background: transparent url(../images/youi/panel/corners-sprite.gif)
+		no-repeat right 0;
+	zoom: 1;
+	padding-right: 6px;
+}
+
+.youi-panel-bc {
+	background: transparent url(../images/youi/panel/bottom-center.gif)
+		repeat-x 0 bottom;
+	zoom: 1;
+}
+
+.youi-panel-bc .youi-panel-footer {
+	zoom: 1;
+}
+
+.youi-panel-bl {
+	background: transparent url(../images/youi/panel/corners-sprite.gif)
+		no-repeat 0 bottom;
+	padding-left: 6px;
+	zoom: 1;
+}
+
+.youi-panel-br {
+	background: transparent url(../images/youi/panel/corners-sprite.gif)
+		no-repeat right bottom;
+	padding-right: 6px;
+	zoom: 1;
+}
+
+.youi-panel-mc {
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+	font: normal 11px tahoma, arial, helvetica, sans-serif;
+	padding-top: 6px;
+	background: #E8F4FF;
+}
+
+.youi-panel-mc .youi-panel-body {
+	background: transparent;
+	border: 0 none;
+}
+
+.youi-panel-ml {
+	background: #fff url(../images/youi/panel/left-right.gif) repeat-y 0 0;
+	padding-left: 6px;
+	zoom: 1;
+}
+
+.youi-panel-mr {
+	background: transparent url(../images/youi/panel/left-right.gif)
+		repeat-y right 0;
+	padding-right: 6px;
+	zoom: 1;
+}
+
+.youi-panel-bc .youi-panel-footer {
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+
+.youi-panel-footer-content {
+	background: #E8F4FF;
+}
+
+.youi-panel-nofooter .youi-panel-bc {
+	height: 6px;
+	font-size: 0;
+	line-height: 0;
+}
+
+.youi-panel-bwrap {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.youi-panel-body {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.youi-panel-collapsed .youi-resizable-handle {
+	display: none;
+}
+
+.ext-gecko .youi-panel-animated div {
+	overflow: hidden !important;
+}
+
+/* Plain */
+.youi-plain-body {
+	overflow: hidden;
+}
+
+.youi-plain-bbar .youi-toolbar {
+	overflow: hidden;
+	padding: 2px;
+}
+
+.youi-plain-tbar .youi-toolbar {
+	overflow: hidden;
+	padding: 2px;
+}
+
+.youi-plain-bwrap {
+	overflow: hidden;
+	zoom: 1;
+}
+
+.youi-plain {
+	overflow: hidden;
+}
+
+/* Tools */
+.youi-tool {
+	overflow: hidden;
+	width: 15px;
+	height: 15px;
+	float: right;
+	cursor: pointer;
+	background: transparent url(../images/youi/panel/tool-sprites.gif)
+		no-repeat;
+	margin-left: 2px;
+}
+
+/* expand / collapse tools */
+.youi-tool-toggle {
+	background-position: 0 -60px;
+}
+
+.youi-tool-toggle-over {
+	background-position: -15px -60px;
+}
+
+.youi-panel-collapsed .youi-tool-toggle {
+	background-position: 0 -75px;
+}
+
+.youi-panel-collapsed .youi-tool-toggle-over {
+	background-position: -15px -75px;
+}
+
+.youi-tool-close {
+	background-position: 0 -0;
+}
+
+.youi-tool-close-over {
+	background-position: -15px 0;
+}
+
+.youi-tool-minimize {
+	background-position: 0 -15px;
+}
+
+.youi-tool-minimize-over {
+	background-position: -15px -15px;
+}
+
+.youi-tool-maximize {
+	background-position: 0 -30px;
+}
+
+.youi-tool-maximize-over {
+	background-position: -15px -30px;
+}
+
+.youi-tool-restore {
+	background-position: 0 -45px;
+}
+
+.youi-tool-restore-over {
+	background-position: -15px -45px;
+}
+
+.youi-tool-gear {
+	background-position: 0 -90px;
+}
+
+.youi-tool-gear-over {
+	background-position: -15px -90px;
+}
+
+.youi-tool-pin {
+	background-position: 0 -135px;
+}
+
+.youi-tool-pin-over {
+	background-position: -15px -135px;
+}
+
+.youi-tool-unpin {
+	background-position: 0 -150px;
+}
+
+.youi-tool-unpin-over {
+	background-position: -15px -150px;
+}
+
+.youi-tool-right {
+	background-position: 0 -165px;
+}
+
+.youi-tool-right-over {
+	background-position: -15px -165px;
+}
+
+.youi-tool-left {
+	background-position: 0 -180px;
+}
+
+.youi-tool-left-over {
+	background-position: -15px -180px;
+}
+
+.youi-tool-up {
+	background-position: 0 -210px;
+}
+
+.youi-tool-up-over {
+	background-position: -15px -210px;
+}
+
+.youi-tool-down {
+	background-position: 0 -195px;
+}
+
+.youi-tool-down-over {
+	background-position: -15px -195px;
+}
+
+.youi-tool-refresh {
+	background-position: 0 -225px;
+}
+
+.youi-tool-refresh-over {
+	background-position: -15px -225px;
+}
+
+.youi-tool-minus {
+	background-position: 0 -255px;
+}
+
+.youi-tool-minus-over {
+	background-position: -15px -255px;
+}
+
+.youi-tool-plus {
+	background-position: 0 -240px;
+}
+
+.youi-tool-plus-over {
+	background-position: -15px -240px;
+}
+
+.youi-tool-search {
+	background-position: 0 -270px;
+}
+
+.youi-tool-search-over {
+	background-position: -15px -270px;
+}
+
+.youi-tool-save {
+	background-position: 0 -285px;
+}
+
+.youi-tool-save-over {
+	background-position: -15px -285px;
+}
+
+.youi-tool-help {
+	background-position: 0 -300px;
+}
+
+.youi-tool-help-over {
+	background-position: -15px -300px;
+}
+
+/* Ghosting */
+.youi-panel-ghost {
+	background: #cbddf3;
+	z-index: 12000;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: .65;
+	-moz-opacity: .65;
+	filter: alpha(opacity = 65);
+}
+
+.youi-panel-ghost ul {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+	border: 1px solid #99bbe8;
+	border-top: 0 none;
+	display: block;
+}
+
+.youi-panel-ghost * {
+	cursor: move !important;
+}
+
+.youi-panel-dd-spacer {
+	border: 2px dashed #99bbe8;
+}
+
+/* Buttons */
+.youi-panel-btns-ct {
+	padding: 5px;
+}
+
+.youi-panel-btns-ct .youi-btn {
+	float: right;
+	clear: none;
+}
+
+.youi-panel-btns-ct .youi-panel-btns td {
+	border: 0;
+	padding: 0;
+}
+
+.youi-panel-btns-ct .youi-panel-btns-right table {
+	float: right;
+	clear: none;
+}
+
+.youi-panel-btns-ct .youi-panel-btns-left table {
+	float: left;
+	clear: none;
+}
+
+.youi-panel-btns-ct .youi-panel-btns-center {
+	text-align: center; /*ie*/
+}
+
+.youi-panel-btns-ct .youi-panel-btns-center table {
+	margin: 0 auto; /*everyone else*/
+}
+
+.youi-panel-btns-ct table td.youi-panel-btn-td {
+	padding: 3px;
+}
+
+.youi-panel-btns-ct .youi-btn-focus .youi-btn-left {
+	background-position: 0 -147px;
+}
+
+.youi-panel-btns-ct .youi-btn-focus .youi-btn-right {
+	background-position: 0 -168px;
+}
+
+.youi-panel-btns-ct .youi-btn-focus .youi-btn-center {
+	background-position: 0 -189px;
+}
+
+.youi-panel-btns-ct .youi-btn-over .youi-btn-left {
+	background-position: 0 -63px;
+}
+
+.youi-panel-btns-ct .youi-btn-over .youi-btn-right {
+	background-position: 0 -84px;
+}
+
+.youi-panel-btns-ct .youi-btn-over .youi-btn-center {
+	background-position: 0 -105px;
+}
+
+.youi-panel-btns-ct .youi-btn-click .youi-btn-center {
+	background-position: 0 -126px;
+}
+
+.youi-panel-btns-ct .youi-btn-click  .youi-btn-right {
+	background-position: 0 -84px;
+}
+
+.youi-panel-btns-ct .youi-btn-click .youi-btn-left {
+	background-position: 0 -63px;
+}

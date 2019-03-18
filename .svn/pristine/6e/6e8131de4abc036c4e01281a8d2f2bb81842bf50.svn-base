@@ -1,0 +1,47 @@
+package common;
+
+public class CommonConst {
+
+	public static final String CONFIG_FILE_PATH = "WEB-INF/properties/config.properties";
+	
+	public static String ROOT_PATH="";
+	
+	public static String CLIENT_APPKEY = "";
+	public static String CLIENT_APPSECRET = "";
+	public static String GUANFANG_WEIBOID = "";
+	public static String SINAAPP_INDEX_URL = "";
+	public static String COMMENT_UTIL_ACCESSTOKEN = "";
+	public static String COMMENT_ACCESSTOKEN_EXPIRE = "";
+	public static String COMMENT_WEIBO_CONTENT = "";
+	
+	public static String DB_URL = "";
+	public static String DB_USER = "";
+	public static String DB_PWD = "";
+	public static String DB_DRIVER_CLASSNAME = "";
+	
+	public static String TIMER_INIT_DELAY = "";
+	public static String TIMER_RUN_DELAY = "";
+	public static String TIMER_FORMAT = "";
+	public static String TIMER_START = "";
+	public static String TIMER_STOP = "";
+	
+	//Begin added by Benny Geng 2012/11/14
+	public static String UPLOAD_PIC_PATH = "";
+	//End added by Benny Geng 2012/11/14
+	
+	public static String PKEY_LOG_PROPS = "";
+	
+	public final static String INT_PAGE_SIZE = "INT_PAGE_SIZE";
+	public final static String INT_PAGE_NOW = "INT_PAGE_NOW";
+	public final static String INT_PAGE_COUNT = "INT_PAGE_COUNT";
+	public final static String INT_ROW_COUNT = "INT_ROW_COUNT";
+	
+	
+	public static String MAIL_SERVER_HOST="";
+	public static String MAIL_SERVER_PORT="";
+	public static String USERNAME="";
+	public static String PASSWORD="";
+	public static String FROM_ADDRESS="";
+	
+	
+}

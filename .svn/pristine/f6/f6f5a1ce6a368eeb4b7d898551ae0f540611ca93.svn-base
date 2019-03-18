@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<p>&nbsp;</p>
+<form name="form" enctype="multipart/form-data" method="post" action="/court/UploadFiles" onSubmit = "onBeforeSubmit()">
+    <table class="normal" width="456" border="0" cellspacing="1" cellpadding="0" align="center" bordercolor="#0099CC" bgcolor="#CCCCCC">
+        <tr>
+            <td bgcolor="#6699CC" colspan="2" nowrap><font class="normal">请选择上传文件</font></td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td height="32" width="67" nowrap>
+                <div align="center"><font class="normal">文件描述</font></div>
+            </td>
+            <td height="32" width="386" nowrap>
+                <input class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+            </td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td height="26" width="67" nowrap>
+                <div align="center"><font class="normal">上传文件</font></div>
+            </td>
+            <td height="26" width="386" nowrap>
+                <input class='normal'  type="file" name="FILE" size="20" maxlength="200">
+            </td>
+        </tr>
+        <tr bgcolor="#FFFFFF">
+            <td height="29" colspan="2">
+                <div align="center">
+                    <input class='normal'  name = "rs_add" type = "submit" src="/court/renshi/images/rs_scwj.gif" >
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>
+</BODY>
+</html>

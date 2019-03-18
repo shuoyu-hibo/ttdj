@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>shopinfo.html</title>
+	<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+	<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+    <script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>  
+    <script type="text/javascript" src="../../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../../js/ourUtil.js"></script>
+    <script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+    <script type="text/javascript">  
+
+	$(function(){
+		$("#pageloading").hide();
+		$("#form1").attr("action",generateUrl("produce!uploadImage.do?"));
+		$("#imgUpload").attr("src","../../image/addPic.png");
+		$("#warning").hide();
+		
+		$("#save").click(function(){
+	    	if(!checkInput("produceName","商品名称")
+	    		||!checkInput("produceDesc","商品描述")
+	    			||!checkInput("producePrice","商品价格")){
+	    		return;
+	    	}
+	    	if($("#picUrl").val()==''){
+	    		$("#warning").html('<strong>提示:</strong> 请选择要上传的图片!');
+	    		$("#warning").toggle(true);
+	    	}else{
+	    		$("#warning").toggle(false);
+	    		var strUrl = generateUrl("produce!saveProduceData.do?","produceName,produceDesc,producePrice,picUrl");
+	    		$.post(strUrl,function(json){
+					if(json["result"]=="0"){alert(1);
+						$("#ok").show();
+					}else{
+						$("#warning").html('<strong>提示:</strong> 商品添加失败!');
+	    				$("#warning").toggle(true);
+					}
+				});
+	    	}
+	    });
+	});
+    /** 
+     * upload Picture
+     */  
+    function uploadUnitImage()  {  
+    		$("#pageloading").show();
+            if($("#fileToUpload").val()==''){
+            	$("#warning").show();
+            	return;
+            }
+             $.ajaxFileUpload({  
+                 url:generateUrl("produce!uploadImage.do?"),             //需要链接到服务器地址  
+                 secureuri:false,  
+                 fileElementId:'fileToUpload',                         //文件选择框的id属性  
+                 dataType: 'json',                                     //服务器返回的格式，可以是json  
+                 success: function (data, status)             //相当于java中try语句块的用法  
+                 {     
+                 //alert(data);       //data是从服务器返回来的值     
+                	 $("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     var imgPath="../../uploadfiles/"+data["newname"];
+   					 $("#imgUpload").attr("src",imgPath);
+   					 $("#picUrl").val(imgPath);
+   					 $("#warning").hide();
+   					 return 0;
+                 },  
+                 error: function (data, status, e)             //相当于java中catch语句块的用法  
+                 {  
+                 	$("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     $("#warning").hide();
+                     return 1;
+                 }  
+               }  
+             );  
+    }  
+    
+    function checkInput(inputId,inputName){
+    	if($("#"+inputId).val()==''){
+	    		$("#warning").html("<strong>提示:</strong> 请输入"+inputName+"!");
+	    		$("#warning").show();
+	    		$("#ok").hide();
+	    		return false;
+	    }
+	    return true;
+    }
+       
+$(function(){
+        $('#myModal').modal({
+        show:true,
+        backdrop:true
+        });
+    });
+
+</script>   
+    <link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css"></link>
+  </head>  
+<body>
+  This is my HTML page. <br>
+  
+<!-- 按钮触发模态框 -->
+
+<!--  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" data-backdrop="static" data-keyboard="true">
+   开始演示模态框
+</button>-->
+
+
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div id="pageloading"></div>
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">
+               	添加商铺信息
+            </h4>
+         </div>
+         <div class="modal-body">
+	         <table class="normal" width="456" border="0" cellspacing="1" cellpadding="0" align="center" bordercolor="#0099CC" bgcolor="#CCCCCC">
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商铺名称:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+		                <input id="produceName" class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商铺地址:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+ 		                <input id="produceDesc" class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商铺电话:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+		                <input id="producePrice" class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>		        
+		    </table>
+         </div>
+         <div class="alert alert-success" style="display: none;" id="ok">
+              <strong>恭喜:</strong> 商铺信息添加成功！
+         </div>
+         
+         <div class="modal-footer">
+         
+         	
+         
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">
+               关闭
+            </button>
+            <button type="button" class="btn btn-primary" id="save">
+               提交
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+</html>

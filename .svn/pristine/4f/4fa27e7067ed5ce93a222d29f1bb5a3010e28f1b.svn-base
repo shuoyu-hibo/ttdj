@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>header.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../js/bootstrap.js"></script>
+	<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+
+	<script type="text/javascript" src="../../js/s.js"></script>
+    
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+  </head>
+  
+  <body>
+<header id="site-mast" class="site-mast">
+<div class="site-mast__user-nav-w">
+    <div class="site-mast__user-nav cf">
+        <ul class="basic-info">
+	           <li class="site-mast__keep">
+	               <a class="fav log-mod-viewed" href="javascript:window.external.AddFavorite('../../html/home/index.html','天天代金券')">
+	                   <i class="F-glob F-glob-star-border icon-keep"></i>
+	                   	收藏TTDJ
+	               </a>
+	           </li>
+	           <li class="user-info cf" >
+	              <div id="div_unlogin">
+	                <a class="user-info__login" href="../../html/register/login.html">登录</a>
+	                <a class="user-info__signup" href="../../html/register/register.html">注册</a>
+	               </div>
+	               <div id="div_login" style="display: none">
+	                	<span >欢迎您</span>,【<span id="userNameShow" style="font-size: 12px;"></span>】   
+	                	<a href="#" id="quit" >退出</a>
+	               </div>
+	           </li>
+	           <li   class="mobile-info__item dropdown" >
+	               <a class="dropdown__toggle" href="../../html/home/index.html">首页</a>
+	           </li>
+	       </ul>
+        <ul class="site-mast__user-w">
+            <li  class="dropdown dropdown--account" >
+                <a id="J-my-account-toggle" rel="nofollow" class="dropdown__toggle" href="../../html/register/usermessage.html" >
+                    <span>我的TTDJ</span>
+                    <i class="tri tri--dropdown"></i>
+                </a>
+            </li>
+            <li   class="dropdown dropdown--history"  >
+                <a id="J-my-history-toggle" rel="nofollow" class="dropdown__toggle" href="javascript:;" >
+                    <span>最近浏览</span>
+                    <i class="tri tri--dropdown"></i>
+                   
+                </a>
+                <div id="J-my-history-menu" class="dropdown-menu dropdown-menu--deal dropdown-menu--history"></div>
+            </li>
+            <li  id="J-site-merchant" class="dropdown dropdown--merchant" >
+                <a class="dropdown__toggle dropdown__toggle--merchant" href="../../html/home/shop.html">
+                    <span>我是商家</span>
+                    <i class="tri tri--dropdown"></i>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+<div class="site-mast__branding cf" >
+    <h1><a class="site-logo"  href="#" gaevent="header/logo">运城代金券</a></h1>
+    <div class="city-info">
+        <h2><a class="city-info__name" href="http://yuncheng.ttdaijin.com" gaevent="header/cityname" code="25">运城</a></h2>
+        <a class="city-info__toggle" href="../../html/home/future.html" gaevent="header/changecity">切换城市</a>
+    </div>
+    <div  class="component-search-box mt-component--booted"  >
+    	<div   class="J-search-box search-box ">
+            <br>
+            <input tabindex="1" type="text" id="search" name="w" autocomplete="off" data-smartbox="/search/smartboxv2/" class="s-text search-box__input J-search-box__input" value="" placeholder="请输入商品名称、商铺名等">
+            <input type="button" id="btnSearch" class="s-submit search-box__button log-mod-viewed" hidefocus="true" value="&nbsp;&nbsp;搜&nbsp;&nbsp;&nbsp;索&nbsp;&nbsp;" data-mod="sr">
+        </div>
+    </div>
+   <!-- <div class="site-commitment">
+        <a href="#">用户登陆</a>
+        <a href="#">商家登陆</a>
+    </div> --> 
+</div>
+
+</header>
+  </body>
+  <script type="text/javascript">
+  $(function(){
+  	$.post(generateUrl("login!checkUserLogin.do?"),function(data){
+		if(data["result"]=="0"){
+			$("#userNameShow").html(data["record"][0]);
+			$("#userNameShow1").html(data["record"][0]);
+			$("#div_login").show();
+			$("#div_unlogin").hide();
+			//$("#quit").attr("href",generateUrl("login!userQuit.do?"));
+			$("#quit").bind("click",function(){
+				if(confirm("确认退出吗？")){
+					window.location.href=generateUrl("login!userQuit.do?");
+				}
+			});
+		}else{
+			$("#div_login").hide();
+			$("#div_unlogin").show();
+		}
+	});
+  });
+  </script>
+
+</html>

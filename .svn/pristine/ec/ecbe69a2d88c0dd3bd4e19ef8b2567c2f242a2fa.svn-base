@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="application-name" content="ttdaijin网－ttdaijin一次 美一次，精品生活">
+<meta name="description" content="运城ttdaijin网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城ttdaijin网,您身边的吃喝玩乐好帮手!">
+<meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+
+
+<title>我的评价</title>
+
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css">
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+
+
+<!--[if IE 6]>
+<script src="http://s1.ttdaijin.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://s0.ttdaijin.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+<style type="text/css">
+.comWidth {
+	width: 1070px;
+	
+	margin: 0 auto;
+	position:relative;
+	
+}
+.meihua1{
+width: 1070px;
+	
+	margin: 30px 30px 0px 60px;
+	position:relative;
+	
+
+}
+.meihua1 ul {
+	list-style:none; height:50px; border-bottom:0px solid #F60;
+	
+}
+
+.meihua1 li {
+	float:left; margin-top:20px;
+}
+.meihua2{
+   width: 1070px;
+	height:450px;
+	margin: 0px auto;
+	position:relative;
+	padding-top:0px;
+    padding-left:60px;
+    margin-bottom: 15px;
+}
+.meihua3{
+   width: 200px;
+	height:80px;
+	margin: 0px auto;
+	position:relative;
+	padding-top:40px;
+    padding-left:60px;
+    float: left;
+}
+.meihua1 a {
+	text-decoration:none; display:block;height:40px; line-height:40px; width:180px; background-color:#09c;color:#Fff; margin-bottom:0px; text-align:center;
+	font-size: 16px;
+}
+.meihua1 a:hover {
+	background-color:#20b2aa; color:#FFFFFF;
+}
+body{color:#000;}
+
+</style>
+</head>
+
+
+<body id="index" class="pg-floor">
+<div class="header" id="header">
+</div>
+	<div class="comWidth">
+		<div class="meihua1">
+			<ul>
+<li><a href="usermessage.html">我的个人信息</a></li>
+<li><a href="myliulai.html">我浏览的店铺</a></li>
+<li><a href="mydjjuan.html">我已领的优惠券</a></li>
+<li><a href="mypingjia.html">我的评价</a></li>
+<li><a href="yonghumima.html">修改密码</a></li>
+</ul>
+		</div>
+		
+		<div class="meihua2">
+		<div class="category-floor__head"style="height:40px;margin-top:15px;width:890px;">
+        <h5><span style="font-size:14px">亲，您最近没有评价！</span></h5>
+        </div>
+		</div>
+	</div>
+	
+<div class="foot" id="foot">
+</div>
+</body>
+
+</html>	
+ 

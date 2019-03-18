@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>登录</title>
+
+
+
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+
+<link rel="stylesheet" href="../../styles/aw/denglu.css" type="text/css">
+
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css">
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+
+<script type="text/javascript">
+	$(function() {
+		$("#chkImg").click(function() {
+			$("#chkImg").attr("src", generateUrl("login!genCheckImg.do?"));
+		});
+	$(document).keydown(function(event){
+if(event.keyCode==13){
+$("#btnSub").click();
+}
+}); 
+		$("#btnSub").click(function(){
+			var userName = $("#userName").val();
+			var password = $("#password").val();
+			var yzm = $("#yzm").val();
+			
+			if(userName==""){
+			    $(".meihua11").css({
+				visibility : "visible",
+				display : "block"});
+				$(".meihua11").html("用户名不能为空");
+				return;
+				
+			}else {
+				$(".meihua11").css({
+					visibility : "hidden",
+					display : "none"
+				});
+			}
+			
+			if(password==""){
+			  $(".meihua11").css({
+				visibility : "visible",
+				display : "block"});
+				$(".meihua11").html("密码不能为空");
+				return;
+			}else {
+				$(".meihua11").css({
+					visibility : "hidden",
+					display : "none"
+				});
+			}
+			
+			if(yzm==""){
+			 $(".meihua11").css({
+				visibility : "visible",
+				display : "block"});
+				$(".meihua11").html("验证码不能为空");
+				return;
+			}else {
+				$(".meihua11").css({
+					visibility : "hidden",
+					display : "none"
+				});
+			}
+			
+			var urlStr = "login!userLogin.do?userName="+userName+"&password="+password;
+			urlStr = urlStr+"&checkNumber="+yzm;
+			var strUrl = generateUrl(urlStr);
+			$.post(strUrl,function(json){
+					if(json["result"]=="0"){
+						//跳转首页
+						window.location.href='../../html/home/index.html?us='+userName;
+						//window.location.href=generateUrl("login!toHomePage.do?us="+userName);
+					}else{
+						//alert(json["message"]);
+						
+						//window.location.href='../../html/home/index.html';
+						$(".meihua11").css({
+							visibility : "visible",
+							display : "block"});
+							$(".meihua11").html(json["message"]);
+							$("#chkImg").attr("src", generateUrl("login!genCheckImg.do?"));
+							return;
+						}
+					
+			});
+
+	});	
+
+	
+	
+	});	
+	
+</script>
+</head>
+<body id="index" class="pg-floor">
+<div class="headerBar">
+		<div class="comWidth">
+			<div class="leftArea">
+				<img src="../../image/aw/tupiao.jpg" width="100" height="100" />
+				登录TT账号
+			</div>
+			
+		</div>
+	</div>
+<div class="comWidth">
+    <div class="control-group"style="margin-top: 100px;width:300px;float:left">
+      <label class="control-label" for="inputIcon"style="font-size: 20px;">账户登录</label>
+      <form >
+      <div class="controls">
+        <div class="input-prepend"style="margin-top: 20px;">
+          <span class="add-on"><i class="icon-user"></i></span>
+          <input class="span2" id="userName" type="text"style="width:200px;"placeholder="邮箱">
+        </div>
+        </div>
+        <div class="controls">
+        <div class="input-prepend"style="margin-top: 20px;">
+          <span class="add-on"><i class="icon-lock "></i></span>
+          <input class="span2" id="password" type="password"style="width:200px;"placeholder="密码" >
+        </div>
+      </div>
+      <div class="meihua77">
+					<label><input type="text" class="text1" id="yzm" /> <img
+						id="chkImg" class="text1" src="login!genCheckImg.do?" alt=""
+						style="cursor: pointer;" /> </label>
+				</div>
+      <div class="meihua9">
+					<input type="checkbox" value="1" name="auto_login"><span
+						style="font-size: 12px">七天内自动登录</span><span
+						style="font-size: 12px;margin-left: 80px;"><a href="findpassword.html">忘记登录密码？</a>
+					</span><span></span>
+				</div>
+				<div class="meihua11">生活很美好，现实很骨感</div>
+				<div class="meihua8">
+					<input name="Submit2" type="button" value="登录" id="btnSub"
+						class="btn1" />
+				</div>
+				<div class="meihua9">
+					还没有账号？<span><a href="register.html">免费注册</a> </span>
+				</div>
+			</form>	
+    </div>
+<div class="meihua5">
+			<img src="../../image/aw/guanggao.jpg" width="630" height="300" />
+		</div>
+
+
+
+
+</div>
+<div class="comWidth1">
+<div class="footer">
+	<p><a href="#">天天简介</a><i>|</i><a href="#">天天公告</a><i>|</i> <a href="#">天天承诺</a><i>|</i><a href="#">联系我们</a><i>|</i>客服热线：400-675-1234</p>
+	<p>Copyright &copy; 2006 - 2015 慕课版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;某市公安局XX分局备案编号：123456789123</p>
+	
+</div>
+</div>		
+			
+
+</body>
+</html>

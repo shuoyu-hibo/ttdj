@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="SHORTCUT ICON" HREF="../../image/favicon.ico">
+<LINK REL="Bookmark" HREF="../../image/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="application-name" content="TTDJ网－TTDJ一次 美一次，精品生活">
+<meta name="description" content="运城TTDJ网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城TTDJ网,您身边的吃喝玩乐好帮手!">
+<meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+
+
+<title>【运城代金券网】</title>
+
+<link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css">
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script type="text/javascript" src="../../js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+
+
+<!--[if IE 6]>
+<script src="http://s1.ttdaijin.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://s0.ttdaijin.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../styles/combo.css">
+<link rel="stylesheet" type="text/css" href="../../styles/xw/ttdj1.css">
+<script type="text/javascript">
+
+    $(function(){
+    	$("#imgUpload").attr("src","../../image/addPic.png");
+		$("#warning").hide();
+    	$("#myModal").modal({
+	        show:true,
+	        backdrop:"static"
+        });
+        
+    	$("#save").click(function(){
+	    	if(!checkInput("produceName","商品名称")){
+	    		return;
+	    	}
+	    	if(!checkInput("produceDesc","商品描述")){
+	    		return;
+	    	}
+	    	if(!checkInput("producePrice","商品价格")){
+	    		return;
+	    	}
+	    	if(!checkInput("produceCoupon","优惠价")){
+	    		return;
+	    	}
+	    	if(!checkInput("producePriceNew","商品现价")){
+	    		return;
+	    	}
+	    	if(!checkInput("proSort1","商品一级分类")){
+	    		return;
+	    	}
+	    	
+	    	//if(!checkInput("proSort2","商品二级分类")){
+	    	//	return;
+	    	//}
+	    	//$("#ifPopular").val();
+	    	
+	    	if($("#picUrl").val()==''){
+	    		$("#warning").html('<strong>提示:</strong> 请选择要上传的图片!');
+	    		$("#warning").toggle(true);
+	    	}else{
+	    		$("#warning").toggle(false);
+	    		var sul = "produce!saveProduceData.do?proSort1Code="+$("#proSort1 option:selected").attr("id");
+		    	if($("#proSort2 option:selected").attr("id")!=undefined){
+		    		sul += "&proSort2Code="+$("#proSort2 option:selected").attr("id");
+		    	}
+		    	if($("#proSort3 option:selected").attr("id")!=undefined){
+			    	sul += "&proSort3Code="+$("#proSort3 option:selected").attr("id");
+		    	}
+		    	if($("#ifPopular").attr("checked")=='checked'){
+		    		sul +="&ifPopular=Y"
+		    	}
+		    	sul += "&";
+	    		var strUrl = generateUrl(sul,"produceName,produceDesc,producePrice,produceCoupon,producePriceNew,picUrl,proSort1,proSort2,proSort3");
+	    		$.post(strUrl,function(json){
+					if(json["result"]=="0"){
+						//alert(1);
+						//$("#ok").show();
+						$("#myModal").modal("hide");
+						loadProduce();
+					}else{
+						$("#warning").html('<strong>提示:</strong> 商品添加失败!');
+	    				$("#warning").toggle(true);
+					}
+				});
+	    	}
+	    });
+	    
+	    //load proSort and bgrounp start
+        $.post(generateUrl("ct!getProSort1.do?"),function(data){
+        	$("#proSort1").html("<option></option>");
+        	$.each(data["record"],function(i,n){
+        		$("<option id="+n.proSortCode+"\>"+n.proSortName+"</option>").appendTo($("#proSort1"));
+        	});
+        });
+        $("#proSort1").change(function(){
+        	var sU = generateUrl("ct!getProSort2.do?proSortCode1="+$("#proSort1 option:selected").attr("id"))
+        	$("#proSort2").removeAttr("disabled");
+        	$("#proSort2").html("<option></option>");
+        	$.post(sU,function(data){
+	        	$.each(data["record"],function(i,n){
+	        		$("<option id="+n.proSort2Code+"\>"+n.proSort2Name+"</option>").appendTo($("#proSort2"));
+        		});
+       		});
+       		$("#proSort2").change();
+        });
+        $("#proSort2").change(function(){
+        	var sU = generateUrl("ct!getProSort3.do?proSortCode2="+$("#proSort2 option:selected").attr("id"))
+        	$("#proSort3").removeAttr("disabled");
+        	$("#proSort3").html("<option></option>");
+        	$.post(sU,function(data){
+	        	$.each(data["record"],function(i,n){
+	        		$("<option id="+n.proSort3Code+"\>"+n.proSort3Name+"</option>").appendTo($("#proSort3"));
+        		});
+       		});
+       		$("#proSort3").change();
+        });
+		//load proSort city county and bgrounp end
+    });
+    
+    function checkInput(inputId,inputName){//checkinput for produceinfo
+  		if($("#"+inputId).val()=='' || $("#"+inputId).val()==undefined){
+	   		$("#warning").html("<strong>提示:</strong> 请输入"+inputName+"!");
+	   		$("#warning").show();
+	   		$("#ok").hide();
+	   		return false;
+	    }
+	  	 $("#warning").hide();
+	     return true;
+    }
+    /** 
+     * upload Picture
+     */  
+    function uploadUnitImage()  {  
+    		$("#pageloading").show();
+            if($("#fileToUpload").val()==''){
+            	$("#warning").show();
+            	$("#pageloading").hide();
+            	return;
+            }
+             $.ajaxFileUpload({  
+                 url:generateUrl("produce!uploadImage.do?"),             //需要链接到服务器地址  
+                 secureuri:false,  
+                 fileElementId:'fileToUpload',                         //文件选择框的id属性  
+                 dataType: 'json',                                     //服务器返回的格式，可以是json  
+                 success: function (data, status)             //相当于java中try语句块的用法  
+                 {     
+                 //alert(data);       //data是从服务器返回来的值     
+                	 $("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     var imgPath="../../uploadfiles/"+data["newname"];
+   					 $("#imgUpload").attr("src",imgPath);
+   					 $("#picUrl").val(imgPath);
+   					 $("#warning").hide();
+   					 return 0;
+                 },  
+                 error: function (data, status, e)             //相当于java中catch语句块的用法  
+                 {  
+                 	$("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     $("#warning").hide();
+                     return 1;
+                 }  
+               }  
+             );  
+    }  
+</script>
+</head>
+
+
+<body id="index" class="pg-floor">
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    	添加商品信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <table class="normal" width="456" border="0" cellspacing="1" cellpadding="0" align="center" bordercolor="#0099CC" bgcolor="#CCCCCC">
+                    <tr bgcolor="#FFFFFF">
+                        <td height="32" width="67" nowrap>
+                            <div align="center"><font class="normal">商品名称: </font></div>
+                        </td>
+                        <td height="32" width="386" nowrap>
+                            <input class='normal' id="produceName"  type="text" name="WJMS" maxlength="200" size="40">
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td height="32" width="67" nowrap>
+                            <div align="center"><font class="normal">商品描述: </font></div>
+                        </td>
+                        <td height="32" width="386" nowrap>
+                            <input class='normal' id="produceDesc"  type="text" name="WJMS" maxlength="200" size="40">
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td height="32" width="67" nowrap>
+                            <div align="center"><font class="normal">商品原价: </font></div>
+                        </td>
+                        <td height="32" width="386" nowrap>
+                            <input class='normal' id="producePrice"  type="number" name="WJMS" maxlength="200" size="40">
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td height="32" width="67" nowrap>
+                            <div align="center"><font class="normal">优惠价: </font></div>
+                        </td>
+                        <td height="32" width="386" nowrap>
+                            <input class='normal' id="produceCoupon"  type="number" name="WJMS" maxlength="200" size="40">
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td height="32" width="67" nowrap>
+                            <div align="center"><font class="normal">商品现价: </font></div>
+                        </td>
+                        <td height="32" width="386" nowrap>
+                            <input class='normal' id="producePriceNew"  type="number" name="WJMS" maxlength="200" size="40">
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td height="32" width="67" nowrap>
+                            <div align="center"><font class="normal">商品类别: </font></div>
+                        </td>
+                        <td height="32" width="386" nowrap>
+                            <select style="width:120px" id="proSort1">
+		                		<option></option>
+			                </select>
+			                <select style="width:120px" id="proSort2" disabled="disabled">
+			                	<option></option>
+			                </select>
+			                <select style="width:120px" id="proSort3" disabled="disabled">
+			                	<option></option>
+			                </select>
+                        </td>
+                    </tr>
+                    <tr bgcolor="#FFFFFF">
+                        <td height="26" width="67" nowrap>
+                            <div align="center"><font class="normal">商品图片:</font></div>
+                        </td>
+                        <td height="26" width="386" nowrap>
+                            <div><img border="0" id="imgUpload" src="" alt="" width="100" height="100" /></div>
+                            <input id="fileToUpload"  type="file" size="45"   accept="image/*" name="file"  class="input" >
+                            <button class="button" id="buttonUpload" type="button"
+                                    onclick="uploadUnitImage();">上传选定图片</button><br>
+                             <input type="hidden" id="picUrl"/>
+                         </td>
+                     </tr>
+                     <tr bgcolor="#FFFFFF">
+					    <td height="40" width="67" nowrap>
+					        <div align="center"><font class="normal">是否推荐:</font></div>
+					    </td>
+					    <td height="26" width="386" nowrap>
+					       <label class="checkbox">
+					              <input type="checkbox" id="ifPopular"> (只可设置2个)
+					            </label>
+					    </td>
+					</tr>
+					<div class="alert alert-success" style="display: none;" id="ok">
+			              <strong>恭喜:</strong> 商铺信息添加成功！
+			         </div>
+					<div class="alert fade in" id="warning">
+                       <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>提示:</strong> 请选择要上传的图片!
+                    </div>
+                    <div id="result" style="margin-left:200px"></div>
+	                </table>
+	            </div>
+	            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+              		关闭
+                </button>
+                <button type="button" class="btn btn-primary" id="save">
+                   	 提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+
+</html>

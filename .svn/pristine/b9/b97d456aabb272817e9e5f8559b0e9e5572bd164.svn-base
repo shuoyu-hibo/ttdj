@@ -1,0 +1,19 @@
+var completeAry = [];
+$(function(){
+	$("#search").typeahead({source:function(query,process){
+		if(completeAry==''){
+			$.post(generateUrl("sh!procTypeahead.do?city="+$(".city-info__name").attr("code")),function(data){
+				$.each(data["record"],function(i,n){
+					completeAry[i]=n;
+				});
+				process(completeAry);
+			});
+		}else{process(completeAry);}
+	}});
+	
+	$("#btnSearch").bind("click",function(){
+		var searchStr = $("#search").val();
+		if(searchStr=='') return false;
+		window.location.href=generateUrl("html/search/productSearch.html?s="+searchStr);
+	});
+});

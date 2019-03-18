@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.ttdj.ProduceInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.ttdj.ProduceInfo" >
+    <id column="PRODUCE_ID" property="produceId" jdbcType="INTEGER" />
+    <result column="PRODUCE_NAME" property="produceName" jdbcType="VARCHAR" />
+    <result column="PRODUCE_DESC" property="produceDesc" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="INTEGER" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="PRODUCE_PIC" property="producePic" jdbcType="VARCHAR" />
+    <result column="PRODUCE_PRICE" property="producePrice" jdbcType="DECIMAL" />
+    <result column="REMIT_PRICE" property="remitPrice" jdbcType="DECIMAL" />
+    <result column="FINAL_PRICE" property="finalPrice" jdbcType="DECIMAL" />
+    <result column="PRODUCE_COUNT" property="produceCount" jdbcType="INTEGER" />
+    <result column="PRODUCE_BUY_COUNT" property="produceBuyCount" jdbcType="INTEGER" />
+    <result column="FAVORITE_COUNT" property="favoriteCount" jdbcType="INTEGER" />
+    <result column="PRO_SORT1_NAME" property="proSort1Name" jdbcType="VARCHAR" />
+    <result column="PRO_SORT1_CODE" property="proSort1Code" jdbcType="INTEGER" />
+    <result column="PRO_SORT2_NAME" property="proSort2Name" jdbcType="VARCHAR" />
+    <result column="PRO_SORT2_CODE" property="proSort2Code" jdbcType="INTEGER" />
+    <result column="PRO_SORT3_NAME" property="proSort3Name" jdbcType="VARCHAR" />
+    <result column="PRO_SORT3_CODE" property="proSort3Code" jdbcType="INTEGER" />
+    <result column="IF_POPULAR" property="ifPopular" jdbcType="VARCHAR" />
+    <result column="HOMEPAGE_SHOW" property="homepageShow" jdbcType="INTEGER" />
+    <result column="ADD_DATE" property="addDate" jdbcType="TIMESTAMP" />
+    <result column="LAST_UPDATE_DATE" property="lastUpdateDate" jdbcType="TIMESTAMP" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    PRODUCE_ID, PRODUCE_NAME, PRODUCE_DESC, USER_ID, USER_NAME, PRODUCE_PIC, PRODUCE_PRICE, 
+    REMIT_PRICE, FINAL_PRICE, PRODUCE_COUNT, PRODUCE_BUY_COUNT, FAVORITE_COUNT, PRO_SORT1_NAME, 
+    PRO_SORT1_CODE, PRO_SORT2_NAME, PRO_SORT2_CODE, PRO_SORT3_NAME, PRO_SORT3_CODE, IF_POPULAR, 
+    HOMEPAGE_SHOW, ADD_DATE, LAST_UPDATE_DATE, REMARK
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from produce_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from produce_info
+    where PRODUCE_ID = #{produceId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from produce_info
+    where PRODUCE_ID = #{produceId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" >
+    delete from produce_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.ttdj.ProduceInfo" >
+    insert into produce_info (PRODUCE_ID, PRODUCE_NAME, PRODUCE_DESC, 
+      USER_ID, USER_NAME, PRODUCE_PIC, 
+      PRODUCE_PRICE, REMIT_PRICE, FINAL_PRICE, 
+      PRODUCE_COUNT, PRODUCE_BUY_COUNT, FAVORITE_COUNT, 
+      PRO_SORT1_NAME, PRO_SORT1_CODE, PRO_SORT2_NAME, 
+      PRO_SORT2_CODE, PRO_SORT3_NAME, PRO_SORT3_CODE, 
+      IF_POPULAR, HOMEPAGE_SHOW, ADD_DATE, 
+      LAST_UPDATE_DATE, REMARK)
+    values (#{produceId,jdbcType=INTEGER}, #{produceName,jdbcType=VARCHAR}, #{produceDesc,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{producePic,jdbcType=VARCHAR}, 
+      #{producePrice,jdbcType=DECIMAL}, #{remitPrice,jdbcType=DECIMAL}, #{finalPrice,jdbcType=DECIMAL}, 
+      #{produceCount,jdbcType=INTEGER}, #{produceBuyCount,jdbcType=INTEGER}, #{favoriteCount,jdbcType=INTEGER}, 
+      #{proSort1Name,jdbcType=VARCHAR}, #{proSort1Code,jdbcType=INTEGER}, #{proSort2Name,jdbcType=VARCHAR}, 
+      #{proSort2Code,jdbcType=INTEGER}, #{proSort3Name,jdbcType=VARCHAR}, #{proSort3Code,jdbcType=INTEGER}, 
+      #{ifPopular,jdbcType=VARCHAR}, #{homepageShow,jdbcType=INTEGER}, #{addDate,jdbcType=TIMESTAMP}, 
+      #{lastUpdateDate,jdbcType=TIMESTAMP}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo" >
+    insert into produce_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="produceId != null" >
+        PRODUCE_ID,
+      </if>
+      <if test="produceName != null" >
+        PRODUCE_NAME,
+      </if>
+      <if test="produceDesc != null" >
+        PRODUCE_DESC,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+      <if test="producePic != null" >
+        PRODUCE_PIC,
+      </if>
+      <if test="producePrice != null" >
+        PRODUCE_PRICE,
+      </if>
+      <if test="remitPrice != null" >
+        REMIT_PRICE,
+      </if>
+      <if test="finalPrice != null" >
+        FINAL_PRICE,
+      </if>
+      <if test="produceCount != null" >
+        PRODUCE_COUNT,
+      </if>
+      <if test="produceBuyCount != null" >
+        PRODUCE_BUY_COUNT,
+      </if>
+      <if test="favoriteCount != null" >
+        FAVORITE_COUNT,
+      </if>
+      <if test="proSort1Name != null" >
+        PRO_SORT1_NAME,
+      </if>
+      <if test="proSort1Code != null" >
+        PRO_SORT1_CODE,
+      </if>
+      <if test="proSort2Name != null" >
+        PRO_SORT2_NAME,
+      </if>
+      <if test="proSort2Code != null" >
+        PRO_SORT2_CODE,
+      </if>
+      <if test="proSort3Name != null" >
+        PRO_SORT3_NAME,
+      </if>
+      <if test="proSort3Code != null" >
+        PRO_SORT3_CODE,
+      </if>
+      <if test="ifPopular != null" >
+        IF_POPULAR,
+      </if>
+      <if test="homepageShow != null" >
+        HOMEPAGE_SHOW,
+      </if>
+      <if test="addDate != null" >
+        ADD_DATE,
+      </if>
+      <if test="lastUpdateDate != null" >
+        LAST_UPDATE_DATE,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="produceId != null" >
+        #{produceId,jdbcType=INTEGER},
+      </if>
+      <if test="produceName != null" >
+        #{produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="produceDesc != null" >
+        #{produceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="producePic != null" >
+        #{producePic,jdbcType=VARCHAR},
+      </if>
+      <if test="producePrice != null" >
+        #{producePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="remitPrice != null" >
+        #{remitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="finalPrice != null" >
+        #{finalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="produceCount != null" >
+        #{produceCount,jdbcType=INTEGER},
+      </if>
+      <if test="produceBuyCount != null" >
+        #{produceBuyCount,jdbcType=INTEGER},
+      </if>
+      <if test="favoriteCount != null" >
+        #{favoriteCount,jdbcType=INTEGER},
+      </if>
+      <if test="proSort1Name != null" >
+        #{proSort1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort1Code != null" >
+        #{proSort1Code,jdbcType=INTEGER},
+      </if>
+      <if test="proSort2Name != null" >
+        #{proSort2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort2Code != null" >
+        #{proSort2Code,jdbcType=INTEGER},
+      </if>
+      <if test="proSort3Name != null" >
+        #{proSort3Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Code != null" >
+        #{proSort3Code,jdbcType=INTEGER},
+      </if>
+      <if test="ifPopular != null" >
+        #{ifPopular,jdbcType=VARCHAR},
+      </if>
+      <if test="homepageShow != null" >
+        #{homepageShow,jdbcType=INTEGER},
+      </if>
+      <if test="addDate != null" >
+        #{addDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateDate != null" >
+        #{lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" resultType="java.lang.Integer" >
+    select count(*) from produce_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update produce_info
+    <set >
+      <if test="record.produceId != null" >
+        PRODUCE_ID = #{record.produceId,jdbcType=INTEGER},
+      </if>
+      <if test="record.produceName != null" >
+        PRODUCE_NAME = #{record.produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.produceDesc != null" >
+        PRODUCE_DESC = #{record.produceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        USER_ID = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userName != null" >
+        USER_NAME = #{record.userName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.producePic != null" >
+        PRODUCE_PIC = #{record.producePic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.producePrice != null" >
+        PRODUCE_PRICE = #{record.producePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.remitPrice != null" >
+        REMIT_PRICE = #{record.remitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.finalPrice != null" >
+        FINAL_PRICE = #{record.finalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="record.produceCount != null" >
+        PRODUCE_COUNT = #{record.produceCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.produceBuyCount != null" >
+        PRODUCE_BUY_COUNT = #{record.produceBuyCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.favoriteCount != null" >
+        FAVORITE_COUNT = #{record.favoriteCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.proSort1Name != null" >
+        PRO_SORT1_NAME = #{record.proSort1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proSort1Code != null" >
+        PRO_SORT1_CODE = #{record.proSort1Code,jdbcType=INTEGER},
+      </if>
+      <if test="record.proSort2Name != null" >
+        PRO_SORT2_NAME = #{record.proSort2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proSort2Code != null" >
+        PRO_SORT2_CODE = #{record.proSort2Code,jdbcType=INTEGER},
+      </if>
+      <if test="record.proSort3Name != null" >
+        PRO_SORT3_NAME = #{record.proSort3Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proSort3Code != null" >
+        PRO_SORT3_CODE = #{record.proSort3Code,jdbcType=INTEGER},
+      </if>
+      <if test="record.ifPopular != null" >
+        IF_POPULAR = #{record.ifPopular,jdbcType=VARCHAR},
+      </if>
+      <if test="record.homepageShow != null" >
+        HOMEPAGE_SHOW = #{record.homepageShow,jdbcType=INTEGER},
+      </if>
+      <if test="record.addDate != null" >
+        ADD_DATE = #{record.addDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastUpdateDate != null" >
+        LAST_UPDATE_DATE = #{record.lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remark != null" >
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update produce_info
+    set PRODUCE_ID = #{record.produceId,jdbcType=INTEGER},
+      PRODUCE_NAME = #{record.produceName,jdbcType=VARCHAR},
+      PRODUCE_DESC = #{record.produceDesc,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=INTEGER},
+      USER_NAME = #{record.userName,jdbcType=VARCHAR},
+      PRODUCE_PIC = #{record.producePic,jdbcType=VARCHAR},
+      PRODUCE_PRICE = #{record.producePrice,jdbcType=DECIMAL},
+      REMIT_PRICE = #{record.remitPrice,jdbcType=DECIMAL},
+      FINAL_PRICE = #{record.finalPrice,jdbcType=DECIMAL},
+      PRODUCE_COUNT = #{record.produceCount,jdbcType=INTEGER},
+      PRODUCE_BUY_COUNT = #{record.produceBuyCount,jdbcType=INTEGER},
+      FAVORITE_COUNT = #{record.favoriteCount,jdbcType=INTEGER},
+      PRO_SORT1_NAME = #{record.proSort1Name,jdbcType=VARCHAR},
+      PRO_SORT1_CODE = #{record.proSort1Code,jdbcType=INTEGER},
+      PRO_SORT2_NAME = #{record.proSort2Name,jdbcType=VARCHAR},
+      PRO_SORT2_CODE = #{record.proSort2Code,jdbcType=INTEGER},
+      PRO_SORT3_NAME = #{record.proSort3Name,jdbcType=VARCHAR},
+      PRO_SORT3_CODE = #{record.proSort3Code,jdbcType=INTEGER},
+      IF_POPULAR = #{record.ifPopular,jdbcType=VARCHAR},
+      HOMEPAGE_SHOW = #{record.homepageShow,jdbcType=INTEGER},
+      ADD_DATE = #{record.addDate,jdbcType=TIMESTAMP},
+      LAST_UPDATE_DATE = #{record.lastUpdateDate,jdbcType=TIMESTAMP},
+      REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo" >
+    update produce_info
+    <set >
+      <if test="produceName != null" >
+        PRODUCE_NAME = #{produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="produceDesc != null" >
+        PRODUCE_DESC = #{produceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="producePic != null" >
+        PRODUCE_PIC = #{producePic,jdbcType=VARCHAR},
+      </if>
+      <if test="producePrice != null" >
+        PRODUCE_PRICE = #{producePrice,jdbcType=DECIMAL},
+      </if>
+      <if test="remitPrice != null" >
+        REMIT_PRICE = #{remitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="finalPrice != null" >
+        FINAL_PRICE = #{finalPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="produceCount != null" >
+        PRODUCE_COUNT = #{produceCount,jdbcType=INTEGER},
+      </if>
+      <if test="produceBuyCount != null" >
+        PRODUCE_BUY_COUNT = #{produceBuyCount,jdbcType=INTEGER},
+      </if>
+      <if test="favoriteCount != null" >
+        FAVORITE_COUNT = #{favoriteCount,jdbcType=INTEGER},
+      </if>
+      <if test="proSort1Name != null" >
+        PRO_SORT1_NAME = #{proSort1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort1Code != null" >
+        PRO_SORT1_CODE = #{proSort1Code,jdbcType=INTEGER},
+      </if>
+      <if test="proSort2Name != null" >
+        PRO_SORT2_NAME = #{proSort2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort2Code != null" >
+        PRO_SORT2_CODE = #{proSort2Code,jdbcType=INTEGER},
+      </if>
+      <if test="proSort3Name != null" >
+        PRO_SORT3_NAME = #{proSort3Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Code != null" >
+        PRO_SORT3_CODE = #{proSort3Code,jdbcType=INTEGER},
+      </if>
+      <if test="ifPopular != null" >
+        IF_POPULAR = #{ifPopular,jdbcType=VARCHAR},
+      </if>
+      <if test="homepageShow != null" >
+        HOMEPAGE_SHOW = #{homepageShow,jdbcType=INTEGER},
+      </if>
+      <if test="addDate != null" >
+        ADD_DATE = #{addDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateDate != null" >
+        LAST_UPDATE_DATE = #{lastUpdateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PRODUCE_ID = #{produceId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.ttdj.ProduceInfo" >
+    update produce_info
+    set PRODUCE_NAME = #{produceName,jdbcType=VARCHAR},
+      PRODUCE_DESC = #{produceDesc,jdbcType=VARCHAR},
+      USER_ID = #{userId,jdbcType=INTEGER},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      PRODUCE_PIC = #{producePic,jdbcType=VARCHAR},
+      PRODUCE_PRICE = #{producePrice,jdbcType=DECIMAL},
+      REMIT_PRICE = #{remitPrice,jdbcType=DECIMAL},
+      FINAL_PRICE = #{finalPrice,jdbcType=DECIMAL},
+      PRODUCE_COUNT = #{produceCount,jdbcType=INTEGER},
+      PRODUCE_BUY_COUNT = #{produceBuyCount,jdbcType=INTEGER},
+      FAVORITE_COUNT = #{favoriteCount,jdbcType=INTEGER},
+      PRO_SORT1_NAME = #{proSort1Name,jdbcType=VARCHAR},
+      PRO_SORT1_CODE = #{proSort1Code,jdbcType=INTEGER},
+      PRO_SORT2_NAME = #{proSort2Name,jdbcType=VARCHAR},
+      PRO_SORT2_CODE = #{proSort2Code,jdbcType=INTEGER},
+      PRO_SORT3_NAME = #{proSort3Name,jdbcType=VARCHAR},
+      PRO_SORT3_CODE = #{proSort3Code,jdbcType=INTEGER},
+      IF_POPULAR = #{ifPopular,jdbcType=VARCHAR},
+      HOMEPAGE_SHOW = #{homepageShow,jdbcType=INTEGER},
+      ADD_DATE = #{addDate,jdbcType=TIMESTAMP},
+      LAST_UPDATE_DATE = #{lastUpdateDate,jdbcType=TIMESTAMP},
+      REMARK = #{remark,jdbcType=VARCHAR}
+    where PRODUCE_ID = #{produceId,jdbcType=INTEGER}
+  </update>
+  
+  <!-- added by wanghaibo   start 20150522-->
+   <select id="selectPdName" parameterType="int" resultMap="BaseResultMap" >  
+      SELECT DISTINCT(T.PRODUCE_NAME) FROM PRODUCE_INFO T,USER_INFO U WHERE T.USER_ID=U.USER_ID AND U.CITY_CODE=#{city,jdbcType=INTEGER} ORDER BY T.PRODUCE_BUY_COUNT DESC LIMIT 200
+   </select>  
+   
+   <select id="searchbymenu1" parameterType="com.mybatis.entity.ttdj.page.PagePojo" resultMap="BaseResultMap" >  
+   	  SELECT * FROM PRODUCE_INFO T INNER JOIN 
+   	  (SELECT P.PRODUCE_ID FROM PRODUCE_INFO P WHERE 
+   	  P.PRO_SORT1_CODE=#{code,jdbcType=INTEGER} ORDER BY
+   	  <if test="orderMark == 0" ><!-- 如果是默认排序 -->
+   	   P.PRODUCE_ID 
+   	  </if>
+   	  <if test="orderMark == 1" ><!-- 如果是销量排序 -->
+   	   P.LAST_UPDATE_DATE 
+   	  </if>
+   	  <if test="orderMark == 2" ><!-- 如果是价格排序 -->
+   	   P.REMIT_PRICE 
+   	  </if>
+   	  <if test="orderMark == 3" ><!-- 如果是发布时间排序 -->
+   	   P.LAST_UPDATE_DATE 
+   	  </if>
+   	  <if test="ifDesc == 1">
+ 		 DESC 
+   	  </if>
+   	    LIMIT #{recordCount,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER}) AS A USING (PRODUCE_ID)
+   </select>  
+   
+   <select id="searchbymenu1count" parameterType="com.mybatis.entity.ttdj.page.PagePojo" resultType="int" >  
+   	 SELECT COUNT(1) AS COUNT  FROM PRODUCE_INFO P WHERE 
+   	  P.PRO_SORT1_CODE=#{code,jdbcType=INTEGER}
+   </select>  
+   
+   <select id="searchbymenu2" parameterType="com.mybatis.entity.ttdj.page.PagePojo" resultMap="BaseResultMap" >  
+      SELECT * FROM PRODUCE_INFO T INNER JOIN 
+   	  (SELECT P.PRODUCE_ID FROM PRODUCE_INFO P WHERE 
+   	  P.PRO_SORT2_CODE=#{code,jdbcType=INTEGER} ORDER BY
+   	  <if test="orderMark == 0" ><!-- 如果是默认排序 -->
+   	   P.PRODUCE_ID 
+   	  </if>
+   	  <if test="orderMark == 1" ><!-- 如果是销量排序 -->
+   	   P.LAST_UPDATE_DATE 
+   	  </if>
+   	  <if test="orderMark == 2" ><!-- 如果是价格排序 -->
+   	   P.REMIT_PRICE 
+   	  </if>
+   	  <if test="orderMark == 3" ><!-- 如果是发布时间排序 -->
+   	   P.LAST_UPDATE_DATE 
+   	  </if>
+   	  <if test="ifDesc == 1">
+ 		 DESC 
+   	  </if>
+   	    LIMIT #{recordCount,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER}) AS A USING (PRODUCE_ID)
+   </select>
+   <select id="searchbymenu2count" parameterType="com.mybatis.entity.ttdj.page.PagePojo" resultType="int" >  
+   	 SELECT COUNT(1) AS COUNT  FROM PRODUCE_INFO P WHERE 
+   	  P.PRO_SORT2_CODE=#{code,jdbcType=INTEGER}
+   </select>  
+   
+   
+   <select id="searchbymenu3" parameterType="com.mybatis.entity.ttdj.page.PagePojo" resultMap="BaseResultMap" >  
+      SELECT * FROM PRODUCE_INFO T INNER JOIN 
+   	  (SELECT P.PRODUCE_ID FROM PRODUCE_INFO P WHERE 
+   	  P.PRO_SORT3_CODE=#{code,jdbcType=INTEGER} ORDER BY
+   	  <if test="orderMark == 0" ><!-- 如果是默认排序 -->
+   	   P.PRODUCE_ID 
+   	  </if>
+   	  <if test="orderMark == 1" ><!-- 如果是销量排序 -->
+   	   P.LAST_UPDATE_DATE 
+   	  </if>
+   	  <if test="orderMark == 2" ><!-- 如果是价格排序 -->
+   	   P.REMIT_PRICE 
+   	  </if>
+   	  <if test="orderMark == 3" ><!-- 如果是发布时间排序 -->
+   	   P.LAST_UPDATE_DATE 
+   	  </if>
+   	  <if test="ifDesc == 1">
+ 		 DESC 
+   	  </if>
+   	    LIMIT #{recordCount,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER}) AS A USING (PRODUCE_ID)
+   </select>
+   <select id="searchbymenu3count" parameterType="com.mybatis.entity.ttdj.page.PagePojo" resultType="int">  
+   	 SELECT COUNT(1) AS COUNT  FROM PRODUCE_INFO P WHERE 
+   	  P.PRO_SORT3_CODE=#{code,jdbcType=INTEGER}
+   </select>  
+   
+   <select id="searchcommon" parameterType="com.mybatis.entity.ttdj.page.PagePojo" resultMap="BaseResultMap" >  
+      SELECT *	FROM
+			PRODUCE_INFO T
+		INNER JOIN (
+			SELECT
+				P.PRODUCE_ID
+			FROM
+				PRODUCE_INFO P,
+				USER_INFO U
+			WHERE
+				P.USER_ID = U.USER_ID
+			AND ((
+				INSTR(P.PRODUCE_NAME, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(U.STORE_NAME, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(U.BUSI_GROP, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(U.ADDRESS, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(P.PRO_SORT1_NAME, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(P.PRO_SORT2_NAME, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(P.PRO_SORT3_NAME, #{searchStr,jdbcType=VARCHAR})) 
+				<if test="searchStrAry!=null">
+					OR 
+				<foreach collection="searchStrAry" item="sAry" separator="OR">
+					(INSTR(P.PRODUCE_NAME, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(U.STORE_NAME, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(U.BUSI_GROP, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(U.ADDRESS, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(P.PRO_SORT1_NAME, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(P.PRO_SORT2_NAME, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(P.PRO_SORT3_NAME, #{sAry,jdbcType=VARCHAR})) 
+				</foreach>
+				</if>
+			)
+			ORDER BY
+			  <if test="orderMark == 0" ><!-- 如果是默认排序 -->
+		   	   P.PRODUCE_ID 
+		   	  </if>
+		   	  <if test="orderMark == 1" ><!-- 如果是销量排序 -->
+		   	   P.LAST_UPDATE_DATE 
+		   	  </if>
+		   	  <if test="orderMark == 2" ><!-- 如果是价格排序 -->
+		   	   P.REMIT_PRICE 
+		   	  </if>
+		   	  <if test="orderMark == 3" ><!-- 如果是发布时间排序 -->
+		   	   P.LAST_UPDATE_DATE 
+		   	  </if>
+		   	  <if test="ifDesc != ''">
+		 		 DESC 
+		   	  </if>
+			LIMIT #{recordCount,jdbcType=INTEGER},#{pageSize,jdbcType=INTEGER} 
+		) AS A USING (PRODUCE_ID)
+   </select>
+   <select id="searchcommoncount" parameterType="com.mybatis.entity.ttdj.page.PagePojo" resultType="int" >  
+	   	SELECT
+				COUNT(1) AS COUNT 
+			FROM
+				PRODUCE_INFO P,
+				USER_INFO U
+			WHERE
+				P.USER_ID = U.USER_ID
+			AND (
+				INSTR(P.PRODUCE_NAME, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(U.STORE_NAME, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(U.BUSI_GROP, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(U.ADDRESS, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(P.PRO_SORT1_NAME, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(P.PRO_SORT2_NAME, #{searchStr,jdbcType=VARCHAR})
+				OR INSTR(P.PRO_SORT3_NAME, #{searchStr,jdbcType=VARCHAR})
+				<if test="searchStrAry!=null">
+					OR 
+				<foreach collection="searchStrAry" item="sAry" separator="OR">
+					INSTR(P.PRODUCE_NAME, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(U.STORE_NAME, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(U.BUSI_GROP, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(U.ADDRESS, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(P.PRO_SORT1_NAME, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(P.PRO_SORT2_NAME, #{sAry,jdbcType=VARCHAR})
+					OR INSTR(P.PRO_SORT3_NAME, #{sAry,jdbcType=VARCHAR})
+				</foreach>
+				</if>
+			)
+   </select> 
+   
+   <select id="selectPdInfoById" parameterType="String" resultType="map">  
+   	 	SELECT
+			T.PRODUCE_NAME produceName,
+			T.PRODUCE_DESC produceDesc,
+			T.PRODUCE_PIC  producePic,
+			T.PRODUCE_PRICE producePrice,
+			T.REMIT_PRICE remitPrice,
+			T.FINAL_PRICE finalPrice,
+			U.STORE_NAME storeName,
+			U.STORE_LEVE storeLeve,
+			U.ADDRESS address,
+			U.LINK_NUMBER linkNumber 
+		FROM
+			PRODUCE_INFO T,
+			USER_INFO U
+		WHERE
+			T.USER_ID = U.USER_ID 
+   	 		AND  T.PRODUCE_ID=#{produceId,jdbcType=VARCHAR}
+   </select>  
+   <!-- added by wanghaibo  end-->
+</mapper>

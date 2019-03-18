@@ -1,0 +1,64 @@
+package com.web.action.register;
+
+import tool.CommonUtil;
+import net.sf.json.JSONArray;
+
+import com.mybatis.entity.ttdj.UserInfo;
+import com.service.homepage.HomePageServiceImpl;
+import com.service.register.RegisterServiceImpl;
+import com.web.action.base.BaseAction;
+import com.web.action.base.JsonUtil;
+
+public class RegisterAction extends BaseAction {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	CommonUtil commonUtil = new CommonUtil();
+	/**
+	 * 验证注册时,用户名是否已经存在
+	 */
+	 public void checkUserName() throws Exception {
+		 	
+			String userName = commonUtil.decodeUrl(request.getParameter("userName"));
+			RegisterServiceImpl registerServiceImpl = ((RegisterServiceImpl) getApplicationContext().getBean("registerServiceImpl"));
+			int count = registerServiceImpl.selectCountByUserName(userName);
+//			JSONObject jsonObj=new JSONObject();
+//			ArrayList aList = new ArrayList();
+			JsonUtil jsUtil = new JsonUtil();
+			JSONArray jsAry=new JSONArray();
+			if(count>=1){
+				jsUtil.returnJson(response, "1", jsAry);//存在相同的用户名
+			}else{
+				jsUtil.returnJson(response, "0", jsAry);//不存在相同的用户名
+			}
+		}
+
+	 /**
+	  * 保存用户注册信息
+	  * @throws Exception
+	  */
+	 public void saveUserRegisterInfo() throws Exception {
+		 String email = commonUtil.decodeUrl(request.getParameter("email"));
+		 String userName = commonUtil.decodeUrl(request.getParameter("userName"));
+		 String password = commonUtil.decodeUrl(request.getParameter("password"));
+		 String province = commonUtil.decodeUrl(request.getParameter("province"));
+		 String city = commonUtil.decodeUrl(request.getParameter("city"));
+		 RegisterServiceImpl registerServiceImpl = ((RegisterServiceImpl) getApplicationContext().getBean("registerServiceImpl"));
+		 UserInfo userinfo = new UserInfo();
+		 userinfo.setEmail(email);
+		 userinfo.setUserName(userName);
+		 userinfo.setPassword(password);
+		 userinfo.setCityName(city);
+		 userinfo.setProvinceName(province);
+		 boolean flag = registerServiceImpl.saveData(userinfo);
+		 JsonUtil jsUtil = new JsonUtil();
+		 JSONArray jsAry=new JSONArray();
+		 if(flag==true)
+			 jsUtil.returnJson(response, "0", jsAry);//保存成功
+		 else
+			 jsUtil.returnJson(response, "1", jsAry);//保存失败
+	 }
+		
+}

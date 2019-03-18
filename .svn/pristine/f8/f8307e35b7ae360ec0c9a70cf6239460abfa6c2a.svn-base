@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsUserOnlineMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsUserOnline" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="online_latest" property="onlineLatest" jdbcType="DOUBLE" />
+    <result column="online_day" property="onlineDay" jdbcType="DOUBLE" />
+    <result column="online_week" property="onlineWeek" jdbcType="DOUBLE" />
+    <result column="online_month" property="onlineMonth" jdbcType="DOUBLE" />
+    <result column="online_year" property="onlineYear" jdbcType="DOUBLE" />
+    <result column="online_total" property="onlineTotal" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    user_id, online_latest, online_day, online_week, online_month, online_year, online_total
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsUserOnlineExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_user_online
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bbs_user_online
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs_user_online
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsUserOnlineExample" >
+    delete from bbs_user_online
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsUserOnline" >
+    insert into bbs_user_online (user_id, online_latest, online_day, 
+      online_week, online_month, online_year, 
+      online_total)
+    values (#{userId,jdbcType=INTEGER}, #{onlineLatest,jdbcType=DOUBLE}, #{onlineDay,jdbcType=DOUBLE}, 
+      #{onlineWeek,jdbcType=DOUBLE}, #{onlineMonth,jdbcType=DOUBLE}, #{onlineYear,jdbcType=DOUBLE}, 
+      #{onlineTotal,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsUserOnline" >
+    insert into bbs_user_online
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="onlineLatest != null" >
+        online_latest,
+      </if>
+      <if test="onlineDay != null" >
+        online_day,
+      </if>
+      <if test="onlineWeek != null" >
+        online_week,
+      </if>
+      <if test="onlineMonth != null" >
+        online_month,
+      </if>
+      <if test="onlineYear != null" >
+        online_year,
+      </if>
+      <if test="onlineTotal != null" >
+        online_total,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="onlineLatest != null" >
+        #{onlineLatest,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineDay != null" >
+        #{onlineDay,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineWeek != null" >
+        #{onlineWeek,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineMonth != null" >
+        #{onlineMonth,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineYear != null" >
+        #{onlineYear,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineTotal != null" >
+        #{onlineTotal,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsUserOnlineExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_user_online
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_user_online
+    <set >
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.onlineLatest != null" >
+        online_latest = #{record.onlineLatest,jdbcType=DOUBLE},
+      </if>
+      <if test="record.onlineDay != null" >
+        online_day = #{record.onlineDay,jdbcType=DOUBLE},
+      </if>
+      <if test="record.onlineWeek != null" >
+        online_week = #{record.onlineWeek,jdbcType=DOUBLE},
+      </if>
+      <if test="record.onlineMonth != null" >
+        online_month = #{record.onlineMonth,jdbcType=DOUBLE},
+      </if>
+      <if test="record.onlineYear != null" >
+        online_year = #{record.onlineYear,jdbcType=DOUBLE},
+      </if>
+      <if test="record.onlineTotal != null" >
+        online_total = #{record.onlineTotal,jdbcType=DOUBLE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_user_online
+    set user_id = #{record.userId,jdbcType=INTEGER},
+      online_latest = #{record.onlineLatest,jdbcType=DOUBLE},
+      online_day = #{record.onlineDay,jdbcType=DOUBLE},
+      online_week = #{record.onlineWeek,jdbcType=DOUBLE},
+      online_month = #{record.onlineMonth,jdbcType=DOUBLE},
+      online_year = #{record.onlineYear,jdbcType=DOUBLE},
+      online_total = #{record.onlineTotal,jdbcType=DOUBLE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsUserOnline" >
+    update bbs_user_online
+    <set >
+      <if test="onlineLatest != null" >
+        online_latest = #{onlineLatest,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineDay != null" >
+        online_day = #{onlineDay,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineWeek != null" >
+        online_week = #{onlineWeek,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineMonth != null" >
+        online_month = #{onlineMonth,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineYear != null" >
+        online_year = #{onlineYear,jdbcType=DOUBLE},
+      </if>
+      <if test="onlineTotal != null" >
+        online_total = #{onlineTotal,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.BbsUserOnline" >
+    update bbs_user_online
+    set online_latest = #{onlineLatest,jdbcType=DOUBLE},
+      online_day = #{onlineDay,jdbcType=DOUBLE},
+      online_week = #{onlineWeek,jdbcType=DOUBLE},
+      online_month = #{onlineMonth,jdbcType=DOUBLE},
+      online_year = #{onlineYear,jdbcType=DOUBLE},
+      online_total = #{onlineTotal,jdbcType=DOUBLE}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

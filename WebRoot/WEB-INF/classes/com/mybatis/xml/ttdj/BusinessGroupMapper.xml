@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.ttdj.BusinessGroupMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.ttdj.BusinessGroup" >
+    <id column="BUSI_GROP_ID" property="busiGropId" jdbcType="INTEGER" />
+    <result column="BUSI_GROP_NAME" property="busiGropName" jdbcType="VARCHAR" />
+    <result column="CITY_ID" property="cityId" jdbcType="INTEGER" />
+    <result column="CITY_NAME" property="cityName" jdbcType="VARCHAR" />
+    <result column="COUNTY_ID" property="countyId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    BUSI_GROP_ID, BUSI_GROP_NAME, CITY_ID, CITY_NAME, COUNTY_ID
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.ttdj.BusinessGroupExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from business_group
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from business_group
+    where BUSI_GROP_ID = #{busiGropId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from business_group
+    where BUSI_GROP_ID = #{busiGropId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.ttdj.BusinessGroupExample" >
+    delete from business_group
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.ttdj.BusinessGroup" >
+    insert into business_group (BUSI_GROP_ID, BUSI_GROP_NAME, CITY_ID, 
+      CITY_NAME, COUNTY_ID)
+    values (#{busiGropId,jdbcType=INTEGER}, #{busiGropName,jdbcType=VARCHAR}, #{cityId,jdbcType=INTEGER}, 
+      #{cityName,jdbcType=VARCHAR}, #{countyId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.ttdj.BusinessGroup" >
+    insert into business_group
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="busiGropId != null" >
+        BUSI_GROP_ID,
+      </if>
+      <if test="busiGropName != null" >
+        BUSI_GROP_NAME,
+      </if>
+      <if test="cityId != null" >
+        CITY_ID,
+      </if>
+      <if test="cityName != null" >
+        CITY_NAME,
+      </if>
+      <if test="countyId != null" >
+        COUNTY_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="busiGropId != null" >
+        #{busiGropId,jdbcType=INTEGER},
+      </if>
+      <if test="busiGropName != null" >
+        #{busiGropName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null" >
+        #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="cityName != null" >
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="countyId != null" >
+        #{countyId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.ttdj.BusinessGroupExample" resultType="java.lang.Integer" >
+    select count(*) from business_group
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update business_group
+    <set >
+      <if test="record.busiGropId != null" >
+        BUSI_GROP_ID = #{record.busiGropId,jdbcType=INTEGER},
+      </if>
+      <if test="record.busiGropName != null" >
+        BUSI_GROP_NAME = #{record.busiGropName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cityId != null" >
+        CITY_ID = #{record.cityId,jdbcType=INTEGER},
+      </if>
+      <if test="record.cityName != null" >
+        CITY_NAME = #{record.cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.countyId != null" >
+        COUNTY_ID = #{record.countyId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update business_group
+    set BUSI_GROP_ID = #{record.busiGropId,jdbcType=INTEGER},
+      BUSI_GROP_NAME = #{record.busiGropName,jdbcType=VARCHAR},
+      CITY_ID = #{record.cityId,jdbcType=INTEGER},
+      CITY_NAME = #{record.cityName,jdbcType=VARCHAR},
+      COUNTY_ID = #{record.countyId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.ttdj.BusinessGroup" >
+    update business_group
+    <set >
+      <if test="busiGropName != null" >
+        BUSI_GROP_NAME = #{busiGropName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityId != null" >
+        CITY_ID = #{cityId,jdbcType=INTEGER},
+      </if>
+      <if test="cityName != null" >
+        CITY_NAME = #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="countyId != null" >
+        COUNTY_ID = #{countyId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where BUSI_GROP_ID = #{busiGropId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.ttdj.BusinessGroup" >
+    update business_group
+    set BUSI_GROP_NAME = #{busiGropName,jdbcType=VARCHAR},
+      CITY_ID = #{cityId,jdbcType=INTEGER},
+      CITY_NAME = #{cityName,jdbcType=VARCHAR},
+      COUNTY_ID = #{countyId,jdbcType=INTEGER}
+    where BUSI_GROP_ID = #{busiGropId,jdbcType=INTEGER}
+  </update>
+</mapper>

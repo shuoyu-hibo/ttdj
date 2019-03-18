@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	
+    <!-- 请求处理 -->
+	<package name="produceAction" extends="riskLoan-default">
+        <action name="produce!*" class="produceAction" method="{1}">
+        	<!-- 配置fileUpload的拦截器  解决struts图片上传问题 start-->
+			<interceptor-ref name="fileUpload">
+			<!-- 允许后缀名为png,bmp,jpg,doc,xls的文件上传 -->     
+			<param name="allowedExtensions">  
+		    	png,bmp,jpg,gif
+			</param> 
+			 <!-- 配置允许上传的文件大小 单位字节-->
+			<param name="maximumSize">5242880</param>
+			</interceptor-ref>
+			<interceptor-ref name="authority"/>
+			<interceptor-ref name="defaultStack"/>
+        <!-- 配置fileUpload的拦截器  解决struts图片上传问题 end-->
+        
+            <result name="load">/WEB-INF/jsp/homepage/middle.jsp</result>
+            <result name="forum">/WEB-INF/jsp/forum/forum.jsp</result>
+        </action>
+    </package>
+</struts>

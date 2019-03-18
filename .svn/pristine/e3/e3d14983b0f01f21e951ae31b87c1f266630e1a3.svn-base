@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.JbUserMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.JbUser" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="group_id" property="groupId" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="register_time" property="registerTime" jdbcType="TIMESTAMP" />
+    <result column="register_ip" property="registerIp" jdbcType="VARCHAR" />
+    <result column="last_login_time" property="lastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="last_login_ip" property="lastLoginIp" jdbcType="VARCHAR" />
+    <result column="login_count" property="loginCount" jdbcType="INTEGER" />
+    <result column="upload_total" property="uploadTotal" jdbcType="BIGINT" />
+    <result column="upload_size" property="uploadSize" jdbcType="INTEGER" />
+    <result column="upload_date" property="uploadDate" jdbcType="DATE" />
+    <result column="is_admin" property="isAdmin" jdbcType="BIT" />
+    <result column="is_disabled" property="isDisabled" jdbcType="BIT" />
+    <result column="PROHIBIT_POST" property="prohibitPost" jdbcType="SMALLINT" />
+    <result column="PROHIBIT_TIME" property="prohibitTime" jdbcType="TIMESTAMP" />
+    <result column="GRADE_TODAY" property="gradeToday" jdbcType="INTEGER" />
+    <result column="UPLOAD_TODAY" property="uploadToday" jdbcType="INTEGER" />
+    <result column="POINT" property="point" jdbcType="BIGINT" />
+    <result column="INTRODUCTION" property="introduction" jdbcType="VARCHAR" />
+    <result column="SIGNED" property="signed" jdbcType="VARCHAR" />
+    <result column="AVATAR" property="avatar" jdbcType="VARCHAR" />
+    <result column="AVATAR_TYPE" property="avatarType" jdbcType="SMALLINT" />
+    <result column="TOPIC_COUNT" property="topicCount" jdbcType="INTEGER" />
+    <result column="REPLY_COUNT" property="replyCount" jdbcType="INTEGER" />
+    <result column="PRIME_COUNT" property="primeCount" jdbcType="INTEGER" />
+    <result column="POST_TODAY" property="postToday" jdbcType="INTEGER" />
+    <result column="LAST_POST_TIME" property="lastPostTime" jdbcType="TIMESTAMP" />
+    <result column="PRESTIGE" property="prestige" jdbcType="BIGINT" />
+    <result column="magic_packet_size" property="magicPacketSize" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    user_id, group_id, username, email, register_time, register_ip, last_login_time, 
+    last_login_ip, login_count, upload_total, upload_size, upload_date, is_admin, is_disabled, 
+    PROHIBIT_POST, PROHIBIT_TIME, GRADE_TODAY, UPLOAD_TODAY, POINT, INTRODUCTION, SIGNED, 
+    AVATAR, AVATAR_TYPE, TOPIC_COUNT, REPLY_COUNT, PRIME_COUNT, POST_TODAY, LAST_POST_TIME, 
+    PRESTIGE, magic_packet_size
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.JbUserExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jb_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jb_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jb_user
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.JbUserExample" >
+    delete from jb_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.JbUser" >
+    insert into jb_user (user_id, group_id, username, 
+      email, register_time, register_ip, 
+      last_login_time, last_login_ip, login_count, 
+      upload_total, upload_size, upload_date, 
+      is_admin, is_disabled, PROHIBIT_POST, 
+      PROHIBIT_TIME, GRADE_TODAY, UPLOAD_TODAY, 
+      POINT, INTRODUCTION, SIGNED, 
+      AVATAR, AVATAR_TYPE, TOPIC_COUNT, 
+      REPLY_COUNT, PRIME_COUNT, POST_TODAY, 
+      LAST_POST_TIME, PRESTIGE, magic_packet_size
+      )
+    values (#{userId,jdbcType=INTEGER}, #{groupId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{registerTime,jdbcType=TIMESTAMP}, #{registerIp,jdbcType=VARCHAR}, 
+      #{lastLoginTime,jdbcType=TIMESTAMP}, #{lastLoginIp,jdbcType=VARCHAR}, #{loginCount,jdbcType=INTEGER}, 
+      #{uploadTotal,jdbcType=BIGINT}, #{uploadSize,jdbcType=INTEGER}, #{uploadDate,jdbcType=DATE}, 
+      #{isAdmin,jdbcType=BIT}, #{isDisabled,jdbcType=BIT}, #{prohibitPost,jdbcType=SMALLINT}, 
+      #{prohibitTime,jdbcType=TIMESTAMP}, #{gradeToday,jdbcType=INTEGER}, #{uploadToday,jdbcType=INTEGER}, 
+      #{point,jdbcType=BIGINT}, #{introduction,jdbcType=VARCHAR}, #{signed,jdbcType=VARCHAR}, 
+      #{avatar,jdbcType=VARCHAR}, #{avatarType,jdbcType=SMALLINT}, #{topicCount,jdbcType=INTEGER}, 
+      #{replyCount,jdbcType=INTEGER}, #{primeCount,jdbcType=INTEGER}, #{postToday,jdbcType=INTEGER}, 
+      #{lastPostTime,jdbcType=TIMESTAMP}, #{prestige,jdbcType=BIGINT}, #{magicPacketSize,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.JbUser" >
+    insert into jb_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="groupId != null" >
+        group_id,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="registerTime != null" >
+        register_time,
+      </if>
+      <if test="registerIp != null" >
+        register_ip,
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time,
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip,
+      </if>
+      <if test="loginCount != null" >
+        login_count,
+      </if>
+      <if test="uploadTotal != null" >
+        upload_total,
+      </if>
+      <if test="uploadSize != null" >
+        upload_size,
+      </if>
+      <if test="uploadDate != null" >
+        upload_date,
+      </if>
+      <if test="isAdmin != null" >
+        is_admin,
+      </if>
+      <if test="isDisabled != null" >
+        is_disabled,
+      </if>
+      <if test="prohibitPost != null" >
+        PROHIBIT_POST,
+      </if>
+      <if test="prohibitTime != null" >
+        PROHIBIT_TIME,
+      </if>
+      <if test="gradeToday != null" >
+        GRADE_TODAY,
+      </if>
+      <if test="uploadToday != null" >
+        UPLOAD_TODAY,
+      </if>
+      <if test="point != null" >
+        POINT,
+      </if>
+      <if test="introduction != null" >
+        INTRODUCTION,
+      </if>
+      <if test="signed != null" >
+        SIGNED,
+      </if>
+      <if test="avatar != null" >
+        AVATAR,
+      </if>
+      <if test="avatarType != null" >
+        AVATAR_TYPE,
+      </if>
+      <if test="topicCount != null" >
+        TOPIC_COUNT,
+      </if>
+      <if test="replyCount != null" >
+        REPLY_COUNT,
+      </if>
+      <if test="primeCount != null" >
+        PRIME_COUNT,
+      </if>
+      <if test="postToday != null" >
+        POST_TODAY,
+      </if>
+      <if test="lastPostTime != null" >
+        LAST_POST_TIME,
+      </if>
+      <if test="prestige != null" >
+        PRESTIGE,
+      </if>
+      <if test="magicPacketSize != null" >
+        magic_packet_size,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="groupId != null" >
+        #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="registerTime != null" >
+        #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerIp != null" >
+        #{registerIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null" >
+        #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginIp != null" >
+        #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="loginCount != null" >
+        #{loginCount,jdbcType=INTEGER},
+      </if>
+      <if test="uploadTotal != null" >
+        #{uploadTotal,jdbcType=BIGINT},
+      </if>
+      <if test="uploadSize != null" >
+        #{uploadSize,jdbcType=INTEGER},
+      </if>
+      <if test="uploadDate != null" >
+        #{uploadDate,jdbcType=DATE},
+      </if>
+      <if test="isAdmin != null" >
+        #{isAdmin,jdbcType=BIT},
+      </if>
+      <if test="isDisabled != null" >
+        #{isDisabled,jdbcType=BIT},
+      </if>
+      <if test="prohibitPost != null" >
+        #{prohibitPost,jdbcType=SMALLINT},
+      </if>
+      <if test="prohibitTime != null" >
+        #{prohibitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gradeToday != null" >
+        #{gradeToday,jdbcType=INTEGER},
+      </if>
+      <if test="uploadToday != null" >
+        #{uploadToday,jdbcType=INTEGER},
+      </if>
+      <if test="point != null" >
+        #{point,jdbcType=BIGINT},
+      </if>
+      <if test="introduction != null" >
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="signed != null" >
+        #{signed,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarType != null" >
+        #{avatarType,jdbcType=SMALLINT},
+      </if>
+      <if test="topicCount != null" >
+        #{topicCount,jdbcType=INTEGER},
+      </if>
+      <if test="replyCount != null" >
+        #{replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="primeCount != null" >
+        #{primeCount,jdbcType=INTEGER},
+      </if>
+      <if test="postToday != null" >
+        #{postToday,jdbcType=INTEGER},
+      </if>
+      <if test="lastPostTime != null" >
+        #{lastPostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="prestige != null" >
+        #{prestige,jdbcType=BIGINT},
+      </if>
+      <if test="magicPacketSize != null" >
+        #{magicPacketSize,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.JbUserExample" resultType="java.lang.Integer" >
+    select count(*) from jb_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jb_user
+    <set >
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.groupId != null" >
+        group_id = #{record.groupId,jdbcType=INTEGER},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.registerTime != null" >
+        register_time = #{record.registerTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.registerIp != null" >
+        register_ip = #{record.registerIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastLoginTime != null" >
+        last_login_time = #{record.lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastLoginIp != null" >
+        last_login_ip = #{record.lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loginCount != null" >
+        login_count = #{record.loginCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.uploadTotal != null" >
+        upload_total = #{record.uploadTotal,jdbcType=BIGINT},
+      </if>
+      <if test="record.uploadSize != null" >
+        upload_size = #{record.uploadSize,jdbcType=INTEGER},
+      </if>
+      <if test="record.uploadDate != null" >
+        upload_date = #{record.uploadDate,jdbcType=DATE},
+      </if>
+      <if test="record.isAdmin != null" >
+        is_admin = #{record.isAdmin,jdbcType=BIT},
+      </if>
+      <if test="record.isDisabled != null" >
+        is_disabled = #{record.isDisabled,jdbcType=BIT},
+      </if>
+      <if test="record.prohibitPost != null" >
+        PROHIBIT_POST = #{record.prohibitPost,jdbcType=SMALLINT},
+      </if>
+      <if test="record.prohibitTime != null" >
+        PROHIBIT_TIME = #{record.prohibitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gradeToday != null" >
+        GRADE_TODAY = #{record.gradeToday,jdbcType=INTEGER},
+      </if>
+      <if test="record.uploadToday != null" >
+        UPLOAD_TODAY = #{record.uploadToday,jdbcType=INTEGER},
+      </if>
+      <if test="record.point != null" >
+        POINT = #{record.point,jdbcType=BIGINT},
+      </if>
+      <if test="record.introduction != null" >
+        INTRODUCTION = #{record.introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signed != null" >
+        SIGNED = #{record.signed,jdbcType=VARCHAR},
+      </if>
+      <if test="record.avatar != null" >
+        AVATAR = #{record.avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="record.avatarType != null" >
+        AVATAR_TYPE = #{record.avatarType,jdbcType=SMALLINT},
+      </if>
+      <if test="record.topicCount != null" >
+        TOPIC_COUNT = #{record.topicCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.replyCount != null" >
+        REPLY_COUNT = #{record.replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.primeCount != null" >
+        PRIME_COUNT = #{record.primeCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.postToday != null" >
+        POST_TODAY = #{record.postToday,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastPostTime != null" >
+        LAST_POST_TIME = #{record.lastPostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.prestige != null" >
+        PRESTIGE = #{record.prestige,jdbcType=BIGINT},
+      </if>
+      <if test="record.magicPacketSize != null" >
+        magic_packet_size = #{record.magicPacketSize,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jb_user
+    set user_id = #{record.userId,jdbcType=INTEGER},
+      group_id = #{record.groupId,jdbcType=INTEGER},
+      username = #{record.username,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      register_time = #{record.registerTime,jdbcType=TIMESTAMP},
+      register_ip = #{record.registerIp,jdbcType=VARCHAR},
+      last_login_time = #{record.lastLoginTime,jdbcType=TIMESTAMP},
+      last_login_ip = #{record.lastLoginIp,jdbcType=VARCHAR},
+      login_count = #{record.loginCount,jdbcType=INTEGER},
+      upload_total = #{record.uploadTotal,jdbcType=BIGINT},
+      upload_size = #{record.uploadSize,jdbcType=INTEGER},
+      upload_date = #{record.uploadDate,jdbcType=DATE},
+      is_admin = #{record.isAdmin,jdbcType=BIT},
+      is_disabled = #{record.isDisabled,jdbcType=BIT},
+      PROHIBIT_POST = #{record.prohibitPost,jdbcType=SMALLINT},
+      PROHIBIT_TIME = #{record.prohibitTime,jdbcType=TIMESTAMP},
+      GRADE_TODAY = #{record.gradeToday,jdbcType=INTEGER},
+      UPLOAD_TODAY = #{record.uploadToday,jdbcType=INTEGER},
+      POINT = #{record.point,jdbcType=BIGINT},
+      INTRODUCTION = #{record.introduction,jdbcType=VARCHAR},
+      SIGNED = #{record.signed,jdbcType=VARCHAR},
+      AVATAR = #{record.avatar,jdbcType=VARCHAR},
+      AVATAR_TYPE = #{record.avatarType,jdbcType=SMALLINT},
+      TOPIC_COUNT = #{record.topicCount,jdbcType=INTEGER},
+      REPLY_COUNT = #{record.replyCount,jdbcType=INTEGER},
+      PRIME_COUNT = #{record.primeCount,jdbcType=INTEGER},
+      POST_TODAY = #{record.postToday,jdbcType=INTEGER},
+      LAST_POST_TIME = #{record.lastPostTime,jdbcType=TIMESTAMP},
+      PRESTIGE = #{record.prestige,jdbcType=BIGINT},
+      magic_packet_size = #{record.magicPacketSize,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.JbUser" >
+    update jb_user
+    <set >
+      <if test="groupId != null" >
+        group_id = #{groupId,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="registerTime != null" >
+        register_time = #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerIp != null" >
+        register_ip = #{registerIp,jdbcType=VARCHAR},
+      </if>
+      <if test="lastLoginTime != null" >
+        last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginIp != null" >
+        last_login_ip = #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="loginCount != null" >
+        login_count = #{loginCount,jdbcType=INTEGER},
+      </if>
+      <if test="uploadTotal != null" >
+        upload_total = #{uploadTotal,jdbcType=BIGINT},
+      </if>
+      <if test="uploadSize != null" >
+        upload_size = #{uploadSize,jdbcType=INTEGER},
+      </if>
+      <if test="uploadDate != null" >
+        upload_date = #{uploadDate,jdbcType=DATE},
+      </if>
+      <if test="isAdmin != null" >
+        is_admin = #{isAdmin,jdbcType=BIT},
+      </if>
+      <if test="isDisabled != null" >
+        is_disabled = #{isDisabled,jdbcType=BIT},
+      </if>
+      <if test="prohibitPost != null" >
+        PROHIBIT_POST = #{prohibitPost,jdbcType=SMALLINT},
+      </if>
+      <if test="prohibitTime != null" >
+        PROHIBIT_TIME = #{prohibitTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gradeToday != null" >
+        GRADE_TODAY = #{gradeToday,jdbcType=INTEGER},
+      </if>
+      <if test="uploadToday != null" >
+        UPLOAD_TODAY = #{uploadToday,jdbcType=INTEGER},
+      </if>
+      <if test="point != null" >
+        POINT = #{point,jdbcType=BIGINT},
+      </if>
+      <if test="introduction != null" >
+        INTRODUCTION = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="signed != null" >
+        SIGNED = #{signed,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        AVATAR = #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarType != null" >
+        AVATAR_TYPE = #{avatarType,jdbcType=SMALLINT},
+      </if>
+      <if test="topicCount != null" >
+        TOPIC_COUNT = #{topicCount,jdbcType=INTEGER},
+      </if>
+      <if test="replyCount != null" >
+        REPLY_COUNT = #{replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="primeCount != null" >
+        PRIME_COUNT = #{primeCount,jdbcType=INTEGER},
+      </if>
+      <if test="postToday != null" >
+        POST_TODAY = #{postToday,jdbcType=INTEGER},
+      </if>
+      <if test="lastPostTime != null" >
+        LAST_POST_TIME = #{lastPostTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="prestige != null" >
+        PRESTIGE = #{prestige,jdbcType=BIGINT},
+      </if>
+      <if test="magicPacketSize != null" >
+        magic_packet_size = #{magicPacketSize,jdbcType=INTEGER},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.JbUser" >
+    update jb_user
+    set group_id = #{groupId,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      register_time = #{registerTime,jdbcType=TIMESTAMP},
+      register_ip = #{registerIp,jdbcType=VARCHAR},
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      last_login_ip = #{lastLoginIp,jdbcType=VARCHAR},
+      login_count = #{loginCount,jdbcType=INTEGER},
+      upload_total = #{uploadTotal,jdbcType=BIGINT},
+      upload_size = #{uploadSize,jdbcType=INTEGER},
+      upload_date = #{uploadDate,jdbcType=DATE},
+      is_admin = #{isAdmin,jdbcType=BIT},
+      is_disabled = #{isDisabled,jdbcType=BIT},
+      PROHIBIT_POST = #{prohibitPost,jdbcType=SMALLINT},
+      PROHIBIT_TIME = #{prohibitTime,jdbcType=TIMESTAMP},
+      GRADE_TODAY = #{gradeToday,jdbcType=INTEGER},
+      UPLOAD_TODAY = #{uploadToday,jdbcType=INTEGER},
+      POINT = #{point,jdbcType=BIGINT},
+      INTRODUCTION = #{introduction,jdbcType=VARCHAR},
+      SIGNED = #{signed,jdbcType=VARCHAR},
+      AVATAR = #{avatar,jdbcType=VARCHAR},
+      AVATAR_TYPE = #{avatarType,jdbcType=SMALLINT},
+      TOPIC_COUNT = #{topicCount,jdbcType=INTEGER},
+      REPLY_COUNT = #{replyCount,jdbcType=INTEGER},
+      PRIME_COUNT = #{primeCount,jdbcType=INTEGER},
+      POST_TODAY = #{postToday,jdbcType=INTEGER},
+      LAST_POST_TIME = #{lastPostTime,jdbcType=TIMESTAMP},
+      PRESTIGE = #{prestige,jdbcType=BIGINT},
+      magic_packet_size = #{magicPacketSize,jdbcType=INTEGER}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,85 @@
+package com.web.action.search;
+
+import java.util.List;
+
+import net.sf.json.JSONArray;
+
+import com.mybatis.entity.ttdj.ProduceInfo;
+import com.mybatis.entity.ttdj.page.PagePojo;
+import com.service.util.CommonToolServiceImpl;
+import com.web.action.base.BaseAction;
+import com.web.action.base.JsonUtil;
+
+/**
+ * 登陆action
+ * @author wanghaibo
+ * @describe 登陆action  不要轻易再添加方法.拦截器会放过loginaction
+ */
+public class SearchAction extends BaseAction {
+
+
+	/**
+	 * auto complete process
+	 * @author Wanghaibo
+	 * @throws Exception
+	 */
+	public void procTypeahead() throws Exception {
+		//String searchStr = commonUtil.decodeUrl(request.getParameter("s"));
+		String cityCde = commonUtil.decodeUrl(request.getParameter("city"));
+		CommonToolServiceImpl commonToolServiceImpl = ((CommonToolServiceImpl) getApplicationContext().getBean("commonToolServiceImpl"));
+		JSONArray jsAry = commonToolServiceImpl.procTypeahead(cityCde);
+		JsonUtil jsUtil = new JsonUtil();
+		getLog(this.getClass()).debug(this.getClass().getName()+"=====================typeahead信息成功! jsAry["+jsAry+"]");
+		//getLog(this.getClass()).info(this.getClass().getName()+"=====================查询商品信息成功!");
+		jsUtil.returnJson(response, "0","查询商品信息成功!", jsAry);//保存成功
+	}
+	
+	/**
+	 * search data
+	 * @author Wanghaibo
+	 * @throws Exception
+	 */
+	public void search() throws Exception {
+		String searchStr = commonUtil.decodeUrl(request.getParameter("sh"));
+		String s1 = commonUtil.decodeUrl(request.getParameter("s1"));
+		String s2 = commonUtil.decodeUrl(request.getParameter("s2"));
+		String s3 = commonUtil.decodeUrl(request.getParameter("s3"));
+		String orderMark = commonUtil.decodeUrl(request.getParameter("om"));
+		String ifDesc = commonUtil.decodeUrl(request.getParameter("ifDesc"));
+		String pageSize = commonUtil.decodeUrl(request.getParameter("ps"));
+		String toPageNo = commonUtil.decodeUrl(request.getParameter("toPn"));//到达页面编号
+		PagePojo pagePojo = new PagePojo();
+		pagePojo.setSearchStr(searchStr);
+		pagePojo.setIfDesc(ifDesc);
+		pagePojo.setOrderMark(Integer.parseInt("".equals(orderMark)?"0":orderMark));
+		int intPageSize = Integer.parseInt("".equals(pageSize)?"12":pageSize);
+		int intToPageNo = Integer.parseInt("".equals(toPageNo)?"1":toPageNo);
+		int abnegatePageCount = intPageSize*(intToPageNo-1);
+		pagePojo.setPageSize(intPageSize);
+		pagePojo.setRecordCount(abnegatePageCount);
+		List<ProduceInfo> lstProInfo = null;
+		CommonToolServiceImpl commonToolServiceImpl = ((CommonToolServiceImpl) getApplicationContext().getBean("commonToolServiceImpl"));
+		if(!"".equals(s1)){//search leve1 menu
+			pagePojo.setCode(Integer.parseInt(s1));
+			lstProInfo = commonToolServiceImpl.searchMenu1(pagePojo);
+		}else if(!"".equals(s2)){//search leve2 menu
+			pagePojo.setCode(Integer.parseInt(s2));
+			lstProInfo = commonToolServiceImpl.searchMenu2(pagePojo);
+		}else if(!"".equals(s3)){//search leve3 menu
+			pagePojo.setCode(Integer.parseInt(s3));
+			lstProInfo = commonToolServiceImpl.searchMenu3(pagePojo);
+		}else{//common search 
+			lstProInfo = commonToolServiceImpl.search(pagePojo);
+		}
+		
+		JsonUtil jsUtil = new JsonUtil();
+		JSONArray jsAry = new JSONArray();
+		for(ProduceInfo pdInfo : lstProInfo){
+			jsAry.add(pdInfo);
+		}
+		getLog(this.getClass()).debug(this.getClass().getName()+"=====================typeahead信息成功! jsAry["+jsAry+"]");
+		//getLog(this.getClass()).info(this.getClass().getName()+"=====================查询商品信息成功!");
+		jsUtil.returnJson(response, ""+pagePojo.getRecordSum(),"查询商品信息成功!", jsAry);//保存成功 recordSum放入result中
+	}
+	
+}

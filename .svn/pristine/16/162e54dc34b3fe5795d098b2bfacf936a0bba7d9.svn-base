@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html class="yui3-js-enabled" id="yui_3_16_0_1_1426896770329_405"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="TTDJ网－TTDJ一次 美一次，精品生活">
+    <meta name="description" content="运城TTDJ网-运城代金券首选,专业品质运城代金券网!为您提供运城美食,电影票,KTV,酒店,旅游等运城代金券大全,运城代金券网站大全运城TTDJ网,您身边的吃喝玩乐好帮手!">
+    <meta name="keywords" content="运城代金券,运城代金券网,运城代金券大全,运城代金券网站,运城代金券网站大全">
+    <meta http-equiv="mobile-agent" content="format=html5; url=http://i.meituan.com/?city=yuncheng">
+    <link rel="dns-prefetch" href="//c.meituan.net">
+    <link rel="dns-prefetch" href="//s0.meituan.net">
+    <link rel="dns-prefetch" href="//s1.meituan.net">
+    <link rel="dns-prefetch" href="//p0.meituan.net">
+    <link rel="dns-prefetch" href="//p1.meituan.net">
+    <link rel="canonical" href="http://www.ttdaijin.com ">
+    <link rel="alternate" href="http://www.ttdaijin.comfeed" title="订阅更新" type="application/rss+xml">
+    <link rel="apple-touch-icon" href="http://s0.meituan.net/img/apple-touch-icon-ipad.v984aff37.png">
+    <link rel="shortcut icon" href="/site-logo.jpg">
+    <link rel="icon" href="/site-logo.jpg" sizes="16x16 32x32">
+    <title>【运城代金券网】运城代金券大全_运城代金券网站_TTDJ网</title>
+    <!--[if IE 6]>
+    <script src="http://s1.meituan.net/vendor/js/DD_belatedPNG_0.0.8a-min.v86c6ab94.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="http://s0.meituan.net/vendor/js/html5shiv-es5shim.min-min.vc0ce900f.js"></script>
+    <![endif]-->
+    <script async="" src="//s0.meituan.net/vendor/js/mta.min.js"></script><script>
+    var M = {}, _gaq = [], Y, _mbq = function () {
+        (_mbq._q = _mbq._q || []).push(arguments);
+    };
+    (function (P) {"function"!=typeof Date.now&&(Date.now=function(){return(new Date).getTime()}),window.M=window.M||{},M.TimeTracker={start:Date.now(),reqtime:P.ts},M.DELTA_TIME=M.TimeTracker.reqtime-M.TimeTracker.start,M.Env={},M.subresources={names:[]},M.logFirstScreenTime=function(a){M.TimeTracker.fst=Date.now(),a&&a.src&&(M.subresources.names.push(a.src),M.subresources.lastImage=a.src,M.subresources.firstImage||(M.subresources.firstImage=a.src))},M.delayImg=function(a){var b=a.getAttribute("data-src");a.removeAttribute("data-src"),b&&window.setTimeout(function(){a.src=b},200)},M._autoinit=[];})({"ts":1426896768000,"action":["index","default"]});(function (P) {function packOrganic(a,b){var c,d,e,f,g,h,i=a.lastIndexOf("?"),j=[["baidu","wd"],["baidu","word"],["baidu","kw"],["google","q"],["soso","w"],["bing","q"],["sogou","query"],["yahoo","p"],["youdao","q"],["vnet","kw"],["haosou","q"]];if(c=a.match(/(?:\/\/)([^:\/?#]*)/),i>-1&&c){if(d=c[1],d.indexOf("meituan.com")>-1)return null;for(e=parse(a.substring(i+1)),f=0,g=j.length;g>f;++f)if(h=j[f],d.indexOf("."+h[0]+".")>-1&&e.hasOwnProperty(h[1]))return{utm_campaign:h[0],utm_medium:"organic",utm_source:h[0],utm_content:b,utm_term:encode(e[h[1]])}}return null}function redirect(a){var b,c=[];for(b in a)a.hasOwnProperty(b)&&c.push(encode(b)+"="+encode(a[b]));window.location.href=url+(-1===url.indexOf("?")?"?":"&")+c.join("&")}function parse(a){var b,c,d,e={};if(a)for(a=a.split("&"),b=0,c=a.length;c>b;++b)d=a[b].split("="),e[decode(d[0])]=d[1]?decode(d[1]):"";return e}var referrer=document.referrer,url=window.location.href,organic,encode=encodeURIComponent,decode=decodeURIComponent;referrer&&-1===url.indexOf("utm_source=")&&(organic=packOrganic(referrer,P.page),organic&&redirect(organic));})({"page":"homepage"});
+    (function(a,b){function d(){var a=document.createElement("script");a.async=!0,a.src="//s0.meituan.net/vendor/js/mta.min.js";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}if(a.MeituanAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},"complete"===document.readyState)d();else{var c=window.onload;window.onload=function(){d(),c&&c()}}})(window,"mta");
+    mta('create','5371750ce87460c1504d7ca2');
+    mta('config','sampleRate',20);
+    mta('config','useCombo',false);
+    mta('tag','geo','yuncheng');
+    mta('send','resource');
+</script>
+    <script class="cached-resources" id="CR-js-asyncjs">
+        !function(t,e){"use strict";function n(t,e){var n=t.length;return~e&&n>e&&(n=e),n}function r(t,e){b.setTimeout(t,e||0)}function a(t){r(function(){throw t})}function o(t){return/(^(https?:)?\/\/)|(\.(js|php)$)/.test(t)&&!/(\n|\r)/m.test(t)}function s(t){return t&&t.constructor&&t.call&&t.apply}function i(t){var e;return(e=Array.isArray)?e(t)?t:[t]:T.concat(t)}function c(t){return T.slice.call(t)}function l(){var t=c(arguments);return function(){return j.apply(j,t.concat(c(arguments)))}}function u(t,e){var n=this;if((!n.readyState||/^c|loade/.test(n.readyState))&&!n.loadStatus){if(n.onload=n.onreadystatechange=n.onerror=null,n.loadStatus=!0,e&&"error"===e.type){var r=n.src||"Resource",o=" fails to load.",s={name:"ConnectionError",source:r,evt:e,stack:r+o,message:o,toString:function(){return this.source+this.message}};return a(s),void t.reject(s)}t.resolve()}}function f(t,e){var n="script",r=x.createElement(n),a=x.getElementsByTagName(n),o=a[a.length-1];if(r.async=!0,r.src=t,e){r.loadStatus=!1;var s=l(u,r,e);r.onload=r.onreadystatechange=r.onerror=s;var i=o;i=i||document.body.firstChild,i.parentNode.insertBefore(r,i)}}function d(t,e){w(function(){try{t.call(null,e)}catch(n){e.reject(n)}})}function h(t,e){if(!s(t)){if(o(t))return void f(t,e);if(C)return t=m+encodeURIComponent(t),void f(t,e)}var n=s(t)?t:Function(t);if(!e.async){var r=n;n=function(t){try{r.call(null),t.resolve()}catch(e){t.reject(e)}}}d(n,e)}function v(t,e){var n=this;n.tasks=[],n.callbacks=[],n.errors=[],n.data={},n.nextTask=0,n.nextCallback=0,n.until=-1,n.digest=!1,n.add(t).whenDone(e)}function p(){var t=this;if(t.digest)return void r(l(p,t),50/3);t.digest=!0;for(var e,a,o=t.nextCallback;o<n(t.callbacks,t.until);o++)if(t.nextTask===t.tasks.length){if(a=t.nextCallback,e=t.callbacks[a]){if(t.nextCallback=o+1,e.call(null,t.data,t.nextTask-1,t.errors),!e.untilThen)continue;t.nextCallback--,t.until=-1}t.callbacks.splice(a,1)}t.digest=!1}function k(){var t=this;return t.nextTask<t.tasks.length&&++t.nextTask!==t.tasks.length?t:(p.call(t),t)}function y(t,e){return new v(t,e)}var m="data:application/javascript,",g="OMITTED",x=document,b=window,T=Array.prototype,C=!0;x.all&&!x.addEventListener&&(C=!1);var w=b.requestAnimationFrame||b.webkitRequestAnimationFrame||b.mozRequestAnimationFrame||r,j=Function.call;v.prototype.resolve=function(t,e){var n=this;return t&&t!==g&&(n.data[t]=e),k.call(n)},v.prototype.reject=function(t){var e=this;return t&&(a(t),e.errors.push(t)),k.call(e)},v.prototype.whenDone=function(t){var e=this;return t?e.nextTask>e.tasks.length?e:(e.callbacks.push(t),e.nextTask===e.tasks.length&&e.resolve(),e):e},v.prototype.add=function(t,e){var n=this;if(!t)return n;if(e&&n[e]){var r=new Error("Callback value name: "+e+" is registered");a(r),n.errors.push(r)}t=i(t);for(var o,s={resolve:l(n.resolve,n,e),reject:n.reject,async:!!e},c=0;c<t.length;c++)o=t[c],o&&(n.tasks.push(o),h(o,s));return n},v.prototype.then=function(t,e){function n(){r.until=r.nextCallback,r.add(t,e)}var r=this;return t?(n.untilThen=!0,r.whenDone(n)):r},"undefined"!=typeof module&&module.exports?module.exports=y:"function"==typeof define&&define.amd?define(function(){return y}):e[t]=y}("asyncJS",this);
+    </script>
+    <script>M.Env["data-conf"] = {"domainHost":"meituan.com","cdnDomainHost":"meituan.net","rootHost":"www.meituan.com","app":"www","comboBase":"http:\/\/c.meituan.net\/combo\/?f=","yuiVersion":"3.16.0","httpReferer":"http:\/\/localhost:63342\/ttdjq\/src.html","debug":false,"pageview":"\/index.php","pageviewData":{"page":"index\/floor"},"asyncPageviewData":[],"gaCustomVar":"","coreCssUrl":"http:\/\/c.meituan.net\/combo\/?f=www\/css\/common.v41ce8a5f.css;www\/css\/base.v21e25d8c.css;www\/css\/seo.css","moreCssUrl":"http:\/\/c.meituan.net\/combo\/?f=www\/css\/slides.v30fdb768.css;www\/css\/side.v5ed60ab0.css;www\/css\/deallist.v90613aa2.css;www\/css\/floor.va12d159e.css","coreJsUrl":"http:\/\/c.meituan.net\/combo\/?f=mt-web-core-min.v3.16.0.js;www\/js\/inline\/conf-min.v87622123.js;fecore\/mt-core\/mt-core-min.v2a93606e.js;fecore\/mt-base\/mt-base-min.v313345f7.js;fecore\/mt-uiutil\/mt-uiutil-min.v3ee76d1b.js;fecore\/mt-window\/mt-window-min.v1e88af0c.js;fecore\/mt-event\/mt-event-min.v42245138.js;fecore\/mt-event-hover\/mt-event-hover-min.v453b1323.js;fecore\/mt-component\/mt-component-min.v663931b0.js;fecore\/mt-viewporttracker\/mt-viewporttracker-min.vae8a3ff1.js;fecore\/mt-bigrender\/mt-bigrender-min.v62f48709.js;fecore\/mt-imageloader\/mt-imageloader-min.vfe7667b5.js;fecore\/mt-ajax\/mt-ajax-min.vba8e887f.js;fecore\/uix-dropdown\/uix-dropdown-min.v06c153d5.js;fecore\/p-node-placeholder\/p-node-placeholder-min.v6107f6dc.js;fecore\/p-node-effect\/p-node-effect-min.va5d2a9e5.js;www\/js\/base-min.v0c81c88b.js;www\/js\/tracker-min.v19a834fc.js;www\/js\/hub-min.vd8d96f51.js;www\/component\/search-box\/search-box-min.v8b003c22.js;www\/component\/cate-nav\/cate-nav-min.vc1e8b5c2.js","jsDepsUrl":"http:\/\/c.meituan.net\/combo\/?f=fecore\/deps-mr-min.v1fc60631.js;vendor\/deps-mr-min.v3b35e32c.js;www\/deps-mr-min.v826b8530.js;\/www\/js\/inline\/init-min.vd823ad33.js;\/www\/js\/inline\/pg-floor-min.v4dc883e8.js","ravenUrl":"http:\/\/s1.meituan.net\/vendor\/js\/raven-helper.min-min.v17440041.js","ag":"http:\/\/s0.meituan.net\/vendor\/js\/ag-min.vcbba537f.js","DEV":0,"nodelogin":false};</script>
+    <script async="" src="http://c.meituan.net/combo/?f=mt-web-core-min.v3.16.0.js;www/js/inline/conf-min.v87622123.js;fecore/mt-core/mt-core-min.v2a93606e.js;fecore/mt-base/mt-base-min.v313345f7.js;fecore/mt-uiutil/mt-uiutil-min.v3ee76d1b.js;fecore/mt-window/mt-window-min.v1e88af0c.js;fecore/mt-event/mt-event-min.v42245138.js;fecore/mt-event-hover/mt-event-hover-min.v453b1323.js;fecore/mt-component/mt-component-min.v663931b0.js;fecore/mt-viewporttracker/mt-viewporttracker-min.vae8a3ff1.js;fecore/mt-bigrender/mt-bigrender-min.v62f48709.js;fecore/mt-imageloader/mt-imageloader-min.vfe7667b5.js;fecore/mt-ajax/mt-ajax-min.vba8e887f.js;fecore/uix-dropdown/uix-dropdown-min.v06c153d5.js;fecore/p-node-placeholder/p-node-placeholder-min.v6107f6dc.js;fecore/p-node-effect/p-node-effect-min.va5d2a9e5.js;www/js/base-min.v0c81c88b.js;www/js/tracker-min.v19a834fc.js;www/js/hub-min.vd8d96f51.js;www/component/search-box/search-box-min.v8b003c22.js;www/component/cate-nav/cate-nav-min.vc1e8b5c2.js"></script><script async="" src="http://c.meituan.net/combo/?f=fecore/deps-mr-min.v1fc60631.js;vendor/deps-mr-min.v3b35e32c.js;www/deps-mr-min.v826b8530.js;/www/js/inline/init-min.vd823ad33.js;/www/js/inline/pg-floor-min.v4dc883e8.js"></script><script>
+    M._mtq = asyncJS();
+    M._mtq.then(function(resolver) {
+        setTimeout(function() {
+            resolver.resolve(null);
+        }, 50);
+    }, "OMITTED");
+    M._mtq.then("http://c.meituan.net/combo/?f=mt-web-core-min.v3.16.0.js;www/js/inline/conf-min.v87622123.js;fecore/mt-core/mt-core-min.v2a93606e.js;fecore/mt-base/mt-base-min.v313345f7.js;fecore/mt-uiutil/mt-uiutil-min.v3ee76d1b.js;fecore/mt-window/mt-window-min.v1e88af0c.js;fecore/mt-event/mt-event-min.v42245138.js;fecore/mt-event-hover/mt-event-hover-min.v453b1323.js;fecore/mt-component/mt-component-min.v663931b0.js;fecore/mt-viewporttracker/mt-viewporttracker-min.vae8a3ff1.js;fecore/mt-bigrender/mt-bigrender-min.v62f48709.js;fecore/mt-imageloader/mt-imageloader-min.vfe7667b5.js;fecore/mt-ajax/mt-ajax-min.vba8e887f.js;fecore/uix-dropdown/uix-dropdown-min.v06c153d5.js;fecore/p-node-placeholder/p-node-placeholder-min.v6107f6dc.js;fecore/p-node-effect/p-node-effect-min.va5d2a9e5.js;www/js/base-min.v0c81c88b.js;www/js/tracker-min.v19a834fc.js;www/js/hub-min.vd8d96f51.js;www/component/search-box/search-box-min.v8b003c22.js;www/component/cate-nav/cate-nav-min.vc1e8b5c2.js");
+    M._mtq.then("http://c.meituan.net/combo/?f=fecore/deps-mr-min.v1fc60631.js;vendor/deps-mr-min.v3b35e32c.js;www/deps-mr-min.v826b8530.js;/www/js/inline/init-min.vd823ad33.js;/www/js/inline/pg-floor-min.v4dc883e8.js");
+</script>
+
+    <link rel="stylesheet" type="text/css" href="http://c.meituan.net/combo/?f=/www/css/common.v41ce8a5f.css;/www/css/base.v21e25d8c.css;/www/css/search-box.vada05931.css;/www/css/cate-nav.v1ea03945.css">
+    <link rel="stylesheet" type="text/css" href="http://c.meituan.net/combo/?f=/www/css/slides.v30fdb768.css;/www/css/side.v5ed60ab0.css;/www/css/deallist.v90613aa2.css;/www/css/floor.va12d159e.css;/www/css/index-slider.vb34c10a6.css">
+
+    <noscript hidden="" style="display:none;" class="J-hub" data-hubcss="/www/css/lazyload.v3292f6f4.css;/iconfont/css/global-iconfont.vc01543d5.css" data-hubstamp="yui_3_16_0_1_1426896770329_1712" data-hubstate="40"></noscript>
+    <script charset="utf-8" id="yui_3_16_0_1_1426896770329_4" src="http://c.meituan.net/combo/?f=fecore/mt-ngparser/mt-ngparser-min.vd6767290.js;fecore/mt-scope/mt-scope-min.v7786f86a.js;fecore/mt-bind/mt-bind-min.v7371c8a9.js" async=""></script><script charset="utf-8" id="yui_3_16_0_1_1426896770329_272" src="http://c.meituan.net/combo/?f=fecore/uix-smoothscroll/uix-smoothscroll-min.vf2bce5f4.js;fecore/uix-scrollspy/uix-scrollspy-min.v456d56b7.js" async=""></script><link charset="utf-8" rel="stylesheet" id="yui_3_16_0_1_1426896770329_1860" href="http://c.meituan.net/combo/?f=/www/css/lazyload.v3292f6f4.css;/iconfont/css/global-iconfont.vc01543d5.css"><link charset="utf-8" rel="stylesheet" id="yui_3_16_0_1_1426896770329_1861" href="http://c.meituan.net/combo/?f=yui/3.16.0/build/widget-base/assets/skins/sam/widget-base.css;yui/3.16.0/build/widget-stack/assets/skins/sam/widget-stack.css;yui/3.16.0/build/overlay/assets/skins/sam/overlay.css"><script charset="utf-8" id="yui_3_16_0_1_1426896770329_1862" src="http://c.meituan.net/combo/?f=fecore/mt-formchecker/mt-formchecker-min.v9bb6e6f1.js;yui/3.16.0/build/attribute-complex/attribute-complex-min.js;yui/3.16.0/build/base-pluginhost/base-pluginhost-min.js;yui/3.16.0/build/classnamemanager/classnamemanager-min.js;yui/3.16.0/build/widget-base/widget-base-min.js;yui/3.16.0/build/widget-htmlparser/widget-htmlparser-min.js;yui/3.16.0/build/widget-skin/widget-skin-min.js;yui/3.16.0/build/widget-uievents/widget-uievents-min.js;yui/3.16.0/build/base-build/base-build-min.js;yui/3.16.0/build/widget-stdmod/widget-stdmod-min.js;yui/3.16.0/build/widget-position/widget-position-min.js;yui/3.16.0/build/widget-position-align/widget-position-align-min.js;yui/3.16.0/build/widget-stack/widget-stack-min.js;yui/3.16.0/build/widget-position-constrain/widget-position-constrain-min.js;yui/3.16.0/build/overlay/overlay-min.js;fecore/mt-dialog/mt-dialog-min.v84556fa8.js;www/js/dialog-min.v6613aa4e.js;www/js/anti-crawl-min.v0b7739ef.js;www/js/index-min.v426f23e8.js" async=""></script><script charset="utf-8" id="yui_3_16_0_1_1426896770329_1888" src="http://c.meituan.net/combo/?f=fecore/uix-sticky/uix-sticky-min.v88a50d15.js" async=""></script><link charset="utf-8" rel="stylesheet" id="yui_3_16_0_1_1426896770329_2460" href="http://c.meituan.net/combo/?f=fecore/w-slider/assets/skins/sam/w-slider.v9283e3b1.css"><script charset="utf-8" id="yui_3_16_0_1_1426896770329_2461" src="http://c.meituan.net/combo/?f=fecore/w-slider/w-slider-min.vb31d9ad0.js" async=""></script><link charset="utf-8" rel="stylesheet" id="yui_3_16_0_1_1426896770329_2462" href="http://c.meituan.net/combo/?f=/www/css/holy-reco.v3e26daec.css"><script charset="utf-8" id="yui_3_16_0_1_1426896770329_2464" src="http://c.meituan.net/combo/?f=yui/3.16.0/build/yui-throttle/yui-throttle-min.js;fecore/mt-xsstorage/mt-xsstorage-min.ve39b55b3.js;fecore/mt-beacon/mt-beacon-min.v71b6966e.js;fecore/mt-log/mt-log-min.v92fc6d45.js;fecore/mt-tracker/mt-tracker-min.vc784827f.js;www/js/acm-tracker-min.va1cf971f.js" async=""></script><script charset="utf-8" id="yui_3_16_0_1_1426896770329_2482" src="http://c.meituan.net/combo/?f=www/js/banner-min.vd69e1d83.js" async=""></script><script charset="utf-8" id="yui_3_16_0_1_1426896770329_2498" src="http://c.meituan.net/combo/?f=www/component/index-slider/index-slider-min.vcd1c8b5b.js;fecore/uix-tabview/uix-tabview-min.vb98f0cac.js;www/component/holy-reco/holy-reco-min.vea33301c.js" async=""></script><script charset="utf-8" id="yui_3_16_0_1_1426896770329_3674" src="http://c.meituan.net/combo/?f=yui/3.16.0/build/transition/transition-min.js;www/js/tips-min.v3471807e.js" async=""></script><script type="text/javascript" async="" src="http://s0.meituan.net/vendor/js/ag-min.vcbba537f.js"></script>
+    <style>
+
+    .site-wrapper__side .side__block--app {
+        display: block;
+        border-bottom: 1px dotted #ff6600;
+        margin: 0 10px;
+        width: 186px;
+        height: 95px;
+    }
+    .side-extension {
+        margin-bottom: 16px;
+        padding: 10px 20px;
+        border: 1px solid #ff6600;
+        background-color: #5c5d5d;
+        font-size: 12px;
+    }
+    body {
+        font: 400 14px/1.5 "Hiragino Sans GB","WenQuanYi Micro Hei",tahoma,sans-serif;
+        color: #ff6600;
+        background-color: #070607;
+    }
+    #bdw {
+        min-height: 500px;
+        background-color: steelblue;
+    }
+    .cate-nav {
+        position: absolute;
+        top: 40px;
+        width: 244px;
+        height: 468px;
+        border: 1px solid #ff6600;
+        border-top: none;
+        overflow: visible;
+        background: #2c2c2c;
+        line-height: 22px;
+        font-size: 12px;
+        z-index: 1;
+        -webkit-backface-visibility: hidden;
+    }
+    .nav-level1__label {
+        display: inline;
+        height: 22px;
+        font-size: 14px;
+        font-weight: 700;
+        -webkit-font-smoothing: antialiased;
+        color: #ff6600;
+        vertical-align: top;
+    }
+    .site-wrapper__content .fs {
+        position: relative;
+        float: left;
+        margin-bottom: 14px;
+        border-right: 1px solid #ff6600;
+        border-bottom: 1px solid #ff6600;
+        padding-left: 246px;
+        width: 744px;
+        height: 468px;
+        background-color: #3d3e3d;
+    }
+    .site-mast__branding .site-logo {
+        background-image: url(site-logo.jpg);
+        background-repeat: no-repeat;
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        background-position: 0;
+    }
+    .pg-floor {
+        margin: 0 auto;
+        min-width: 1200px;
+        background-color: #494949;
+    }
+    .site-mast__branding {
+        position: relative;
+        margin: 0 auto;
+        height: 115px;
+        width: 100%;
+        background: #000000;
+    }
+    .site-mast__branding .commitment-item {
+        float: left;
+        display: block;
+        width: 69px;
+        height: 42px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 5.5;
+        color: #ff6600;
+    }
+    .site-mast .navbar {
+        margin-left: 246px;
+        border-bottom: none;
+        padding-left: 0;
+        _height: 38px;
+        background: #161516;
+    }
+    .site-mast {
+        width: 100%;
+        height: 188px;
+        background: #000000;
+    }
+    .site-mast__keep a {
+        color:#ff6600;
+        text-decoration: none;
+    }
+    .city-info__toggle {
+        border: 1px solid #333333;
+        padding: 2px 5px;
+        line-height: 20px;
+        font-size: 12px;
+        color:#ff6600;
+        background: #000000;
+    }
+    .city-info__name {
+        font-size: 18px;
+        font-weight: 700;
+        color:#ff6600;
+    }
+    .user-info__signup {
+        padding: 0 10px 0 5px;
+        color:#ff6600;
+        border-right: 1px solid #ff6600;
+    }
+    .site-mast .dropdown__toggle {
+        position: relative;
+        display: inline-block;
+        height: 16px;
+        padding: 6px 20px 6px 12px;
+        margin: 0 1px;
+        color:#ff6600;
+        z-index: 93;
+
+    }
+    .site-mast__user-w .user-orders a {
+        color:#ff6600;
+    }
+    .navbar__item {
+        position: relative;
+        display: inline-block;
+        padding: 10px 18px 9px;
+        min-width: 54px;
+        height: 21px;
+        line-height: 21px;
+        text-align: center;
+        font-weight: 700;
+        color:#ff6600;
+    }
+    .search-box__button {
+        float: left;
+        width: 76px;
+        margin: 0;
+        height: 42px;
+        line-height: 42px;
+        border: 1px solid #ff6600;
+        color: #ff6600;
+        background:dimgray;
+        cursor: pointer;
+        border-radius: 0;
+    }
+    .search-box__input {
+        float: left;
+        margin: 0;
+        padding: 6px 5px;
+        border: 2px solid #ff6600;
+        border-right: none;
+        border-left: none;
+        border-radius: 0;
+        width: 338px;
+        height: 26px;
+        line-height: 26px;
+    }
+    .search-box__tabs-container {
+        position: relative;
+        float: left;
+        width: 63px;
+        height: 38px;
+        border: 2px solid #ff6600;
+        border-right: none;
+    }
+    .search-box__tab {
+        padding: 3px 20px 3px 14px;
+        line-height: 32px;
+        font-size: 14px;
+        color: #ff6600;
+        cursor: pointer;
+    }
+    .search-box__hot a {
+        padding: 0 10px;
+        border-right: none;
+        height: 18px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 72px;
+        _width: 62px;
+        overflow: hidden;
+        color: #ff6600;
+        display: inline-block;
+        text-align: center;
+    }
+    .site-mast__user-nav-w {
+        height: 32px;
+        font-size: 12px;
+        border-top: 1px solid #000000;
+        box-shadow: 0 0 0 1px #000000,0 0 0 2px #000000,0 0 5px 3px #000000;
+        background:#333333;
+    }
+    .pg-floor .site-mast .mt-cates {
+        position: absolute;
+        top: 0;
+        border: 2px solid #ff6600;
+        padding-left: 15px;
+        width: 227px;
+        height: 38px;
+        line-height: 38px;
+        cursor: default;
+        text-align: left;
+        font-weight: 400;
+        color:#ff6600;
+        background: #000000;
+    }
+    .index-slider .title {
+        position: relative;
+        float: left;
+        width: 266px;
+        height: 40px;
+        padding: 5px 0;
+        background-color: #3d3e3d;
+    }
+    .index-slider .head .trigger-container {
+        top: 5px;
+        right: 0;
+        left: auto;
+        background: #5c5d5d;
+    }
+    .side__block {
+        margin-bottom: 12px;
+        border: 1px solid #ff6600;
+        width: 208px;
+        background: #3d3e3d;
+    }
+    .elevator {
+        border-top: 1px solid #ff6600;
+        border-bottom: 1px solid #ff6600;
+        width: 43px;
+        font-size: 12px;
+        background-color: #333333;
+        color: #ff6600;
+    }
+    .elevator__floor .link {
+        position: relative;
+        display: block;
+        border: 1px solid #ff6600;
+        margin-top: -1px;
+        margin-bottom: -1px;
+        padding: 11px 8px 8px;
+        min-height: 14px;
+        height: auto!important;
+        height: 14px;
+        text-align: center;
+        font-size: 12px;
+        color: #ff6600;
+        cursor: pointer;
+        background: #5c5d5d;
+    }
+    .category-floor__head .title {
+        display: block;
+        height: 38px;
+        width: 126px;
+        font-size: 22px;
+        color: #ff6600;
+        text-shadow: 0 0 .5px rgba(0,0,0,.36);
+    }
+    .category-floor__head {
+        margin-bottom: 15px;
+        padding-top: 30px;
+        border-bottom: 2px solid #ff6600;
+        box-shadow: 0 1px 1px #5c5d5d;
+        height: 38px;
+        line-height: 38px;
+    }
+    .category-floor__foot .link {
+        display: block;
+        border: 1px solid #ff6600;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+        background-color: #5c5d5d;
+    }
+    .deal-tile {
+        position: relative;
+        float: left;
+        width: 350px;
+        border: 1px solid #ff6600;
+        background-color: #5c5d5d;
+        color: #ff6600;
+    }
+    .deal-tile__title .xtitle {
+        margin-bottom: 4px;
+        color: #ff6600;
+        font-size: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-indent: -.5em;
+        _width: 306px;
+    }
+    .deal-tile__title .short-title {
+        line-height: 18px;
+        color: #ff6600;
+        font-weight: 400;
+    }
+    .deal-tile__extra {
+        padding: 1px;
+        border-top: 1px #ff6600 solid;
+    }
+    .deal-tile__extra .extra-inner {
+        position: relative;
+        height: 33px;
+        padding: 0 15px;
+        font-size: 12px;
+        background-color: #0f0f0f;
+    }
+    .price {
+        font-family: arial,sans-serif;
+        color: #f76120;
+        margin-left: 35px;
+        display: inline-block;
+        margin-top: 6px;
+    }
+    .site-wrapper__content .filter-strip__all {
+        float: right;
+        position: relative;
+        border: 1px solid #ff6600;
+        margin: 1px 0;
+        padding: 0 13px 0 5px;
+        color: #ff6600;
+        line-height: 20px;
+    }
+    .site-wrapper__content .content__cell .label {
+        position: relative;
+        padding-left: 20px;
+        line-height: 24px;
+        color: #ff6600;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .site-wrapper__content .filter-strip__list a {
+        color: #ff6600;
+    }
+    .index-slider .head h2 {
+        margin-bottom: 8px;
+        line-height: 20px;
+        font-size: 14px;
+        color: #ff6600;
+    }
+    .index-slider .xtitle {
+        position: relative;
+        width: 245px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color:#ff6600;
+    }
+    .index-slider .desc {
+        font-size: 12px;
+        color: #ff6600;
+    }
+    .category-floor__head .sub-categories__cell .link {
+        margin-top: 13px;
+        border-right: 1px solid #ff6600;
+        padding: 0 9px;
+        height: 14px;
+        line-height: 14px;
+        font-size: 14px;
+        color: #ff6600;
+    }
+    .category-floor__head .sub-categories__cell--all {
+        position: relative;
+        margin-top: 6px;
+        border: 1px solid #ff6600;
+        padding: 2px 1px 1px;
+        height: 21px;
+        line-height: 21px;
+        background: #181818;
+    }
+    .nav-tabs--small {
+        border: 1px solid #ff6600;
+        font-size: 12px;
+        line-height: 23px;
+        color: #ff6600;
+        background-color: #101010;
+    }
+    .nav-tabs--small li {
+        float: left;
+        margin-right: -1px;
+        padding: 0 6px;
+        width: 78px;
+        border: 1px solid #ff6600;
+        background: #0f0f0f;
+        text-align: center;
+        cursor: pointer;
+    }
+    .nav-tabs--small .current {
+        background: #0f0f0f;
+    }
+    .holy-reco__content {
+        border: 1px solid #ff6600;
+        border-top: 0;
+        padding: 10px;
+        background: #0f0f0f;
+    }
+    .holy-reco .tab-item {
+        position: relative;
+        display: block;
+        padding: 0 15px;
+        _border-left: 0;
+        outline: 0;
+        color: #ff6600;
+        text-decoration: none;
+        _display: inline;
+    }
+    .holy-reco__content a {
+        display: inline-block;
+        color: #ff6600;
+        font-size: 12px;
+        padding: 0 5px;
+        line-height: 16px;
+        white-space: nowrap;
+        width: 85px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .site-info-w {
+        border-top: 3px solid #ff6600;
+        background: #000000;
+        padding-bottom: 30px;
+        _height: 100px;
+        clear: both;
+    }
+    .site-info__item h3 {
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #ff6600;
+    }
+    .site-info__item a {
+        color: #ff6600;
+    }
+    .site-info__item--service {
+        border-right-color: #ff6600;
+        padding-right: 25px;
+        width: 176px;
+        font-family: "Hiragino Sans GB"," Microsoft YaHei","WenQuanYi Micro Hei",arial,sans-serif;
+        color: #ff6600;
+    }
+    .site-info__item--service .selfservice-link {
+        color: #ff6600;
+    }
+    .copyright {
+        padding: 30px 0 10px;
+        clear: both;
+        color: #ff6600;
+        text-align: center;
+        font-size: 12px;
+        font-family: initial;
+    }
+    .copyright a {
+        color: #ff6600;
+    }
+    .site-info__item {
+        float: left;
+        border-left: 1px dotted #ff6600;
+        border-right: 1px dotted #ff6600;
+        padding: 20px 0 0 25px;
+        width: 161px;
+        height: 160px;
+    }
+    </style>
+</head>
+
+
+<body id="index" class="pg-floor"><div id="yui_3_16_0_1_1426896770329_3741" class="yui3-widget mt-slider"><div id="yui_3_16_0_1_1426896770329_3743" class="mt-slider-content"></div></div>
+<noscript hidden="" style="display:none;" data-comboajax-uri="/index/tips/index/floor" data-comboajax-onsuccess="$request.listen(&quot;www-tips&quot;, &quot;www.Tips&quot;);" data-comboajax-data="{&quot;sysmsg&quot;:true,&quot;commontips&quot;:true,&quot;page&quot;:&quot;index&quot;}" data-comboajax-state="5" data-parent="body"></noscript><noscript hidden="" style="display:none;" data-comboajax-uri="/event/timetrigger" data-comboajax-state="5"></noscript><noscript hidden="" style="display:none;" data-comboajax-uri="/index/atf" data-comboajax-onsuccess="$request.listen(&quot;www-index&quot;, &quot;www.Index.ATF&quot;);" data-comboajax-state="5"></noscript><noscript hidden="" style="display:none;" data-comboajax-uri="/index/prepare" data-comboajax-onsuccess="$request.listen(&quot;www-index&quot;, &quot;www.Index.FloatCard&quot;);" data-comboajax-state="5"></noscript><header id="site-mast" class="site-mast">
+<div class="site-mast__user-nav-w">
+    <div class="site-mast__user-nav cf">
+        <ul class="basic-info">
+            <li class="site-mast__keep">
+                <a rel="nofollow" class="fav log-mod-viewed" id="J-favorite" gaevent="header/addFavorite" data-mod="fa" href="javascript:;">
+                    <i class="F-glob F-glob-star-border icon-keep"></i>
+                    收藏TTDJ
+                </a>
+            </li>
+            <li class="user-info cf" data-comboajax-uri="/combo/userinfo" data-comboajax-onsuccess="this.setHTML($response.html);" data-comboajax-state="5">
+                <!--注册登陆在这里-->
+                <a class="user-info__login" id="J-login" href="https://passport.meituan.com/account/unitivelogin?service=www&amp;continue=http%3A%2F%2Fwww.meituan.com%2Faccount%2Fsettoken%3Fcontinue%3Dhttp%253A%252F%252Fyuncheng.meituan.com%252F" gaevent="top/login">登录</a>
+                <a class="user-info__signup" href="https://passport.meituan.com/account/unitivesignup?service=www&amp;continue=http%3A%2F%2Fwww.meituan.com%2Faccount%2Fsettoken%3Fcontinue%3Dhttp%253A%252F%252Fyuncheng.meituan.com%252F" gaevent="top/signup">注册</a>
+            </li>
+            <li data-uix="dropdown" class="dropdown dropdown--msg" data-comboajax-uri="/index/message" data-comboajax-onsuccess="$request.listen(&quot;www-tips&quot;, &quot;www.MsgCenter&quot;);" data-comboajax-state="5" style="display:none;" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1614">
+                <a id="J-my-msg" rel="nofollow" class="dropdown__toggle" href="http://www.meituan.com/message/" gaevent="nav/mymsg">
+                    <i class="vertical-bar vertical-bar--left"></i>
+                    <span class="J-title">消息</span>
+                    <i class="tri tri--dropdown"></i>
+                    <i class="vertical-bar"></i>
+                </a>
+            </li>
+            <li data-uix="dropdown" data-params="{&quot;classname&quot;: &quot;dropdown--open dropdown--open-app&quot;}" class="mobile-info__item dropdown" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1625">
+                <a class="dropdown__toggle" href="javascript:;"><i class="icon-mobile F-glob F-glob-phone"></i>手机TTDJ<i class="tri tri--dropdown"></i></a>
+                <div class="dropdown-menu dropdown-menu--app">
+                    <a class="app-block" href="http://i.meituan.com/mobile/down/meituan" target="_blank">
+                        <span class="app-block__title">免费下载TTDJ手机版</span>
+                        <span class="app-block__content"></span>
+                        <i class="app-block__arrow F-glob F-glob-caret-right"></i>
+                    </a>
+                    <a class="app-block app-block--last app-block--maoyan" href="http://www.maoyan.com/" target="_blank">
+                        <span class="app-block__title">免费下载天天代金券手机版</span>
+                        <span class="app-block__content"></span>
+                        <i class="app-block__arrow F-glob F-glob-caret-right"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+        <ul class="site-mast__user-w">
+            <li class="user-orders">
+                <a href="http://www.meituan.com/orders/">我的订单</a>
+            </li>
+            <li data-uix="dropdown" class="dropdown dropdown--account" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1636">
+                <a id="J-my-account-toggle" rel="nofollow" class="dropdown__toggle" href="http://www.meituan.com/orders/" gaevent="nav/my" data-mttcode="Amymeituan">
+                    <span>我的TTDJ</span>
+                    <i class="tri tri--dropdown"></i>
+                    <i class="vertical-bar"></i>
+                </a>
+                <ul id="J-my-account-menu" class="dropdown-menu dropdown-menu--text dropdown-menu--account account-menu" data-mtnode="Amymeituan">
+                    <li><a class="dropdown-menu__item first " rel="nofollow" gaevent="nav/my/orders" href="http://www.meituan.com/orders/" data-mttcode="Borders">我的订单</a></li>
+                    <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/feedback" href="http://www.meituan.com/rates/" data-mttcode="Brates">我的评价</a></li>
+                    <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/collections" href="http://www.meituan.com/collections/" data-mttcode="Bcollections">我的收藏</a></li>
+                    <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/points" href="http://www.meituan.com/account/points/" data-mttcode="Bpoints">我的积分</a></li>
+                    <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/card" href="http://www.meituan.com/card/list" data-mttcode="Bvoucher">抵用券</a></li>
+                    <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/credit" href="http://www.meituan.com/account/credit" data-mttcode="Bcredit">TTDJ余额</a></li>
+                    <li><a class="dropdown-menu__item  " rel="nofollow" gaevent="nav/my/charge" href="http://www.meituan.com/account/charge" data-mttcode="Bcharge">账户充值</a></li>
+                    <li><a class="dropdown-menu__item  last" rel="nofollow" gaevent="nav/my/settings" href="http://www.meituan.com/account/settings" data-mttcode="Bsettings">账户设置</a></li>
+                </ul>
+            </li>
+            <li data-uix="dropdown" data-params="{&quot;classname&quot;: &quot;dropdown--open dropdown--open-history&quot;}" class="dropdown dropdown--history" data-comboajax-uri="/index/rvd" data-comboajax-config="www.History.nav" data-comboajax-state="5" id="yui_3_16_0_1_1426896770329_98" data-widget-init="true">
+                <a id="J-my-history-toggle" rel="nofollow" class="dropdown__toggle" href="javascript:;" gaevent="nav/history">
+                    <span>最近浏览</span>
+                    <i class="tri tri--dropdown"></i>
+                    <i class="vertical-bar"></i>
+                </a>
+                <div id="J-my-history-menu" class="dropdown-menu dropdown-menu--deal dropdown-menu--history"></div>
+            </li>
+            <li data-uix="dropdown" id="J-my-cart" class="dropdown dropdown--cart J-cart-updated" data-comboajax-uri="/index/navcart" data-comboajax-onsuccess="Y.mt.www.CartEx.update($response.data);" data-comboajax-state="5" data-widget-init="true">
+                <a id="J-my-cart-toggle" rel="nofollow" class="dropdown__toggle" href="http://www.meituan.com/cart/" gaevent="nav/cart">
+                    <i class="icon icon-cart F-glob F-glob-cart"></i>
+                    <span>购物车<em class="badge" data-newindex="true"><strong class="cart-count">0</strong>件</em></span>
+                    <i class="tri tri--dropdown"></i>
+                    <i class="vertical-bar"></i>
+                </a>
+                <div id="J-my-cart-menu" class="dropdown-menu dropdown-menu--deal dropdown-menu--cart"></div>
+            </li>
+            <li data-uix="dropdown" id="J-site-help" class="dropdown dropdown--help" data-widget-init="true">
+                <a class="dropdown__toggle" href="http://www.meituan.com/help/selfservice" gaevent="top/service">
+                    <span>联系客服</span>
+                    <i class="tri tri--dropdown"></i>
+                    <i class="vertical-bar"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu--text dropdown-menu--help">
+                    <ul class="site-help-info">
+                        <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="0" href="http://www.meituan.com/help/selfservice" gaevent="top/service/refund">申请退款</a></li>
+                        <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="1" href="http://www.meituan.com/help/selfservice?tab=1" gaevent="top/service/returns">申请退换货</a></li>
+                        <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="2" href="http://www.meituan.com/help/selfservice?tab=2" gaevent="top/service/code">查看TTDJ券</a></li>
+                        <li><a rel="nofollow" class="J-selfservice-tab dropdown-menu__item" data-tab="3" href="http://www.meituan.com/help/selfservice?tab=3" gaevent="top/service/tel">换绑手机号</a></li>
+                        <li><a rel="nofollow" class="dropdown-menu__item" href="http://www.meituan.com/help/faq" gaevent="top/service/faq">常见问题</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li data-uix="dropdown" id="J-site-merchant" class="dropdown dropdown--merchant" data-widget-init="true">
+                <a class="dropdown__toggle dropdown__toggle--merchant" href="javascript:;" gaevent="top/merchant">
+                    <span>我是商家</span>
+                    <i class="tri tri--dropdown"></i>
+                    <i class="vertical-bar"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu--text dropdown-menu--merchant">
+                    <ul>
+                        <li><a rel="nofollow" class="dropdown-menu__item" href="http://e.meituan.com/" gaevent="top/merchant/ecom">商家中心</a></li>
+                        <li><a rel="nofollow" class="dropdown-menu__item" href="http://www.meituan.com/crmopen/business/opportunity/embed/add" gaevent="top/merchant/cooperation">我想合作</a></li>
+                        <li><a rel="nofollow" class="dropdown-menu__item" href="http://zhaoshang.meituan.com" gaevent="top/merchant/mmp">商家营销平台</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li data-uix="dropdown" id="J-my-more" class="dropdown dropdown--more dropdown--last" data-widget-init="true">
+                <a id="J-my-more-toggle" class="dropdown__toggle dropdown__toggle--my-more" href="javascript:;" gaevent="nav/more">
+                    <span>更多</span>
+                    <i class="tri tri--dropdown"></i>
+                </a>
+                <div id="J-my-more-menu" class="dropdown-menu dropdown-menu--text dropdown-menu--more">
+                    <ul>
+                        <li>
+                            <a rel="nofollow" class="mobile dropdown-menu__item" href="http://www.meituan.com/mobile/" target="_blank" gaevent="header/mobile"><span></span>手机版</a>
+                        </li>
+                        <li>
+                            <a rel="nofollow" id="J-subscribe" class="subscribe dropdown-menu__item" gaevent="header/subscribe" href="http://www.meituan.com/maillist/subscribe"><span></span>邮件订阅</a>
+                        </li>
+                        <li class="last">
+                            <a rel="nofollow" class="refer dropdown-menu__item" href="http://www.meituan.com/account/referrals" target="_blank" gaevent="header/refferals">邀请好友</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <noscript hidden="" style="display:none;" data-comboajax-uri="/index/vipbubble" data-comboajax-data="{&quot;ref&quot;:&quot;\/index\/floor&quot;}" data-comboajax-onsuccess="$request.listen(&quot;www-tips&quot;, &quot;www.VipBubble&quot;);" data-comboajax-state="5"></noscript>
+    </div>
+</div>
+
+
+
+<noscript hidden="" style="display:none;" data-comboajax-uri="/combo/unfoldbanner/index/floor" data-comboajax-onsuccess="$request.listen(&quot;www-banner&quot;, &quot;www.Banner.Unfold&quot;);" data-comboajax-state="5"></noscript>
+<div class="site-mast__branding cf" id="yui_3_16_0_1_1426896770329_1892">
+    <h1><a class="site-logo"  href="http://yuncheng.meituan.com" gaevent="header/logo">运城代金券</a></h1>
+    <div class="city-info">
+        <h2><a class="city-info__name" href="http://yuncheng.meituan.com" gaevent="header/cityname">运城</a></h2>
+        <a class="city-info__toggle" href="http://www.meituan.com/index/changecity/initiative" gaevent="header/changecity">切换城市</a>
+    </div>
+    <div data-component="search-box" class="component-search-box mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;afterLoad&quot;:false}" id="yui_3_16_0_1_1426896770329_1891"><div data-comboajax-uri="/index/hotqueries" data-comboajax-data="{&quot;isshowshops&quot;:true,&quot;isshopspage&quot;:false}" data-comboajax-onsuccess="this.append($response.html);" data-comboajax-state="5" class="J-search-box search-box ">
+        <form action="/s/" class="search-box__form J-search-form cf" name="searchForm" method="get" id="yui_3_16_0_1_1426896770329_1904">
+            <div class="search-box__tabs-container" style="float:left">
+                <span class="tri"></span>
+                <ul class="J-search-box__tabs search-box__tabs">
+                    <li class="search-box__tab J-search-box__tab--deal search-box__tab--current">代金券</li>
+                    <li class="search-box__tab J-search-box__tab--shops" gaevent="search/biz">商家</li>
+                </ul>
+            </div>
+            <input tabindex="1" type="text" name="w" autocomplete="off" data-smartbox="/search/smartboxv2/" class="s-text search-box__input J-search-box__input" value="" placeholder="请输入商品名称、地址等" id="yui_3_16_0_1_1426896770329_1910">
+            <input type="submit" class="s-submit search-box__button log-mod-viewed" hidefocus="true" value="搜&nbsp;&nbsp;索" data-mod="sr">
+        </form>
+        <ul class="search-suggest J-search-suggest" style="display: none;" hidden="hidden">
+        </ul>
+        <div class="smart-query-panel" style="display: none;" id="yui_3_16_0_1_1426896770329_1900" hidden="hidden">
+            <div class="smart-query-content"></div>
+        </div>
+        <div class="J-search-box__hot search-box__hot log-mod-viewed" data-mod="st" id="yui_3_16_0_1_1426896770329_3679"><div class="s-hot" id="J-deal-hot-query"><a class="hot-link  hot-link--first log-acm-viewed" gaevent="search/hotquery/1" data-mttcode="Asearch.Bhotquery.C1.Dgbdt" href="http://www.meituan.com/s/?w=盐湖区" data-acm-clk="AsearchB2864797524463488311.盐湖区.1">盐湖区</a><a class="hot-link  log-acm-viewed" gaevent="search/hotquery/2" data-mttcode="Asearch.Bhotquery.C2.Dgbdt" href="http://www.meituan.com/s/?w=运城" data-acm-clk="AsearchB1329597331279935535.运城.2">运城</a><a class="hot-link  log-acm-viewed" gaevent="search/hotquery/3" data-mttcode="Asearch.Bhotquery.C3.Dgbdt" href="http://www.meituan.com/s/?w=临猗县美食" data-acm-clk="AsearchB616626637069751691.临猗县美食.3">临猗县美食</a><a class="hot-link  log-acm-viewed" gaevent="search/hotquery/4" data-mttcode="Asearch.Bhotquery.C4.Dgbdt" href="http://www.meituan.com/s/?w=快餐" data-acm-clk="AsearchB7749668485419150661.快餐.4">快餐</a><a class="hot-link  log-acm-viewed" gaevent="search/hotquery/5" data-mttcode="Asearch.Bhotquery.C5.Dgbdt" href="http://www.meituan.com/s/?w=河津" data-acm-clk="AsearchB4963279973150885322.河津.5">河津</a><a class="hot-link  log-acm-viewed" gaevent="search/hotquery/6" data-mttcode="Asearch.Bhotquery.C6.Dgbdt" href="http://www.meituan.com/s/?w=空港" data-acm-clk="AsearchB6078854419554833686.空港.6">空港</a><a class="hot-link  log-acm-viewed" gaevent="search/hotquery/7" data-mttcode="Asearch.Bhotquery.C7.Dgbdt" href="http://www.meituan.com/s/?w=芮城县" data-acm-clk="AsearchB4503472004651718812.芮城县.7">芮城县</a><a class="hot-link  log-acm-viewed" gaevent="search/hotquery/8" data-mttcode="Asearch.Bhotquery.C8.Dgbdt" href="http://www.meituan.com/s/?w=永济市美食" data-acm-clk="AsearchB705603106232449367.永济市美食.8">永济市美食</a><a class="hot-link  log-acm-viewed" gaevent="search/hotquery/9" data-mttcode="Asearch.Bhotquery.C9.Dgbdt" href="http://www.meituan.com/s/?w=自助餐" data-acm-clk="AsearchB4410784240679445235.自助餐.9">自助餐</a><a class="hot-link  last log-acm-viewed" gaevent="search/hotquery/10" data-mttcode="Asearch.Bhotquery.C10.Dgbdt" title="南风广场美食" href="http://www.meituan.com/s/?w=南风广场美食" data-acm-clk="AsearchB5968548309658543150.南风广场美食.10">南风广场美食</a></div><div class="s-hot" id="J-poi-hot-query" style="display:none"><a class="hot-link  hot-link--first log-acm-viewed" gaevent="poisearch/hotquery/1" data-mttcode="Apoisearch.Bhotquery.C1.Dgbdt" href="http://www.meituan.com/shops/?w=盐湖区" data-acm-clk="AsearchB2864797524463488311.盐湖区.1">盐湖区</a><a class="hot-link  log-acm-viewed" gaevent="poisearch/hotquery/2" data-mttcode="Apoisearch.Bhotquery.C2.Dgbdt" href="http://www.meituan.com/shops/?w=运城" data-acm-clk="AsearchB1329597331279935535.运城.2">运城</a><a class="hot-link  log-acm-viewed" gaevent="poisearch/hotquery/3" data-mttcode="Apoisearch.Bhotquery.C3.Dgbdt" href="http://www.meituan.com/shops/?w=临猗县美食" data-acm-clk="AsearchB616626637069751691.临猗县美食.3">临猗县美食</a><a class="hot-link  log-acm-viewed" gaevent="poisearch/hotquery/4" data-mttcode="Apoisearch.Bhotquery.C4.Dgbdt" href="http://www.meituan.com/shops/?w=快餐" data-acm-clk="AsearchB7749668485419150661.快餐.4">快餐</a><a class="hot-link  log-acm-viewed" gaevent="poisearch/hotquery/5" data-mttcode="Apoisearch.Bhotquery.C5.Dgbdt" href="http://www.meituan.com/shops/?w=河津" data-acm-clk="AsearchB4963279973150885322.河津.5">河津</a><a class="hot-link  log-acm-viewed" gaevent="poisearch/hotquery/6" data-mttcode="Apoisearch.Bhotquery.C6.Dgbdt" href="http://www.meituan.com/shops/?w=空港" data-acm-clk="AsearchB6078854419554833686.空港.6">空港</a><a class="hot-link  log-acm-viewed" gaevent="poisearch/hotquery/7" data-mttcode="Apoisearch.Bhotquery.C7.Dgbdt" href="http://www.meituan.com/shops/?w=芮城县" data-acm-clk="AsearchB4503472004651718812.芮城县.7">芮城县</a><a class="hot-link  log-acm-viewed" gaevent="poisearch/hotquery/8" data-mttcode="Apoisearch.Bhotquery.C8.Dgbdt" href="http://www.meituan.com/shops/?w=永济市美食" data-acm-clk="AsearchB705603106232449367.永济市美食.8">永济市美食</a><a class="hot-link  log-acm-viewed" gaevent="poisearch/hotquery/9" data-mttcode="Apoisearch.Bhotquery.C9.Dgbdt" href="http://www.meituan.com/shops/?w=自助餐" data-acm-clk="AsearchB4410784240679445235.自助餐.9">自助餐</a><a class="hot-link  last log-acm-viewed" gaevent="poisearch/hotquery/10" data-mttcode="Apoisearch.Bhotquery.C10.Dgbdt" title="南风广场美食" href="http://www.meituan.com/shops/?w=南风广场美食" data-acm-clk="AsearchB5968548309658543150.南风广场美食.10">南风广场美食</a></div></div></div>
+    </div>
+    <a class="site-commitment" gaevent="top/commitment" href="http://www.meituan.com/commitment/" target="_blank">
+        <span class="commitment-item">用户登陆</span>
+        <span class="commitment-item">商家登陆</span>
+    </a>
+</div>
+<div class="site-mast__site-nav-w" id="yui_3_16_0_1_1426896770329_2508">
+    <div class="site-mast__site-nav" id="yui_3_16_0_1_1426896770329_2507">
+        <div class="site-mast__site-nav-inner" id="yui_3_16_0_1_1426896770329_2506">
+            <div data-component="cate-nav" class="component-cate-nav mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false}" id="yui_3_16_0_1_1426896770329_2505"><span class="mt-cates J-nav__trigger">全部分类</span>
+                <div class="cate-nav J-nav__list J-nav__list--present cateNavNew log-mod-viewed" data-mtnode="Acategory.Enavcategory" data-mod="nc" id="yui_3_16_0_1_1426896770329_2513">
+                    <div class="J-nav-item" id="yui_3_16_0_1_1426896770329_15522">
+                        <div class="cate-nav__item J-cate-nav__item--121 cate-nav__item--121 cate-nav__item--has-l2" data-mtnode="Bmeishi" id="yui_3_16_0_1_1426896770329_2515">
+                            <div class="nav-level1 nav-level1--first" id="yui_3_16_0_1_1426896770329_15521">
+                                <dl id="yui_3_16_0_1_1426896770329_15520">
+                                    <dt><a class="nav-level1__label" href="http://www.ttdaijin.comcategory/meishi" hidefocus="true"> 美食</a> </dt>
+                               </dl>
+                                <i class="nav-level2-indication F-glob F-glob-caret-right-thin"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="J-nav-item">
+                        <div class="cate-nav__item J-cate-nav__item--122 cate-nav__item--122 cate-nav__item--has-l2" data-mtnode="Bjiudian" id="yui_3_16_0_1_1426896770329_2520">
+                            <div class="nav-level1">
+                                <dl>
+                                    <dt><a class="nav-level1__label" href="http://www.meituan.com/hotel/search/jiudian/yuncheng" hidefocus="true"> 酒店</a><span class="sperator">/</span><a href="/hotel/zl" gaevent="nav/category/nav/category/kuaiding" data-mttcode="Bkuaiding" class="nav-extralink">快订有房</a> </dt>
+                                </dl>
+                                <i class="nav-level2-indication F-glob F-glob-caret-right-thin"></i>
+                            </div>
+                            <div class="nav-level2 J-nav-level2 nav-waterfall dropdown-menu--loading" style="display:none;"></div></div>
+                    </div>
+                    <div class="J-nav-item" id="yui_3_16_0_1_1426896770329_15525">
+                        <div class="cate-nav__item J-cate-nav__item--6 cate-nav__item--6 cate-nav__item--has-l2" data-mtnode="Bdianying" id="yui_3_16_0_1_1426896770329_2525">
+                            <div class="nav-level1" id="yui_3_16_0_1_1426896770329_15524">
+                                <dl id="yui_3_16_0_1_1426896770329_15523">
+                                    <dt><a class="nav-level1__label" href="http://www.ttdaijin.comcategory/dianying" hidefocus="true"> 电影</a><span class="sperator">/</span><a href="/dianying/cinemalist/all/all/seat" gaevent="nav/category/nav/category/xuanzuo" data-mttcode="Bxuanzuo" class="nav-extralink">在线选座</a> </dt>
+                                </dl>
+                                <i class="nav-level2-indication F-glob F-glob-caret-right-thin"></i>
+                            </div>
+                            <div class="nav-level2 J-nav-level2 nav-waterfall dropdown-menu--loading" style="display:none;"></div></div>
+                    </div>
+                    <div class="J-nav-item" id="yui_3_16_0_1_1426896770329_15529">
+                        <div class="cate-nav__item J-cate-nav__item--314 cate-nav__item--314 cate-nav__item--no-l2" data-mtnode="Bpc_ktv" id="yui_3_16_0_1_1426896770329_15528">
+                            <div class="nav-level1" id="yui_3_16_0_1_1426896770329_15527">
+                                <dl id="yui_3_16_0_1_1426896770329_15526">
+                                    <dt><a class="nav-level1__label" href="http://www.ttdaijin.comcategory/pc_ktv" hidefocus="true"> KTV</a> </dt>
+                                </dl>
+                                <i class="nav-level2-indication F-glob F-glob-caret-right-thin"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="J-nav-item" id="yui_3_16_0_1_1426896770329_15532">
+                        <div class="cate-nav__item J-cate-nav__item--123 cate-nav__item--123 cate-nav__item--has-l2" data-mtnode="Bxiuxianyule" id="yui_3_16_0_1_1426896770329_2530">
+                            <div class="nav-level1" id="yui_3_16_0_1_1426896770329_15531">
+                                <dl id="yui_3_16_0_1_1426896770329_15530">
+                                    <dt><a class="nav-level1__label" href="http://www.ttdaijin.comcategory/xiuxianyule" hidefocus="true"> 休闲娱乐</a> </dt>
+                                </dl>
+                                <i class="nav-level2-indication F-glob F-glob-caret-right-thin"></i>
+                            </div>
+                            <div class="nav-level2 J-nav-level2 nav-waterfall dropdown-menu--loading" style="display:none;">
+                                </div>
+                        </div>
+                    </div>
+                    <div class="J-nav-item" id="yui_3_16_0_1_1426896770329_15533">
+                        <div class="cate-nav__item J-cate-nav__item--9 cate-nav__item--9 cate-nav__item--has-l2" data-mtnode="Blvyou" id="yui_3_16_0_1_1426896770329_2535">
+                            <div class="nav-level1">
+                                <dl>
+                                    <dt><a class="nav-level1__label" href="http://www.ttdaijin.comcategory/lvyou" hidefocus="true"> 旅游</a> </dt>
+                                </dl>
+                                <i class="nav-level2-indication F-glob F-glob-caret-right-thin"></i>
+                            </div>
+                            <div class="nav-level2 J-nav-level2 nav-waterfall dropdown-menu--loading" style="display:none;"></div>
+                        </div>
+                    </div>
+                    <div class="J-nav-item">
+                        <div class="cate-nav__item J-cate-nav__item--124 cate-nav__item--124 cate-nav__item--has-l2" data-mtnode="Bshenghuo" id="yui_3_16_0_1_1426896770329_2540">
+                            <div class="nav-level1">
+                                <dl>
+                                    <dt><a class="nav-level1__label" href="http://www.ttdaijin.comcategory/shenghuo" hidefocus="true"> 生活服务</a> </dt>
+                                </dl>
+                                <i class="nav-level2-indication F-glob F-glob-caret-right-thin"></i>
+                            </div>
+                            <div class="nav-level2 J-nav-level2 nav-waterfall dropdown-menu--loading" style="display:none;"></div>
+                        </div>
+                    </div>
+                    <div class="J-nav-item">
+                        <div class="cate-nav__item J-cate-nav__item--7 cate-nav__item--7 cate-nav__item--has-l2" data-mtnode="Bwanggou" id="yui_3_16_0_1_1426896770329_2545">
+                            <div class="nav-level1">
+                                <dl>
+                                    <dt><a class="nav-level1__label" href="http://www.ttdaijin.comcategory/wanggou" hidefocus="true"> 购物</a> </dt>
+                                </dl>
+                                <i class="nav-level2-indication F-glob F-glob-caret-right-thin"></i>
+                            </div>
+                            <div class="nav-level2 J-nav-level2 nav-waterfall dropdown-menu--loading" style="display:none;"></div>
+                        </div>
+                    </div>
+                    <div class="J-nav-item">
+                        <div class="cate-nav__item J-cate-nav__item--125 cate-nav__item--125 cate-nav__item--has-l2" data-mtnode="Bjiankangliren" id="yui_3_16_0_1_1426896770329_2550">
+                            <div class="nav-level1">
+                                <dl>
+                                    <dt><a class="nav-level1__label" href="http://www.ttdaijin.comcategory/jiankangliren" hidefocus="true"> 丽人</a> </dt>
+                                </dl>
+                                <i class="nav-level2-indication F-glob F-glob-caret-right-thin"></i>
+                            </div>
+                            <div class="nav-level2 J-nav-level2 nav-waterfall dropdown-menu--loading" style="display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <ul class="navbar cf  log-mod-viewed" data-mod="lz" data-mod-deepview="1" id="yui_3_16_0_1_1426896770329_2485">
+                    <li class="navbar__item-w ">
+                        <a class="navbar__item" href="http://yuncheng.meituan.com" gaevent="nav/today" hidefocus="true"><span class="nav-label">首页</span></a>
+                    </li>
+                    <li class="navbar__item-w ">
+                        <a class="navbar__item" href="http://www.ttdaijin.comcategory/new" gaevent="nav/new" hidefocus="true"><span class="nav-label">今日新单</span></a>
+                    </li>
+                    <li class="navbar__item-w ">
+                        <a class="navbar__item" href="http://www.meituan.com/around/" gaevent="nav/around" hidefocus="true"><span class="nav-label">身边代金券</span></a>
+                    </li>
+                    <li class="navbar__item-w ">
+                        <a class="navbar__item" href="http://www.ttdaijin.comcategory/wanggou" data-mttcode="Acategory.Bwanggou" gaevent="nav/wanggou" hidefocus="true"><span class="nav-label">购物</span></a>
+                    </li>
+                    <li class="navbar__item-w ">
+                        <a class="navbar__item" href="http://waimai.meituan.com?utm_source=3001&amp;utm_medium=shenbian&amp;utm_campaign=normal&amp;city=135" target="_blank" gaevent="nav/waimai" hidefocus="true"><span class="nav-label">特价精品</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</div>
+</header>
+
+
+<div id="bdw" class="bdw">
+<div id="bd" class="cf">
+<div class="site-wrapper cf" id="yui_3_16_0_1_1426896770329_404" style="position: static;">
+<div class="site-wrapper__content" id="yui_3_16_0_1_1426896770329_403">
+<div class="fs site-fs J-site-fs__content" id="yui_3_16_0_1_1426896770329_2511"><div class="content__cell  content__cell-small content__cell--hot" id="yui_3_16_0_1_1426896770329_19001"><h3 class="label"><i class="F-glob F-glob-hot"></i><span>热门代金券</span></h3><div class="filter-strip log-mod-viewed" data-mtnode="Ahot.Enavhot" data-mod="nh" id="yui_3_16_0_1_1426896770329_19005"><ul class="filter-strip__list" id="yui_3_16_0_1_1426896770329_19004"><li><a href="http://www.ttdaijin.comcategory/all/all?attrs=isvoucher%3A1" gaevent="hot/category/daijinquan" data-mttcode="Bdaijinquan" class="hot">代金券</a></li><li id="yui_3_16_0_1_1426896770329_19003"><a href="http://www.ttdaijin.comcategory/dangao" gaevent="hot/category/dangao" data-mttcode="Bdangao" id="yui_3_16_0_1_1426896770329_19002">蛋糕</a></li><li><a href="http://www.ttdaijin.comcategory/huoguo" gaevent="hot/category/huoguo" data-mttcode="Bhuoguo" class="hot">火锅</a></li><li><a href="http://www.ttdaijin.comcategory/zuliaoxiuxian" gaevent="hot/category/zuliaoxiuxian" data-mttcode="Bzuliaoxiuxian">足疗按摩</a></li><li><a href="http://www.ttdaijin.comcategory/meifa" gaevent="hot/category/meifa" data-mttcode="Bmeifa">美发</a></li><li><a href="http://www.ttdaijin.comcategory/dianying" gaevent="hot/category/dianying" data-mttcode="Bdianying" class="hot">电影</a></li><li><a href="http://www.ttdaijin.comcategory/ertongsheying" gaevent="hot/category/ertongsheying" data-mttcode="Bertongsheying">儿童摄影</a></li><li><a href="http://www.ttdaijin.comcategory/jingdianmenpiao" gaevent="hot/category/jingdianmenpiao" data-mttcode="Bjingdianmenpiao">景点门票</a></li><li><a href="http://www.ttdaijin.comcategory/xiyuhanzheng" gaevent="hot/category/xiyuhanzheng" data-mttcode="Bxiyuhanzheng">洗浴/汗蒸</a></li><li><a href="http://www.ttdaijin.comcategory/kuaican" gaevent="hot/category/kuaican" data-mttcode="Bkuaican">小吃快餐</a></li><li><a href="http://www.ttdaijin.comcategory/hunshaphoto" gaevent="hot/category/hunshaphoto" data-mttcode="Bhunshaphoto">婚纱摄影</a></li><li><a href="http://www.ttdaijin.comcategory/aiche" gaevent="hot/category/aiche" data-mttcode="Baiche">汽车服务</a></li><li><a href="http://www.ttdaijin.comcategory/meijia" gaevent="hot/category/meijia" data-mttcode="Bmeijia">美甲</a></li><li><a href="http://www.ttdaijin.comcategory/zhoubianyou" gaevent="hot/category/zhoubianyou" data-mttcode="Bzhoubianyou">本地/周边游</a></li><li><a href="http://www.ttdaijin.comcategory/xican" gaevent="hot/category/xican" data-mttcode="Bxican" class="hot">西餐</a></li><li><a href="http://www.meituan.com/hotel/search/jingjijiudian" gaevent="hot/category/jingjijiudian" data-mttcode="Bjingjijiudian" class="hot">经济型酒店</a></li><li><a href="http://www.ttdaijin.comcategory/chuancai" gaevent="hot/category/chuancai" data-mttcode="Bchuancai">川湘菜</a></li></ul></div></div><div class="content__cell  content__cell-small content__cell--geo J-filter__geo" id="yui_3_16_0_1_1426896770329_3704"><h3 class="label"><i class="F-glob F-glob-position"></i><span>全部区域</span></h3><div class="filter-strip log-mod-viewed" data-mttcode="Acategory.Enavarea" data-mod="na" id="yui_3_16_0_1_1426896770329_19007"><a href="http://www.ttdaijin.comcategory/all/all" class="filter-strip__all J-geo-more" gaevent="nav/area" id="yui_3_16_0_1_1426896770329_19015">更多<span class="tri"></span></a><ul class="filter-strip__list" id="yui_3_16_0_1_1426896770329_19006"><li><a href="http://www.ttdaijin.comcategory/all/yanhuqu" gaevent="nav/area/yanhuqu">盐湖区</a></li><li><a href="http://www.ttdaijin.comcategory/all/konggangkaifaqu" gaevent="nav/area/konggangkaifaqu">空港开发区</a></li><li><a href="http://www.ttdaijin.comcategory/all/yuanquxian" gaevent="nav/area/yuanquxian">垣曲县</a></li><li><a href="http://www.ttdaijin.comcategory/all/pingluxian" gaevent="nav/area/pingluxian">平陆县</a></li><li><a href="http://www.ttdaijin.comcategory/all/jiangxian" gaevent="nav/area/jiangxian">绛县</a></li><li><a href="http://www.ttdaijin.comcategory/all/xiaxian" gaevent="nav/area/xiaxian">夏县</a></li><li id="yui_3_16_0_1_1426896770329_19008"><a href="http://www.ttdaijin.comcategory/all/wenxixian" gaevent="nav/area/wenxixian">闻喜县</a></li><li id="yui_3_16_0_1_1426896770329_19009"><a href="http://www.ttdaijin.comcategory/all/hejinshi" gaevent="nav/area/hejinshi">河津市</a></li><li id="yui_3_16_0_1_1426896770329_19011"><a href="http://www.ttdaijin.comcategory/all/jishanxian" gaevent="nav/area/jishanxian" id="yui_3_16_0_1_1426896770329_19010">稷山县</a></li><li id="yui_3_16_0_1_1426896770329_19013"><a href="http://www.ttdaijin.comcategory/all/xinjiangxian" gaevent="nav/area/xinjiangxian" id="yui_3_16_0_1_1426896770329_19012">新绛县</a></li><li><a href="http://www.ttdaijin.comcategory/all/wanrongxian" gaevent="nav/area/wanrongxian">万荣县</a></li><li><a href="http://www.ttdaijin.comcategory/all/linyixian" gaevent="nav/area/linyixian">临猗县</a></li><li><a href="http://www.ttdaijin.comcategory/all/ruichengxian" gaevent="nav/area/ruichengxian">芮城县</a></li><li><a href="http://www.ttdaijin.comcategory/all/yongjishi" gaevent="nav/area/yongjishi">永济市</a></li><li><a href="http://www.ttdaijin.comcategory/all/yudukaifaqu" gaevent="nav/area/yudukaifaqu">禹都开发区</a></li></ul></div></div><div class="content__cell  content__cell-small content__cell--area" id="yui_3_16_0_1_1426896770329_19014">
+    <h3 class="label"><i class="F-glob F-glob-shangquan"></i><span>热门商圈</span></h3>
+    <div class="filter-strip log-mod-viewed" data-mtnode="Aresys.Bshoppingmall" data-mod="ns">
+        <ul class="filter-strip__list"><li><a href="http://www.ttdaijin.comcategory/all/woerma" gaevent="nav/shoppingmall/yuncheng/woerma" data-mttcode="Chotbizarea.Dhotbizarea.F0.G1.H0">沃尔玛</a></li><li><a href="http://www.ttdaijin.comcategory/all/dongxingshidaiguangchang" gaevent="nav/shoppingmall/yuncheng/dongxingshidaiguangchang" data-mttcode="Chotbizarea.Dhotbizarea.F0.G2.H0">东星时代广场</a></li><li><a href="http://www.ttdaijin.comcategory/all/beijiao" gaevent="nav/shoppingmall/yuncheng/beijiao" data-mttcode="Chotbizarea.Dhotbizarea.F0.G3.H0">北郊</a></li><li><a href="http://www.ttdaijin.comcategory/all/yuxiangyuan" gaevent="nav/shoppingmall/yuncheng/yuxiangyuan" data-mttcode="Chotbizarea.Dhotbizarea.F0.G4.H0">禹香苑</a></li><li><a href="http://www.ttdaijin.comcategory/all/nanfengguangchang" gaevent="nav/shoppingmall/yuncheng/nanfengguangchang" data-mttcode="Chotbizarea.Dhotbizarea.F0.G5.H0">南风广场</a></li><li><a href="http://www.ttdaijin.comcategory/all/zhongyindadao" gaevent="nav/shoppingmall/yuncheng/zhongyindadao" data-mttcode="Chotbizarea.Dhotbizarea.F0.G6.H0">中银大道</a></li><li><a href="http://www.ttdaijin.comcategory/all/jiefanglu" gaevent="nav/shoppingmall/yuncheng/jiefanglu" data-mttcode="Chotbizarea.Dhotbizarea.F0.G7.H0">解放路</a></li><li><a href="http://www.ttdaijin.comcategory/all/xicheng" gaevent="nav/shoppingmall/yuncheng/xicheng" data-mttcode="Chotbizarea.Dhotbizarea.F0.G8.H0">西城</a></li><li><a href="http://www.ttdaijin.comcategory/all/fenbinjie" gaevent="nav/shoppingmall/yuncheng/fenbinjie" data-mttcode="Chotbizarea.Dhotbizarea.F0.G9.H0">汾滨街</a></li><li><a href="http://www.ttdaijin.comcategory/all/zhonglouxiaoqu" gaevent="nav/shoppingmall/yuncheng/zhonglouxiaoqu" data-mttcode="Chotbizarea.Dhotbizarea.F0.G10.H0">钟楼小区</a></li><li><a href="http://www.ttdaijin.comcategory/all/baihuodalou" gaevent="nav/shoppingmall/yuncheng/baihuodalou" data-mttcode="Chotbizarea.Dhotbizarea.F0.G11.H0">百货大楼</a></li><li><a href="http://www.ttdaijin.comcategory/all/xiangjiangguojigouwuguangchang" gaevent="nav/shoppingmall/yuncheng/xiangjiangguojigouwuguangchang" data-mttcode="Chotbizarea.Dhotbizarea.F0.G12.H0">香江国际购物广场</a></li>
+        </ul>
+    </div>
+</div>
+<div class="content__cell content__cell--slider" id="yui_3_16_0_1_1426896770329_2510">
+<div id="yui_3_16_0_1_1426896770329_3586" class="yui3-widget mt-slider">
+    <div data-component="index-slider" class="component-index-slider mt-component--booted mt-slider-content" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false}" id="yui_3_16_0_1_1426896770329_2509">
+        <div class="index-slider ui-slider log-mod-viewed" data-mod="nr" id="yui_3_16_0_1_1426896770329_3570">
+<div class="pre-next">
+    <a gaevent="recommend/back" style="opacity: 0;" href="javascript:;" hidefocus="true" class="mt-slider-previous"></a>
+    <a gaevent="recommend/next" style="opacity: 0;" href="javascript:;" hidefocus="true" class="mt-slider-next"></a>
+</div>
+<div class="head ccf">
+    <h2><span class="icon F-glob F-glob-star"></span>本周精选</h2>
+    <ul class="trigger-container ui-slider__triggers mt-slider-trigger-container" id="yui_3_16_0_1_1426896770329_3591"><li class="mt-slider-trigger"></li><li class="mt-slider-trigger"></li><li class="mt-slider-trigger"></li><li class="mt-slider-trigger mt-slider-current-trigger"></li><li class="mt-slider-trigger"></li><li class="mt-slider-trigger"></li></ul>
+</div>
+            <ul class="content mt-slider-sheet-container" data-mtnode="Aresys.Bguess" id="yui_3_16_0_1_1428388828848_3597">
+                <li class="cf mt-slider-sheet mt-slider-current-sheet" id="yui_3_16_0_1_1428388828848_3616" style="left: 0px;">
+                    <div class="left" id="yui_3_16_0_1_1428388828848_3898">
+                        <a class="link ccf" target="_blank" href="http://www.meituan.com/topic/4078?mtt=1.index%2Ffloor.nr.3.i86xtu43" data-mod-extra="{&quot;reccidx&quot;:1}" data-mttcode="C1" id="yui_3_16_0_1_1428388828848_3897" data-mod-mtt="1.index/floor.nr.3.i86xtu43">
+                            <img class="img" width="356" height="216" onload="M.logFirstScreenTime(this)" src="tb.jpg" id="yui_3_16_0_1_1428388828848_3896">
+                        </a>
+                        <div class="title  title--banner">
+                            <a class="xtitle link ccf" target="_blank" href="http://www.meituan.com/topic/4078" data-mod-extra="{&quot;reccidx&quot;:1}" data-mttcode="C1">通宝大酒店</a>
+                            <p class="desc">通宝大酒店品位餐厅</p>
+                        </div>
+                        <span class="price" id="yui_3_16_0_1_1428388828848_3912">¥<strong id="yui_3_16_0_1_1428388828848_3914">108</strong></span>
+                    </div>
+                    <div class="right" id="yui_3_16_0_1_1428388828848_3913">
+                        <a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/27933501.html" data-mod-extra="{&quot;reccidx&quot;:2}" data-mttcode="C2">
+                            <img class="img" width="356" height="216" onload="M.logFirstScreenTime(this)" src="tbfood2.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/27933501.html" data-mod-extra="{&quot;reccidx&quot;:2}" data-mttcode="C2">通宝大酒店</a>
+                            <p class="desc">通宝大酒店品位餐厅</p>
+                        </div>
+                        <span class="price" id="yui_3_16_0_1_1428388828848_3912">¥<strong id="yui_3_16_0_1_1428388828848_3914">108</strong></span>
+                    </div>
+
+                </li>
+                <li class="cf mt-slider-sheet" style="left: 712px; display: none;" id="yui_3_16_0_1_1428388828848_3630" hidden="hidden">
+                    <div class="left" id="yui_3_16_0_1_1428388828848_3880">
+                        <em class="J-discount discount-big discount">5</em>
+                        <a class="link ccf" target="_blank" href="http://www.meituan.com/deal/28277976.html" data-mod-extra="{&quot;reccidx&quot;:3}" data-mttcode="C3" id="yui_3_16_0_1_1428388828848_3879">
+                            <img class="img" width="356" height="216" src="http://p1.meituan.net/366.220/deal/27d0adf52116c344fc6e16ed43b145ae250224.jpg" id="yui_3_16_0_1_1428388828848_3878">
+                        </a>
+                        <div class="title " id="yui_3_16_0_1_1428388828848_3882">
+                            <a class="xtitle link ccf" target="_blank" href="http://www.meituan.com/deal/28277976.html" data-mod-extra="{&quot;reccidx&quot;:3}" data-mttcode="C3" id="yui_3_16_0_1_1428388828848_3884">美年大健康体检</a>
+                            <p class="desc">入职体检套餐体检1次，男女不限，提供免费WiFi</p>
+                        </div>
+                        <span class="price">¥<strong>149</strong></span>
+                    </div>
+                    <div class="right">
+                        <em class="J-discount discount">7.8</em>
+                        <a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25459899.html" data-mod-extra="{&quot;reccidx&quot;:4}" data-mttcode="C4">
+                            <img class="img" width="356" height="216" src="http://p0.meituan.net/366.220/deal/ffed34d95fe7e87388d9074a5285c6a5140847.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25459899.html" data-mod-extra="{&quot;reccidx&quot;:4}" data-mttcode="C4">北京汉釜宫</a>
+                            <p class="desc">涮烤自助套餐，提供免费WiFi</p>
+                        </div>
+                        <span class="price">¥<strong>42.9</strong></span>
+                    </div>
+
+                </li>
+                <li class="cf mt-slider-sheet" style="display: none;" hidden="hidden" id="yui_3_16_0_1_1428388828848_3830">
+                    <div class="left">
+                        <em class="J-discount discount">8.8</em>
+                        <a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/1318177.html" data-mod-extra="{&quot;reccidx&quot;:5}" data-mttcode="C5">
+                            <img class="img" width="356" height="216" src="http://p0.meituan.net/366.220/deal/__28441408__9820521.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/1318177.html" data-mod-extra="{&quot;reccidx&quot;:5}" data-mttcode="C5">汉斯特自助烤肉</a>
+                            <p class="desc">单人餐午晚餐2选1，舌尖上的美味尽在汉斯特自助烤肉</p>
+                        </div>
+                        <span class="price">¥<strong>42.9</strong></span>
+                    </div>
+                    <div class="right">
+                        <em class="J-discount discount">8.8</em>
+                        <a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/5614507.html" data-mod-extra="{&quot;reccidx&quot;:6}" data-mttcode="C6">
+                            <img class="img" width="356" height="216" src="http://p1.meituan.net/366.220/deal/__25434657__7866268.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/5614507.html" data-mod-extra="{&quot;reccidx&quot;:6}" data-mttcode="C6">汉丽轩烤肉自助餐厅（旗舰店）</a>
+                            <p class="desc">单人自助午餐/晚餐2选1，无需预约，节假日通用</p>
+                        </div>
+                        <span class="price">¥<strong>42.9</strong></span>
+                    </div>
+
+                </li>
+                <li class="cf mt-slider-sheet" style="display: none;" hidden="hidden">
+                    <div class="left">
+                        <em class="J-discount discount">8.3</em>
+                        <a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/2157211.html" data-mod-extra="{&quot;reccidx&quot;:7}" data-mttcode="C7">
+                            <img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/__26811310__1059072.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/2157211.html" data-mod-extra="{&quot;reccidx&quot;:7}" data-mttcode="C7">京福隆干果炒货</a>
+                            <p class="desc">半斤栗子1份，超值享惠，为回馈广大新老顾客</p>
+                        </div>
+                        <span class="price">¥<strong>7.9</strong></span>
+                    </div>
+                    <div class="right">
+                        <em class="J-discount discount">8.8</em>
+                        <a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/8968199.html" data-mod-extra="{&quot;reccidx&quot;:8}" data-mttcode="C8">
+                            <img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p0.meituan.net/366.220/deal/__23168226__9805518.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/8968199.html" data-mod-extra="{&quot;reccidx&quot;:8}" data-mttcode="C8">好伦哥（南风广场店）</a>
+                            <p class="desc">单人自助餐，午/晚餐通用，乐享美味，欢乐无限</p>
+                        </div>
+                        <span class="price">¥<strong>43</strong></span>
+                    </div>
+
+                </li>
+                <li class="cf mt-slider-sheet" style="display: none;" hidden="hidden">
+                    <div class="left">
+                        <em class="J-discount discount">6.7</em>
+                        <a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25125133.html" data-mod-extra="{&quot;reccidx&quot;:9}" data-mttcode="C9">
+                            <img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/__43830676__1590607.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25125133.html" data-mod-extra="{&quot;reccidx&quot;:9}" data-mttcode="C9">韩香阁韩式自助涮烤</a>
+                            <p class="desc">韩香阁韩式自助烤肉单人午餐/晚餐时段2选1</p>
+                        </div>
+                        <span class="price">¥<strong>32.9</strong></span>
+                    </div>
+                    <div class="right">
+                        <em class="J-discount discount-big discount">9</em>
+                        <a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/12480248.html" data-mod-extra="{&quot;reccidx&quot;:10}" data-mttcode="C10">
+                            <img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/__37201173__2744752.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/12480248.html" data-mod-extra="{&quot;reccidx&quot;:10}" data-mttcode="C10">欢乐牧歌（钟楼店）</a>
+                            <p class="desc">单人自助火锅午餐/单人自助火锅晚餐2选1</p>
+                        </div>
+                        <span class="price">¥<strong>43</strong></span>
+                    </div>
+
+                </li>
+                <li class="cf mt-slider-sheet" style="display: none;" hidden="hidden">
+                    <div class="left">
+                        <em class="J-discount discount">8.8</em>
+                        <a class="link ccf" target="_blank" href="http://www.meituan.com/deal/1612480.html" data-mod-extra="{&quot;reccidx&quot;:11}" data-mttcode="C11">
+                            <img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p0.meituan.net/366.220/deal/__17810004__8371783.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://www.meituan.com/deal/1612480.html" data-mod-extra="{&quot;reccidx&quot;:11}" data-mttcode="C11">好伦哥</a>
+                            <p class="desc">单人自助，午餐/晚餐通用</p>
+                        </div>
+                        <span class="price">¥<strong>43</strong></span>
+                    </div>
+                    <div class="right">
+                        <em class="J-discount discount">8.8</em>
+                        <a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25081261.html" data-mod-extra="{&quot;reccidx&quot;:12}" data-mttcode="C12">
+                            <img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/__43246535__2626952.jpg">
+                        </a>
+                        <div class="title ">
+                            <a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25081261.html" data-mod-extra="{&quot;reccidx&quot;:12}" data-mttcode="C12">汉丽轩 • 凤凰店</a>
+                            <p class="desc">汉丽轩烤涮一体单人自助餐午晚通用，提供免费WiFi</p>
+                        </div>
+                        <span class="price">¥<strong>42.9</strong></span>
+                    </div>
+
+                </li></ul>
+<textarea style="display:none;" class="br-rendered" data-br-target="previous|ul">        &lt;li class="cf" style="display:none"&gt;
+    &lt;div  class="left" &gt;
+    &lt;em  class="J-discount discount-big"  data-lazyicon--slide="discount" style="display:none;"&gt;5&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://www.meituan.com/deal/28277976.html" data-mod-extra='{"reccidx":3}' data-mttcode="C3"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/27d0adf52116c344fc6e16ed43b145ae250224.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://www.meituan.com/deal/28277976.html" data-mod-extra='{"reccidx":3}' data-mttcode="C3"&gt;美年大健康体检&lt;/a&gt;
+    &lt;p class="desc"&gt;入职体检套餐体检1次，男女不限，提供免费WiFi&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;149&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div  class="right" &gt;
+    &lt;em  class="J-discount"  data-lazyicon--slide="discount" style="display:none;"&gt;7.8&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25459899.html" data-mod-extra='{"reccidx":4}' data-mttcode="C4"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p0.meituan.net/366.220/deal/ffed34d95fe7e87388d9074a5285c6a5140847.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25459899.html" data-mod-extra='{"reccidx":4}' data-mttcode="C4"&gt;北京汉釜宫&lt;/a&gt;
+    &lt;p class="desc"&gt;涮烤自助套餐，提供免费WiFi&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;42.9&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;/li&gt;
+    &lt;li class="cf" style="display:none"&gt;
+    &lt;div  class="left" &gt;
+    &lt;em  class="J-discount"  data-lazyicon--slide="discount" style="display:none;"&gt;8.8&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/1318177.html" data-mod-extra='{"reccidx":5}' data-mttcode="C5"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p0.meituan.net/366.220/deal/__28441408__9820521.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/1318177.html" data-mod-extra='{"reccidx":5}' data-mttcode="C5"&gt;汉斯特自助烤肉&lt;/a&gt;
+    &lt;p class="desc"&gt;单人餐午晚餐2选1，舌尖上的美味尽在汉斯特自助烤肉&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;42.9&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div  class="right" &gt;
+    &lt;em  class="J-discount"  data-lazyicon--slide="discount" style="display:none;"&gt;8.8&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/5614507.html" data-mod-extra='{"reccidx":6}' data-mttcode="C6"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/__25434657__7866268.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/5614507.html" data-mod-extra='{"reccidx":6}' data-mttcode="C6"&gt;汉丽轩烤肉自助餐厅（旗舰店）&lt;/a&gt;
+    &lt;p class="desc"&gt;单人自助午餐/晚餐2选1，无需预约，节假日通用&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;42.9&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;/li&gt;
+    &lt;li class="cf" style="display:none"&gt;
+    &lt;div  class="left" &gt;
+    &lt;em  class="J-discount"  data-lazyicon--slide="discount" style="display:none;"&gt;8.3&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/2157211.html" data-mod-extra='{"reccidx":7}' data-mttcode="C7"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/__26811310__1059072.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/2157211.html" data-mod-extra='{"reccidx":7}' data-mttcode="C7"&gt;京福隆干果炒货&lt;/a&gt;
+    &lt;p class="desc"&gt;半斤栗子1份，超值享惠，为回馈广大新老顾客&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;7.9&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div  class="right" &gt;
+    &lt;em  class="J-discount"  data-lazyicon--slide="discount" style="display:none;"&gt;8.8&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/8968199.html" data-mod-extra='{"reccidx":8}' data-mttcode="C8"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p0.meituan.net/366.220/deal/__23168226__9805518.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/8968199.html" data-mod-extra='{"reccidx":8}' data-mttcode="C8"&gt;好伦哥（南风广场店）&lt;/a&gt;
+    &lt;p class="desc"&gt;单人自助餐，午/晚餐通用，乐享美味，欢乐无限&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;43&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;/li&gt;
+    &lt;li class="cf" style="display:none"&gt;
+    &lt;div  class="left" &gt;
+    &lt;em  class="J-discount"  data-lazyicon--slide="discount" style="display:none;"&gt;6.7&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25125133.html" data-mod-extra='{"reccidx":9}' data-mttcode="C9"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/__43830676__1590607.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25125133.html" data-mod-extra='{"reccidx":9}' data-mttcode="C9"&gt;韩香阁韩式自助涮烤&lt;/a&gt;
+    &lt;p class="desc"&gt;韩香阁韩式自助烤肉单人午餐/晚餐时段2选1&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;32.9&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div  class="right" &gt;
+    &lt;em  class="J-discount discount-big"  data-lazyicon--slide="discount" style="display:none;"&gt;9&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/12480248.html" data-mod-extra='{"reccidx":10}' data-mttcode="C10"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/__37201173__2744752.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/12480248.html" data-mod-extra='{"reccidx":10}' data-mttcode="C10"&gt;欢乐牧歌（钟楼店）&lt;/a&gt;
+    &lt;p class="desc"&gt;单人自助火锅午餐/单人自助火锅晚餐2选1&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;43&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;/li&gt;
+    &lt;li class="cf" style="display:none"&gt;
+    &lt;div  class="left" &gt;
+    &lt;em  class="J-discount"  data-lazyicon--slide="discount" style="display:none;"&gt;8.8&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://www.meituan.com/deal/1612480.html" data-mod-extra='{"reccidx":11}' data-mttcode="C11"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p0.meituan.net/366.220/deal/__17810004__8371783.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://www.meituan.com/deal/1612480.html" data-mod-extra='{"reccidx":11}' data-mttcode="C11"&gt;好伦哥&lt;/a&gt;
+    &lt;p class="desc"&gt;单人自助，午餐/晚餐通用&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;43&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div  class="right" &gt;
+    &lt;em  class="J-discount"  data-lazyicon--slide="discount" style="display:none;"&gt;8.8&lt;/em&gt;
+    &lt;a class="link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25081261.html" data-mod-extra='{"reccidx":12}' data-mttcode="C12"&gt;
+    &lt;img class="lazy-img img" width="356" height="216" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="http://p1.meituan.net/366.220/deal/__43246535__2626952.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;div class="title "&gt;
+    &lt;a class="xtitle link ccf" target="_blank" href="http://yuncheng.meituan.com/deal/25081261.html" data-mod-extra='{"reccidx":12}' data-mttcode="C12"&gt;汉丽轩 • 凤凰店&lt;/a&gt;
+    &lt;p class="desc"&gt;汉丽轩烤涮一体单人自助餐午晚通用，提供免费WiFi&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;span class="price"&gt;¥&lt;strong&gt;42.9&lt;/strong&gt;&lt;/span&gt;
+    &lt;/div&gt;
+
+    &lt;/li&gt;
+</textarea>
+</div>
+</div></div>
+</div>
+</div>
+
+
+<div class="floors cf" id="yui_3_16_0_1_1426896770329_402">
+
+<div class="mall mall--3cols mall--3cols--fixed J-mall J-hub" data-hubmodule="www-index" data-hubnamespace="Index.DealList" data-hubconfig="true" data-mtnode="Efloor" id="yui_3_16_0_1_1426896770329_401" data-hubstamp="yui_3_16_0_1_1426896770329_429" data-hubstate="40">
+<div data-mod="fm" class="category-floor log-mod-viewed" data-mtnode="Bmeishi" data-mteventnd="{&quot;la&quot;:&quot;deal\/see&quot;,&quot;cate&quot;:&quot;meishi&quot;,&quot;pg&quot;:1}" id="yui_3_16_0_1_1426896770329_400">
+<div id="floor-category--meishi" class="category-floor__head" data-mtnode="Acategory">
+    <ul class="sub-categories">
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/daijinquan_meishi" class="link" gaevent="floor/meishi/daijinquan_meishi/category" data-mttcode="Cdaijinquan_meishi">代金券</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/zizhucan" class="link" gaevent="floor/meishi/zizhucan/category" data-mttcode="Czizhucan">自助餐</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/huoguo" class="link" gaevent="floor/meishi/huoguo/category" data-mttcode="Chuoguo">火锅</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/kaorou" class="link" gaevent="floor/meishi/kaorou/category" data-mttcode="Ckaorou">烧烤烤肉</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/xiangguokaoyu" class="link" gaevent="floor/meishi/xiangguokaoyu/category" data-mttcode="Cxiangguokaoyu">香锅烤鱼</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--last">
+            <a target="_blank" href="/category/xican" class="link" gaevent="floor/meishi/xican/category" data-mttcode="Cxican">西餐</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--all">
+            <a target="_blank" href="/category/meishi" class="link" gaevent="floor/meishi/all/category" data-mttcode="Call">
+                全部<i class="F-glob F-glob-caret-right-small"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="title" href="/category/meishi" target="_blank" gaevent="floor/meishi/meishi/category" data-mttcode="Cmeishi">
+        <i class="F-glob F-glob-meishi"></i>美食</a>
+</div>
+<div class="category-floor__body cf" data-mtnode="Anone" id="yui_3_16_0_1_1426896770329_399"><div data-component="deal-list" class="component-deal-list mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;afterLoad&quot;:false}" id="yui_3_16_0_1_1426896770329_398">    <div class="deal-tile" data-mteventnd="{&quot;id&quot;:27493081,&quot;pos&quot;:1}" data-mttcode="C1" id="yui_3_16_0_1_1426896770329_2038">
+<!--这里放图片-->
+    <a href="tbpinwei.html" class="deal-tile__cover" hidefocus="true" target="_blank" data-mtevent="{&quot;sr&quot;:&quot;cover&quot;}" id="yui_3_16_0_1_1427242054970_3886" data-mod-mtt="1.index/floor.fm.9.i7nz2hq6">
+        <img class="J-webp" width="313" height="311" alt="通宝自助餐" src="tbhj2.jpg" id="yui_3_16_0_1_1427242054970_3885">
+    </a>
+    <div class="deal-tile__extra">
+        <p class="extra-inner">
+            <span class="sales">
+                已售<strong class="num">25</strong>
+            </span>
+            <span class="price">¥<strong><big>98.0</big></strong></span>
+            <span class="value">门店价<span>¥</span>216.0</span>
+            <span class="rate-info rate-info--noreviews">暂无评价</span>
+        </p>
+   </div>
+</div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:26994305,&quot;pos&quot;:2}" data-mttcode="C2" id="yui_3_16_0_1_1426896770329_2044">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:25459899,&quot;pos&quot;:3}" data-mttcode="C3" id="yui_3_16_0_1_1426896770329_2050">
+    <!--这里放图片-->
+
+
+  </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:1612480,&quot;pos&quot;:4}" data-mttcode="C4" id="yui_3_16_0_1_1426896770329_2056">
+    <!--这里放图片-->
+
+
+  </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:26186531,&quot;pos&quot;:5}" data-mttcode="C5" id="yui_3_16_0_1_1426896770329_2062">
+    <!--这里放图片-->
+
+
+  </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:25125133,&quot;pos&quot;:6}" data-mttcode="C6" id="yui_3_16_0_1_1426896770329_2068">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:1318177,&quot;pos&quot;:7}" data-mttcode="C7" id="yui_3_16_0_1_1426896770329_15567">
+    <!--这里放图片-->
+
+
+  </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:27933501,&quot;pos&quot;:8}" data-mttcode="C8" id="yui_3_16_0_1_1426896770329_15565">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:8968199,&quot;pos&quot;:9}" data-mttcode="C9" id="yui_3_16_0_1_1426896770329_15563">
+    <!--这里放图片-->
+
+
+  </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:5614507,&quot;pos&quot;:10}" data-mttcode="C10" id="yui_3_16_0_1_1426896770329_15580">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:26299153,&quot;pos&quot;:11}" data-mttcode="C11" id="yui_3_16_0_1_1426896770329_15578">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:4558858,&quot;pos&quot;:12}" data-mttcode="C12" id="yui_3_16_0_1_1426896770329_15576">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:7523042,&quot;pos&quot;:13}" data-mttcode="C13" id="yui_3_16_0_1_1426896770329_15596">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:5795966,&quot;pos&quot;:14}" data-mttcode="C14" id="yui_3_16_0_1_1426896770329_15594">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:12480248,&quot;pos&quot;:15}" data-mttcode="C15" id="yui_3_16_0_1_1426896770329_15592">
+    <!--这里放图片-->
+
+
+    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:26337917,&quot;pos&quot;:16}" data-mttcode="C16" id="yui_3_16_0_1_1426896770329_15614">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:2157211,&quot;pos&quot;:17}" data-mttcode="C17" id="yui_3_16_0_1_1426896770329_15612">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:27910684,&quot;pos&quot;:18}" data-mttcode="C18" id="yui_3_16_0_1_1426896770329_15610">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:26143856,&quot;pos&quot;:19}" data-mttcode="C19" id="yui_3_16_0_1_1426896770329_15608">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:26623096,&quot;pos&quot;:20}" data-mttcode="C20" id="yui_3_16_0_1_1426896770329_15606">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:25081261,&quot;pos&quot;:21}" data-mttcode="C21" id="yui_3_16_0_1_1426896770329_15604">
+    <!--这里放图片-->
+
+
+   </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:28309534,&quot;pos&quot;:22}" data-mttcode="C22">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:25132742,&quot;pos&quot;:23}" data-mttcode="C23">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:6545665,&quot;pos&quot;:24}" data-mttcode="C24">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:1841241,&quot;pos&quot;:25}" data-mttcode="C25">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:27932213,&quot;pos&quot;:26}" data-mttcode="C26">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:27356509,&quot;pos&quot;:27}" data-mttcode="C27">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+</div>
+</div>
+<div class="category-floor__foot" data-mtnode="Acategory">
+    <a href="/category/meishi" target="_blank" class="link" gaevent="floor/meishi/more" data-mttcode="Cmore"><span>更多美食代金券，请点击查看<i class="link__icon"></i></span></a>
+</div>
+</div>
+<div data-mod="fx" class="category-floor log-mod-viewed" data-mtnode="Bxiuxianyule" data-mteventnd="{&quot;la&quot;:&quot;deal\/see&quot;,&quot;cate&quot;:&quot;xiuxianyule&quot;,&quot;pg&quot;:1}" id="yui_3_16_0_1_1426896770329_408">
+<div id="floor-category--xiuxianyule" class="category-floor__head" data-mtnode="Acategory">
+    <ul class="sub-categories">
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/ktv" class="link" gaevent="floor/xiuxianyule/ktv/category" data-mttcode="Cktv">KTV</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/shuishijie" class="link" gaevent="floor/xiuxianyule/shuishijie/category" data-mttcode="Cshuishijie">水上世界</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/youyong" class="link" gaevent="floor/xiuxianyule/youyong/category" data-mttcode="Cyouyong">游泳/水上乐园</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/jianshen" class="link" gaevent="floor/xiuxianyule/jianshen/category" data-mttcode="Cjianshen">运动健身</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--last">
+            <a target="_blank" href="/category/zuliaoxiuxian" class="link" gaevent="floor/xiuxianyule/zuliaoxiuxian/category" data-mttcode="Czuliaoxiuxian">足疗按摩</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--all">
+            <a target="_blank" href="/category/xiuxianyule" class="link" gaevent="floor/xiuxianyule/all/category" data-mttcode="Call">
+                全部<i class="F-glob F-glob-caret-right-small"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="title" href="/category/xiuxianyule" target="_blank" gaevent="floor/xiuxianyule/xiuxianyule/category" data-mttcode="Cxiuxianyule">
+        <i class="F-glob F-glob-xiuxianyule"></i>休闲娱乐</a>
+</div>
+<div class="category-floor__body cf" data-mtnode="Anone" id="yui_3_16_0_1_1426896770329_407"><div data-component="deal-list" class="component-deal-list mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;afterLoad&quot;:false}" id="yui_3_16_0_1_1426896770329_406">    <div class="deal-tile" data-mteventnd="{&quot;id&quot;:8542621,&quot;pos&quot;:1}" data-mttcode="C1">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:5773095,&quot;pos&quot;:2}" data-mttcode="C2">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:4941412,&quot;pos&quot;:3}" data-mttcode="C3">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:27910570,&quot;pos&quot;:4}" data-mttcode="C4">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:9666233,&quot;pos&quot;:5}" data-mttcode="C5">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:28281243,&quot;pos&quot;:6}" data-mttcode="C6">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:25269916,&quot;pos&quot;:7}" data-mttcode="C7">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:26224157,&quot;pos&quot;:8}" data-mttcode="C8">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:26382527,&quot;pos&quot;:9}" data-mttcode="C9">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:27743192,&quot;pos&quot;:10}" data-mttcode="C10">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:24961353,&quot;pos&quot;:11}" data-mttcode="C11">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:26171196,&quot;pos&quot;:12}" data-mttcode="C12">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+</div>
+</div>
+<div class="category-floor__foot" data-mtnode="Acategory">
+    <a href="/category/xiuxianyule" target="_blank" class="link" gaevent="floor/xiuxianyule/more" data-mttcode="Cmore"><span>更多休闲娱乐代金券，请点击查看<i class="link__icon"></i></span></a>
+</div>
+</div>
+<div data-mod="fd" class="category-floor log-mod-viewed" data-mtnode="Bdianying" data-mteventnd="{&quot;la&quot;:&quot;deal\/see&quot;,&quot;cate&quot;:&quot;dianying&quot;,&quot;pg&quot;:1}" id="yui_3_16_0_1_1426896770329_411">
+<div id="floor-category--dianying" class="category-floor__head" data-mtnode="Acategory">
+    <ul class="sub-categories">
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/dianying/puredeal" class="link" gaevent="floor/dianying/dianyingpiao/category" data-mttcode="Cdianyingpiao">电影票代金券</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/dianying/cinemalist" class="link" gaevent="floor/dianying/dianyingyuan/category" data-mttcode="Cdianyingyuan">电影院</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/dianying/cinemalist/all/all/seat" class="link" gaevent="floor/dianying/zaixianxuanzuo/category" data-mttcode="Czaixianxuanzuo">在线选座</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--last">
+            <a target="_blank" href="/dianying/zuixindianying" class="link" gaevent="floor/dianying/zuixindianying/category" data-mttcode="Czuixindianying">最新电影</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--all">
+            <a target="_blank" href="/dianying/all" class="link" gaevent="floor/dianying/all/category" data-mttcode="Call">
+                全部<i class="F-glob F-glob-caret-right-small"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="title" href="/dianying/all" target="_blank" gaevent="floor/dianying/dianying/category" data-mttcode="Cdianying">
+        <i class="F-glob F-glob-dianying"></i>电影</a>
+</div>
+<div class="category-floor__body cf" data-mtnode="Anone" id="yui_3_16_0_1_1426896770329_410"><div data-component="deal-list" class="component-deal-list mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;afterLoad&quot;:false}" id="yui_3_16_0_1_1426896770329_409">    <div class="deal-tile" data-mteventnd="{&quot;id&quot;:27889393,&quot;pos&quot;:1}" data-mttcode="C1">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:27355153,&quot;pos&quot;:2}" data-mttcode="C2">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:28105466,&quot;pos&quot;:3}" data-mttcode="C3">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:28117342,&quot;pos&quot;:4}" data-mttcode="C4">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:28199674,&quot;pos&quot;:5}" data-mttcode="C5">
+
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:26727412,&quot;pos&quot;:6}" data-mttcode="C6">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+</div>
+</div>
+<div class="category-floor__foot" data-mtnode="Acategory">
+    <a href="/category/dianying" target="_blank" class="link" gaevent="floor/dianying/more" data-mttcode="Cmore"><span>更多电影代金券，请点击查看<i class="link__icon"></i></span></a>
+</div>
+</div>
+<div data-mod="fj" class="category-floor log-mod-viewed" data-mtnode="Bjiudian" data-mteventnd="{&quot;la&quot;:&quot;deal\/see&quot;,&quot;cate&quot;:&quot;jiudian&quot;,&quot;pg&quot;:1}" id="yui_3_16_0_1_1426896770329_414">
+<div id="floor-category--jiudian" class="category-floor__head" data-mtnode="Acategory">
+    <ul class="sub-categories">
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/hotel/search/jingjijiudian/yuncheng" class="link" gaevent="floor/jiudian/jingjijiudian/category" data-mttcode="Cjingjijiudian">经济型酒店</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/hotel/search/zhutijiudian/yuncheng" class="link" gaevent="floor/jiudian/zhutijiudian/category" data-mttcode="Czhutijiudian">主题酒店</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/hotel/search/haohuajiudian/yuncheng" class="link" gaevent="floor/jiudian/haohuajiudian/category" data-mttcode="Chaohuajiudian">豪华酒店</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--last">
+            <a target="_blank" href="/hotel/search/zhongdianfang/yuncheng" class="link" gaevent="floor/jiudian/zhongdianfang/category" data-mttcode="Czhongdianfang">钟点房</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--all">
+            <a target="_blank" href="/hotel/search/jiudian/yuncheng" class="link" gaevent="floor/jiudian/all/category" data-mttcode="Call">
+                全部<i class="F-glob F-glob-caret-right-small"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="title" href="/hotel/search/jiudian/yuncheng" target="_blank" gaevent="floor/jiudian/jiudian/category" data-mttcode="Cjiudian">
+        <i class="F-glob F-glob-jiudian"></i>酒店</a>
+</div>
+<div class="category-floor__body cf" data-mtnode="Anone" id="yui_3_16_0_1_1426896770329_413"><div data-component="deal-list" class="component-deal-list mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;afterLoad&quot;:false}" id="yui_3_16_0_1_1426896770329_412">    <div class="deal-tile" data-mteventnd="{&quot;id&quot;:27932286,&quot;pos&quot;:1}" data-mttcode="C1">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:26468506,&quot;pos&quot;:2}" data-mttcode="C2">
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:416401,&quot;pos&quot;:3}" data-mttcode="C3">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:8818575,&quot;pos&quot;:4}" data-mttcode="C4">
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:8110770,&quot;pos&quot;:5}" data-mttcode="C5">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:1418297,&quot;pos&quot;:6}" data-mttcode="C6">
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+</div>
+</div>
+<div class="category-floor__foot" data-mtnode="Acategory">
+    <a href="/category/jiudian" target="_blank" class="link" gaevent="floor/jiudian/more" data-mttcode="Cmore"><span>更多酒店代金券，请点击查看<i class="link__icon"></i></span></a>
+</div>
+</div>
+<div data-mod="fs" class="category-floor log-mod-viewed" data-mtnode="Bshenghuo" data-mteventnd="{&quot;la&quot;:&quot;deal\/see&quot;,&quot;cate&quot;:&quot;shenghuo&quot;,&quot;pg&quot;:1}" id="yui_3_16_0_1_1426896770329_417">
+<div id="floor-category--shenghuo" class="category-floor__head" data-mtnode="Acategory">
+    <ul class="sub-categories">
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/sheying" class="link" gaevent="floor/shenghuo/sheying/category" data-mttcode="Csheying">其他摄影</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/aiche" class="link" gaevent="floor/shenghuo/aiche/category" data-mttcode="Caiche">汽车服务</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/peixun" class="link" gaevent="floor/shenghuo/peixun/category" data-mttcode="Cpeixun">培训课程</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/muyingqinzi" class="link" gaevent="floor/shenghuo/muyingqinzi/category" data-mttcode="Cmuyingqinzi">母婴亲子</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/baojian" class="link" gaevent="floor/shenghuo/baojian/category" data-mttcode="Cbaojian">体检保健</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--last">
+            <a target="_blank" href="/category/peijing" class="link" gaevent="floor/shenghuo/peijing/category" data-mttcode="Cpeijing">配镜</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--all">
+            <a target="_blank" href="/category/shenghuo" class="link" gaevent="floor/shenghuo/all/category" data-mttcode="Call">
+                全部<i class="F-glob F-glob-caret-right-small"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="title" href="/category/shenghuo" target="_blank" gaevent="floor/shenghuo/shenghuo/category" data-mttcode="Cshenghuo">
+        <i class="F-glob F-glob-shenghuo"></i>生活服务</a>
+</div>
+<div class="category-floor__body cf" data-mtnode="Anone" id="yui_3_16_0_1_1426896770329_416"><div data-component="deal-list" class="component-deal-list mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;afterLoad&quot;:false}" id="yui_3_16_0_1_1426896770329_415">    <div class="deal-tile" data-mteventnd="{&quot;id&quot;:26651207,&quot;pos&quot;:1}" data-mttcode="C1">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:9994697,&quot;pos&quot;:2}" data-mttcode="C2">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:28417818,&quot;pos&quot;:3}" data-mttcode="C3">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:1665191,&quot;pos&quot;:4}" data-mttcode="C4">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:26470672,&quot;pos&quot;:5}" data-mttcode="C5">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:936650,&quot;pos&quot;:6}" data-mttcode="C6">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+    </textarea>    </div>
+</div>
+</div>
+<div class="category-floor__foot" data-mtnode="Acategory">
+    <a href="/category/shenghuo" target="_blank" class="link" gaevent="floor/shenghuo/more" data-mttcode="Cmore"><span>更多生活服务代金券，请点击查看<i class="link__icon"></i></span></a>
+</div>
+</div>
+<div data-mod="fg" class="category-floor log-mod-viewed" data-mtnode="Bwanggou" data-mteventnd="{&quot;la&quot;:&quot;deal\/see&quot;,&quot;cate&quot;:&quot;wanggou&quot;,&quot;pg&quot;:1}" id="yui_3_16_0_1_1426896770329_420">
+<div id="floor-category--wanggou" class="category-floor__head" data-mtnode="Acategory">
+    <ul class="sub-categories">
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/nvzhuang" class="link" gaevent="floor/wanggou/nvzhuang/category" data-mttcode="Cnvzhuang">女装</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/nanzhuang" class="link" gaevent="floor/wanggou/nanzhuang/category" data-mttcode="Cnanzhuang">男装</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/neiyi" class="link" gaevent="floor/wanggou/neiyi/category" data-mttcode="Cneiyi">内衣</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/xiexue" class="link" gaevent="floor/wanggou/xiexue/category" data-mttcode="Cxiexue">鞋靴</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/shipin" class="link" gaevent="floor/wanggou/shipin/category" data-mttcode="Cshipin">食品</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--last">
+            <a target="_blank" href="/category/baihuo" class="link" gaevent="floor/wanggou/baihuo/category" data-mttcode="Cbaihuo">家居日用</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--all">
+            <a target="_blank" href="/category/wanggou" class="link" gaevent="floor/wanggou/all/category" data-mttcode="Call">
+                全部<i class="F-glob F-glob-caret-right-small"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="title" href="/category/wanggou" target="_blank" gaevent="floor/wanggou/wanggou/category" data-mttcode="Cwanggou">
+        <i class="F-glob F-glob-wanggou"></i>购物</a>
+</div>
+<div class="category-floor__body cf" data-mtnode="Anone" id="yui_3_16_0_1_1426896770329_419"><div data-component="deal-list" class="component-deal-list mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;afterLoad&quot;:false}" id="yui_3_16_0_1_1426896770329_418">    <div class="deal-tile" data-mteventnd="{&quot;id&quot;:28410062,&quot;pos&quot;:1}" data-mttcode="C1">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:28338896,&quot;pos&quot;:2}" data-mttcode="C2">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:28406231,&quot;pos&quot;:3}" data-mttcode="C3">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:28410372,&quot;pos&quot;:4}" data-mttcode="C4">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:28423483,&quot;pos&quot;:5}" data-mttcode="C5">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:28339689,&quot;pos&quot;:6}" data-mttcode="C6">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+</div>
+</div>
+<div class="category-floor__foot" data-mtnode="Acategory">
+    <a href="/category/wanggou" target="_blank" class="link" gaevent="floor/wanggou/more" data-mttcode="Cmore"><span>更多购物代金券，请点击查看<i class="link__icon"></i></span></a>
+</div>
+</div>
+<div data-mod="fl" class="category-floor log-mod-viewed" data-mtnode="Bjiankangliren" data-mteventnd="{&quot;la&quot;:&quot;deal\/see&quot;,&quot;cate&quot;:&quot;jiankangliren&quot;,&quot;pg&quot;:1}" id="yui_3_16_0_1_1426896770329_423">
+<div id="floor-category--jiankangliren" class="category-floor__head" data-mtnode="Acategory">
+    <ul class="sub-categories">
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/meifa" class="link" gaevent="floor/jiankangliren/meifa/category" data-mttcode="Cmeifa">美发</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/meirong" class="link" gaevent="floor/jiankangliren/meirong/category" data-mttcode="Cmeirong">美容美体</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/meijia" class="link" gaevent="floor/jiankangliren/meijia/category" data-mttcode="Cmeijia">美甲</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--last">
+            <a target="_blank" href="/category/yujiawudao" class="link" gaevent="floor/jiankangliren/yujiawudao/category" data-mttcode="Cyujiawudao">瑜伽/舞蹈</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--all">
+            <a target="_blank" href="/category/jiankangliren" class="link" gaevent="floor/jiankangliren/all/category" data-mttcode="Call">
+                全部<i class="F-glob F-glob-caret-right-small"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="title" href="/category/jiankangliren" target="_blank" gaevent="floor/jiankangliren/jiankangliren/category" data-mttcode="Cjiankangliren">
+        <i class="F-glob F-glob-jiankangliren"></i>丽人</a>
+</div>
+<div class="category-floor__body cf" data-mtnode="Anone" id="yui_3_16_0_1_1426896770329_422"><div data-component="deal-list" class="component-deal-list mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;afterLoad&quot;:false}" id="yui_3_16_0_1_1426896770329_421">    <div class="deal-tile" data-mteventnd="{&quot;id&quot;:25355323,&quot;pos&quot;:1}" data-mttcode="C1">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:9129010,&quot;pos&quot;:2}" data-mttcode="C2">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:27872477,&quot;pos&quot;:3}" data-mttcode="C3">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:4845972,&quot;pos&quot;:4}" data-mttcode="C4">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:24553149,&quot;pos&quot;:5}" data-mttcode="C5">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:26021965,&quot;pos&quot;:6}" data-mttcode="C6">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+</div>
+</div>
+<div class="category-floor__foot" data-mtnode="Acategory">
+    <a href="/category/jiankangliren" target="_blank" class="link" gaevent="floor/jiankangliren/more" data-mttcode="Cmore"><span>更多丽人代金券，请点击查看<i class="link__icon"></i></span></a>
+</div>
+</div>
+<div data-mod="fy" class="category-floor log-mod-viewed" data-mtnode="Blvyou" data-mteventnd="{&quot;la&quot;:&quot;deal\/see&quot;,&quot;cate&quot;:&quot;lvyou&quot;,&quot;pg&quot;:1}" id="yui_3_16_0_1_1426896770329_426">
+<div id="floor-category--lvyou" class="category-floor__head" data-mtnode="Acategory">
+    <ul class="sub-categories">
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/jingdianmenpiao" class="link" gaevent="floor/lvyou/jingdianmenpiao/category" data-mttcode="Cjingdianmenpiao">景点门票</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/zhoubianyou" class="link" gaevent="floor/lvyou/zhoubianyou/category" data-mttcode="Czhoubianyou">周边游</a>
+        </li>
+        <li class="sub-categories__cell">
+            <a target="_blank" href="/category/guoneiyou" class="link" gaevent="floor/lvyou/guoneiyou/category" data-mttcode="Cguoneiyou">国内游</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--last">
+            <a target="_blank" href="/category/jingwaiyou" class="link" gaevent="floor/lvyou/jingwaiyou/category" data-mttcode="Cjingwaiyou">境外游</a>
+        </li>
+        <li class="sub-categories__cell sub-categories__cell--all">
+            <a target="_blank" href="/category/lvyou" class="link" gaevent="floor/lvyou/all/category" data-mttcode="Call">
+                全部<i class="F-glob F-glob-caret-right-small"></i>
+            </a>
+        </li>
+    </ul>
+    <a class="title" href="/category/lvyou" target="_blank" gaevent="floor/lvyou/lvyou/category" data-mttcode="Clvyou">
+        <i class="F-glob F-glob-lvyou"></i>旅游</a>
+</div>
+<div class="category-floor__body cf" data-mtnode="Anone" id="yui_3_16_0_1_1426896770329_425"><div data-component="deal-list" class="component-deal-list mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;afterLoad&quot;:false}" id="yui_3_16_0_1_1426896770329_424">    <div class="deal-tile" data-mteventnd="{&quot;id&quot;:28179513,&quot;pos&quot;:1}" data-mttcode="C1">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:21533941,&quot;pos&quot;:2}" data-mttcode="C2">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:25024811,&quot;pos&quot;:3}" data-mttcode="C3">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:25075431,&quot;pos&quot;:4}" data-mttcode="C4">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile" data-mteventnd="{&quot;id&quot;:27007157,&quot;pos&quot;:5}" data-mttcode="C5">
+
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+<div class="deal-tile deal-tile--even" data-mteventnd="{&quot;id&quot;:24516999,&quot;pos&quot;:6}" data-mttcode="C6">
+ 
+    <textarea style="display:none;" class="J-bigrender-data" data-br-offset="350" data-br-beforerender="e.target.one(&quot;a&quot;).remove(true);">
+
+    </textarea>    </div>
+</div>
+</div>
+<div class="category-floor__foot" data-mtnode="Acategory">
+    <a href="/category/lvyou" target="_blank" class="link" gaevent="floor/lvyou/more" data-mttcode="Cmore"><span>更多旅游代金券，请点击查看<i class="link__icon"></i></span></a>
+</div>
+</div>
+</div>        </div>
+</div>
+
+<div class="J-hub elevator-wrapper" data-hublaziness="load" data-hubmodule="www-index" data-hubnamespace="Index.Elevator" data-hubconfig="{&quot;topEdge&quot;:&quot;.category-floor__body&quot;}" data-uix="smoothscroll" data-params="{easing: 'easeIn'}" style="top: 804px; right: 1561.5px; display: none;" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1699" data-hubstamp="yui_3_16_0_1_1426896770329_270" data-hubstate="40" hidden="hidden">
+    <ul class="elevator" data-uix="scrollspy" data-params="{currentClass: 'current'}" data-widget-init="true" id="yui_3_16_0_1_1426896770329_1701">
+        <li class="elevator__floor meishi">
+            <a class="link current" hidefocus="true" data-target="#floor-category--meishi" data-scroll="#floor-category--meishi" gaevent="lift/meishi">
+                <i class="link__icon F-glob F-glob-meishi"></i>
+                <span>美食</span>
+            </a>
+        </li>
+        <li class="elevator__floor xiuxianyule">
+            <a class="link" hidefocus="true" data-target="#floor-category--xiuxianyule" data-scroll="#floor-category--xiuxianyule" gaevent="lift/xiuxianyule">
+                <i class="link__icon F-glob F-glob-xiuxianyule"></i>
+                <span>休闲娱乐</span>
+            </a>
+        </li>
+        <li class="elevator__floor dianying">
+            <a class="link" hidefocus="true" data-target="#floor-category--dianying" data-scroll="#floor-category--dianying" gaevent="lift/dianying">
+                <i class="link__icon F-glob F-glob-dianying"></i>
+                <span>电影</span>
+            </a>
+        </li>
+        <li class="elevator__floor jiudian">
+            <a class="link" hidefocus="true" data-target="#floor-category--jiudian" data-scroll="#floor-category--jiudian" gaevent="lift/jiudian">
+                <i class="link__icon F-glob F-glob-jiudian"></i>
+                <span>酒店</span>
+            </a>
+        </li>
+        <li class="elevator__floor shenghuo">
+            <a class="link" hidefocus="true" data-target="#floor-category--shenghuo" data-scroll="#floor-category--shenghuo" gaevent="lift/shenghuo">
+                <i class="link__icon F-glob F-glob-shenghuo"></i>
+                <span>生活服务</span>
+            </a>
+        </li>
+        <li class="elevator__floor wanggou">
+            <a class="link" hidefocus="true" data-target="#floor-category--wanggou" data-scroll="#floor-category--wanggou" gaevent="lift/wanggou">
+                <i class="link__icon F-glob F-glob-wanggou"></i>
+                <span>购物</span>
+            </a>
+        </li>
+        <li class="elevator__floor jiankangliren">
+            <a class="link" hidefocus="true" data-target="#floor-category--jiankangliren" data-scroll="#floor-category--jiankangliren" gaevent="lift/jiankangliren">
+                <i class="link__icon F-glob F-glob-jiankangliren"></i>
+                <span>丽人</span>
+            </a>
+        </li>
+        <li class="elevator__floor lvyou">
+            <a class="link" hidefocus="true" data-target="#floor-category--lvyou" data-scroll="#floor-category--lvyou" gaevent="lift/lvyou">
+                <i class="link__icon F-glob F-glob-lvyou"></i>
+                <span>旅游</span>
+            </a>
+        </li>
+    </ul>
+</div>    <div class="site-wrapper__side">
+
+    <div class="side__block side__activity">
+        <div id="yui_3_16_0_1_1426896770329_3504" class="yui3-widget mt-slider"><div class="lottery ui-slider log-mod-viewed mt-slider-content" data-mod="rd" id="yui_3_16_0_1_1426896770329_3497">
+            <div class="lottery__header">
+                <a class="link-arrow--right" href="http://www.meituan.com/lottery/past" target="_blank" gaevent="floor/sidebar/lottery/title">全部<span class="F-glob F-glob-caret-right-small"></span></a>
+                <span class="lottery-icon"></span>
+            </div>
+
+            <ul class="lotter__slider-container J-hub mt-slider-sheet-container" data-hublaziness="load" data-hubmodule="www-index" data-hubnamespace="Index.Lottery" data-hubstamp="yui_3_16_0_1_1426896770329_1810" data-hubstate="40" id="yui_3_16_0_1_1426896770329_3499">
+                <li class="slider mt-slider-sheet mt-slider-current-sheet" id="yui_3_16_0_1_1426896770329_3510" style="left: -208px; display: none;" hidden="hidden">
+                    <a href="http://www.meituan.com/deal/28352930.html" title="美梦成真：华谊电影机 V5，TTDJ网免费送！" gaevent="floor/sidebar/1"><img onload="M.delayImg(this);" src="site-logo1.jpg" width="206" height="158">
+                    </a>
+                </li><li class="slider mt-slider-sheet" style="left: -208px; display: none;" id="yui_3_16_0_1_1426896770329_3521" hidden="hidden">
+                <a href="http://www.meituan.com/deal/28337432.html" title="美梦成真：三星 GALAXY S5，TTDJ网免费送" gaevent="floor/sidebar/2"><img src="site-logo1.jpg" width="206" height="158">
+                </a>
+            </li>
+                <li class="slider mt-slider-sheet" style="left: 0px;" id="yui_3_16_0_1_1426896770329_3823">
+                    <a href="http://www.meituan.com/deal/28353690.html" title="美梦成真：ThinkPad8平板电脑，TTDJ免费送！" gaevent="floor/sidebar/3" id="yui_3_16_0_1_1426896770329_19020"><img src="site-logo1.jpg" width="206" height="158" id="yui_3_16_0_1_1426896770329_19019">
+                    </a>
+                </li>
+                <li class="slider mt-slider-sheet" style="left: -208px; display: none;" id="yui_3_16_0_1_1426896770329_3874" hidden="hidden">
+                    <a href="http://www.meituan.com/deal/28358104.html" title="美梦成真：苹果ipad mini3，TTDJ网免费送!" gaevent="floor/sidebar/4"><img src="site-logo1.jpg" width="206" height="158">
+                    </a>
+                </li></ul><textarea style="display:none;" class="br-rendered" data-br-target="previous|ul" id="yui_3_16_0_1_1426896770329_3490">           <li class="slider" style="display:none;">
+           <a href="http://www.meituan.com/deal/28337432.html" title="美梦成真：三星 GALAXY S5，TTDJ网免费送" gaevent="floor/sidebar/2"><img src="site-logo1.jpg" width="206" height="158" />
+           </a>
+           </li>
+           <li class="slider" style="display:none;">
+           <a href="http://www.meituan.com/deal/28353690.html" title="美梦成真：ThinkPad8平板电脑，TTDJ免费送！" gaevent="floor/sidebar/3"><img src="site-logo1.jpg" width="206" height="158" />
+           </a>
+           </li>
+           <li class="slider" style="display:none;">
+           <a href="http://www.meituan.com/deal/28358104.html" title="美梦成真：苹果ipad mini3，TTDJ网免费送!" gaevent="floor/sidebar/4"><img src="site-logo1.jpg" width="206" height="158" />
+           </a>
+           </li></textarea>
+            <ul class="trigger-container ui-slider__triggers ui-slider__triggers--small mt-slider-trigger-container" id="yui_3_16_0_1_1426896770329_3491">
+
+                <li class="trigger trigger-item mt-slider-trigger" href="javascript:void(0);"></li>
+                <li class="trigger trigger-item mt-slider-trigger" href="javascript:void(0);"></li>
+                <li class="trigger trigger-item mt-slider-trigger mt-slider-current-trigger" href="javascript:void(0);"></li>
+                <li class="trigger trigger-item mt-slider-trigger" href="javascript:void(0);"></li>
+            </ul>
+            <div class="pre-next" id="yui_3_16_0_1_1426896770329_3492">
+                <a style="opacity: 0;" href="javascript:void(0);" hidefocus="true" class="mt-slider-previous sp-slide--previous"></a>
+                <a style="opacity: 0;" href="javascript:void(0);" hidefocus="true" class="mt-slider-next sp-slide--next"></a>
+            </div>
+        </div></div>
+        <ul class="sub-lottery log-mod-viewed" data-mod="rb">
+
+            <li class="sub-lottery__item">
+                <a class="content" href="http://www.meituan.com/lottery/result/pingguoipadair0206" target="_blank" gaevent="sidebar/lottery/result" title="ipad air2，免费送！">ipad air2，免费...</a>
+                <span class="status status--end">查结果</span>
+            </li>
+            <li class="sub-lottery__item">
+                <a class="content" href="http://www.meituan.com/lottery/result/sonyXperiaZ31126" target="_blank" gaevent="sidebar/lottery/result" title="索尼Xperia Z3">索尼Xperia Z3</a>
+                <span class="status status--end">查结果</span>
+            </li>
+            <li class="sub-lottery__item">
+                <a class="content" href="http://www.meituan.com/lottery/result/meitu31124" target="_blank" gaevent="sidebar/lottery/result" title="美图 M2">美图 M2</a>
+                <span class="status status--end">查结果</span>
+            </li>
+        </ul>
+        <div class="special ui-slider log-mod-viewed" data-mod="rh" data-mod-deepview="1-6853.2-6855.3-6858" id="yui_3_16_0_1_1426896770329_3734">
+            <ul class="special__slider-container J-hub mt-slider-sheet-container" data-hublaziness="load" data-hubmodule="www-index" data-hubnamespace="Index.Topic" data-hubconfig="135" data-hubstamp="yui_3_16_0_1_1426896770329_1835" data-hubstate="40" id="yui_3_16_0_1_1426896770329_3736">
+                <li class="slider mt-slider-sheet mt-slider-current-sheet" id="yui_3_16_0_1_1426896770329_3748" style="left: 0px;">
+                    <a href="http://www.meituan.com/category/sushi?acm=UmyulwbVm_1247788549002396652.%E7%B4%A0%E9%A3%9F" title="" gaevent="" data-mttcode="" target="_blank" data-mod-idx="6853">
+                        <img onload="M.delayImg(this);" alt="【全国】素食" src="site-logo1.jpg" width="206" height="190">
+                    </a>
+                </li>
+                <li class="slider mt-slider-sheet" style="left: -208px; display: none;" id="yui_3_16_0_1_1426896770329_3761" hidden="hidden">
+                    <a href="http://www.meituan.com/category/zhoubianyou" title="" gaevent="" data-mttcode="" target="_blank" data-mod-idx="6855">
+                        <img alt="【全国】周边游" src="site-logo1.jpg" width="206" height="190">
+                    </a>
+                </li>
+                <li class="slider mt-slider-sheet" style="left: -208px; display: none;" id="yui_3_16_0_1_1426896770329_3865" hidden="hidden">
+                    <a href="http://www.meituan.com/category/kaorou" title="" gaevent="" data-mttcode="" target="_blank" data-mod-idx="6858">
+                        <img alt="【全国】烤肉" src="site-logo1.jpg" width="206" height="190">
+                    </a>
+                </li></ul><textarea style="display:none;" class="br-rendered" data-br-target="previous|ul" id="yui_3_16_0_1_1426896770329_3727">           <li class="slider" >
+           <a href="http://www.meituan.com/category/sushi?acm=UmyulwbVm_1247788549002396652.%E7%B4%A0%E9%A3%9F" title="" gaevent="" data-mttcode="" target="_blank" data-mod-idx="6853">
+           <img onload="M.delayImg(this);" alt="【全国】素食" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="" width="206" height="190" />
+           </a>
+           </li>
+           <li class="slider" style="display:none;">
+           <a href="http://www.meituan.com/category/zhoubianyou" title="" gaevent="" data-mttcode="" target="_blank" data-mod-idx="6855">
+           <img alt="【全国】周边游" src="site-logo1.jpg" width="206" height="190" />
+           </a>
+           </li>
+           <li class="slider" style="display:none;">
+           <a href="http://www.meituan.com/category/kaorou" title="" gaevent="" data-mttcode="" target="_blank" data-mod-idx="6858">
+           <img alt="【全国】烤肉" src="site-logo1.jpg" width="206" height="190" />
+           </a>
+           </li></textarea>
+            <ul class="trigger-container ui-slider__triggers ui-slider__triggers--small mt-slider-trigger-container" id="yui_3_16_0_1_1426896770329_3728">
+                <li class="trigger trigger-item mt-slider-trigger mt-slider-current-trigger" href="javascript:void(0);"></li>
+                <li class="trigger trigger-item mt-slider-trigger" href="javascript:void(0);"></li>
+                <li class="trigger trigger-item mt-slider-trigger" href="javascript:void(0);"></li>
+            </ul>
+            <div class="pre-next" id="yui_3_16_0_1_1426896770329_3729">
+                <a style="opacity: 0;" href="javascript:void(0);" hidefocus="true" class="mt-slider-previous sp-slide--previous"></a>
+                <a style="opacity: 0;" href="javascript:void(0);" hidefocus="true" class="mt-slider-next sp-slide--next"></a>
+            </div>
+        </div>
+    </div>
+    <div class="side-extension side-extension--history" style="" data-comboajax-uri="/combo/sidehistory" data-comboajax-config="www.History.side" data-comboajax-state="5" id="yui_3_16_0_1_1428452557366_3712"><div class="side-extension__item side-extension__item--last log-mod-viewed" data-mod="ne" id="yui_3_16_0_1_1428452557366_4041"><h3 id="yui_3_16_0_1_1428452557366_4040"><a href="javascript:;" gaevent="list/recent/qingkong" class="clear-history J-clear">清空</a>最近浏览</h3><ul class="history-list J-history-list" data-mtnode="Alist.Brecent"><li class="history-list__item  history-list__item--first"><a href="http://yuncheng.meituan.com/deal/27493081.html" title="火火火涮烤自助自助餐" target="_blank" rel="nofollow" gaevent="list/recent/1/default" data-mttcode="Alist.Brecent.C1.Ddefault"><img class="" src="http://p1.meituan.net/80.50/deal/ea20e224a6ab90941a991a3640fa7d6c108050.jpg" width="80" height="50"></a><h5><a href="http://yuncheng.meituan.com/deal/27493081.html" title="火火火涮烤自助自助餐" target="_blank" rel="nofollow" gaevent="list/recent/1/default" data-mttcode="Alist.Brecent.C1.Ddefault">火火火涮烤自助自助餐</a></h5><p><em class="price">¥<i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -21px -26px;"></i><i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -14px -26px;"></i><i class="inline-block ps_12 ps_12p pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -11px 0px;"></i><i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -43px -13px;"></i></em><del class="old-price">45</del></p></li><li class="history-list__item "><a href="http://yuncheng.meituan.com/deal/28476998.html" title="一尊皇牛2人餐" target="_blank" rel="nofollow" gaevent="list/recent/2/default" data-mttcode="Alist.Brecent.C2.Ddefault"><img class="" src="http://p1.meituan.net/80.50/deal/f0fa12828b6d3760f924ba053793fc14357781.jpg" width="80" height="50"></a><h5><a href="http://yuncheng.meituan.com/deal/28476998.html" title="一尊皇牛2人餐" target="_blank" rel="nofollow" gaevent="list/recent/2/default" data-mttcode="Alist.Brecent.C2.Ddefault">一尊皇牛2人餐</a></h5><p><em class="price">¥<i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -4px 0px;"></i><i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -29px 0px;"></i></em><del class="old-price">102</del></p></li><li class="history-list__item "><a href="http://yuncheng.meituan.com/deal/28469265.html" title="玖玖玖川菜2-3人餐" target="_blank" rel="nofollow" gaevent="list/recent/3/default" data-mttcode="Alist.Brecent.C3.Ddefault"><img class="" src="http://p1.meituan.net/80.50/deal/741b53567774190586391ae011dcee11299713.jpg" width="80" height="50"></a><h5><a href="http://yuncheng.meituan.com/deal/28469265.html" title="玖玖玖川菜2-3人餐" target="_blank" rel="nofollow" gaevent="list/recent/3/default" data-mttcode="Alist.Brecent.C3.Ddefault">玖玖玖川菜2-3人餐</a></h5><p><em class="price">¥<i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -49px -39px;"></i><i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -43px 0px;"></i><i class="inline-block ps_12 ps_12p pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -43px -26px;"></i><i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -14px -26px;"></i></em><del class="old-price">42</del></p></li><li class="history-list__item  history-list__item--last"><a href="http://yuncheng.meituan.com/deal/28478829.html" title="益盛缘蛋糕小切块蛋糕1个" target="_blank" rel="nofollow" gaevent="list/recent/4/default" data-mttcode="Alist.Brecent.C4.Ddefault"><img class="" src="http://p1.meituan.net/80.50/deal/2fe5b55834da746b2a363f1550278eea235517.jpg" width="80" height="50"></a><h5><a href="http://yuncheng.meituan.com/deal/28478829.html" title="益盛缘蛋糕小切块蛋糕1个" target="_blank" rel="nofollow" gaevent="list/recent/4/default" data-mttcode="Alist.Brecent.C4.Ddefault">益盛缘蛋糕小切块蛋糕1个</a></h5><p><em class="price">¥<i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -25px -52px;"></i><i class="inline-block ps_12 ps_12p pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -21px -52px;"></i><i class="inline-block ps_12 pngfix" style="background-image: url(http://s0.meituan.net/www/css/si/pricesp/12/365d7c44e7.ve37b1e42.png);background-position: -21px -13px;"></i></em><del class="old-price">8</del></p></li></ul></div></div></div>
+</div>
+
+</div>
+<div data-component="holy-reco" class="component-holy-reco mt-component--booted" mt-scope="[]" data-component-config="{&quot;lazyRender&quot;:false,&quot;lazyDisplay&quot;:true,&quot;css&quot;:&quot;\/www\/css\/holy-reco.v3e26daec.css&quot;}" id="yui_3_16_0_1_1426896770329_2512"><div class="J-holy-reco holy-reco"><div><ul class="ccf cf nav-tabs--small"><li class="J-holy-reco__label current"><a href="javascript:void(0)" class="tab-item">代金券分类</a></li><li class="J-holy-reco__label"><a href="javascript:void(0)" class="tab-item">热门代金券</a></li><li class="J-holy-reco__label"><a href="javascript:void(0)" class="tab-item">精品推荐</a></li><li class="J-holy-reco__label"><a href="javascript:void(0)" class="tab-item">历史代金券</a></li><li class="J-holy-reco__label"><a href="javascript:void(0)" class="tab-item">热门城市</a></li><li class="J-holy-reco__label"><a href="javascript:void(0)" class="tab-item">周边城市</a></li></ul></div><div class="J-holy-reco__content holy-reco__content"><a href="http://www.ttdaijin.comcategory/meishi" title="美食代金券">美食代金券</a><a href="http://www.ttdaijin.comcategory/dianying" title="电影代金券">电影代金券</a><a href="http://www.ttdaijin.comcategory/xuxianyule" title="休闲娱乐代金券">休闲娱乐代金券</a><a href="http://www.ttdaijin.comcategory/lvyou" title="旅游代金券">旅游代金券</a><a href="http://www.ttdaijin.comcategory/shenghuo" title="生活服务代金券">生活服务代金券</a><a href="http://www.ttdaijin.comcategory/wanggou" title="购物代金券">购物代金券</a><a href="http://www.ttdaijin.comcategory/jiangkangliren" title="丽人代金券">丽人代金券</a><a href="http://www.meituan.com/sitemap/comment/" title="代金券评论">代金券评论</a><a href="http://www.meituan.com/brandsitemap/" title="品牌代金券">品牌代金券</a><a href="http://www.meituan.com/ztmap/" title="专题代金券">专题代金券</a></div><div class="J-holy-reco__content holy-reco__content" style="display:none;"><a href="http://www.ttdaijin.comdeal/28350187.html" title="鑫鑫快餐正餐代金券">鑫鑫快餐正餐代金券</a><a href="http://www.ttdaijin.comdeal/25055978.html" title="土老坎麻辣烫2人餐代金券">土老坎麻辣烫2人餐代金券</a><a href="http://www.ttdaijin.comdeal/25803211.html" title="大福面馆香辣干锅鸡(含1份拉面)代金券">大福面馆香辣干锅鸡(含1份拉面)代金券</a><a href="http://www.ttdaijin.comdeal/27489295.html" title="安妮斯贝·闪电泡芙代金券代金券">安妮斯贝·闪电泡芙代金券代金券</a><a href="http://www.ttdaijin.comdeal/28346636.html" title="麻肉削面馆单人餐代金券">麻肉削面馆单人餐代金券</a><a href="http://www.ttdaijin.comdeal/26754176.html" title="海纳百川代金券代金券">海纳百川代金券代金券</a><a href="http://www.ttdaijin.comdeal/27807916.html" title="武汉黑鸭大鸭架代金券">武汉黑鸭大鸭架代金券</a><a href="http://www.ttdaijin.comdeal/26582931.html" title="京福隆干果炒货京福隆腰果代金券">京福隆干果炒货京福隆腰果代金券</a><a href="http://www.ttdaijin.comdeal/28324193.html" title="亿品香快餐荤盖饭送汤+半个卤蛋代金券">亿品香快餐荤盖饭送汤+半个卤蛋代金券</a><a href="http://www.ttdaijin.comdeal/26370064.html" title="多麦其8寸水果蛋糕代金券">多麦其8寸水果蛋糕代金券</a><a href="http://www.ttdaijin.comdeal/26526943.html" title="北京一品黄记煌三汁焖锅代金券代金券">北京一品黄记煌三汁焖锅代金券代金券</a><a href="http://www.ttdaijin.comdeal/26256590.html" title="鲜烤空间汽车蛋糕代金券">鲜烤空间汽车蛋糕代金券</a><a href="http://www.ttdaijin.comdeal/26560095.html" title="汉斯特自助烤肉二十人午晚餐代金券">汉斯特自助烤肉二十人午晚餐代金券</a><a href="http://www.ttdaijin.comdeal/27975537.html" title="小滋时代饮品代金券">小滋时代饮品代金券</a><a href="http://www.ttdaijin.comdeal/27944187.html" title="一品酱猪蹄酱猪蹄代金券">一品酱猪蹄酱猪蹄代金券</a><a href="http://www.ttdaijin.comdeal/26406400.html" title="披萨屋2人餐代金券">披萨屋2人餐代金券</a><a href="http://www.ttdaijin.comdeal/26712773.html" title="重庆鸡公煲4-5人餐代金券">重庆鸡公煲4-5人餐代金券</a><a href="http://www.ttdaijin.comdeal/26322392.html" title="吉吉熊快餐两荤+两素+米饭+汤+煎蛋+鸡翅一对代金券">吉吉熊快餐两荤+两素+米饭+汤+煎蛋+鸡翅一对代金券</a><a href="http://www.ttdaijin.comdeal/27402380.html" title="圣得利蛋糕迷你小蛋糕代金券">圣得利蛋糕迷你小蛋糕代金券</a><a href="http://www.ttdaijin.comdeal/26647344.html" title="唐邦红酒会所单人餐代金券">唐邦红酒会所单人餐代金券</a><a href="http://www.ttdaijin.comdeal/25353999.html" title="大唐饺子食府代金券代金券">大唐饺子食府代金券代金券</a><a href="http://www.ttdaijin.comdeal/27124717.html" title="一品羊汤10-16人餐代金券">一品羊汤10-16人餐代金券</a><a href="http://www.ttdaijin.comdeal/26524028.html" title="妃爱回转自助火锅午餐/晚餐2选1代金券">妃爱回转自助火锅午餐/晚餐2选1代金券</a><a href="http://www.ttdaijin.comdeal/27236260.html" title="百味鱼4人餐代金券">百味鱼4人餐代金券</a><a href="http://www.ttdaijin.comdeal/25815302.html" title="鸳鸯砂锅聚4-5人餐代金券">鸳鸯砂锅聚4-5人餐代金券</a><a href="http://www.ttdaijin.comdeal/28226687.html" title="金禹烧烤6人餐代金券">金禹烧烤6人餐代金券</a></div><div class="J-holy-reco__content holy-reco__content" style="display:none;"><a href="http://www.ttdaijin.comdeal/27357456.html" title="二度空间密室逃脱地下室惊魂">二度空间密室逃脱地下室惊魂</a><a href="http://www.ttdaijin.comdeal/26690520.html" title="禹香苑商务酒店·温泉宫洗浴中心温泉洗浴游泳">禹香苑商务酒店·温泉宫洗浴中心温泉洗浴游泳</a><a href="http://www.ttdaijin.comdeal/26719382.html" title="18号KTV5小时欢唱套餐">18号KTV5小时欢唱套餐</a><a href="http://www.ttdaijin.comdeal/28281340.html" title="扬足苑养生足浴套餐">扬足苑养生足浴套餐</a><a href="http://www.ttdaijin.comdeal/26745191.html" title="小当家手工DIY不织布手工">小当家手工DIY不织布手工</a><a href="http://www.ttdaijin.comdeal/26224274.html" title="御足苑御足苑特色足疗">御足苑御足苑特色足疗</a><a href="http://www.ttdaijin.comdeal/25601043.html" title="森喜特商务酒店足疗按摩套餐">森喜特商务酒店足疗按摩套餐</a><a href="http://www.ttdaijin.comdeal/28289276.html" title="益康足道养生保健套餐">益康足道养生保健套餐</a><a href="http://www.ttdaijin.comdeal/25499229.html" title="牛氏修脚堂水晶泥系列泡脚+修脚+足疗">牛氏修脚堂水晶泥系列泡脚+修脚+足疗</a><a href="http://www.ttdaijin.comdeal/25366663.html" title="好味佳蛋糕DIY 手工巧克力">好味佳蛋糕DIY 手工巧克力</a><a href="http://www.ttdaijin.comdeal/28346805.html" title="尚御阁汗蒸养生精品套餐">尚御阁汗蒸养生精品套餐</a><a href="http://www.ttdaijin.comdeal/26977055.html" title="扬州王氏专业修脚足疗套餐">扬州王氏专业修脚足疗套餐</a><a href="http://www.ttdaijin.comdeal/26090606.html" title="康悦汗蒸养生会所豪华套餐">康悦汗蒸养生会所豪华套餐</a><a href="http://www.ttdaijin.comdeal/25476015.html" title="汇鑫KTV下午场套餐">汇鑫KTV下午场套餐</a><a href="http://www.ttdaijin.comdeal/28227398.html" title="一品足轩养生套餐">一品足轩养生套餐</a><a href="http://www.ttdaijin.comdeal/28156092.html" title="麦丫糖量贩式KTV欢唱">麦丫糖量贩式KTV欢唱</a><a href="http://www.ttdaijin.comdeal/26460476.html" title="268元欢唱套餐D">268元欢唱套餐D</a><a href="http://www.ttdaijin.comdeal/27167911.html" title="新华启智乐园淘气宝宝">新华启智乐园淘气宝宝</a><a href="http://www.ttdaijin.comdeal/26225159.html" title="星舞派对欢唱">星舞派对欢唱</a><a href="http://www.ttdaijin.comdeal/27768946.html" title="金樽音乐会所欢唱">金樽音乐会所欢唱</a><a href="http://www.ttdaijin.comdeal/25793581.html" title="DIY工厂DIY手工">DIY工厂DIY手工</a><a href="http://www.ttdaijin.comdeal/25521697.html" title="永康钟楼中医养生理疗会所按摩套餐">永康钟楼中医养生理疗会所按摩套餐</a><a href="http://www.ttdaijin.comdeal/24922703.html" title="八马茶业2-4人餐">八马茶业2-4人餐</a></div><div class="J-holy-reco__content holy-reco__content" style="display:none;"><a href="http://www.meituan.com/search/expired/%E7%BE%8E%E9%A3%9F" title="美食代金券">美食代金券</a><a href="http://www.meituan.com/search/expired/%E9%85%92%E5%BA%97" title="酒店代金券">酒店代金券</a><a href="http://www.meituan.com/search/expired/%E7%94%B5%E5%BD%B1" title="电影代金券">电影代金券</a><a href="http://www.meituan.com/search/expired/%E4%BC%91%E9%97%B2%E5%A8%B1%E4%B9%90" title="休闲娱乐">休闲娱乐</a><a href="http://www.meituan.com/search/expired/%E6%97%85%E6%B8%B8" title="旅游代金券">旅游代金券</a><a href="http://www.meituan.com/search/expired/%E7%94%9F%E6%B4%BB%E6%9C%8D%E5%8A%A1" title="生活服务">生活服务</a><a href="http://www.meituan.com/search/expired/%E4%B8%BD%E4%BA%BA" title="丽人代金券">丽人代金券</a><a href="http://www.meituan.com/search/expired/%E5%A5%B3%E8%A3%85" title="女装代金券">女装代金券</a><a href="http://www.meituan.com/search/expired/%E7%94%B7%E8%A3%85" title="男装代金券">男装代金券</a><a href="http://www.meituan.com/search/expired/%E9%9E%8B%E9%9D%B4" title="鞋靴代金券">鞋靴代金券</a><a href="http://www.meituan.com/search/expired/%E5%AE%B6%E5%B1%85" title="家居代金券">家居代金券</a><a href="http://www.meituan.com/search/expired/%E7%AE%B1%E5%8C%85" title="箱包代金券">箱包代金券</a><a href="http://www.meituan.com/search/expired/%E9%A3%9F%E5%93%81" title="食品代金券">食品代金券</a><a href="http://www.meituan.com/search/expired/%E6%95%B0%E7%A0%81" title="数码代金券">数码代金券</a><a href="http://www.meituan.com/search/expired/%E6%AF%8D%E5%A9%B4" title="母婴代金券">母婴代金券</a><a href="http://www.meituan.com/search/expired/%E6%88%B7%E5%A4%96" title="户外代金券">户外代金券</a></div><div class="J-holy-reco__content holy-reco__content" style="display:none;"><a href="http://bj.meituan.com" title="北京代金券">北京代金券</a><a href="http://sh.meituan.com" title="上海代金券">上海代金券</a><a href="http://gz.meituan.com" title="广州代金券">广州代金券</a><a href="http://sz.meituan.com" title="深圳代金券">深圳代金券</a><a href="http://tj.meituan.com" title="天津代金券">天津代金券</a><a href="http://xa.meituan.com" title="西安代金券">西安代金券</a><a href="http://fz.meituan.com" title="福州代金券">福州代金券</a><a href="http://cq.meituan.com" title="重庆代金券">重庆代金券</a><a href="http://hz.meituan.com" title="杭州代金券">杭州代金券</a><a href="http://nb.meituan.com" title="宁波代金券">宁波代金券</a><a href="http://wx.meituan.com" title="无锡代金券">无锡代金券</a><a href="http://nj.meituan.com" title="南京代金券">南京代金券</a><a href="http://hf.meituan.com" title="合肥代金券">合肥代金券</a><a href="http://wh.meituan.com" title="武汉代金券">武汉代金券</a><a href="http://cd.meituan.com" title="成都代金券">成都代金券</a><a href="http://qd.meituan.com" title="青岛代金券">青岛代金券</a><a href="http://xm.meituan.com" title="厦门代金券">厦门代金券</a><a href="http://dl.meituan.com" title="大连代金券">大连代金券</a><a href="http://sy.meituan.com" title="沈阳代金券">沈阳代金券</a><a href="http://chs.meituan.com" title="长沙代金券">长沙代金券</a><a href="http://zz.meituan.com" title="郑州代金券">郑州代金券</a><a href="http://sjz.meituan.com" title="石家庄代金券">石家庄代金券</a><a href="http://su.meituan.com" title="苏州代金券">苏州代金券</a><a href="http://nt.meituan.com" title="南通代金券">南通代金券</a><a href="http://nc.meituan.com" title="南昌代金券">南昌代金券</a><a href="http://cz.meituan.com" title="常州代金券">常州代金券</a><a href="http://dg.meituan.com" title="东莞代金券">东莞代金券</a><a href="http://fs.meituan.com" title="佛山代金券">佛山代金券</a><a href="http://jn.meituan.com" title="济南代金券">济南代金券</a><a href="http://hrb.meituan.com" title="哈尔滨代金券">哈尔滨代金券</a></div><div class="J-holy-reco__content holy-reco__content" style="display:none;"><a href="http://xinzhou.meituan.com" title="忻州代金券">忻州代金券</a><a href="http://linfen.meituan.com" title="临汾代金券">临汾代金券</a><a href="http://lvliang.meituan.com" title="吕梁代金券">吕梁代金券</a><a href="http://hu.meituan.com" title="呼和浩特代金券">呼和浩特代金券</a><a href="http://bt.meituan.com" title="包头代金券">包头代金券</a><a href="http://wuhai.meituan.com" title="乌海代金券">乌海代金券</a><a href="http://chifeng.meituan.com" title="赤峰代金券">赤峰代金券</a><a href="http://tongliao.meituan.com" title="通辽代金券">通辽代金券</a><a href="http://erds.meituan.com" title="鄂尔多斯代金券">鄂尔多斯代金券</a><a href="http://hlbe.meituan.com" title="呼伦贝尔代金券">呼伦贝尔代金券</a><a href="http://byne.meituan.com" title="巴彦淖尔代金券">巴彦淖尔代金券</a><a href="http://wlcb.meituan.com" title="乌兰察布代金券">乌兰察布代金券</a><a href="http://xan.meituan.com" title="兴安盟代金券">兴安盟代金券</a><a href="http://xlgl.meituan.com" title="锡林郭勒代金券">锡林郭勒代金券</a><a href="http://als.meituan.com" title="阿拉善盟代金券">阿拉善盟代金券</a><a href="http://as.meituan.com" title="鞍山代金券">鞍山代金券</a><a href="http://fushun.meituan.com" title="抚顺代金券">抚顺代金券</a><a href="http://benxi.meituan.com" title="本溪代金券">本溪代金券</a><a href="http://dandong.meituan.com" title="丹东代金券">丹东代金券</a><a href="http://yk.meituan.com" title="营口代金券">营口代金券</a><a href="http://fx.meituan.com" title="阜新代金券">阜新代金券</a><a href="http://liaoyang.meituan.com" title="辽阳代金券">辽阳代金券</a><a href="http://pj.meituan.com" title="盘锦代金券">盘锦代金券</a><a href="http://tl.meituan.com" title="铁岭代金券">铁岭代金券</a><a href="http://cy.meituan.com" title="朝阳代金券">朝阳代金券</a><a href="http://jl.meituan.com" title="吉林代金券">吉林代金券</a></div></div></div></div><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
+<footer class="site-info-w J-br" style="min-height:298px;" id="yui_3_16_0_1_1426896770329_253">
+    <a href="http://www.meituan.com/sitemap/citysitemap.php" target="_blank" title="网站地图"></a>
+    <textarea style="display:none;" class="J-bigrender-data" data-br-beforerender="e.target.one('a').remove(true);">   <div class="site-info">
+       <div class="site-info__item">
+       <h3>获取更新</h3>
+       <ul>
+       <li><a rel="nofollow" href="http://www.meituan.com/maillist/subscribe">邮件订阅</a></li>
+       <li><a href="http://www.meituan.com/mobile/">iPhone/Android</a></li>
+       <li><a rel="nofollow" href="http://user.qzone.qq.com/97231705" target="_blank">TTDJQQ空间</a></li>
+       <li><a rel="nofollow" href="http://t.sina.com.cn/meituanyuncheng" target="_blank">TTDJ新浪微博</a></li>
+       <li><a href="http://www.meituan.com/sitemap/citysitemap.php" target="_blank">sitemap</a></li>
+       <li><a rel="nofollow" href="/feed/yuncheng" target="_blank">RSS订阅</a></li>
+       </ul>
+       </div>
+       <div class="site-info__item">
+       <h3>商务合作</h3>
+       <ul>
+       <li><a rel="nofollow" href="http://www.meituan.com/crmopen/business/opportunity/embed/add" gaevent="footer/seller">提供代金券信息</a></li>
+       <li><a rel="nofollow" href="http://zhaoshang.meituan.com/" gaevent="footer/mmp">TTDJ商家营销平台</a></li>
+       <li><a rel="nofollow" href="http://www.meituan.com/about#contact">市场合作</a></li>
+       <li><a rel="nofollow" href="http://union.meituan.com/" target="_blank">TTDJ联盟</a></li>
+       <li><a rel="nofollow" href="javascript:;" onClick="if (window.confirm('本邮箱仅接收合作商家对TTDJ员工违规行为的举报。不接受用户咨询、投诉或商务合作申请。')) { window.location = 'mailto:' + 'moc.nautiem@gnehznail'.split('').reverse().join(''); }">廉正邮箱<br/><span class="revEmail">moc.nautiem@gnehznail</span></a></li>
+       </ul>
+       </div>
+       <div class="site-info__item">
+       <h3>公司信息</h3>
+       <ul>
+       <li><a rel="nofollow" href="http://www.meituan.com/about/">关于TTDJ</a></li>
+       <li><a rel="nofollow" href="http://www.meituan.com/commitment/">TTDJ承诺</a></li>
+       <li><a rel="nofollow" href="http://www.meituan.com/about/press">媒体报道</a></li>
+       <li><a rel="nofollow" href="http://www.hotjob.cn/wt/meituan/web/index?brandCode=meituan" gaevent="footer/job">加入我们</a></li>
+       <li><a rel="nofollow" href="http://www.meituan.com/about/law">法律声明</a></li>
+       <li><a rel="nofollow" href="http://www.meituan.com/about/terms">用户协议</a></li>
+       <li><a href="http://www.meituan.com/about/license">营业执照</a></li>
+       </ul>
+       </div>
+       <div class="site-info__item">
+       <h3>用户帮助</h3>
+       <ul>
+       <li><a rel="nofollow" class="J-selfservice-tab" data-tab="0" href="http://www.meituan.com/help/selfservice">申请退款</a></li>
+       <li><a rel="nofollow" class="J-selfservice-tab" data-tab="2" href="http://www.meituan.com/help/selfservice?tab=2">查看TTDJ券密码</a></li>
+       <li><a rel="nofollow" href="http://www.meituan.com/help/faq">常见问题</a></li>
+       <li><a rel="nofollow" href="http://www.meituan.com/help/api">开放API</a></li>
+       <li><a rel="nofollow" target="_blank" href="http://mos.meituan.com">TTDJ云</a></li>
+       <li><a rel="nofollow" href="http://www.meituan.com/about/anticheat">反诈骗公告</a></li>
+       </ul>
+       </div>
+       <div class="site-info__item site-info__item--service">
+       <i class="hotline"></i>
+       <p class="desc">退款、退换货、查看TTDJ券</p>
+       <p><a href="http://www.meituan.com/help/selfservice" class="selfservice-link" gaevent="footer/selfservice">参考教程，轻松搞定 &amp;raquo;</a></p>
+       <div class="contact-info">
+       <p>客服电话：400-660-5335</p>
+       <p>服务时间：每天 9:00 - 22:00</p>
+       </div>
+       </div>
+       <div class="copyright">
+       <p>&amp;copy;<span title="I:-; Q:3; S:3; C:10; F:0; T:249.68; H:com">2015</span><a href="http://www.meituan.com/">TTDJ网代金券</a> meituan.com<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证070791号</a> 京公网安备11010502025545号<a href="http://www.meituan.com/about/rules" target="_blank"> 电子公告服务规则</a></p>
+       </div>
+       <ul class="cert cf">
+       <li class="cert__item"><a class="sp-ft sp-ft--record" title="备案信息" href="http://www.meituan.com/about/openinfo" hidefocus="true" target="_blank">备案信息</a></li>
+       <li class="cert__item"><a class="sp-ft sp-ft--alipay" rel="nofollow" title="支付宝特约商家" href="javascript:;">支付宝特约商家</a></li>
+       <li class="cert__item"><a class="sp-ft sp-ft--tenpay" rel="nofollow" href="http://union.tenpay.com/cgi-bin/trust_mch/ShowTrustMchInfo.cgi?uin=1209236701&amp;uin_type=1" title="财付通诚信商家" hidefocus="true" target="_blank" >财付通诚信商家</a></li>
+       <li class="cert__item"><a class="sp-ft sp-ft--knet" href="javascript:;" title="可信网站认证" rel="nofollow">可信网站</a></li>
+       <li class="cert__item"><a class="sp-ft sp-ft--12315" href="javascript:;" title="12315消费争议" rel="nofollow">12315消费争议</a></li>
+       </ul>
+       </div>
+    </textarea></footer>
+<noscript hidden="" style="display:none;" data-comboajax-uri="/help/fixbar" data-comboajax-onsuccess="$request.listen(&quot;www-base&quot;, &quot;www.asyncSurveyCb&quot;)" data-comboajax-data="{&quot;city&quot;:135,&quot;class&quot;:&quot;index&quot;,&quot;action&quot;:&quot;default&quot;,&quot;args&quot;:[],&quot;type&quot;:&quot;&quot;}" data-comboajax-state="5"></noscript>
+
+<div id="fixbar-container" class="new-index-triffle-w" style="bottom: 20px; right: 10px;"><div id="fixbar-item-top" style="position: static;"><div style="bottom: 20px; right: 10px; display: none;" hidden="hidden"><a class="J-go-top lift-nav new-index-triffle" hidefocus="true" href="javascript:void(0)"><i></i><span>回到顶部</span></a></div></div><div id="fixbar-item-vote" style="position: static;"><div style="bottom: 20px; right: 10px;"><a target="_blank" class="new-index-triffle lift-nav lift-nav--vote " hidefocus="true" href="http://survey.meituan.com/index.php?r=survey/index/sid/278592/lang/zh-Hans"><i></i><span>问卷调查<span></span></span></a></div></div><div id="fixbar-item-help"><div style="bottom: 20px; right: 10px;"><a class="J-lift-help new-index-triffle lift-nav lift-nav--help" hidefocus="true" gaevent="lift/helpcenter" href="javascript:void(0)"><i></i><span>帮助中心<span></span></span></a></div></div><div id="fixbar-item-feedback"><div style="bottom: 20px; right: 10px;"><a target="_blank" class="new-index-triffle lift-nav lift-nav--feedback " hidefocus="true" gaevent="survey/floor" href="/feedback/default/search"><i></i><span>意见反馈<span></span></span></a></div></div></div><iframe width="1" height="1" frameborder="0" style="position:absolute;top:0;left:-9999px;" src="http://www.meituan.com/xsstorage.html"></iframe></body></html>

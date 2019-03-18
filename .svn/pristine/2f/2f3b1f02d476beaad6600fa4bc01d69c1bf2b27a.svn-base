@@ -1,0 +1,117 @@
+@CHARSET "UTF-8";
+.youi-widget-grid{
+	position:relative;
+	overflow:hidden;
+	font-size:9pt;
+	empty-cells: show;
+	border-collapse: collapse;
+	width:760px;
+	padding:0;
+	margin:0;
+}
+.youi-table-headTableContainer{
+	position:relative;
+	overflow:hidden;
+	border-left:1pt solid #99bbe8;
+	border-right:1pt solid #99bbe8;
+	z-index:0;
+	height:32px;
+}
+
+.youi-table-dataTableContainer{
+	position:relative;
+	border-left:1pt solid #99bbe8;
+	border-right:1pt solid #99bbe8;
+	border-bottom:1pt solid #99bbe8;
+}
+
+.youi-table-dataTableContainer tr.old{
+	background:#E8F4FF;
+	cursor:pointer;
+}
+
+.youi-table-dataTableContainer tr.even{
+	cursor:pointer;
+}
+
+.youi-table-dataTableContainer tr.over{
+	background:#eee;
+}
+
+.youi-widget-grid-headCell{
+	border-right:1pt solid #99bbe8;
+	border-top:1pt solid #99bbe8;
+	font-size:9pt;
+	padding-top:5px;
+	padding-bottom:5px;
+	background: transparent url(../images/youi/panel/top-bottom.gif) repeat-x 0 0;
+	height:20px;
+}
+
+.youi-widget-grid-headCell >div{
+	position:relative;
+}
+
+.youi-table-dataTableContainer td{
+	height:20px;
+	border-right:1pt solid #99bbe8;
+	border-top:1pt solid #99bbe8;
+}
+
+.youi-widget-grid-pageIndexSpan{
+	margin:1pt;
+	padding:0 2pt 0 2pt;
+	cursor:pointer;
+	border:1pt solid #EFEDFE;
+}
+
+.youi-widget-grid-pageIndexSpan-over{
+	border:1pt solid #99bbe8;
+}
+
+.youi-table-dataTableContainer td .checkbox,.youi-widget-grid-headCell .checkbox{
+	width:16px;
+	height:16px;
+	margin-right:2pt;
+	background: transparent url(../images/youi/grid/row-check-sprite.gif) repeat-x 2pt 0;
+	cursor:pointer;
+}
+
+.youi-table-dataTableContainer td .checked,.youi-widget-grid-headCell .checked{
+	background-position: 21pt 0pt;
+}
+
+.youi-table-dataTableContainer td .num,.youi-widget-grid-headCell .num{
+	width:20px;
+}
+.youi-widget-grid-sort-icon{
+	background-repeat:no-repeat;
+	display:none;
+	height:10px;
+	margin-left:3px;
+	vertical-align:middle;
+	width:13px;
+	cursor:pointer;
+}
+
+.youi-widget-grid-headCell .asc{
+	display:inline;
+	background-image:url(../images/youi/grid/sort_asc.gif);
+}
+
+.youi-widget-grid-headCell .desc{
+	display:inline;
+	background-image:url(../images/youi/grid/sort_desc.gif);
+}
+
+.youi-widget-grid-coverScroll{
+	border-top:1pt solid #99bbe8;
+	border-right:1pt solid #99bbe8;
+	border-bottom:1pt solid #99bbe8;
+	background: transparent url(../images/youi/panel/top-bottom.gif) repeat-x 0 0;
+	position:absolute;
+	width:18px;
+	-width:17px;
+	height:31px;
+	zIndex:2;
+}

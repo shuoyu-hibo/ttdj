@@ -1,0 +1,80 @@
+package com.web.action.search;
+
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
+import javax.imageio.ImageIO;
+import javax.servlet.ServletException;
+
+import net.sf.json.JSONArray;
+
+import com.mybatis.entity.ttdj.ProduceInfo;
+import com.mybatis.entity.ttdj.ProduceSort1;
+import com.mybatis.entity.ttdj.ProduceSort2;
+import com.mybatis.entity.ttdj.UserInfo;
+import com.service.login.LoginServiceImpl;
+import com.service.produce.ProduceServiceImpl;
+import com.service.util.CommonToolServiceImpl;
+import com.web.action.base.BaseAction;
+import com.web.action.base.JsonUtil;
+
+/**
+ * 登陆action
+ * @author wanghaibo
+ * @describe 登陆action  不要轻易再添加方法.拦截器会放过loginaction
+ */
+public class SearchAction extends BaseAction {
+
+
+	/**
+	 * auto complete process
+	 * @author Wanghaibo
+	 * @throws Exception
+	 */
+	public void procTypeahead() throws Exception {
+		//String searchStr = commonUtil.decodeUrl(request.getParameter("s"));
+		String cityCde = commonUtil.decodeUrl(request.getParameter("city"));
+		CommonToolServiceImpl commonToolServiceImpl = ((CommonToolServiceImpl) getApplicationContext().getBean("commonToolServiceImpl"));
+		JSONArray jsAry = commonToolServiceImpl.procTypeahead(cityCde);
+		JsonUtil jsUtil = new JsonUtil();
+		getLog(this.getClass()).debug(this.getClass().getName()+"=====================typeahead信息成功! jsAry["+jsAry+"]");
+		//getLog(this.getClass()).info(this.getClass().getName()+"=====================查询商品信息成功!");
+		jsUtil.returnJson(response, "0","查询商品信息成功!", jsAry);//保存成功
+	}
+	
+	/**
+	 * search data
+	 * @author Wanghaibo
+	 * @throws Exception
+	 */
+	public void search() throws Exception {
+		String searchStr = commonUtil.decodeUrl(request.getParameter("sh"));
+		String s1 = commonUtil.decodeUrl(request.getParameter("s1"));
+		String s2 = commonUtil.decodeUrl(request.getParameter("s2"));
+		String s3 = commonUtil.decodeUrl(request.getParameter("s3"));
+		CommonToolServiceImpl commonToolServiceImpl = ((CommonToolServiceImpl) getApplicationContext().getBean("commonToolServiceImpl"));
+		if(!"".equals(s1)){//search leve1 menu
+			commonToolServiceImpl.searchMenu1(searchStr, s1);
+		}else if(!"".equals(s2)){//search leve2 menu
+			commonToolServiceImpl.searchMenu2(searchStr, s2);
+		}else if(!"".equals(s3)){//search leve3 menu
+			commonToolServiceImpl.searchMenu3(searchStr, s3);
+		}else{//common search 
+			commonToolServiceImpl.search(searchStr);
+		}
+//		JSONArray jsAry = commonToolServiceImpl.procTypeahead(cityCde);
+		JsonUtil jsUtil = new JsonUtil();
+		JSONArray jsAry = new JSONArray();
+		getLog(this.getClass()).debug(this.getClass().getName()+"=====================typeahead信息成功! jsAry["+jsAry+"]");
+		//getLog(this.getClass()).info(this.getClass().getName()+"=====================查询商品信息成功!");
+		jsUtil.returnJson(response, "0","查询商品信息成功!", jsAry);//保存成功
+	}
+	
+}

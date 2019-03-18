@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsCommonMagicMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsCommonMagic" >
+    <id column="magicid" property="magicid" jdbcType="SMALLINT" />
+    <result column="available" property="available" jdbcType="BIT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="identifier" property="identifier" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="displayorder" property="displayorder" jdbcType="TINYINT" />
+    <result column="credit" property="credit" jdbcType="BIT" />
+    <result column="price" property="price" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="SMALLINT" />
+    <result column="salevolume" property="salevolume" jdbcType="SMALLINT" />
+    <result column="supplytype" property="supplytype" jdbcType="BIT" />
+    <result column="supplynum" property="supplynum" jdbcType="SMALLINT" />
+    <result column="useperoid" property="useperoid" jdbcType="BIT" />
+    <result column="usenum" property="usenum" jdbcType="SMALLINT" />
+    <result column="weight" property="weight" jdbcType="TINYINT" />
+    <result column="useevent" property="useevent" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    magicid, available, name, identifier, description, displayorder, credit, price, num, 
+    salevolume, supplytype, supplynum, useperoid, usenum, weight, useevent
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsCommonMagicExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_common_magic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Short" >
+    select 
+    <include refid="Base_Column_List" />
+    from bbs_common_magic
+    where magicid = #{magicid,jdbcType=SMALLINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short" >
+    delete from bbs_common_magic
+    where magicid = #{magicid,jdbcType=SMALLINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsCommonMagicExample" >
+    delete from bbs_common_magic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsCommonMagic" >
+    insert into bbs_common_magic (magicid, available, name, 
+      identifier, description, displayorder, 
+      credit, price, num, salevolume, 
+      supplytype, supplynum, useperoid, 
+      usenum, weight, useevent
+      )
+    values (#{magicid,jdbcType=SMALLINT}, #{available,jdbcType=BIT}, #{name,jdbcType=VARCHAR}, 
+      #{identifier,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{displayorder,jdbcType=TINYINT}, 
+      #{credit,jdbcType=BIT}, #{price,jdbcType=INTEGER}, #{num,jdbcType=SMALLINT}, #{salevolume,jdbcType=SMALLINT}, 
+      #{supplytype,jdbcType=BIT}, #{supplynum,jdbcType=SMALLINT}, #{useperoid,jdbcType=BIT}, 
+      #{usenum,jdbcType=SMALLINT}, #{weight,jdbcType=TINYINT}, #{useevent,jdbcType=BIT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsCommonMagic" >
+    insert into bbs_common_magic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="magicid != null" >
+        magicid,
+      </if>
+      <if test="available != null" >
+        available,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="identifier != null" >
+        identifier,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="displayorder != null" >
+        displayorder,
+      </if>
+      <if test="credit != null" >
+        credit,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+      <if test="salevolume != null" >
+        salevolume,
+      </if>
+      <if test="supplytype != null" >
+        supplytype,
+      </if>
+      <if test="supplynum != null" >
+        supplynum,
+      </if>
+      <if test="useperoid != null" >
+        useperoid,
+      </if>
+      <if test="usenum != null" >
+        usenum,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="useevent != null" >
+        useevent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="magicid != null" >
+        #{magicid,jdbcType=SMALLINT},
+      </if>
+      <if test="available != null" >
+        #{available,jdbcType=BIT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="identifier != null" >
+        #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="displayorder != null" >
+        #{displayorder,jdbcType=TINYINT},
+      </if>
+      <if test="credit != null" >
+        #{credit,jdbcType=BIT},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=SMALLINT},
+      </if>
+      <if test="salevolume != null" >
+        #{salevolume,jdbcType=SMALLINT},
+      </if>
+      <if test="supplytype != null" >
+        #{supplytype,jdbcType=BIT},
+      </if>
+      <if test="supplynum != null" >
+        #{supplynum,jdbcType=SMALLINT},
+      </if>
+      <if test="useperoid != null" >
+        #{useperoid,jdbcType=BIT},
+      </if>
+      <if test="usenum != null" >
+        #{usenum,jdbcType=SMALLINT},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=TINYINT},
+      </if>
+      <if test="useevent != null" >
+        #{useevent,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsCommonMagicExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_common_magic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_common_magic
+    <set >
+      <if test="record.magicid != null" >
+        magicid = #{record.magicid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.available != null" >
+        available = #{record.available,jdbcType=BIT},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identifier != null" >
+        identifier = #{record.identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null" >
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.displayorder != null" >
+        displayorder = #{record.displayorder,jdbcType=TINYINT},
+      </if>
+      <if test="record.credit != null" >
+        credit = #{record.credit,jdbcType=BIT},
+      </if>
+      <if test="record.price != null" >
+        price = #{record.price,jdbcType=INTEGER},
+      </if>
+      <if test="record.num != null" >
+        num = #{record.num,jdbcType=SMALLINT},
+      </if>
+      <if test="record.salevolume != null" >
+        salevolume = #{record.salevolume,jdbcType=SMALLINT},
+      </if>
+      <if test="record.supplytype != null" >
+        supplytype = #{record.supplytype,jdbcType=BIT},
+      </if>
+      <if test="record.supplynum != null" >
+        supplynum = #{record.supplynum,jdbcType=SMALLINT},
+      </if>
+      <if test="record.useperoid != null" >
+        useperoid = #{record.useperoid,jdbcType=BIT},
+      </if>
+      <if test="record.usenum != null" >
+        usenum = #{record.usenum,jdbcType=SMALLINT},
+      </if>
+      <if test="record.weight != null" >
+        weight = #{record.weight,jdbcType=TINYINT},
+      </if>
+      <if test="record.useevent != null" >
+        useevent = #{record.useevent,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_common_magic
+    set magicid = #{record.magicid,jdbcType=SMALLINT},
+      available = #{record.available,jdbcType=BIT},
+      name = #{record.name,jdbcType=VARCHAR},
+      identifier = #{record.identifier,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      displayorder = #{record.displayorder,jdbcType=TINYINT},
+      credit = #{record.credit,jdbcType=BIT},
+      price = #{record.price,jdbcType=INTEGER},
+      num = #{record.num,jdbcType=SMALLINT},
+      salevolume = #{record.salevolume,jdbcType=SMALLINT},
+      supplytype = #{record.supplytype,jdbcType=BIT},
+      supplynum = #{record.supplynum,jdbcType=SMALLINT},
+      useperoid = #{record.useperoid,jdbcType=BIT},
+      usenum = #{record.usenum,jdbcType=SMALLINT},
+      weight = #{record.weight,jdbcType=TINYINT},
+      useevent = #{record.useevent,jdbcType=BIT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsCommonMagic" >
+    update bbs_common_magic
+    <set >
+      <if test="available != null" >
+        available = #{available,jdbcType=BIT},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="identifier != null" >
+        identifier = #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="displayorder != null" >
+        displayorder = #{displayorder,jdbcType=TINYINT},
+      </if>
+      <if test="credit != null" >
+        credit = #{credit,jdbcType=BIT},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=INTEGER},
+      </if>
+      <if test="num != null" >
+        num = #{num,jdbcType=SMALLINT},
+      </if>
+      <if test="salevolume != null" >
+        salevolume = #{salevolume,jdbcType=SMALLINT},
+      </if>
+      <if test="supplytype != null" >
+        supplytype = #{supplytype,jdbcType=BIT},
+      </if>
+      <if test="supplynum != null" >
+        supplynum = #{supplynum,jdbcType=SMALLINT},
+      </if>
+      <if test="useperoid != null" >
+        useperoid = #{useperoid,jdbcType=BIT},
+      </if>
+      <if test="usenum != null" >
+        usenum = #{usenum,jdbcType=SMALLINT},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=TINYINT},
+      </if>
+      <if test="useevent != null" >
+        useevent = #{useevent,jdbcType=BIT},
+      </if>
+    </set>
+    where magicid = #{magicid,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.BbsCommonMagic" >
+    update bbs_common_magic
+    set available = #{available,jdbcType=BIT},
+      name = #{name,jdbcType=VARCHAR},
+      identifier = #{identifier,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      displayorder = #{displayorder,jdbcType=TINYINT},
+      credit = #{credit,jdbcType=BIT},
+      price = #{price,jdbcType=INTEGER},
+      num = #{num,jdbcType=SMALLINT},
+      salevolume = #{salevolume,jdbcType=SMALLINT},
+      supplytype = #{supplytype,jdbcType=BIT},
+      supplynum = #{supplynum,jdbcType=SMALLINT},
+      useperoid = #{useperoid,jdbcType=BIT},
+      usenum = #{usenum,jdbcType=SMALLINT},
+      weight = #{weight,jdbcType=TINYINT},
+      useevent = #{useevent,jdbcType=BIT}
+    where magicid = #{magicid,jdbcType=SMALLINT}
+  </update>
+</mapper>

@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.ttdj.UserInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.ttdj.UserInfo" >
+    <id column="USER_ID" property="userId" jdbcType="INTEGER" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+    <result column="USER_DESC" property="userDesc" jdbcType="VARCHAR" />
+    <result column="STORE_NAME" property="storeName" jdbcType="VARCHAR" />
+    <result column="ADDRESS" property="address" jdbcType="VARCHAR" />
+    <result column="LINK_NUMBER" property="linkNumber" jdbcType="VARCHAR" />
+    <result column="USER_TYPE" property="userType" jdbcType="VARCHAR" />
+    <result column="PHONE" property="phone" jdbcType="VARCHAR" />
+    <result column="EMAIL" property="email" jdbcType="VARCHAR" />
+    <result column="PROVINCE_NAME" property="provinceName" jdbcType="VARCHAR" />
+    <result column="PROVINCE_CODE" property="provinceCode" jdbcType="INTEGER" />
+    <result column="CITY_NAME" property="cityName" jdbcType="VARCHAR" />
+    <result column="CITY_CODE" property="cityCode" jdbcType="INTEGER" />
+    <result column="COUNTY_CODE" property="countyCode" jdbcType="INTEGER" />
+    <result column="COUNTY_NAME" property="countyName" jdbcType="VARCHAR" />
+    <result column="ACTIVATION" property="activation" jdbcType="VARCHAR" />
+    <result column="BUSI_GROP_ID" property="busiGropId" jdbcType="INTEGER" />
+    <result column="BUSI_GROP" property="busiGrop" jdbcType="VARCHAR" />
+    <result column="QQ" property="qq" jdbcType="VARCHAR" />
+    <result column="STORE_DATE" property="storeDate" jdbcType="TIMESTAMP" />
+    <result column="REGISTER_DATE" property="registerDate" jdbcType="TIMESTAMP" />
+    <result column="LAST_LOGIN_DATE" property="lastLoginDate" jdbcType="TIMESTAMP" />
+    <result column="LAST_LOGIN_IP" property="lastLoginIp" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    USER_ID, USER_NAME, PASSWORD, USER_DESC, STORE_NAME, ADDRESS, LINK_NUMBER, USER_TYPE, 
+    PHONE, EMAIL, PROVINCE_NAME, PROVINCE_CODE, CITY_NAME, CITY_CODE, COUNTY_CODE, COUNTY_NAME, 
+    ACTIVATION, BUSI_GROP_ID, BUSI_GROP, QQ, STORE_DATE, REGISTER_DATE, LAST_LOGIN_DATE, 
+    LAST_LOGIN_IP, REMARK
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.ttdj.UserInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from user_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_info
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_info
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.ttdj.UserInfoExample" >
+    delete from user_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.ttdj.UserInfo" >
+    insert into user_info (USER_ID, USER_NAME, PASSWORD, 
+      USER_DESC, STORE_NAME, ADDRESS, 
+      LINK_NUMBER, USER_TYPE, PHONE, 
+      EMAIL, PROVINCE_NAME, PROVINCE_CODE, 
+      CITY_NAME, CITY_CODE, COUNTY_CODE, 
+      COUNTY_NAME, ACTIVATION, BUSI_GROP_ID, 
+      BUSI_GROP, QQ, STORE_DATE, 
+      REGISTER_DATE, LAST_LOGIN_DATE, LAST_LOGIN_IP, 
+      REMARK)
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{userDesc,jdbcType=VARCHAR}, #{storeName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{linkNumber,jdbcType=VARCHAR}, #{userType,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{email,jdbcType=VARCHAR}, #{provinceName,jdbcType=VARCHAR}, #{provinceCode,jdbcType=INTEGER}, 
+      #{cityName,jdbcType=VARCHAR}, #{cityCode,jdbcType=INTEGER}, #{countyCode,jdbcType=INTEGER}, 
+      #{countyName,jdbcType=VARCHAR}, #{activation,jdbcType=VARCHAR}, #{busiGropId,jdbcType=INTEGER}, 
+      #{busiGrop,jdbcType=VARCHAR}, #{qq,jdbcType=VARCHAR}, #{storeDate,jdbcType=TIMESTAMP}, 
+      #{registerDate,jdbcType=TIMESTAMP}, #{lastLoginDate,jdbcType=TIMESTAMP}, #{lastLoginIp,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.ttdj.UserInfo" >
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="userName != null" >
+        USER_NAME,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="userDesc != null" >
+        USER_DESC,
+      </if>
+      <if test="storeName != null" >
+        STORE_NAME,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="linkNumber != null" >
+        LINK_NUMBER,
+      </if>
+      <if test="userType != null" >
+        USER_TYPE,
+      </if>
+      <if test="phone != null" >
+        PHONE,
+      </if>
+      <if test="email != null" >
+        EMAIL,
+      </if>
+      <if test="provinceName != null" >
+        PROVINCE_NAME,
+      </if>
+      <if test="provinceCode != null" >
+        PROVINCE_CODE,
+      </if>
+      <if test="cityName != null" >
+        CITY_NAME,
+      </if>
+      <if test="cityCode != null" >
+        CITY_CODE,
+      </if>
+      <if test="countyCode != null" >
+        COUNTY_CODE,
+      </if>
+      <if test="countyName != null" >
+        COUNTY_NAME,
+      </if>
+      <if test="activation != null" >
+        ACTIVATION,
+      </if>
+      <if test="busiGropId != null" >
+        BUSI_GROP_ID,
+      </if>
+      <if test="busiGrop != null" >
+        BUSI_GROP,
+      </if>
+      <if test="qq != null" >
+        QQ,
+      </if>
+      <if test="storeDate != null" >
+        STORE_DATE,
+      </if>
+      <if test="registerDate != null" >
+        REGISTER_DATE,
+      </if>
+      <if test="lastLoginDate != null" >
+        LAST_LOGIN_DATE,
+      </if>
+      <if test="lastLoginIp != null" >
+        LAST_LOGIN_IP,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userDesc != null" >
+        #{userDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="storeName != null" >
+        #{storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="linkNumber != null" >
+        #{linkNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceName != null" >
+        #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        #{provinceCode,jdbcType=INTEGER},
+      </if>
+      <if test="cityName != null" >
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        #{cityCode,jdbcType=INTEGER},
+      </if>
+      <if test="countyCode != null" >
+        #{countyCode,jdbcType=INTEGER},
+      </if>
+      <if test="countyName != null" >
+        #{countyName,jdbcType=VARCHAR},
+      </if>
+      <if test="activation != null" >
+        #{activation,jdbcType=VARCHAR},
+      </if>
+      <if test="busiGropId != null" >
+        #{busiGropId,jdbcType=INTEGER},
+      </if>
+      <if test="busiGrop != null" >
+        #{busiGrop,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="storeDate != null" >
+        #{storeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerDate != null" >
+        #{registerDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginDate != null" >
+        #{lastLoginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginIp != null" >
+        #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.ttdj.UserInfoExample" resultType="java.lang.Integer" >
+    select count(*) from user_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update user_info
+    <set >
+      <if test="record.userId != null" >
+        USER_ID = #{record.userId,jdbcType=INTEGER},
+      </if>
+      <if test="record.userName != null" >
+        USER_NAME = #{record.userName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        PASSWORD = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userDesc != null" >
+        USER_DESC = #{record.userDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.storeName != null" >
+        STORE_NAME = #{record.storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        ADDRESS = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkNumber != null" >
+        LINK_NUMBER = #{record.linkNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userType != null" >
+        USER_TYPE = #{record.userType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null" >
+        PHONE = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        EMAIL = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.provinceName != null" >
+        PROVINCE_NAME = #{record.provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.provinceCode != null" >
+        PROVINCE_CODE = #{record.provinceCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.cityName != null" >
+        CITY_NAME = #{record.cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cityCode != null" >
+        CITY_CODE = #{record.cityCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.countyCode != null" >
+        COUNTY_CODE = #{record.countyCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.countyName != null" >
+        COUNTY_NAME = #{record.countyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.activation != null" >
+        ACTIVATION = #{record.activation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.busiGropId != null" >
+        BUSI_GROP_ID = #{record.busiGropId,jdbcType=INTEGER},
+      </if>
+      <if test="record.busiGrop != null" >
+        BUSI_GROP = #{record.busiGrop,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qq != null" >
+        QQ = #{record.qq,jdbcType=VARCHAR},
+      </if>
+      <if test="record.storeDate != null" >
+        STORE_DATE = #{record.storeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.registerDate != null" >
+        REGISTER_DATE = #{record.registerDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastLoginDate != null" >
+        LAST_LOGIN_DATE = #{record.lastLoginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastLoginIp != null" >
+        LAST_LOGIN_IP = #{record.lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update user_info
+    set USER_ID = #{record.userId,jdbcType=INTEGER},
+      USER_NAME = #{record.userName,jdbcType=VARCHAR},
+      PASSWORD = #{record.password,jdbcType=VARCHAR},
+      USER_DESC = #{record.userDesc,jdbcType=VARCHAR},
+      STORE_NAME = #{record.storeName,jdbcType=VARCHAR},
+      ADDRESS = #{record.address,jdbcType=VARCHAR},
+      LINK_NUMBER = #{record.linkNumber,jdbcType=VARCHAR},
+      USER_TYPE = #{record.userType,jdbcType=VARCHAR},
+      PHONE = #{record.phone,jdbcType=VARCHAR},
+      EMAIL = #{record.email,jdbcType=VARCHAR},
+      PROVINCE_NAME = #{record.provinceName,jdbcType=VARCHAR},
+      PROVINCE_CODE = #{record.provinceCode,jdbcType=INTEGER},
+      CITY_NAME = #{record.cityName,jdbcType=VARCHAR},
+      CITY_CODE = #{record.cityCode,jdbcType=INTEGER},
+      COUNTY_CODE = #{record.countyCode,jdbcType=INTEGER},
+      COUNTY_NAME = #{record.countyName,jdbcType=VARCHAR},
+      ACTIVATION = #{record.activation,jdbcType=VARCHAR},
+      BUSI_GROP_ID = #{record.busiGropId,jdbcType=INTEGER},
+      BUSI_GROP = #{record.busiGrop,jdbcType=VARCHAR},
+      QQ = #{record.qq,jdbcType=VARCHAR},
+      STORE_DATE = #{record.storeDate,jdbcType=TIMESTAMP},
+      REGISTER_DATE = #{record.registerDate,jdbcType=TIMESTAMP},
+      LAST_LOGIN_DATE = #{record.lastLoginDate,jdbcType=TIMESTAMP},
+      LAST_LOGIN_IP = #{record.lastLoginIp,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.ttdj.UserInfo" >
+    update user_info
+    <set >
+      <if test="userName != null" >
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userDesc != null" >
+        USER_DESC = #{userDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="storeName != null" >
+        STORE_NAME = #{storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="linkNumber != null" >
+        LINK_NUMBER = #{linkNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null" >
+        USER_TYPE = #{userType,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        PHONE = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        EMAIL = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceName != null" >
+        PROVINCE_NAME = #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null" >
+        PROVINCE_CODE = #{provinceCode,jdbcType=INTEGER},
+      </if>
+      <if test="cityName != null" >
+        CITY_NAME = #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null" >
+        CITY_CODE = #{cityCode,jdbcType=INTEGER},
+      </if>
+      <if test="countyCode != null" >
+        COUNTY_CODE = #{countyCode,jdbcType=INTEGER},
+      </if>
+      <if test="countyName != null" >
+        COUNTY_NAME = #{countyName,jdbcType=VARCHAR},
+      </if>
+      <if test="activation != null" >
+        ACTIVATION = #{activation,jdbcType=VARCHAR},
+      </if>
+      <if test="busiGropId != null" >
+        BUSI_GROP_ID = #{busiGropId,jdbcType=INTEGER},
+      </if>
+      <if test="busiGrop != null" >
+        BUSI_GROP = #{busiGrop,jdbcType=VARCHAR},
+      </if>
+      <if test="qq != null" >
+        QQ = #{qq,jdbcType=VARCHAR},
+      </if>
+      <if test="storeDate != null" >
+        STORE_DATE = #{storeDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerDate != null" >
+        REGISTER_DATE = #{registerDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginDate != null" >
+        LAST_LOGIN_DATE = #{lastLoginDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastLoginIp != null" >
+        LAST_LOGIN_IP = #{lastLoginIp,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.ttdj.UserInfo" >
+    update user_info
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      USER_DESC = #{userDesc,jdbcType=VARCHAR},
+      STORE_NAME = #{storeName,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      LINK_NUMBER = #{linkNumber,jdbcType=VARCHAR},
+      USER_TYPE = #{userType,jdbcType=VARCHAR},
+      PHONE = #{phone,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      PROVINCE_NAME = #{provinceName,jdbcType=VARCHAR},
+      PROVINCE_CODE = #{provinceCode,jdbcType=INTEGER},
+      CITY_NAME = #{cityName,jdbcType=VARCHAR},
+      CITY_CODE = #{cityCode,jdbcType=INTEGER},
+      COUNTY_CODE = #{countyCode,jdbcType=INTEGER},
+      COUNTY_NAME = #{countyName,jdbcType=VARCHAR},
+      ACTIVATION = #{activation,jdbcType=VARCHAR},
+      BUSI_GROP_ID = #{busiGropId,jdbcType=INTEGER},
+      BUSI_GROP = #{busiGrop,jdbcType=VARCHAR},
+      QQ = #{qq,jdbcType=VARCHAR},
+      STORE_DATE = #{storeDate,jdbcType=TIMESTAMP},
+      REGISTER_DATE = #{registerDate,jdbcType=TIMESTAMP},
+      LAST_LOGIN_DATE = #{lastLoginDate,jdbcType=TIMESTAMP},
+      LAST_LOGIN_IP = #{lastLoginIp,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR}
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>

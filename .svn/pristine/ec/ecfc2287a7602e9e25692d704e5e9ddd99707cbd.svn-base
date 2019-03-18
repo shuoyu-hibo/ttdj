@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>登录</title>
+<link rel="stylesheet" href="../../styles/aw/denglu.css" type="text/css">
+</head>
+<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="../../js/ourUtil.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#chkImg").click(function() {
+			$("#chkImg").attr("src", generateUrl("login!genCheckImg.do?"));
+		});
+		$("#btnSub").click(function(){
+			var userName = $("#userName").val();
+			var password = $("#password").val();
+			var yzm = $("#yzm").val();
+			
+			if(userName==""){
+			    $(".meihua11").css({
+				visibility : "visible",
+				display : "block"});
+				$(".meihua11").html("用户名不能为空");
+				return;
+				
+			}else {
+				$(".meihua11").css({
+					visibility : "hidden",
+					display : "none"
+				});
+			}
+			
+			if(password==""){
+			  $(".meihua11").css({
+				visibility : "visible",
+				display : "block"});
+				$(".meihua11").html("密码不能为空");
+				return;
+			}else {
+				$(".meihua11").css({
+					visibility : "hidden",
+					display : "none"
+				});
+			}
+			
+			if(yzm==""){
+			 $(".meihua11").css({
+				visibility : "visible",
+				display : "block"});
+				$(".meihua11").html("验证码不能为空");
+				return;
+			}else {
+				$(".meihua11").css({
+					visibility : "hidden",
+					display : "none"
+				});
+			}
+			
+			var urlStr = "login!userLogin.do?userName="+userName+"&password="+password;
+			urlStr = urlStr+"&checkNumber="+yzm;
+			var strUrl = generateUrl(urlStr);
+			$.post(strUrl,function(json){
+					if(json["result"]=="0"){
+						//跳转首页
+						window.location.href='../../html/home/index.html';
+					}else{
+						//alert(json["message"]);
+						
+						//window.location.href='../../html/home/index.html';
+						$(".meihua11").css({
+				visibility : "visible",
+				display : "block"});
+				$(".meihua11").html(json["message"]);
+				return;
+					}
+					
+			});
+		});
+		});
+		/*$(":text").blur(function() {
+			$(".meihua11").css({
+				visibility : "visible",
+				display : "block"
+			});
+			if (this.value == "") {
+				$(".meihua11").html("用户名不能为空");
+			} else {
+				$(".meihua11").css({
+					visibility : "hidden",
+					display : "none"
+				});
+			}
+		});*/
+	
+</script>
+<body>
+	<div class="meihua1">
+		<div class="meihua2">
+			<i class="logo6"></i><span class="logo7">欢迎使用天天代金</span>
+		</div>
+		<div class="meihua3">
+			<i class="logo5"></i>
+		</div>
+		<div class="meihua4">
+			<div class="meihua9">
+				<ul>
+					<li>账号登录</li>
+					<li>手机动态码登录</li>
+				</ul>
+			</div>
+			<form >
+				<div class="meihua7">
+					<label><i class="logo"></i><input type="text" class="text"id="userName"
+						placeholder="手机号/用户名/邮箱" /> </label>
+				</div>
+				<div class="meihua7">
+					<label><i class="logo1"></i><input type="password"id="password"
+						class="text" placeholder="密码" /> </label>
+				</div>
+				<div class="meihua77">
+					<label><input type="text" class="text1"id="yzm" /> <img id="chkImg"class="text1"
+						src="login!genCheckImg.do?" alt="" style="cursor: pointer;" /> </label>
+				</div>
+
+				<div class="meihua11">生活很美好，现实很骨感</div>
+				<div class="meihua9">
+					<input type="checkbox" value="1" name="auto_login"><span
+						style="font-size: 10px">七天内自动登录</span><span
+						style="font-size: 10px;margin-left: 80px;"><a href="#">忘记登录密码？</a>
+					</span><span></span>
+				</div>
+				<div class="meihua8">
+					<input name="Submit2" type="button" value="登录"
+					id="btnSub"	class="btn" />
+				</div>
+
+				<div class="meihua9">
+					还没有账号？<span><a href="zhuce11.html">免费注册</a> </span>
+				</div>
+
+
+			</form>
+			<div class="meihua10">
+				<i class="logo3"></i>
+			</div>
+		</div>
+		<div class="meihua5">
+			<i class="logo4"></i>
+		</div>
+
+	</div>
+
+</body>
+</html>

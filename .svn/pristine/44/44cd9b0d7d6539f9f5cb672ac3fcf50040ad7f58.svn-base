@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsCreditExchangeMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsCreditExchange" >
+    <id column="eid" property="eid" jdbcType="INTEGER" />
+    <result column="expoint" property="expoint" jdbcType="INTEGER" />
+    <result column="exprestige" property="exprestige" jdbcType="INTEGER" />
+    <result column="pointoutavailable" property="pointoutavailable" jdbcType="BIT" />
+    <result column="pointinavailable" property="pointinavailable" jdbcType="BIT" />
+    <result column="prestigeoutavailable" property="prestigeoutavailable" jdbcType="TINYINT" />
+    <result column="prestigeinavailable" property="prestigeinavailable" jdbcType="BIT" />
+    <result column="exchangetax" property="exchangetax" jdbcType="REAL" />
+    <result column="mini_balance" property="miniBalance" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    eid, expoint, exprestige, pointoutavailable, pointinavailable, prestigeoutavailable, 
+    prestigeinavailable, exchangetax, mini_balance
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsCreditExchangeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_credit_exchange
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from bbs_credit_exchange
+    where eid = #{eid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs_credit_exchange
+    where eid = #{eid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsCreditExchangeExample" >
+    delete from bbs_credit_exchange
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsCreditExchange" >
+    insert into bbs_credit_exchange (eid, expoint, exprestige, 
+      pointoutavailable, pointinavailable, prestigeoutavailable, 
+      prestigeinavailable, exchangetax, mini_balance
+      )
+    values (#{eid,jdbcType=INTEGER}, #{expoint,jdbcType=INTEGER}, #{exprestige,jdbcType=INTEGER}, 
+      #{pointoutavailable,jdbcType=BIT}, #{pointinavailable,jdbcType=BIT}, #{prestigeoutavailable,jdbcType=TINYINT}, 
+      #{prestigeinavailable,jdbcType=BIT}, #{exchangetax,jdbcType=REAL}, #{miniBalance,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsCreditExchange" >
+    insert into bbs_credit_exchange
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        eid,
+      </if>
+      <if test="expoint != null" >
+        expoint,
+      </if>
+      <if test="exprestige != null" >
+        exprestige,
+      </if>
+      <if test="pointoutavailable != null" >
+        pointoutavailable,
+      </if>
+      <if test="pointinavailable != null" >
+        pointinavailable,
+      </if>
+      <if test="prestigeoutavailable != null" >
+        prestigeoutavailable,
+      </if>
+      <if test="prestigeinavailable != null" >
+        prestigeinavailable,
+      </if>
+      <if test="exchangetax != null" >
+        exchangetax,
+      </if>
+      <if test="miniBalance != null" >
+        mini_balance,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="eid != null" >
+        #{eid,jdbcType=INTEGER},
+      </if>
+      <if test="expoint != null" >
+        #{expoint,jdbcType=INTEGER},
+      </if>
+      <if test="exprestige != null" >
+        #{exprestige,jdbcType=INTEGER},
+      </if>
+      <if test="pointoutavailable != null" >
+        #{pointoutavailable,jdbcType=BIT},
+      </if>
+      <if test="pointinavailable != null" >
+        #{pointinavailable,jdbcType=BIT},
+      </if>
+      <if test="prestigeoutavailable != null" >
+        #{prestigeoutavailable,jdbcType=TINYINT},
+      </if>
+      <if test="prestigeinavailable != null" >
+        #{prestigeinavailable,jdbcType=BIT},
+      </if>
+      <if test="exchangetax != null" >
+        #{exchangetax,jdbcType=REAL},
+      </if>
+      <if test="miniBalance != null" >
+        #{miniBalance,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsCreditExchangeExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_credit_exchange
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_credit_exchange
+    <set >
+      <if test="record.eid != null" >
+        eid = #{record.eid,jdbcType=INTEGER},
+      </if>
+      <if test="record.expoint != null" >
+        expoint = #{record.expoint,jdbcType=INTEGER},
+      </if>
+      <if test="record.exprestige != null" >
+        exprestige = #{record.exprestige,jdbcType=INTEGER},
+      </if>
+      <if test="record.pointoutavailable != null" >
+        pointoutavailable = #{record.pointoutavailable,jdbcType=BIT},
+      </if>
+      <if test="record.pointinavailable != null" >
+        pointinavailable = #{record.pointinavailable,jdbcType=BIT},
+      </if>
+      <if test="record.prestigeoutavailable != null" >
+        prestigeoutavailable = #{record.prestigeoutavailable,jdbcType=TINYINT},
+      </if>
+      <if test="record.prestigeinavailable != null" >
+        prestigeinavailable = #{record.prestigeinavailable,jdbcType=BIT},
+      </if>
+      <if test="record.exchangetax != null" >
+        exchangetax = #{record.exchangetax,jdbcType=REAL},
+      </if>
+      <if test="record.miniBalance != null" >
+        mini_balance = #{record.miniBalance,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_credit_exchange
+    set eid = #{record.eid,jdbcType=INTEGER},
+      expoint = #{record.expoint,jdbcType=INTEGER},
+      exprestige = #{record.exprestige,jdbcType=INTEGER},
+      pointoutavailable = #{record.pointoutavailable,jdbcType=BIT},
+      pointinavailable = #{record.pointinavailable,jdbcType=BIT},
+      prestigeoutavailable = #{record.prestigeoutavailable,jdbcType=TINYINT},
+      prestigeinavailable = #{record.prestigeinavailable,jdbcType=BIT},
+      exchangetax = #{record.exchangetax,jdbcType=REAL},
+      mini_balance = #{record.miniBalance,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsCreditExchange" >
+    update bbs_credit_exchange
+    <set >
+      <if test="expoint != null" >
+        expoint = #{expoint,jdbcType=INTEGER},
+      </if>
+      <if test="exprestige != null" >
+        exprestige = #{exprestige,jdbcType=INTEGER},
+      </if>
+      <if test="pointoutavailable != null" >
+        pointoutavailable = #{pointoutavailable,jdbcType=BIT},
+      </if>
+      <if test="pointinavailable != null" >
+        pointinavailable = #{pointinavailable,jdbcType=BIT},
+      </if>
+      <if test="prestigeoutavailable != null" >
+        prestigeoutavailable = #{prestigeoutavailable,jdbcType=TINYINT},
+      </if>
+      <if test="prestigeinavailable != null" >
+        prestigeinavailable = #{prestigeinavailable,jdbcType=BIT},
+      </if>
+      <if test="exchangetax != null" >
+        exchangetax = #{exchangetax,jdbcType=REAL},
+      </if>
+      <if test="miniBalance != null" >
+        mini_balance = #{miniBalance,jdbcType=INTEGER},
+      </if>
+    </set>
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.BbsCreditExchange" >
+    update bbs_credit_exchange
+    set expoint = #{expoint,jdbcType=INTEGER},
+      exprestige = #{exprestige,jdbcType=INTEGER},
+      pointoutavailable = #{pointoutavailable,jdbcType=BIT},
+      pointinavailable = #{pointinavailable,jdbcType=BIT},
+      prestigeoutavailable = #{prestigeoutavailable,jdbcType=TINYINT},
+      prestigeinavailable = #{prestigeinavailable,jdbcType=BIT},
+      exchangetax = #{exchangetax,jdbcType=REAL},
+      mini_balance = #{miniBalance,jdbcType=INTEGER}
+    where eid = #{eid,jdbcType=INTEGER}
+  </update>
+</mapper>

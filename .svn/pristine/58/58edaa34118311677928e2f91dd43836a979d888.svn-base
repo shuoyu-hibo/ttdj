@@ -1,0 +1,33 @@
+package com.mybatis.entity.bbs;
+
+public class ProduceSort1 {
+    private String proSortCode;
+
+    private String proSortName;
+
+    private String remark;
+
+    public String getProSortCode() {
+        return proSortCode;
+    }
+
+    public void setProSortCode(String proSortCode) {
+        this.proSortCode = proSortCode == null ? null : proSortCode.trim();
+    }
+
+    public String getProSortName() {
+        return proSortName;
+    }
+
+    public void setProSortName(String proSortName) {
+        this.proSortName = proSortName == null ? null : proSortName.trim();
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark == null ? null : remark.trim();
+    }
+}

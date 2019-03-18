@@ -1,0 +1,188 @@
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input
+	{
+	margin: 0;
+	padding: 0;
+}
+/*公用*/
+body {
+	background-color: #fff;
+	color: #000;
+}
+
+a {
+	text-decoration: none;
+	background-color: #fff;
+	text-align: center;
+	color: #000;
+	font-size: 25px;
+}
+
+.comWidth {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.leftArea {
+	float: left;
+	margin-top: 20px;
+}
+
+.rightArea {
+	float: right;
+	margin-top: 80px
+}
+
+.headerBar {
+	height: 120px;
+}
+
+.biaoti {
+	left: -40px;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	float: left;
+	margin-top: 80px;
+	margin-left: 80px;
+}
+
+.lianjie {
+	font-size: 18px;
+	color: #000;
+	margin-left: -230px;
+}
+
+.zhucebiao {
+	margin-top: 140px;
+	margin-left: 100px
+}
+
+input {
+	vertical-align: middle;
+}
+
+select {
+	vertical-align: middle;
+}
+
+label {
+	vertical-align: middle
+}
+
+textarea:focus {
+	outline: none
+}
+
+form div {
+	overflow: hidden;
+	clear: both
+}
+
+form div label {
+	float: left;
+	clear: both
+}
+
+form div label b {
+	font-weight: normal;
+	font-size: 30px;
+	color: #ff38e6;
+	visibility: hidden
+}
+
+form div label .text {
+	width: 200px;
+	height: 30px;
+	padding: 0 2px;
+	border: 1px solid #666
+}
+
+form div em {
+	display: inline-table;
+	font-size: 12px;
+	text-align: center;
+	color: #fff;
+	vertical-align: middle;
+	font-style: normal;
+	width: 53px;
+	height: 15px;
+	line-height: 15px;
+	background: #ffd099
+}
+
+form div .active {
+	background-color: #f60
+}
+
+form  div span {
+	display: inline-table;
+	width: 100px;
+	text-align: right
+}
+
+.msg {
+	line-height: 18px;
+	color: #f60;
+	float: left;
+	margin-left: 5px;
+	display: none;
+	font-size: 12px;
+}
+
+#intro {
+	line-height: 12px;
+	font-size: 30px;
+	color: #b9ff8a;
+	float: left;
+	margin-left: 500px;
+	visibility: hidden;
+}
+
+#count {
+	line-height: 20px;
+	font-size: 13px;
+	color: red;
+	float: left;
+	margin-left: 50px;
+	visibility: hidden;
+}
+
+.msg i {
+	display: inline-table;
+	vertical-align: middle;
+	width: 25px;
+	height: 20px;
+}
+
+.btn {
+	height: 40px;
+	width: 270px;
+	left: 100px;
+	right: 100px;
+	border: 2px solid #666;
+	background: #f60;
+	font-size: 25px;
+	font-family: "微软雅体";
+}
+
+#wen_zi {
+	visibility: visible;
+	margin-left: 300px;
+	font-size: 14px;
+}
+
+.tijiao1 {
+	color: #000;
+	left: 900px;
+	position: relative;
+	font-size: 12px;
+	top: 150px;
+}
+.tijiao2 {
+	margin-top:30px;margin-left:100px;font-size:12px ;
+}

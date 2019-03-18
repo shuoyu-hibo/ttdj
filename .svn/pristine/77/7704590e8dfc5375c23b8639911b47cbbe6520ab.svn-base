@@ -1,0 +1,69 @@
+$(function(){
+		$.post(generateUrl("login!checkUserLogin.do?"),function(data){
+			if(data["result"]=="0"){
+				$("#userNameShow").html(data["record"][0]);
+				$("#div_login").show();
+				$("#div_unlogin").hide();
+				//$("#quit").attr("href",generateUrl("login!userQuit.do?"));
+				$("#quit").bind("click",function(){
+					if(confirm("确认退出吗？")){
+						window.location.href=generateUrl("login!userQuit.do?");
+					}
+				});
+			}else{
+				$("#div_login").hide();
+				$("#div_unlogin").show();
+			}
+		});
+		
+		$.post(generateUrl("login!loadPdToHomepage.do?"),function(data){
+			//pdShow1
+			for(var i=1;i<15;i++){$("#pdShow"+i).empty();}
+			$.each(data["record"],function(i,n){
+				var str = "<li class=\"span4\">"
+				str += "<a href=\"#\" class=\"thumbnail\" onclick=\"javascript:window.open(genLinkUrl('html/home/product.html?produceId="+n.produceId+"'));\">";
+			    str += "<img data-src=\"holder.js/360x270\" alt=\"360x270\" src=\""+n.producePic+"\" style=\"width: 360px; height: 270px;\">";
+			    str += "</a>";
+		        str += "<div class=\"thumbnail\">";
+		        str += "<h3>"+n.produceName+"</h3>";
+		        str += "<p><span>优惠券："+n.remitPrice+"元  &nbsp;&nbsp;&nbsp;&nbsp;</span><span>还需到店支付："+n.finalPrice+"元  </span></p>";                   
+		        str += "</div>";
+				str += "</li>";
+				$("#pdShow"+n.proSort1Code).append(str);
+			});
+			
+		});
+		
+		$.post(generateUrl("login!loadMenuToHomepage.do?"),function(data){
+			$.each(data["record"],function(i,n){
+				$("#liMenu"+n.proSortCode).empty();
+				var tempName = "";
+				if(n.proSortName.length>8){
+					tempName = n.proSortName.substring(0,8);
+					tempName += " ... ";
+				}else{
+					tempName = n.proSortName;
+				}
+				//added by yangxiaowei  20150605 start
+  				$("#cate_more"+n.proSortCode).attr("href",generateUrl("html/search/productSearch.html?s1="+n.proSortCode+"&sn1="+n.proSortName));
+				//added by yangxiaowei  20150605 end
+				var str = "<i>&gt;</i> <a class=\"ti\" href=\""+generateUrl('html/search/productSearch.html?s1='+n.proSortCode+'&sn1='+n.proSortName)+"\" title=\""+n.proSortName+"\" mon=\"#content="+n.proSortName+"\">"+tempName+"</a>";
+				str += "<div class=\"prosmore hide\">";
+				$.post(generateUrl("login!loadMenu2ToHomepage.do?proSort1Code="+n.proSortCode),function(json){
+					$.each(json["record"],function(k,v){
+						str+="<ul class=\"breadcrumb\">";
+						str+="<li><a href=\""+generateUrl('html/search/productSearch.html?s2='+v.proSort2Code+'&sn2='+v.proSort2Name)+"\" style=\"color:red\">"+v.proSort2Name+"</a> &gt; </li>";
+						$.each(v.produceSort3List,function(sort3k,sort3v){
+							str+="<li><a href=\""+generateUrl('html/search/productSearch.html?s3='+sort3v.proSort3Code+'&sn3='+sort3v.proSort3Name)+"\">"+sort3v.proSort3Name+"</a>  </li>";
+						});
+						str+="</ul>";
+					});
+					str+="</div>";
+					$("#liMenu"+(i+1)).append(str);
+				});
+			});
+		});
+		
+
+		
+	});

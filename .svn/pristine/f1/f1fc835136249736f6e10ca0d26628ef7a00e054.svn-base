@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+   <link rel="stylesheet" href="../../styles/bootstrap.css" type="text/css">
+	<script type="text/javascript" src="../../js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="../../js/ourUtil.js"></script>
+   <script type="text/javascript" src="../../js/bootstrap.js"></script>
+   <script type="text/javascript" src="../../js/ajaxfileupload.js"></script> 
+  <script type="text/javascript">  
+
+	$(function(){
+		$("#pageloading").hide();
+		$("#form1").attr("action",generateUrl("produce!uploadImage.do?"));
+		$("#imgUpload").attr("src","../../image/addPic.png");
+		$("#warning").hide();
+	});
+    /** 
+     * 上传图片 
+     */  
+    function uploadUnitImage()  {  
+    		$("#pageloading").show();
+            if($("#fileToUpload").val()==''){
+            	$("#warning").show();
+            	return;
+            }
+             $.ajaxFileUpload({  
+                 url:generateUrl("produce!uploadImage.do?"),             //需要链接到服务器地址  
+                 secureuri:false,  
+                 fileElementId:'fileToUpload',                         //文件选择框的id属性  
+                 dataType: 'json',                                     //服务器返回的格式，可以是json  
+                 success: function (data, status)             //相当于java中try语句块的用法  
+                 {     
+                 //alert(data);       //data是从服务器返回来的值     
+                	 $("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     var imgPath="../../uploadfiles/"+data["newname"];
+   					 $("#imgUpload").attr("src",imgPath);
+   					 $("#picUrl").val(imgPath);
+   					 $("#warning").hide();
+   					 return 0;
+                 },  
+                 error: function (data, status, e)             //相当于java中catch语句块的用法  
+                 {  
+                 	$("#pageloading").hide();
+                     $('#result').html(data["msg"]);  
+                     $("#warning").hide();
+                     return 1;
+                 }  
+               }  
+             );  
+    }  
+    $("#save").click(function(){
+    	if(uploadUnitImage()==0){
+    		alert(1);
+    	}else{
+    		alert(2);
+    	}
+    });
+</script> 
+  </head>
+ <body>
+
+
+<h2>模态框（Modal）插件事件</h2>
+<!-- 按钮触发模态框 -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+   开始演示模态框
+</button>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+   aria-labelledby="myModalLabel" aria-hidden="true">
+   <div id="pageloading"></div>
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" 
+               aria-hidden="true">×
+            </button>
+            <h4 class="modal-title" id="myModalLabel">
+               	添加商品信息
+            </h4>
+         </div>
+         <div class="modal-body">
+	         <table class="normal" width="456" border="0" cellspacing="1" cellpadding="0" align="center" bordercolor="#0099CC" bgcolor="#CCCCCC">
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商品名称:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+		                <input class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="32" width="67" nowrap>
+		                <div align="center"><font class="normal">商品描述:</font></div>
+		            </td>
+		            <td height="32" width="386" nowrap>
+		                <input class='normal'  type="text" name="WJMS" maxlength="200" size="40">
+		            </td>
+		        </tr>
+		        <tr bgcolor="#FFFFFF">
+		            <td height="26" width="67" nowrap>
+		                <div align="center"><font class="normal">商品图片:</font></div>
+		            </td>
+		            <td height="26" width="386" nowrap>
+		               <img border="0" id="imgUpload" src="" alt="" width="100" height="100" />
+                       <input id="fileToUpload"  type="file" size="45"   accept="image/*" name="file"  class="input" />
+		            	<button class="button" id="buttonUpload" type="button" 
+                            onclick="uploadUnitImage();">上传选定图片</button><br>
+			           <div class="alert fade in" id="warning">
+			            <button type="button" class="close" data-dismiss="alert">×</button>
+			            <strong>提示:</strong> 请选择要上传的图片!
+			          </div>
+		            	<div id="result" style="margin-left:200px"></div>
+		            	<input type="hidden" id="picUrl"/>
+		            </td>
+		        </tr>
+		    </table>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" 
+               data-dismiss="modal">
+               关闭
+            </button>
+            <button type="button" class="btn btn-primary" id="save">
+               提交
+            </button>
+         </div>
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body>
+
+</html>

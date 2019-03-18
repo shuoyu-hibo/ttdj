@@ -1,0 +1,678 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.dao.bbs.BbsTopicMapper" >
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.bbs.BbsTopic" >
+    <id column="TOPIC_ID" property="topicId" jdbcType="INTEGER" />
+    <result column="FORUM_ID" property="forumId" jdbcType="INTEGER" />
+    <result column="LAST_POST_ID" property="lastPostId" jdbcType="INTEGER" />
+    <result column="FIRST_POST_ID" property="firstPostId" jdbcType="INTEGER" />
+    <result column="SITE_ID" property="siteId" jdbcType="INTEGER" />
+    <result column="CREATER_ID" property="createrId" jdbcType="INTEGER" />
+    <result column="REPLYER_ID" property="replyerId" jdbcType="INTEGER" />
+    <result column="TITLE" property="title" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="LAST_TIME" property="lastTime" jdbcType="TIMESTAMP" />
+    <result column="SORT_TIME" property="sortTime" jdbcType="TIMESTAMP" />
+    <result column="VIEW_COUNT" property="viewCount" jdbcType="BIGINT" />
+    <result column="REPLY_COUNT" property="replyCount" jdbcType="INTEGER" />
+    <result column="TOP_LEVEL" property="topLevel" jdbcType="SMALLINT" />
+    <result column="PRIME_LEVEL" property="primeLevel" jdbcType="SMALLINT" />
+    <result column="STATUS" property="status" jdbcType="SMALLINT" />
+    <result column="OUTER_URL" property="outerUrl" jdbcType="VARCHAR" />
+    <result column="STYLE_BOLD" property="styleBold" jdbcType="BIT" />
+    <result column="STYLE_ITALIC" property="styleItalic" jdbcType="BIT" />
+    <result column="STYLE_COLOR" property="styleColor" jdbcType="CHAR" />
+    <result column="STYLE_TIME" property="styleTime" jdbcType="TIMESTAMP" />
+    <result column="IS_AFFIX" property="isAffix" jdbcType="BIT" />
+    <result column="moderator_reply" property="moderatorReply" jdbcType="BIT" />
+    <result column="TYPE_ID" property="typeId" jdbcType="INTEGER" />
+    <result column="ALLAY_REPLY" property="allayReply" jdbcType="BIT" />
+    <result column="HAS_SOFAED" property="hasSofaed" jdbcType="BIT" />
+    <result column="CATEGORY" property="category" jdbcType="BIT" />
+    <result column="TOTAL_COUNT" property="totalCount" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.mybatis.entity.bbs.BbsTopic" extends="BaseResultMap" >
+    <result column="HAVA_REPLY" property="havaReply" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    TOPIC_ID, FORUM_ID, LAST_POST_ID, FIRST_POST_ID, SITE_ID, CREATER_ID, REPLYER_ID, 
+    TITLE, CREATE_TIME, LAST_TIME, SORT_TIME, VIEW_COUNT, REPLY_COUNT, TOP_LEVEL, PRIME_LEVEL, 
+    STATUS, OUTER_URL, STYLE_BOLD, STYLE_ITALIC, STYLE_COLOR, STYLE_TIME, IS_AFFIX, moderator_reply, 
+    TYPE_ID, ALLAY_REPLY, HAS_SOFAED, CATEGORY, TOTAL_COUNT
+  </sql>
+  <sql id="Blob_Column_List" >
+    HAVA_REPLY
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.mybatis.entity.bbs.BbsTopicExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bbs_topic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.mybatis.entity.bbs.BbsTopicExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from bbs_topic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from bbs_topic
+    where TOPIC_ID = #{topicId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from bbs_topic
+    where TOPIC_ID = #{topicId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.bbs.BbsTopicExample" >
+    delete from bbs_topic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.bbs.BbsTopic" >
+    insert into bbs_topic (TOPIC_ID, FORUM_ID, LAST_POST_ID, 
+      FIRST_POST_ID, SITE_ID, CREATER_ID, 
+      REPLYER_ID, TITLE, CREATE_TIME, 
+      LAST_TIME, SORT_TIME, VIEW_COUNT, 
+      REPLY_COUNT, TOP_LEVEL, PRIME_LEVEL, 
+      STATUS, OUTER_URL, STYLE_BOLD, 
+      STYLE_ITALIC, STYLE_COLOR, STYLE_TIME, 
+      IS_AFFIX, moderator_reply, TYPE_ID, 
+      ALLAY_REPLY, HAS_SOFAED, CATEGORY, 
+      TOTAL_COUNT, HAVA_REPLY)
+    values (#{topicId,jdbcType=INTEGER}, #{forumId,jdbcType=INTEGER}, #{lastPostId,jdbcType=INTEGER}, 
+      #{firstPostId,jdbcType=INTEGER}, #{siteId,jdbcType=INTEGER}, #{createrId,jdbcType=INTEGER}, 
+      #{replyerId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{lastTime,jdbcType=TIMESTAMP}, #{sortTime,jdbcType=TIMESTAMP}, #{viewCount,jdbcType=BIGINT}, 
+      #{replyCount,jdbcType=INTEGER}, #{topLevel,jdbcType=SMALLINT}, #{primeLevel,jdbcType=SMALLINT}, 
+      #{status,jdbcType=SMALLINT}, #{outerUrl,jdbcType=VARCHAR}, #{styleBold,jdbcType=BIT}, 
+      #{styleItalic,jdbcType=BIT}, #{styleColor,jdbcType=CHAR}, #{styleTime,jdbcType=TIMESTAMP}, 
+      #{isAffix,jdbcType=BIT}, #{moderatorReply,jdbcType=BIT}, #{typeId,jdbcType=INTEGER}, 
+      #{allayReply,jdbcType=BIT}, #{hasSofaed,jdbcType=BIT}, #{category,jdbcType=BIT}, 
+      #{totalCount,jdbcType=INTEGER}, #{havaReply,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.bbs.BbsTopic" >
+    insert into bbs_topic
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="topicId != null" >
+        TOPIC_ID,
+      </if>
+      <if test="forumId != null" >
+        FORUM_ID,
+      </if>
+      <if test="lastPostId != null" >
+        LAST_POST_ID,
+      </if>
+      <if test="firstPostId != null" >
+        FIRST_POST_ID,
+      </if>
+      <if test="siteId != null" >
+        SITE_ID,
+      </if>
+      <if test="createrId != null" >
+        CREATER_ID,
+      </if>
+      <if test="replyerId != null" >
+        REPLYER_ID,
+      </if>
+      <if test="title != null" >
+        TITLE,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="lastTime != null" >
+        LAST_TIME,
+      </if>
+      <if test="sortTime != null" >
+        SORT_TIME,
+      </if>
+      <if test="viewCount != null" >
+        VIEW_COUNT,
+      </if>
+      <if test="replyCount != null" >
+        REPLY_COUNT,
+      </if>
+      <if test="topLevel != null" >
+        TOP_LEVEL,
+      </if>
+      <if test="primeLevel != null" >
+        PRIME_LEVEL,
+      </if>
+      <if test="status != null" >
+        STATUS,
+      </if>
+      <if test="outerUrl != null" >
+        OUTER_URL,
+      </if>
+      <if test="styleBold != null" >
+        STYLE_BOLD,
+      </if>
+      <if test="styleItalic != null" >
+        STYLE_ITALIC,
+      </if>
+      <if test="styleColor != null" >
+        STYLE_COLOR,
+      </if>
+      <if test="styleTime != null" >
+        STYLE_TIME,
+      </if>
+      <if test="isAffix != null" >
+        IS_AFFIX,
+      </if>
+      <if test="moderatorReply != null" >
+        moderator_reply,
+      </if>
+      <if test="typeId != null" >
+        TYPE_ID,
+      </if>
+      <if test="allayReply != null" >
+        ALLAY_REPLY,
+      </if>
+      <if test="hasSofaed != null" >
+        HAS_SOFAED,
+      </if>
+      <if test="category != null" >
+        CATEGORY,
+      </if>
+      <if test="totalCount != null" >
+        TOTAL_COUNT,
+      </if>
+      <if test="havaReply != null" >
+        HAVA_REPLY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="topicId != null" >
+        #{topicId,jdbcType=INTEGER},
+      </if>
+      <if test="forumId != null" >
+        #{forumId,jdbcType=INTEGER},
+      </if>
+      <if test="lastPostId != null" >
+        #{lastPostId,jdbcType=INTEGER},
+      </if>
+      <if test="firstPostId != null" >
+        #{firstPostId,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null" >
+        #{createrId,jdbcType=INTEGER},
+      </if>
+      <if test="replyerId != null" >
+        #{replyerId,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastTime != null" >
+        #{lastTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sortTime != null" >
+        #{sortTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="viewCount != null" >
+        #{viewCount,jdbcType=BIGINT},
+      </if>
+      <if test="replyCount != null" >
+        #{replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="topLevel != null" >
+        #{topLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="primeLevel != null" >
+        #{primeLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="outerUrl != null" >
+        #{outerUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="styleBold != null" >
+        #{styleBold,jdbcType=BIT},
+      </if>
+      <if test="styleItalic != null" >
+        #{styleItalic,jdbcType=BIT},
+      </if>
+      <if test="styleColor != null" >
+        #{styleColor,jdbcType=CHAR},
+      </if>
+      <if test="styleTime != null" >
+        #{styleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAffix != null" >
+        #{isAffix,jdbcType=BIT},
+      </if>
+      <if test="moderatorReply != null" >
+        #{moderatorReply,jdbcType=BIT},
+      </if>
+      <if test="typeId != null" >
+        #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="allayReply != null" >
+        #{allayReply,jdbcType=BIT},
+      </if>
+      <if test="hasSofaed != null" >
+        #{hasSofaed,jdbcType=BIT},
+      </if>
+      <if test="category != null" >
+        #{category,jdbcType=BIT},
+      </if>
+      <if test="totalCount != null" >
+        #{totalCount,jdbcType=INTEGER},
+      </if>
+      <if test="havaReply != null" >
+        #{havaReply,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.bbs.BbsTopicExample" resultType="java.lang.Integer" >
+    select count(*) from bbs_topic
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update bbs_topic
+    <set >
+      <if test="record.topicId != null" >
+        TOPIC_ID = #{record.topicId,jdbcType=INTEGER},
+      </if>
+      <if test="record.forumId != null" >
+        FORUM_ID = #{record.forumId,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastPostId != null" >
+        LAST_POST_ID = #{record.lastPostId,jdbcType=INTEGER},
+      </if>
+      <if test="record.firstPostId != null" >
+        FIRST_POST_ID = #{record.firstPostId,jdbcType=INTEGER},
+      </if>
+      <if test="record.siteId != null" >
+        SITE_ID = #{record.siteId,jdbcType=INTEGER},
+      </if>
+      <if test="record.createrId != null" >
+        CREATER_ID = #{record.createrId,jdbcType=INTEGER},
+      </if>
+      <if test="record.replyerId != null" >
+        REPLYER_ID = #{record.replyerId,jdbcType=INTEGER},
+      </if>
+      <if test="record.title != null" >
+        TITLE = #{record.title,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastTime != null" >
+        LAST_TIME = #{record.lastTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.sortTime != null" >
+        SORT_TIME = #{record.sortTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.viewCount != null" >
+        VIEW_COUNT = #{record.viewCount,jdbcType=BIGINT},
+      </if>
+      <if test="record.replyCount != null" >
+        REPLY_COUNT = #{record.replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.topLevel != null" >
+        TOP_LEVEL = #{record.topLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="record.primeLevel != null" >
+        PRIME_LEVEL = #{record.primeLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="record.status != null" >
+        STATUS = #{record.status,jdbcType=SMALLINT},
+      </if>
+      <if test="record.outerUrl != null" >
+        OUTER_URL = #{record.outerUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.styleBold != null" >
+        STYLE_BOLD = #{record.styleBold,jdbcType=BIT},
+      </if>
+      <if test="record.styleItalic != null" >
+        STYLE_ITALIC = #{record.styleItalic,jdbcType=BIT},
+      </if>
+      <if test="record.styleColor != null" >
+        STYLE_COLOR = #{record.styleColor,jdbcType=CHAR},
+      </if>
+      <if test="record.styleTime != null" >
+        STYLE_TIME = #{record.styleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isAffix != null" >
+        IS_AFFIX = #{record.isAffix,jdbcType=BIT},
+      </if>
+      <if test="record.moderatorReply != null" >
+        moderator_reply = #{record.moderatorReply,jdbcType=BIT},
+      </if>
+      <if test="record.typeId != null" >
+        TYPE_ID = #{record.typeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.allayReply != null" >
+        ALLAY_REPLY = #{record.allayReply,jdbcType=BIT},
+      </if>
+      <if test="record.hasSofaed != null" >
+        HAS_SOFAED = #{record.hasSofaed,jdbcType=BIT},
+      </if>
+      <if test="record.category != null" >
+        CATEGORY = #{record.category,jdbcType=BIT},
+      </if>
+      <if test="record.totalCount != null" >
+        TOTAL_COUNT = #{record.totalCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.havaReply != null" >
+        HAVA_REPLY = #{record.havaReply,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update bbs_topic
+    set TOPIC_ID = #{record.topicId,jdbcType=INTEGER},
+      FORUM_ID = #{record.forumId,jdbcType=INTEGER},
+      LAST_POST_ID = #{record.lastPostId,jdbcType=INTEGER},
+      FIRST_POST_ID = #{record.firstPostId,jdbcType=INTEGER},
+      SITE_ID = #{record.siteId,jdbcType=INTEGER},
+      CREATER_ID = #{record.createrId,jdbcType=INTEGER},
+      REPLYER_ID = #{record.replyerId,jdbcType=INTEGER},
+      TITLE = #{record.title,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      LAST_TIME = #{record.lastTime,jdbcType=TIMESTAMP},
+      SORT_TIME = #{record.sortTime,jdbcType=TIMESTAMP},
+      VIEW_COUNT = #{record.viewCount,jdbcType=BIGINT},
+      REPLY_COUNT = #{record.replyCount,jdbcType=INTEGER},
+      TOP_LEVEL = #{record.topLevel,jdbcType=SMALLINT},
+      PRIME_LEVEL = #{record.primeLevel,jdbcType=SMALLINT},
+      STATUS = #{record.status,jdbcType=SMALLINT},
+      OUTER_URL = #{record.outerUrl,jdbcType=VARCHAR},
+      STYLE_BOLD = #{record.styleBold,jdbcType=BIT},
+      STYLE_ITALIC = #{record.styleItalic,jdbcType=BIT},
+      STYLE_COLOR = #{record.styleColor,jdbcType=CHAR},
+      STYLE_TIME = #{record.styleTime,jdbcType=TIMESTAMP},
+      IS_AFFIX = #{record.isAffix,jdbcType=BIT},
+      moderator_reply = #{record.moderatorReply,jdbcType=BIT},
+      TYPE_ID = #{record.typeId,jdbcType=INTEGER},
+      ALLAY_REPLY = #{record.allayReply,jdbcType=BIT},
+      HAS_SOFAED = #{record.hasSofaed,jdbcType=BIT},
+      CATEGORY = #{record.category,jdbcType=BIT},
+      TOTAL_COUNT = #{record.totalCount,jdbcType=INTEGER},
+      HAVA_REPLY = #{record.havaReply,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update bbs_topic
+    set TOPIC_ID = #{record.topicId,jdbcType=INTEGER},
+      FORUM_ID = #{record.forumId,jdbcType=INTEGER},
+      LAST_POST_ID = #{record.lastPostId,jdbcType=INTEGER},
+      FIRST_POST_ID = #{record.firstPostId,jdbcType=INTEGER},
+      SITE_ID = #{record.siteId,jdbcType=INTEGER},
+      CREATER_ID = #{record.createrId,jdbcType=INTEGER},
+      REPLYER_ID = #{record.replyerId,jdbcType=INTEGER},
+      TITLE = #{record.title,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      LAST_TIME = #{record.lastTime,jdbcType=TIMESTAMP},
+      SORT_TIME = #{record.sortTime,jdbcType=TIMESTAMP},
+      VIEW_COUNT = #{record.viewCount,jdbcType=BIGINT},
+      REPLY_COUNT = #{record.replyCount,jdbcType=INTEGER},
+      TOP_LEVEL = #{record.topLevel,jdbcType=SMALLINT},
+      PRIME_LEVEL = #{record.primeLevel,jdbcType=SMALLINT},
+      STATUS = #{record.status,jdbcType=SMALLINT},
+      OUTER_URL = #{record.outerUrl,jdbcType=VARCHAR},
+      STYLE_BOLD = #{record.styleBold,jdbcType=BIT},
+      STYLE_ITALIC = #{record.styleItalic,jdbcType=BIT},
+      STYLE_COLOR = #{record.styleColor,jdbcType=CHAR},
+      STYLE_TIME = #{record.styleTime,jdbcType=TIMESTAMP},
+      IS_AFFIX = #{record.isAffix,jdbcType=BIT},
+      moderator_reply = #{record.moderatorReply,jdbcType=BIT},
+      TYPE_ID = #{record.typeId,jdbcType=INTEGER},
+      ALLAY_REPLY = #{record.allayReply,jdbcType=BIT},
+      HAS_SOFAED = #{record.hasSofaed,jdbcType=BIT},
+      CATEGORY = #{record.category,jdbcType=BIT},
+      TOTAL_COUNT = #{record.totalCount,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.bbs.BbsTopic" >
+    update bbs_topic
+    <set >
+      <if test="forumId != null" >
+        FORUM_ID = #{forumId,jdbcType=INTEGER},
+      </if>
+      <if test="lastPostId != null" >
+        LAST_POST_ID = #{lastPostId,jdbcType=INTEGER},
+      </if>
+      <if test="firstPostId != null" >
+        FIRST_POST_ID = #{firstPostId,jdbcType=INTEGER},
+      </if>
+      <if test="siteId != null" >
+        SITE_ID = #{siteId,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null" >
+        CREATER_ID = #{createrId,jdbcType=INTEGER},
+      </if>
+      <if test="replyerId != null" >
+        REPLYER_ID = #{replyerId,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        TITLE = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastTime != null" >
+        LAST_TIME = #{lastTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sortTime != null" >
+        SORT_TIME = #{sortTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="viewCount != null" >
+        VIEW_COUNT = #{viewCount,jdbcType=BIGINT},
+      </if>
+      <if test="replyCount != null" >
+        REPLY_COUNT = #{replyCount,jdbcType=INTEGER},
+      </if>
+      <if test="topLevel != null" >
+        TOP_LEVEL = #{topLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="primeLevel != null" >
+        PRIME_LEVEL = #{primeLevel,jdbcType=SMALLINT},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=SMALLINT},
+      </if>
+      <if test="outerUrl != null" >
+        OUTER_URL = #{outerUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="styleBold != null" >
+        STYLE_BOLD = #{styleBold,jdbcType=BIT},
+      </if>
+      <if test="styleItalic != null" >
+        STYLE_ITALIC = #{styleItalic,jdbcType=BIT},
+      </if>
+      <if test="styleColor != null" >
+        STYLE_COLOR = #{styleColor,jdbcType=CHAR},
+      </if>
+      <if test="styleTime != null" >
+        STYLE_TIME = #{styleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAffix != null" >
+        IS_AFFIX = #{isAffix,jdbcType=BIT},
+      </if>
+      <if test="moderatorReply != null" >
+        moderator_reply = #{moderatorReply,jdbcType=BIT},
+      </if>
+      <if test="typeId != null" >
+        TYPE_ID = #{typeId,jdbcType=INTEGER},
+      </if>
+      <if test="allayReply != null" >
+        ALLAY_REPLY = #{allayReply,jdbcType=BIT},
+      </if>
+      <if test="hasSofaed != null" >
+        HAS_SOFAED = #{hasSofaed,jdbcType=BIT},
+      </if>
+      <if test="category != null" >
+        CATEGORY = #{category,jdbcType=BIT},
+      </if>
+      <if test="totalCount != null" >
+        TOTAL_COUNT = #{totalCount,jdbcType=INTEGER},
+      </if>
+      <if test="havaReply != null" >
+        HAVA_REPLY = #{havaReply,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where TOPIC_ID = #{topicId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.mybatis.entity.bbs.BbsTopic" >
+    update bbs_topic
+    set FORUM_ID = #{forumId,jdbcType=INTEGER},
+      LAST_POST_ID = #{lastPostId,jdbcType=INTEGER},
+      FIRST_POST_ID = #{firstPostId,jdbcType=INTEGER},
+      SITE_ID = #{siteId,jdbcType=INTEGER},
+      CREATER_ID = #{createrId,jdbcType=INTEGER},
+      REPLYER_ID = #{replyerId,jdbcType=INTEGER},
+      TITLE = #{title,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      LAST_TIME = #{lastTime,jdbcType=TIMESTAMP},
+      SORT_TIME = #{sortTime,jdbcType=TIMESTAMP},
+      VIEW_COUNT = #{viewCount,jdbcType=BIGINT},
+      REPLY_COUNT = #{replyCount,jdbcType=INTEGER},
+      TOP_LEVEL = #{topLevel,jdbcType=SMALLINT},
+      PRIME_LEVEL = #{primeLevel,jdbcType=SMALLINT},
+      STATUS = #{status,jdbcType=SMALLINT},
+      OUTER_URL = #{outerUrl,jdbcType=VARCHAR},
+      STYLE_BOLD = #{styleBold,jdbcType=BIT},
+      STYLE_ITALIC = #{styleItalic,jdbcType=BIT},
+      STYLE_COLOR = #{styleColor,jdbcType=CHAR},
+      STYLE_TIME = #{styleTime,jdbcType=TIMESTAMP},
+      IS_AFFIX = #{isAffix,jdbcType=BIT},
+      moderator_reply = #{moderatorReply,jdbcType=BIT},
+      TYPE_ID = #{typeId,jdbcType=INTEGER},
+      ALLAY_REPLY = #{allayReply,jdbcType=BIT},
+      HAS_SOFAED = #{hasSofaed,jdbcType=BIT},
+      CATEGORY = #{category,jdbcType=BIT},
+      TOTAL_COUNT = #{totalCount,jdbcType=INTEGER},
+      HAVA_REPLY = #{havaReply,jdbcType=LONGVARCHAR}
+    where TOPIC_ID = #{topicId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.bbs.BbsTopic" >
+    update bbs_topic
+    set FORUM_ID = #{forumId,jdbcType=INTEGER},
+      LAST_POST_ID = #{lastPostId,jdbcType=INTEGER},
+      FIRST_POST_ID = #{firstPostId,jdbcType=INTEGER},
+      SITE_ID = #{siteId,jdbcType=INTEGER},
+      CREATER_ID = #{createrId,jdbcType=INTEGER},
+      REPLYER_ID = #{replyerId,jdbcType=INTEGER},
+      TITLE = #{title,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      LAST_TIME = #{lastTime,jdbcType=TIMESTAMP},
+      SORT_TIME = #{sortTime,jdbcType=TIMESTAMP},
+      VIEW_COUNT = #{viewCount,jdbcType=BIGINT},
+      REPLY_COUNT = #{replyCount,jdbcType=INTEGER},
+      TOP_LEVEL = #{topLevel,jdbcType=SMALLINT},
+      PRIME_LEVEL = #{primeLevel,jdbcType=SMALLINT},
+      STATUS = #{status,jdbcType=SMALLINT},
+      OUTER_URL = #{outerUrl,jdbcType=VARCHAR},
+      STYLE_BOLD = #{styleBold,jdbcType=BIT},
+      STYLE_ITALIC = #{styleItalic,jdbcType=BIT},
+      STYLE_COLOR = #{styleColor,jdbcType=CHAR},
+      STYLE_TIME = #{styleTime,jdbcType=TIMESTAMP},
+      IS_AFFIX = #{isAffix,jdbcType=BIT},
+      moderator_reply = #{moderatorReply,jdbcType=BIT},
+      TYPE_ID = #{typeId,jdbcType=INTEGER},
+      ALLAY_REPLY = #{allayReply,jdbcType=BIT},
+      HAS_SOFAED = #{hasSofaed,jdbcType=BIT},
+      CATEGORY = #{category,jdbcType=BIT},
+      TOTAL_COUNT = #{totalCount,jdbcType=INTEGER}
+    where TOPIC_ID = #{topicId,jdbcType=INTEGER}
+  </update>
+</mapper>

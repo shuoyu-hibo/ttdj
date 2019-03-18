@@ -1,0 +1,34 @@
+package com.service.login;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
+
+import com.mybatis.dao.ttdj.UserInfoMapper;
+import com.mybatis.entity.ttdj.UserInfo;
+import com.mybatis.entity.ttdj.UserInfoExample;
+import com.service.BaseService;
+
+
+public class LoginServiceImpl extends BaseService{
+
+	Logger log = this.getLog(this.getClass());//加载log方法
+
+	public List<UserInfo> getDataByUserinfo(String userName,String password){
+		
+		UserInfoExample userExmp = new UserInfoExample();
+		userExmp.or().andUserNameEqualTo(userName);
+		userExmp.or().andPasswordEqualTo(password);
+		SqlSession sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+		UserInfoMapper userinfoMapper = sqlSession.getMapper(UserInfoMapper.class);
+		List<UserInfo> list = userinfoMapper.selectByExample(userExmp);
+		return  list;
+	}
+	
+	
+	
+}
+
+

@@ -1,0 +1,79 @@
+package com.service.util;
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
+
+import com.mybatis.dao.ttdj.ProduceSort1Mapper;
+import com.mybatis.entity.ttdj.ProduceSort1;
+import com.mybatis.entity.ttdj.ProduceSort1Example;
+import com.mybatis.entity.ttdj.ProduceSort2;
+import com.service.BaseService;
+import common.CommonConst;
+
+public class CommonToolServiceImpl extends BaseService{
+
+	Logger log = this.getLog(this.getClass());//加载log方法
+	public List<ProduceSort1> selectMenuToHomepage() {
+		// TODO Auto-generated method stub
+		List<ProduceSort1> list = null;
+		SqlSession sqlSession = null;
+		Date currDate = new Date();
+		if(CommonConst.lastSelectMenu1Date!=null){
+			long millisecond = currDate.getTime()-CommonConst.lastSelectPdDate.getTime();//距离上次查询过去了多少毫秒
+			if(millisecond<(1000*60*CommonConst.MINUTE)){
+				return CommonConst.listMenu1;
+			}
+		}
+		try {
+			ProduceSort1Example pdExmp = new ProduceSort1Example();
+			pdExmp.setOrderByClause("order_num asc");
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			ProduceSort1Mapper produceSort1Mapper = sqlSession.getMapper(ProduceSort1Mapper.class);
+			list = produceSort1Mapper.selectByExample(pdExmp);
+			CommonConst.listMenu1 = list;
+			CommonConst.lastSelectMenu1Date = new Date();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return null;//失败
+		} finally {
+			sqlSession.close();
+		}
+		return CommonConst.listMenu1;
+	}
+	
+	public List<ProduceSort2> selectMenu2ToHomepage(Integer proSort1Code) {
+		// TODO Auto-generated method stub
+		List<ProduceSort2> list = null;
+		SqlSession sqlSession = null;
+		Date currDate = new Date();
+		if(CommonConst.lastSelectMenu2Date!=null){
+			long millisecond = currDate.getTime()-CommonConst.lastSelectPdDate.getTime();//距离上次查询过去了多少毫秒
+			if(millisecond<(1000*60*CommonConst.MINUTE)){
+				return CommonConst.mapMenu2.get(proSort1Code);
+			}
+		}
+		try {
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			for(ProduceSort1 ps1 : CommonConst.listMenu1){
+				list = sqlSession.selectList("com.mybatis.dao.ttdj.ProduceSort2Mapper.selectMenu2",ps1.getProSortCode());
+				CommonConst.mapMenu2.put(ps1.getProSortCode(), list);
+			}
+			CommonConst.lastSelectMenu2Date = new Date();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return null;//失败
+		} finally {
+			sqlSession.close();
+		}
+		return CommonConst.mapMenu2.get(proSort1Code);
+	}
+
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 配置拦截器-->
+	<package name="riskLoan-default" extends="struts-default">
+		<interceptors>
+			<interceptor name="authority" class="com.web.action.base.AuthorityInterceptor"></interceptor>
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="authority"/>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault"/>
+		<global-results>
+			<result name="unlogin">/jsp/login.jsp</result>
+		</global-results>
+	</package> 
+	
+	<include file="com/web/action/struts_config/homepage.xml" />
+	<include file="com/web/action/struts_config/register.xml" />
+</struts>    

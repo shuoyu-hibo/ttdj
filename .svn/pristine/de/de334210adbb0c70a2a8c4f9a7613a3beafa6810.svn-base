@@ -1,0 +1,25 @@
+
+.selectImg{cursor:pointer;}
+.selectedImg{cursor:pointer;width:148px;}
+.fb{cursor:pointer;}
+td{
+			font-weight: bold;
+			font-size: 14px;
+			font-family: "Î¢ÈíÑÅºÚ";
+			color: #FFFFFF;
+			height: 30px;
+}
+.td_fontSmall{
+			font-weight: 800;
+			font-size: 16px;
+			font-family: "»ªÎÄºÚÌå";
+			color: #FFFFFF;
+			height: 40px;
+}
+.td_score{
+		 font-family:"Ó×Ô²";
+		 font-size:40px;
+		 color: #FFFF00;
+		 font-weight:1000;
+		 filter:DropShadow(Color="#000000",OffX="4",OffY="3",Positive="1")Alpha(Opacity="60",FinishOpacity="100",Style="2")Chroma(Color="#CCFF00")Glow(Color="#66FF66",Strength="2")Blur(Add="0",Direction="30",Strength="1");
+}

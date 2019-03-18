@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link type="text/css" rel="stylesheet" href="reset.css">
+    <script type="text/javascript" src="zhuce1.js">
+    </script>
+</head>
+<body>
+<div class="headerBar">
+    <div class="comWidth">
+        <div class="leftArea">
+            <img src="tupian/gg.png" width="100" height="100" /> 注册TT账号
+        </div>
+        <div class="rightArea">
+            已有TT账号？<a href="#"target="_blank">登录</a>
+        </div>
+    </div>
+</div>
+<div class="comWidth">
+    <ul>
+        <li ><a  class="lianjie" href="#" > 邮箱注册</a></li>
+        <li><a class="lianjie"href="#" >手机注册</a></li>
+    </ul>
+
+</div>
+<div class="comWidth">
+    <div class="zhucebiao">
+        <form method="post" action="22.php" >
+            <div style="margin-bottom:20px"> <label><span>    手机号:</span><input type="text" class="text" /></label><p  class="msg">  请输入手机号</p><p  id="wen_zi"> 注册成功后，全TT通用</p></div>
+            <div style="margin-bottom:20px;margin-left:100px;font-size:13px ;border:1px solid #666;width: 120px;background-color:#333333">免费获取短信动态码</div>
+            <div style="margin-bottom:20px"><label><span>短信动态码:  </span><input type="text" class="text" /></label><p  class="msg">  请输入手机号</p> </div>
+            <div><label><span>登录密码:  </span><input type="password" class="text" /></label><p class="msg">5-25个字符，一个汉字为两个字</p></div>
+            <div style="margin:3px 0 10px 0"><label><span></span><em >弱</em><em> 中 </em><em>强</em></label></div>
+            <div style="margin-bottom:20px"><label><span>确认密码:  </span><input type="password" class="text" /></label><p class="msg">请再输入一次</p></div>
+
+
+            <div style="margin-top:30px;margin-left:85px ">
+                <input name="Submit2" type="submit" class="btn" value="同意以下协议并注册" /></label></div>
+            <div style="margin-top:30px;margin-left:100px;font-size:10px  ">《TT网用户协议》</div>
+        </form>
+    </div>
+</div>
+<div class="comWidth">
+    <div><p><span class="tijiao1"> 京ICP证070791号京公网安备11010502025545号</span><br />
+    </div>
+
+</div>
+
+
+</body>
+</html>

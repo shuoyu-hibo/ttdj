@@ -1,0 +1,68 @@
+package com.service.register;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
+import org.aspectj.org.eclipse.jdt.core.dom.ThisExpression;
+
+import com.mybatis.dao.ttdj.UserInfoMapper;
+import com.mybatis.entity.ttdj.UserInfo;
+import com.mybatis.entity.ttdj.UserInfoExample;
+import com.service.BaseService;
+
+
+public class RegisterServiceImpl extends BaseService{
+
+	Logger log = this.getLog(this.getClass());//加载log方法
+
+	/**
+	 * 根据用户名查询是否存在
+	 * @param userName
+	 * @return
+	 */
+	public int selectCountByUserName(String userName){
+		
+		List<UserInfo> list = null;
+		SqlSession sqlSession = null;
+		try {
+			UserInfoExample userExmp = new UserInfoExample();
+			userExmp.or().andUserNameEqualTo(userName);
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			UserInfoMapper userinfoMapper = sqlSession.getMapper(UserInfoMapper.class);
+			list = userinfoMapper.selectByExample(userExmp);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return 1;//失败
+		} finally {
+			sqlSession.close();
+		}
+		return list.size();
+	}
+	
+	/**
+	 * 保存用户信息
+	 * @param userinfo
+	 * @return
+	 */
+	public boolean saveData(UserInfo userinfo){
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			UserInfoMapper userinfoMapper = sqlSession.getMapper(UserInfoMapper.class);
+			userinfoMapper.insert(userinfo);
+			sqlSession.commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return false;
+		} finally {
+			sqlSession.close();
+		}
+		return true;
+	}
+}

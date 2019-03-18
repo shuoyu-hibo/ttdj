@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- classPathEntry:数据库的JDBC驱动 -->
+	<classPathEntry location="WebRoot/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar" />
+	<context id="MysqlTables" targetRuntime="MyBatis3">
+		<!-- 注意这里面的顺序确定的，不能随变更改 -->
+		<!--  自定义的分页插件 <plugin type="com.deppon.foss.module.helloworld.shared.PaginationPlugin"/>-->
+		
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/bbs" userId="wanghaibo" password="wanghaibo">
+		</jdbcConnection>
+		
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		
+		
+		<javaModelGenerator targetPackage="com.mybatis.entity.bbs"
+			targetProject="src">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		
+		
+		<sqlMapGenerator targetPackage="com.mybatis.xml.bbs"
+			targetProject="src">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.mybatis.dao.bbs" 
+			targetProject="src">
+			<property name="enableSubPackages" value="true" />
+			<property name="methodNameCalculator" value="extended"/>
+		</javaClientGenerator>
+		
+		<table tableName="attachment" domainObjectName="Attachment" enableInsert="true" />
+		<table tableName="bbs_category" domainObjectName="BbsCtegory" enableInsert="true" />
+		<table tableName="bbs_category_user" domainObjectName="BbsCategoryUser" enableInsert="true" />
+		<table tableName="bbs_common_magic" domainObjectName="BbsCommonMagic" enableInsert="true" />
+		<table tableName="bbs_config" domainObjectName="BbsConfig" enableInsert="true" />
+		<table tableName="bbs_credit_exchange" domainObjectName="BbsCreditExchange" enableInsert="true" />
+		<table tableName="bbs_credit_rule" domainObjectName="BbsCreditRule" enableInsert="true" />
+		<table tableName="bbs_forum" domainObjectName="BbsForum" enableInsert="true" />
+		<table tableName="bbs_forum_group_reply" domainObjectName="BbsForumGroupReply" enableInsert="true" />
+		<table tableName="bbs_forum_group_topic" domainObjectName="BbsForumGroupTopic" enableInsert="true" />
+		<table tableName="bbs_forum_group_view" domainObjectName="BbsForumGroupView" enableInsert="true" />
+		<table tableName="bbs_forum_user" domainObjectName="BbsForumUser" enableInsert="true" />
+		<table tableName="bbs_grade" domainObjectName="BbsGrade" enableInsert="true" />
+		<table tableName="bbs_group_type" domainObjectName="BbsGroupType" enableInsert="true" />
+		<table tableName="bbs_login_log" domainObjectName="BbsLoginLog" enableInsert="true" />
+		<table tableName="bbs_magic_config" domainObjectName="BbsMagicConfig" enableInsert="true" />
+		<table tableName="bbs_magic_log" domainObjectName="BbsMagicLog" enableInsert="true" />
+		<table tableName="bbs_magic_usergroup" domainObjectName="BbsMagicUsergroup" enableInsert="true" />
+		<table tableName="bbs_magic_usergroup_to" domainObjectName="BbsMagicUsergroupTo" enableInsert="true" />
+		<table tableName="bbs_member_magic" domainObjectName="BbsMemberMagic" enableInsert="true" />
+		<table tableName="bbs_operation" domainObjectName="BbsOperation" enableInsert="true" />
+		<table tableName="bbs_permission" domainObjectName="BbsPermission" enableInsert="true" />
+		<table tableName="bbs_post" domainObjectName="BbsPost" enableInsert="true" />
+		<table tableName="bbs_post_text" domainObjectName="BbsPostText" enableInsert="true" />
+		<table tableName="bbs_post_type" domainObjectName="BbsPostType" enableInsert="true" />
+		<table tableName="bbs_private_msg" domainObjectName="BbsPrivateMsg" enableInsert="true" />
+		<table tableName="bbs_private_msg_text" domainObjectName="BbsPrivateMsgText" enableInsert="true" />
+		<table tableName="bbs_report" domainObjectName="BbsReport" enableInsert="true" />
+		<table tableName="bbs_report_ext" domainObjectName="BbsReportExt" enableInsert="true" />
+		<table tableName="bbs_topic" domainObjectName="BbsTopic" enableInsert="true" />
+		<table tableName="bbs_topic_text" domainObjectName="BbsTopicText" enableInsert="true" />
+		<table tableName="bbs_user_group" domainObjectName="BbsUserGroup" enableInsert="true" />
+		<table tableName="bbs_user_online" domainObjectName="BbsUserOnline" enableInsert="true" />
+		<table tableName="bbs_vote_item" domainObjectName="BbsVoteItem" enableInsert="true" />
+		<table tableName="bbs_vote_record" domainObjectName="BbsVoteRecord" enableInsert="true" />
+		<table tableName="jb_friendship" domainObjectName="JbFriendship" enableInsert="true" />
+		<table tableName="jb_message" domainObjectName="JbMessage" enableInsert="true" />
+		<table tableName="jb_message_reply" domainObjectName="JbMessageReply" enableInsert="true" />
+		<table tableName="jb_user" domainObjectName="JbUser" enableInsert="true" />
+		<table tableName="jb_user_ext" domainObjectName="JbUserExt" enableInsert="true" />
+		<table tableName="jc_config" domainObjectName="JcConfig" enableInsert="true" />
+		<table tableName="jc_friendlink" domainObjectName="JcFriendlink" enableInsert="true" />
+		<table tableName="jc_friendlink_ctg" domainObjectName="JcFriendlinkCtg" enableInsert="true" />
+		<table tableName="jc_sensitivity" domainObjectName="JcSensitivity" enableInsert="true" />
+		<table tableName="jc_site" domainObjectName="JcSite" enableInsert="true" />
+		<table tableName="jo_authentication" domainObjectName="JoAuthentication" enableInsert="true" />
+		<table tableName="jo_config" domainObjectName="JoConfig" enableInsert="true" />
+		<table tableName="jo_ftp" domainObjectName="JoFtp" enableInsert="true" />
+		<table tableName="jo_template" domainObjectName="JoTemplate" enableInsert="true" />
+		<table tableName="jo_upload" domainObjectName="JoUpload" enableInsert="true" />
+		<table tableName="jo_user" domainObjectName="JoUser" enableInsert="true" />
+
+	</context>
+</generatorConfiguration>

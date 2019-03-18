@@ -1,0 +1,304 @@
+(function () {
+    var f = 0;
+    var e = function (m) {
+        if (typeof m === "string") {
+            return document.getElementById(m)
+        } else {
+            return m
+        }
+    };
+
+    function c(m) {
+        if (typeof m !== "string") {
+            throw "trim need a string as parameter"
+        }
+        if (typeof m.trim === "function") {
+            return m.trim()
+        } else {
+            return m.replace(/^(\u3000|\s|\t|\u00A0)*|(\u3000|\s|\t|\u00A0)*$/g, "")
+        }
+    }
+    function d(m, p, o) {
+        var n = e(m);
+        if (n == null) {
+            return false
+        }
+        p = p || "click";
+        if ((typeof o).toLowerCase() != "function") {
+            return
+        }
+        if (n.attachEvent) {
+            n.attachEvent("on" + p, o)
+        } else {
+            if (n.addEventListener) {
+                n.addEventListener(p, o, false)
+            } else {
+                n["on" + p] = o
+            }
+        }
+        return true
+    }
+    function g(n, p, o, m) {
+        if (n == null) {
+            return false
+        }
+        if (typeof o != "function") {
+            return false
+        }
+        if (n.removeEventListener) {
+            n.removeEventListener(p, o, m)
+        } else {
+            if (n.detachEvent) {
+                n.detachEvent("on" + p, o)
+            } else {
+                n["on" + p] = null
+            }
+        }
+        return true
+    }
+    function i(r, o) {
+        var q = function (u, t) {
+            u = u == null ? "" : u;
+            u = c(u.toString());
+            if (t) {
+                return encodeURIComponent(u)
+            } else {
+                return u
+            }
+        };
+        var s = [];
+        if (typeof r == "object") {
+            for (var n in r) {
+                if (r[n] instanceof Array) {
+                    for (var p = 0, m = r[n].length; p < m; p++) {
+                        s.push(n + "=" + q(r[n][p], o))
+                    }
+                } else {
+                    if (typeof r[n] != "function") {
+                        s.push(n + "=" + q(r[n], o))
+                    }
+                }
+            }
+        }
+        if (s.length) {
+            return s.join("&")
+        } else {
+            return ""
+        }
+    }
+    function h(m) {
+        var n = i(m);
+        n = escape(n);
+        if (window.postMessage) {
+            parent.postMessage(n, "*")
+        } else {
+            window.parent.name = (new Date()).getTime() + (f++) + "^" + document.domain + "&" + window.escape(n)
+        }
+    }
+    var l;
+
+    function a() {
+        var m = {
+            width: document.body.clientWidth,
+            height: document.body.clientHeight + 40
+        };
+        if (l == null) {
+            l = {
+                width: m.width,
+                height: m.height
+            };
+            h(l)
+        }
+        if (l != null && typeof l.width != "undefined" && typeof l.height != "undefined" && (l.width != m.width || l.height != m.height)) {
+            h(m)
+        }
+    }
+    var b = setInterval(a, 1000);
+    var k = true;
+
+    function j() {
+        if (k == true) {
+            d(window, "load", a);
+            d(document.body, "DOMSubtreeModified", a);
+            d(document.body, "DOMNodeInserted", a);
+            d(document.body, "DOMNodeRemoved", a)
+        } else {
+            g(window, "load", a);
+            g(document.body, "DOMSubtreeModified", a);
+            g(document.body, "DOMNodeInserted", a);
+            g(document.body, "DOMNodeRemoved", a)
+        }
+    }
+    j();
+    if (typeof window.App == "undefined") {
+        window.App = {}
+    }
+    window.App.setPageHeight = function (m) {
+        clearInterval(b);
+        k = false;
+        j();
+        h({
+            width: "",
+            height: m,
+            force: "true"
+        })
+    };
+    window.App.scrollToTop = function (m) {
+        h({
+            goTop: m
+        })
+    }
+})();
+(function () {
+    var a = (function () {
+        var b = {};
+        var c = [];
+        b.inc = function (e, d) {
+            return true
+        };
+        b.register = function (f, d) {
+            var h = f.split(".");
+            var g = b;
+            var e = null;
+            while (e = h.shift()) {
+                if (h.length) {
+                    if (g[e] === undefined) {
+                        g[e] = {}
+                    }
+                    g = g[e]
+                } else {
+                    if (g[e] === undefined) {
+                        try {
+                            g[e] = d(b)
+                        } catch (i) {
+                            c.push(i)
+                        }
+                    }
+                }
+            }
+        };
+        b.regShort = function (d, e) {
+            if (b[d] !== undefined) {
+                throw "[" + d + "] : short : has been register"
+            }
+            b[d] = e
+        };
+        b.IE = /msie/i.test(navigator.userAgent);
+        b.E = function (d) {
+            if (typeof d === "string") {
+                return document.getElementById(d)
+            } else {
+                return d
+            }
+        };
+        b.C = function (d) {
+            var e;
+            d = d.toUpperCase();
+            if (d == "TEXT") {
+                e = document.createTextNode("")
+            } else {
+                if (d == "BUFFER") {
+                    e = document.createDocumentFragment()
+                } else {
+                    e = document.createElement(d)
+                }
+            }
+            return e
+        };
+        b.log = function (d) {
+            c.push("[" + ((new Date()).getTime() % 100000) + "]: " + d)
+        };
+        b.getErrorLogInformationList = function (d) {
+            return c.splice(0, d || c.length)
+        };
+        return b
+    })();
+    $Import = a.inc;
+    a.register("core.util.winSize", function (b) {
+        return function (d) {
+            var c, e;
+            var f;
+            if (d) {
+                f = d.document
+            } else {
+                f = document
+            }
+            if (f.compatMode === "CSS1Compat") {
+                c = f.documentElement.clientWidth;
+                e = f.documentElement.clientHeight
+            } else {
+                if (self.innerHeight) {
+                    if (d) {
+                        f = d.self
+                    } else {
+                        f = self
+                    }
+                    c = f.innerWidth;
+                    e = f.innerHeight
+                } else {
+                    if (f.documentElement && f.documentElement.clientHeight) {
+                        c = f.documentElement.clientWidth;
+                        e = f.documentElement.clientHeight
+                    } else {
+                        if (f.body) {
+                            c = f.body.clientWidth;
+                            e = f.body.clientHeight
+                        }
+                    }
+                }
+            }
+            return {
+                width: c,
+                height: e
+            }
+        }
+    });
+    window.App = window.App || {};
+    App.AuthDialog = {
+        init: function (d) {
+            d = d || {};
+            var g = "https://api.weibo.com/oauth2/authorize?response_type=token&client_id=" + d.client_id + "&redirect_uri=" + encodeURIComponent(d.redirect_uri);
+            //d.scope && (g += "&scope=" + d.scope);
+            //d.scope && (g += "&scope=" + d.scope);
+            g+="&display=apponweibo"
+            var b = "700",
+                e = "500";
+            var c = "<iframe frameBorder='0' scrolling='no' width='" + b + "px' height='" + e + "px' allowtransparency='true' src='" + g + "' ></iframe>";
+            var f = document.createElement("div");
+            f.id = "authDiv";
+            f.style.width = b + "px";
+            f.style.height = e + "px";
+            f.style.position = "relative";
+            f.style.overflow = "hidden";
+            f.style.textAlign = "center";
+            f.innerHTML = c;
+            f.style.display = "none";
+            document.body.appendChild(f);
+            this.authDiv = f
+        },
+        show: function (f) {
+            f = f || {
+                height: 120,
+                client_id: "",
+                redirect_uri: ""
+            };
+            if (f.client_id == "" || typeof f.client_id == "undefined" || f.redirect_uri == "" || typeof f.redirect_uri == "undefined") {
+                throw new Error("no client_id or redirect_uri found.")
+            }
+            if (this.authDiv == null) {
+                this.init({
+                    client_id: f.client_id,
+                    redirect_uri: f.redirect_uri
+                })
+            }
+            this.authDiv.style.display = "";
+            var e = this.authDiv.offsetWidth;
+            var g = this.authDiv.offsetHeight;
+            var d = a.core.util.winSize();
+            var c = (d.width - e) / 2;
+            var b = (d.height - g) / 2;
+            this.authDiv.style.left = c + "px";
+            this.authDiv.style.top = (f.height || b) + "px"
+        }
+    }
+})();

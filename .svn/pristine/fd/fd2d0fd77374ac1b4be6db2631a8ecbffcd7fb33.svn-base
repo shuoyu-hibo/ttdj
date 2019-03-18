@@ -1,0 +1,186 @@
+package com.service.produce;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
+
+import com.mybatis.dao.ttdj.ProduceInfoMapper;
+import com.mybatis.dao.ttdj.ProduceSort1Mapper;
+import com.mybatis.entity.ttdj.ProduceInfo;
+import com.mybatis.entity.ttdj.ProduceInfoExample;
+import com.mybatis.entity.ttdj.ProduceSort1;
+import com.mybatis.entity.ttdj.ProduceSort1Example;
+import com.service.BaseService;
+import common.CommonConst;
+
+
+public class ProduceServiceImpl extends BaseService{
+
+	Logger log = this.getLog(this.getClass());//加载log方法
+	/**
+	 * 根据用户id查询商品信息
+	 * @param userName
+	 * @return
+	 */
+	public List<ProduceInfo> selectProduceByUserId(int userid){
+		
+		List<ProduceInfo> list = null;
+		SqlSession sqlSession = null;
+		try {
+			ProduceInfoExample pdExmp = new ProduceInfoExample();
+			pdExmp.or().andUserIdEqualTo(userid);
+			pdExmp.setOrderByClause("produce_id desc");
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			ProduceInfoMapper produceInfoMapper = sqlSession.getMapper(ProduceInfoMapper.class);
+			list = produceInfoMapper.selectByExample(pdExmp);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return null;//失败
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+	
+	/**
+	 * 保存商品信息
+	 * @param userinfo
+	 * @return
+	 */
+	public boolean saveProduceData(ProduceInfo produceInfo){
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			ProduceInfoMapper produceMapper = sqlSession.getMapper(ProduceInfoMapper.class);
+			produceMapper.insert(produceInfo);
+			sqlSession.commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return false;
+		} finally {
+			sqlSession.close();
+		}
+		return true;
+	}
+	
+	/**
+	 * 保存商品信息
+	 * @param userinfo
+	 * @return
+	 */
+	public boolean updateProduceData(ProduceInfo produceInfo){
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			ProduceInfoMapper produceMapper = sqlSession.getMapper(ProduceInfoMapper.class);
+			produceMapper.updateByPrimaryKeySelective(produceInfo);
+			sqlSession.commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return false;
+		} finally {
+			sqlSession.close();
+		}
+		return true;
+	}
+
+	/**
+	 * 删除produce
+	 * @param produceId
+	 * @return
+	 */
+	public boolean deleteProduceData(String produceId) {
+		// TODO Auto-generated method stub
+		SqlSession sqlSession = null;
+		try {
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			ProduceInfoMapper produceMapper = sqlSession.getMapper(ProduceInfoMapper.class);
+			produceMapper.deleteByPrimaryKey(Integer.parseInt(produceId));
+			sqlSession.commit();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return false;
+		} finally {
+			sqlSession.close();
+		}
+		return true;
+	}
+
+	public ProduceInfo selectProduceById(String produceId) {
+		// TODO Auto-generated method stub
+		ProduceInfo produceinfo = null;
+		SqlSession sqlSession = null;
+		List<ProduceInfo>	list = null;
+		try {
+			ProduceInfoExample pdExmp = new ProduceInfoExample();
+			pdExmp.or().andProduceIdEqualTo(Integer.parseInt(produceId));
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			ProduceInfoMapper produceInfoMapper = sqlSession.getMapper(ProduceInfoMapper.class);
+			list = (List<ProduceInfo>) produceInfoMapper.selectByExample(pdExmp);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return null;//失败
+		} finally {
+			sqlSession.close();
+		}
+		return list.get(0);
+	}
+
+	/**
+	 * 加载首页商品
+	 * @return
+	 */
+	public List<ProduceInfo> selectPdToHomepage() {
+		// TODO Auto-generated method stub
+		List<ProduceInfo> list = null;
+		SqlSession sqlSession = null;
+		Date currDate = new Date();
+		if(CommonConst.lastSelectPdDate!=null){
+			long millisecond = currDate.getTime()-CommonConst.lastSelectPdDate.getTime();//距离上次查询过去了多少毫秒
+			if(millisecond<(1000*60*CommonConst.MINUTE)){
+				return CommonConst.lFinal;
+			}
+		}
+		try {
+			sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+			ProduceSort1Mapper produceSort1Mapper = sqlSession.getMapper(ProduceSort1Mapper.class);
+			ProduceInfoMapper produceInfoMapper = sqlSession.getMapper(ProduceInfoMapper.class);
+			List<ProduceSort1> lProSort1 = produceSort1Mapper.selectByExample(new ProduceSort1Example());
+			CommonConst.lFinal = new ArrayList<ProduceInfo>();
+			for(ProduceSort1 produceSort1 : lProSort1){
+				ProduceInfoExample pdExmp = new ProduceInfoExample();
+				pdExmp.or().andProSort1CodeEqualTo(produceSort1.getProSortCode());
+				pdExmp.setOrderByClause("last_update_date desc");
+				list = produceInfoMapper.selectByExample(pdExmp);
+				if(list==null||list.size()==0){
+					continue;
+				}
+				for(int i=0;i<(list.size()<3?list.size():3);i++){
+					CommonConst.lFinal.add(list.get(i));
+				}
+			}
+			CommonConst.lastSelectPdDate = new Date();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.error(this.getClass().getName()+"=======================error: "+e.getMessage());
+			e.printStackTrace();
+			return null;//失败
+		} finally {
+			sqlSession.close();
+		}
+		return CommonConst.lFinal;
+	}
+}

@@ -1,0 +1,91 @@
+package com.web.action.base;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONObject;
+
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.web.context.ContextLoader;
+
+
+import com.opensymphony.xwork2.ActionSupport;
+import common.CommonUtil;
+
+public class BaseAction  extends ActionSupport implements ServletRequestAware,ServletResponseAware {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	public HttpServletRequest request;
+	public HttpServletResponse response;
+	public CommonUtil commonUtil = new CommonUtil();
+	public ApplicationContext getApplicationContext(){//获取applicationContext加载的实体(即：spring注入的实体)
+		return ContextLoader.getCurrentWebApplicationContext();
+	}    
+	
+	public void setServletRequest(HttpServletRequest request) {
+		this.request = request;
+	}
+
+	public void setServletResponse(HttpServletResponse response) {
+		response.setCharacterEncoding("UTF-8");
+		this.response = response;
+	}
+	
+	public HttpServletRequest getServletRequest() {
+        return request;
+    }
+	
+	public HttpServletResponse getServletResponse() {
+        return response;
+    }
+
+	public void returnJSON(JSONObject jsonObj){
+		response.setContentType("application/json;charset=UTF-8");
+		PrintWriter out = null;
+        try {
+            out = response.getWriter();
+            out.print(jsonObj);
+            out.flush();
+        } catch (IOException e) {
+             e.printStackTrace();
+        } finally {
+            if(out != null){
+                out.close();
+            }
+        }
+	}
+	
+	/** 
+     * 以文本形式下发数据 
+     * @param response 
+     * @param responseText 
+     */  
+    protected void responseOutWithText(HttpServletResponse response,  
+            String responseText) {  
+        response.setCharacterEncoding("UTF-8");  
+        response.setContentType("text/html");  
+        PrintWriter out = null;  
+        try {  
+            out = response.getWriter();  
+            out.println(responseText);  
+            out.close();  
+           // logger.debug("下发的数据是");  
+           // logger.debug(responseText);  
+        } catch (IOException e) {  
+            // TODO Auto-generated catch block  
+            e.printStackTrace();  
+        } finally {  
+            if (out != null) {  
+                out.close();  
+            }  
+        }  
+    }  
+}

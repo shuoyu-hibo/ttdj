@@ -1,0 +1,28 @@
+package com.service.login;
+
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.log4j.Logger;
+
+import com.mybatis.dao.ttdj.UserInfoMapper;
+import com.mybatis.entity.ttdj.UserInfo;
+import com.mybatis.entity.ttdj.UserInfoExample;
+import com.service.BaseService;
+
+
+public class LoginServiceImpl extends BaseService{
+
+	Logger log = this.getLog(this.getClass());//加载log方法
+
+	public int selectCountByUserName(String userName){
+		
+		UserInfoExample userExmp = new UserInfoExample();
+		userExmp.or().andUserNameEqualTo(userName);
+		SqlSession sqlSession = this.getSqlSessionTemplate().getSqlSessionFactory().openSession();
+		UserInfoMapper userinfoMapper = sqlSession.getMapper(UserInfoMapper.class);
+		List<UserInfo> list = userinfoMapper.selectByExample(userExmp);
+		return list.size();
+	}
+}

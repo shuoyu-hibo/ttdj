@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+  <head>
+    <title>foot.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+            <div class="site-info" id="yui_3_16_0_1_1427333131652_4249">
+            <div class="site-info__item" id="yui_3_16_0_1_1427333131652_4248">
+                <h3>获取更新</h3>
+                <ul id="yui_3_16_0_1_1427333131652_4247">
+                    <li id="yui_3_16_0_1_1427333131652_4246"><a rel="nofollow" href="http://www.ttdaijin.com/maillist/subscribe">邮件订阅</a></li>
+                    <li><a rel="nofollow" href="http://user.qzone.qq.com/97231705" target="_blank">天天代金QQ空间</a></li>
+                    <li><a rel="nofollow" href="http://t.sina.com.cn/ttdaijinyuncheng" target="_blank">天天代金新浪微博</a></li>
+                    <li><a href="http://www.ttdaijin.com/sitemap/citysitemap.php" target="_blank">网站地图</a></li>
+                    <li><a rel="nofollow" href="/feed/yuncheng" target="_blank">RSS订阅</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item">
+                <h3>商务合作</h3>
+                <ul>
+                    <li><a rel="nofollow" href="http://www.ttdaijin.com/crmopen/business/opportunity/embed/add" gaevent="footer/seller">提供代金券信息</a></li>
+                    <li><a rel="nofollow" href="http://zhaoshang.ttdaijin.com/" gaevent="footer/mmp">天天代金商家营销平台</a></li>
+                    <li><a rel="nofollow" href="http://www.ttdaijin.com/about#contact">市场合作</a></li>
+                    <li><a rel="nofollow" href="http://union.ttdaijin.com/" target="_blank">天天代金联盟</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item">
+                <h3>公司信息</h3>
+                <ul>
+                    <li><a rel="nofollow" href="http://www.ttdaijin.com/about/">关于天天代金</a></li>
+                    <li><a rel="nofollow" href="http://www.ttdaijin.com/about/press">媒体报道</a></li>
+                    <li><a rel="nofollow" href="http://www.hotjob.cn/wt/ttdaijin/web/index?brandCode=ttdaijin" gaevent="footer/job">加入我们</a></li>
+                    <li><a rel="nofollow" href="http://www.ttdaijin.com/about/law">法律声明</a></li>
+                    <li><a rel="nofollow" href="http://www.ttdaijin.com/about/terms">用户协议</a></li>
+                    <li><a href="http://www.ttdaijin.com/about/license">营业执照</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item">
+                <h3>用户帮助</h3>
+                <ul>                    
+                    <li><a rel="nofollow" class="J-selfservice-tab" data-tab="2" href="http://www.ttdaijin.com/help/selfservice?tab=2">查看天天代金券密码</a></li>
+                    <li><a rel="nofollow" href="http://www.ttdaijin.com/help/faq">常见问题</a></li>
+                    <li><a rel="nofollow" href="http://www.ttdaijin.com/about/anticheat">反诈骗公告</a></li>
+                </ul>
+            </div>
+            <div class="site-info__item site-info__item--service">
+                <div class="contact-info">
+                    <p>客服电话：400-660-5335</p>
+                    <p>服务时间：每天 9:00 - 22:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>©<span title="I:-; Q:21; S:7; C:10; F:0; T:295.60; H:com">2015</span><a href="http://www.ttdaijin.com/">天天代金网代金券</a> ttdaijin.com <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证070791号</a> 京公网安备11010502025545号<a href="http://www.ttdaijin.com/about/rules" target="_blank"> 电子公告服务规则</a></p>
+            </div>
+            <ul class="cert cf">
+                <li class="cert__item"><a class="sp-ft sp-ft--record" title="备案信息" href="http://www.ttdaijin.com/about/openinfo" hidefocus="true" target="_blank">备案信息</a></li>
+                <li class="cert__item"><a class="sp-ft sp-ft--knet" href="javascript:;" title="可信网站认证" rel="nofollow">可信网站</a></li>
+                <li class="cert__item"><a class="sp-ft sp-ft--12315" href="javascript:;" title="12315消费争议" rel="nofollow">12315消费争议</a></li>
+            </ul>
+        </div><textarea style="display:none;" class="br-rendered" data-br-beforerender="e.target.one('a').remove(true);">
+    </textarea>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+package tool;
+
+import java.io.UnsupportedEncodingException;
+
+import org.apache.log4j.Logger;
+
+public class CommonUtil {
+
+	public String decodeUrl(String str){
+		if("".equals(str)||str==null)
+			str="";
+		try {
+			return java.net.URLDecoder.decode(str,"utf-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			Logger.getLogger(this.getClass()).error(this.getClass().getName()+"==============error: "+e.getMessage());
+			e.printStackTrace();
+		}
+		return str;
+	}
+}

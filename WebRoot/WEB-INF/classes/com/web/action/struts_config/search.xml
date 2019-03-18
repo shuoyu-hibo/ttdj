@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+
+    <!-- 请求处理 -->
+	<package name="SearchAction" extends="riskLoan-default">
+        <action name="sh!*" class="searchAction" method="{1}">
+        	<result name="homepage">/html/home/index.jsp</result>
+        	<result name="error">/html/register/login.html</result>
+            <result name="load">/WEB-INF/jsp/homepage/middle.jsp</result>
+            <result name="forum">/WEB-INF/jsp/forum/forum.jsp</result>
+        </action>
+    </package>
+</struts>

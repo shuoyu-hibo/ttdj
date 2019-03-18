@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.dao.ttdj.ProduceInfoMapper">
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.ttdj.ProduceInfo">
+    <id column="CITY_CODE" jdbcType="INTEGER" property="cityCode" />
+    <result column="CITY_NAME" jdbcType="VARCHAR" property="cityName" />
+    <result column="PROVINCE_CODE" jdbcType="INTEGER" property="provinceCode" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    CITY_CODE, CITY_NAME, PROVINCE_CODE, REMARK
+  </sql>
+  <select id="selectByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from city_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from city_info
+    where CITY_CODE = #{cityCode,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from city_info
+    where CITY_CODE = #{cityCode,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample">
+    delete from city_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    insert into city_info (CITY_CODE, CITY_NAME, PROVINCE_CODE, 
+      REMARK)
+    values (#{cityCode,jdbcType=INTEGER}, #{cityName,jdbcType=VARCHAR}, #{provinceCode,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    insert into city_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cityCode != null">
+        CITY_CODE,
+      </if>
+      <if test="cityName != null">
+        CITY_NAME,
+      </if>
+      <if test="provinceCode != null">
+        PROVINCE_CODE,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cityCode != null">
+        #{cityCode,jdbcType=INTEGER},
+      </if>
+      <if test="cityName != null">
+        #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null">
+        #{provinceCode,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" resultType="java.lang.Integer">
+    select count(*) from city_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update city_info
+    <set>
+      <if test="record.cityCode != null">
+        CITY_CODE = #{record.cityCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.cityName != null">
+        CITY_NAME = #{record.cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.provinceCode != null">
+        PROVINCE_CODE = #{record.provinceCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update city_info
+    set CITY_CODE = #{record.cityCode,jdbcType=INTEGER},
+      CITY_NAME = #{record.cityName,jdbcType=VARCHAR},
+      PROVINCE_CODE = #{record.provinceCode,jdbcType=INTEGER},
+      REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    update city_info
+    <set>
+      <if test="cityName != null">
+        CITY_NAME = #{cityName,jdbcType=VARCHAR},
+      </if>
+      <if test="provinceCode != null">
+        PROVINCE_CODE = #{provinceCode,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CITY_CODE = #{cityCode,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    update city_info
+    set CITY_NAME = #{cityName,jdbcType=VARCHAR},
+      PROVINCE_CODE = #{provinceCode,jdbcType=INTEGER},
+      REMARK = #{remark,jdbcType=VARCHAR}
+    where CITY_CODE = #{cityCode,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.ttdj.ProduceInfo">
+    <id column="PROVINCE_CODE" jdbcType="INTEGER" property="provinceCode" />
+    <result column="PROVINCE_NAME" jdbcType="VARCHAR" property="provinceName" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PROVINCE_CODE, PROVINCE_NAME, REMARK
+  </sql>
+  <select id="selectByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from province_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from province_info
+    where PROVINCE_CODE = #{provinceCode,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from province_info
+    where PROVINCE_CODE = #{provinceCode,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample">
+    delete from province_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    insert into province_info (PROVINCE_CODE, PROVINCE_NAME, REMARK
+      )
+    values (#{provinceCode,jdbcType=INTEGER}, #{provinceName,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    insert into province_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="provinceCode != null">
+        PROVINCE_CODE,
+      </if>
+      <if test="provinceName != null">
+        PROVINCE_NAME,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="provinceCode != null">
+        #{provinceCode,jdbcType=INTEGER},
+      </if>
+      <if test="provinceName != null">
+        #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" resultType="java.lang.Integer">
+    select count(*) from province_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update province_info
+    <set>
+      <if test="record.provinceCode != null">
+        PROVINCE_CODE = #{record.provinceCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.provinceName != null">
+        PROVINCE_NAME = #{record.provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update province_info
+    set PROVINCE_CODE = #{record.provinceCode,jdbcType=INTEGER},
+      PROVINCE_NAME = #{record.provinceName,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    update province_info
+    <set>
+      <if test="provinceName != null">
+        PROVINCE_NAME = #{provinceName,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PROVINCE_CODE = #{provinceCode,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    update province_info
+    set PROVINCE_NAME = #{provinceName,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR}
+    where PROVINCE_CODE = #{provinceCode,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.ttdj.ProduceInfo">
+    <id column="PRODUCE_ID" jdbcType="VARCHAR" property="produceId" />
+    <result column="PRODUCE_NAME" jdbcType="VARCHAR" property="produceName" />
+    <result column="PRODUCE_DESC" jdbcType="VARCHAR" property="produceDesc" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="PRODUCE_PIC" jdbcType="VARCHAR" property="producePic" />
+    <result column="PRODUCE_COUNT" jdbcType="INTEGER" property="produceCount" />
+    <result column="PRODUCE_BUY_COUNT" jdbcType="INTEGER" property="produceBuyCount" />
+    <result column="PRO_SORT1_NAME" jdbcType="VARCHAR" property="proSort1Name" />
+    <result column="PRO_SORT2_NAME" jdbcType="VARCHAR" property="proSort2Name" />
+    <result column="PRO_SORT3_NAME" jdbcType="VARCHAR" property="proSort3Name" />
+    <result column="PRO_SORT3_CODE" jdbcType="VARCHAR" property="proSort3Code" />
+    <result column="IF_POPULAR" jdbcType="VARCHAR" property="ifPopular" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PRODUCE_ID, PRODUCE_NAME, PRODUCE_DESC, USER_ID, PRODUCE_PIC, PRODUCE_COUNT, PRODUCE_BUY_COUNT, 
+    PRO_SORT1_NAME, PRO_SORT2_NAME, PRO_SORT3_NAME, PRO_SORT3_CODE, IF_POPULAR, REMARK
+  </sql>
+  <select id="selectByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from produce_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from produce_info
+    where PRODUCE_ID = #{produceId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from produce_info
+    where PRODUCE_ID = #{produceId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample">
+    delete from produce_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    insert into produce_info (PRODUCE_ID, PRODUCE_NAME, PRODUCE_DESC, 
+      USER_ID, PRODUCE_PIC, PRODUCE_COUNT, 
+      PRODUCE_BUY_COUNT, PRO_SORT1_NAME, PRO_SORT2_NAME, 
+      PRO_SORT3_NAME, PRO_SORT3_CODE, IF_POPULAR, 
+      REMARK)
+    values (#{produceId,jdbcType=VARCHAR}, #{produceName,jdbcType=VARCHAR}, #{produceDesc,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{producePic,jdbcType=VARCHAR}, #{produceCount,jdbcType=INTEGER}, 
+      #{produceBuyCount,jdbcType=INTEGER}, #{proSort1Name,jdbcType=VARCHAR}, #{proSort2Name,jdbcType=VARCHAR}, 
+      #{proSort3Name,jdbcType=VARCHAR}, #{proSort3Code,jdbcType=VARCHAR}, #{ifPopular,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    insert into produce_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="produceId != null">
+        PRODUCE_ID,
+      </if>
+      <if test="produceName != null">
+        PRODUCE_NAME,
+      </if>
+      <if test="produceDesc != null">
+        PRODUCE_DESC,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="producePic != null">
+        PRODUCE_PIC,
+      </if>
+      <if test="produceCount != null">
+        PRODUCE_COUNT,
+      </if>
+      <if test="produceBuyCount != null">
+        PRODUCE_BUY_COUNT,
+      </if>
+      <if test="proSort1Name != null">
+        PRO_SORT1_NAME,
+      </if>
+      <if test="proSort2Name != null">
+        PRO_SORT2_NAME,
+      </if>
+      <if test="proSort3Name != null">
+        PRO_SORT3_NAME,
+      </if>
+      <if test="proSort3Code != null">
+        PRO_SORT3_CODE,
+      </if>
+      <if test="ifPopular != null">
+        IF_POPULAR,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="produceId != null">
+        #{produceId,jdbcType=VARCHAR},
+      </if>
+      <if test="produceName != null">
+        #{produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="produceDesc != null">
+        #{produceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="producePic != null">
+        #{producePic,jdbcType=VARCHAR},
+      </if>
+      <if test="produceCount != null">
+        #{produceCount,jdbcType=INTEGER},
+      </if>
+      <if test="produceBuyCount != null">
+        #{produceBuyCount,jdbcType=INTEGER},
+      </if>
+      <if test="proSort1Name != null">
+        #{proSort1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort2Name != null">
+        #{proSort2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Name != null">
+        #{proSort3Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Code != null">
+        #{proSort3Code,jdbcType=VARCHAR},
+      </if>
+      <if test="ifPopular != null">
+        #{ifPopular,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" resultType="java.lang.Integer">
+    select count(*) from produce_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update produce_info
+    <set>
+      <if test="record.produceId != null">
+        PRODUCE_ID = #{record.produceId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.produceName != null">
+        PRODUCE_NAME = #{record.produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.produceDesc != null">
+        PRODUCE_DESC = #{record.produceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.producePic != null">
+        PRODUCE_PIC = #{record.producePic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.produceCount != null">
+        PRODUCE_COUNT = #{record.produceCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.produceBuyCount != null">
+        PRODUCE_BUY_COUNT = #{record.produceBuyCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.proSort1Name != null">
+        PRO_SORT1_NAME = #{record.proSort1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proSort2Name != null">
+        PRO_SORT2_NAME = #{record.proSort2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proSort3Name != null">
+        PRO_SORT3_NAME = #{record.proSort3Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proSort3Code != null">
+        PRO_SORT3_CODE = #{record.proSort3Code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ifPopular != null">
+        IF_POPULAR = #{record.ifPopular,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update produce_info
+    set PRODUCE_ID = #{record.produceId,jdbcType=VARCHAR},
+      PRODUCE_NAME = #{record.produceName,jdbcType=VARCHAR},
+      PRODUCE_DESC = #{record.produceDesc,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      PRODUCE_PIC = #{record.producePic,jdbcType=VARCHAR},
+      PRODUCE_COUNT = #{record.produceCount,jdbcType=INTEGER},
+      PRODUCE_BUY_COUNT = #{record.produceBuyCount,jdbcType=INTEGER},
+      PRO_SORT1_NAME = #{record.proSort1Name,jdbcType=VARCHAR},
+      PRO_SORT2_NAME = #{record.proSort2Name,jdbcType=VARCHAR},
+      PRO_SORT3_NAME = #{record.proSort3Name,jdbcType=VARCHAR},
+      PRO_SORT3_CODE = #{record.proSort3Code,jdbcType=VARCHAR},
+      IF_POPULAR = #{record.ifPopular,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    update produce_info
+    <set>
+      <if test="produceName != null">
+        PRODUCE_NAME = #{produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="produceDesc != null">
+        PRODUCE_DESC = #{produceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="producePic != null">
+        PRODUCE_PIC = #{producePic,jdbcType=VARCHAR},
+      </if>
+      <if test="produceCount != null">
+        PRODUCE_COUNT = #{produceCount,jdbcType=INTEGER},
+      </if>
+      <if test="produceBuyCount != null">
+        PRODUCE_BUY_COUNT = #{produceBuyCount,jdbcType=INTEGER},
+      </if>
+      <if test="proSort1Name != null">
+        PRO_SORT1_NAME = #{proSort1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort2Name != null">
+        PRO_SORT2_NAME = #{proSort2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Name != null">
+        PRO_SORT3_NAME = #{proSort3Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Code != null">
+        PRO_SORT3_CODE = #{proSort3Code,jdbcType=VARCHAR},
+      </if>
+      <if test="ifPopular != null">
+        IF_POPULAR = #{ifPopular,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PRODUCE_ID = #{produceId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    update produce_info
+    set PRODUCE_NAME = #{produceName,jdbcType=VARCHAR},
+      PRODUCE_DESC = #{produceDesc,jdbcType=VARCHAR},
+      USER_ID = #{userId,jdbcType=VARCHAR},
+      PRODUCE_PIC = #{producePic,jdbcType=VARCHAR},
+      PRODUCE_COUNT = #{produceCount,jdbcType=INTEGER},
+      PRODUCE_BUY_COUNT = #{produceBuyCount,jdbcType=INTEGER},
+      PRO_SORT1_NAME = #{proSort1Name,jdbcType=VARCHAR},
+      PRO_SORT2_NAME = #{proSort2Name,jdbcType=VARCHAR},
+      PRO_SORT3_NAME = #{proSort3Name,jdbcType=VARCHAR},
+      PRO_SORT3_CODE = #{proSort3Code,jdbcType=VARCHAR},
+      IF_POPULAR = #{ifPopular,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR}
+    where PRODUCE_ID = #{produceId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="com.mybatis.entity.ttdj.ProduceInfo">
+    <id column="PRODUCE_ID" jdbcType="VARCHAR" property="produceId" />
+    <result column="PRODUCE_NAME" jdbcType="VARCHAR" property="produceName" />
+    <result column="PRODUCE_DESC" jdbcType="VARCHAR" property="produceDesc" />
+    <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="PRODUCE_PIC" jdbcType="VARCHAR" property="producePic" />
+    <result column="PRODUCE_COUNT" jdbcType="INTEGER" property="produceCount" />
+    <result column="PRODUCE_BUY_COUNT" jdbcType="INTEGER" property="produceBuyCount" />
+    <result column="PRO_SORT1_NAME" jdbcType="VARCHAR" property="proSort1Name" />
+    <result column="PRO_SORT2_NAME" jdbcType="VARCHAR" property="proSort2Name" />
+    <result column="PRO_SORT3_NAME" jdbcType="VARCHAR" property="proSort3Name" />
+    <result column="PRO_SORT3_CODE" jdbcType="VARCHAR" property="proSort3Code" />
+    <result column="IF_POPULAR" jdbcType="VARCHAR" property="ifPopular" />
+    <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    PRODUCE_ID, PRODUCE_NAME, PRODUCE_DESC, USER_ID, PRODUCE_PIC, PRODUCE_COUNT, PRODUCE_BUY_COUNT, 
+    PRO_SORT1_NAME, PRO_SORT2_NAME, PRO_SORT3_NAME, PRO_SORT3_CODE, IF_POPULAR, REMARK
+  </sql>
+  <select id="selectByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from produce_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from produce_info
+    where PRODUCE_ID = #{produceId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from produce_info
+    where PRODUCE_ID = #{produceId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample">
+    delete from produce_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    insert into produce_info (PRODUCE_ID, PRODUCE_NAME, PRODUCE_DESC, 
+      USER_ID, PRODUCE_PIC, PRODUCE_COUNT, 
+      PRODUCE_BUY_COUNT, PRO_SORT1_NAME, PRO_SORT2_NAME, 
+      PRO_SORT3_NAME, PRO_SORT3_CODE, IF_POPULAR, 
+      REMARK)
+    values (#{produceId,jdbcType=VARCHAR}, #{produceName,jdbcType=VARCHAR}, #{produceDesc,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{producePic,jdbcType=VARCHAR}, #{produceCount,jdbcType=INTEGER}, 
+      #{produceBuyCount,jdbcType=INTEGER}, #{proSort1Name,jdbcType=VARCHAR}, #{proSort2Name,jdbcType=VARCHAR}, 
+      #{proSort3Name,jdbcType=VARCHAR}, #{proSort3Code,jdbcType=VARCHAR}, #{ifPopular,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    insert into produce_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="produceId != null">
+        PRODUCE_ID,
+      </if>
+      <if test="produceName != null">
+        PRODUCE_NAME,
+      </if>
+      <if test="produceDesc != null">
+        PRODUCE_DESC,
+      </if>
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="producePic != null">
+        PRODUCE_PIC,
+      </if>
+      <if test="produceCount != null">
+        PRODUCE_COUNT,
+      </if>
+      <if test="produceBuyCount != null">
+        PRODUCE_BUY_COUNT,
+      </if>
+      <if test="proSort1Name != null">
+        PRO_SORT1_NAME,
+      </if>
+      <if test="proSort2Name != null">
+        PRO_SORT2_NAME,
+      </if>
+      <if test="proSort3Name != null">
+        PRO_SORT3_NAME,
+      </if>
+      <if test="proSort3Code != null">
+        PRO_SORT3_CODE,
+      </if>
+      <if test="ifPopular != null">
+        IF_POPULAR,
+      </if>
+      <if test="remark != null">
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="produceId != null">
+        #{produceId,jdbcType=VARCHAR},
+      </if>
+      <if test="produceName != null">
+        #{produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="produceDesc != null">
+        #{produceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="producePic != null">
+        #{producePic,jdbcType=VARCHAR},
+      </if>
+      <if test="produceCount != null">
+        #{produceCount,jdbcType=INTEGER},
+      </if>
+      <if test="produceBuyCount != null">
+        #{produceBuyCount,jdbcType=INTEGER},
+      </if>
+      <if test="proSort1Name != null">
+        #{proSort1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort2Name != null">
+        #{proSort2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Name != null">
+        #{proSort3Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Code != null">
+        #{proSort3Code,jdbcType=VARCHAR},
+      </if>
+      <if test="ifPopular != null">
+        #{ifPopular,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.mybatis.entity.ttdj.ProduceInfoExample" resultType="java.lang.Integer">
+    select count(*) from produce_info
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update produce_info
+    <set>
+      <if test="record.produceId != null">
+        PRODUCE_ID = #{record.produceId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.produceName != null">
+        PRODUCE_NAME = #{record.produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.produceDesc != null">
+        PRODUCE_DESC = #{record.produceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null">
+        USER_ID = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.producePic != null">
+        PRODUCE_PIC = #{record.producePic,jdbcType=VARCHAR},
+      </if>
+      <if test="record.produceCount != null">
+        PRODUCE_COUNT = #{record.produceCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.produceBuyCount != null">
+        PRODUCE_BUY_COUNT = #{record.produceBuyCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.proSort1Name != null">
+        PRO_SORT1_NAME = #{record.proSort1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proSort2Name != null">
+        PRO_SORT2_NAME = #{record.proSort2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proSort3Name != null">
+        PRO_SORT3_NAME = #{record.proSort3Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.proSort3Code != null">
+        PRO_SORT3_CODE = #{record.proSort3Code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ifPopular != null">
+        IF_POPULAR = #{record.ifPopular,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update produce_info
+    set PRODUCE_ID = #{record.produceId,jdbcType=VARCHAR},
+      PRODUCE_NAME = #{record.produceName,jdbcType=VARCHAR},
+      PRODUCE_DESC = #{record.produceDesc,jdbcType=VARCHAR},
+      USER_ID = #{record.userId,jdbcType=VARCHAR},
+      PRODUCE_PIC = #{record.producePic,jdbcType=VARCHAR},
+      PRODUCE_COUNT = #{record.produceCount,jdbcType=INTEGER},
+      PRODUCE_BUY_COUNT = #{record.produceBuyCount,jdbcType=INTEGER},
+      PRO_SORT1_NAME = #{record.proSort1Name,jdbcType=VARCHAR},
+      PRO_SORT2_NAME = #{record.proSort2Name,jdbcType=VARCHAR},
+      PRO_SORT3_NAME = #{record.proSort3Name,jdbcType=VARCHAR},
+      PRO_SORT3_CODE = #{record.proSort3Code,jdbcType=VARCHAR},
+      IF_POPULAR = #{record.ifPopular,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    update produce_info
+    <set>
+      <if test="produceName != null">
+        PRODUCE_NAME = #{produceName,jdbcType=VARCHAR},
+      </if>
+      <if test="produceDesc != null">
+        PRODUCE_DESC = #{produceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        USER_ID = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="producePic != null">
+        PRODUCE_PIC = #{producePic,jdbcType=VARCHAR},
+      </if>
+      <if test="produceCount != null">
+        PRODUCE_COUNT = #{produceCount,jdbcType=INTEGER},
+      </if>
+      <if test="produceBuyCount != null">
+        PRODUCE_BUY_COUNT = #{produceBuyCount,jdbcType=INTEGER},
+      </if>
+      <if test="proSort1Name != null">
+        PRO_SORT1_NAME = #{proSort1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort2Name != null">
+        PRO_SORT2_NAME = #{proSort2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Name != null">
+        PRO_SORT3_NAME = #{proSort3Name,jdbcType=VARCHAR},
+      </if>
+      <if test="proSort3Code != null">
+        PRO_SORT3_CODE = #{proSort3Code,jdbcType=VARCHAR},
+      </if>
+      <if test="ifPopular != null">
+        IF_POPULAR = #{ifPopular,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PRODUCE_ID = #{produceId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.mybatis.entity.ttdj.ProduceInfo">
+    update produce_info
+    set PRODUCE_NAME = #{produceName,jdbcType=VARCHAR},
+      PRODUCE_DESC = #{produceDesc,jdbcType=VARCHAR},
+      USER_ID = #{userId,jdbcType=VARCHAR},
+      PRODUCE_PIC = #{producePic,jdbcType=VARCHAR},
+      PRODUCE_COUNT = #{produceCount,jdbcType=INTEGER},
+      PRODUCE_BUY_COUNT = #{produceBuyCount,jdbcType=INTEGER},
+      PRO_SORT1_NAME = #{proSort1Name,jdbcType=VARCHAR},
+      PRO_SORT2_NAME = #{proSort2Name,jdbcType=VARCHAR},
+      PRO_SORT3_NAME = #{proSort3Name,jdbcType=VARCHAR},
+      PRO_SORT3_CODE = #{proSort3Code,jdbcType=VARCHAR},
+      IF_POPULAR = #{ifPopular,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR}
+    where PRODUCE_ID = #{produceId,jdbcType=VARCHAR}
+  </update>
+</mapper>
